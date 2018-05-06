@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% if page.fullTitle.size > 0 %}{{ page.fullTitle }}
+            {% elsif page.title.size > 0 %}{{ page.title }} | {{ site.title }}
+            {$ else }{{ page.name }}
+        </title>
+        <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    </head>
+    <header>
+        <p>This is the header</p>
+    </header>
+    <body>
+        <div class="body">
+         {{ content }}
+        </div>
+    </body>
+    
+    <footer>
+        <p>Und das ist die Fußzeile</p>
+    </footer>
+</html>
