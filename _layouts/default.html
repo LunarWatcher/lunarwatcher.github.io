@@ -4,7 +4,7 @@
         <title>
             {% if page.fullTitle.size > 0 %}{{ page.fullTitle }}
             {% elsif page.title.size > 0 %}{{ page.title }} | {{ site.title }}
-            {$ else %}{{ page.name }}
+            {% else %}{{ page.name }}
         </title>
         <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     </head>
@@ -23,6 +23,4 @@
             <p>Und das ist die Fußzeile</p>
         </footer>
     </body>
-    
-    
 </html>
