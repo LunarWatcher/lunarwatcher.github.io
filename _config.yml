@@ -1,2 +1,4 @@
 timezone: Europe/Oslo
 title: LunarWatcher
+
+theme: jekyll-theme-hacker
