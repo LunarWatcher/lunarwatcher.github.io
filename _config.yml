@@ -1,5 +1,12 @@
 timezone: Europe/Oslo
 title: LunarWatcher
-
+email: zoe.i2k1@gmail.com
 github: LunarWatcher
 twitter: OliviaZoe0
+
+markdown: kramdown
+theme: minima
+
+baseurl: ""
+sass:
+    sass_dir: assets/css
