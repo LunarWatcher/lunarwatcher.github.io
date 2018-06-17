@@ -1,14 +1,41 @@
 ---
 ---
+@import "materialize/sass/materialize.scss";
 @import "{{ site.theme }}";
 
-$linkHover: pink;
+$side-pad: 20px;
+
+
+
+main {
+    padding-left: $side-pad;
+    padding-right: $side-pad;
+}
 
 // Debugging help: !important may be necessary to override stuff defined in the site theme.
 .center{
-    text-align:center;   
+    text-align: center;   
+}
+
+a{
+    color: #e8282a !important;
 }
 
 a:hover{
-    color: $linkHover;
+    @extend .red-text, .text-lighten-1;
+}
+
+
+.page-footer, .nav-wrapper{
+    @extend .grey, .darken-4;
+}
+
+h1, h2, h3, h4, h5, h6{
+    @extend .pink-text, .text-lighten-2;
+    
+
+}
+
+h1, h2{
+    border-bottom: 1px solid #d1d1d1;
 }
