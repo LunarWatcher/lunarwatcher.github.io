@@ -3,18 +3,10 @@
 @import "materialize/sass/materialize.scss";
 @import "{{ site.theme }}";
 
-$side-pad: 20px;
+$grey-darken-3-alias: #424242;
 
-
-
-main {
-    padding-left: $side-pad;
-    padding-right: $side-pad;
-}
-
-// Debugging help: !important may be necessary to override stuff defined in the site theme.
-.center{
-    text-align: center;   
+blockquote{
+    border-left: 4px solid $grey-darken-3-alias;
 }
 
 a{
@@ -26,7 +18,7 @@ a:hover{
 }
 
 
-.page-footer, .nav-wrapper{
+.page-footer, .nav-wrapper, .nav-container {
     @extend .grey, .darken-4;
 }
 

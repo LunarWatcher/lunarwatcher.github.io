@@ -3,6 +3,11 @@ title: LunarWatcher
 email: zoe.i2k1@gmail.com
 github: LunarWatcher
 twitter: OliviaZoe0
+rss: /feed.xml
+stackoverflow: "6296561"
+deviantart: oliviazoe0
+discord-server: https://discordapp.com/invite/WTJ8g3v
+discord-username: Olivia#0740
 
 name: LunarWatcher
 
@@ -23,3 +28,6 @@ baseurl: ""
 sass:
     sass_dir: assets/css
     style: compressed
+
+plugins:
+  - jekyll-feed
