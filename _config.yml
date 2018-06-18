@@ -1,5 +1,36 @@
 timezone: Europe/Oslo
 title: LunarWatcher
-
+email: zoe.i2k1@gmail.com
 github: LunarWatcher
 twitter: OliviaZoe0
+rss: /feed.xml
+stackoverflow: "6296561"
+deviantart: oliviazoe0
+discord-server: "WTJ8g3v"
+discord-username: Olivia#0740
+keybase: oliviazoe0
+
+footer-description: "Hi! I'm Olivia, though I often go by Zoe. This is my website, and it contains different things I either feel like putting here, or stuff with an actual purpose (like repositories). There's also a knowledge base with random bits of information in different topics."
+
+name: LunarWatcher
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown: 
+    input: GFM
+    hard_wrap: false
+    highlight: true
+    auto_ids: true
+
+theme: minima
+
+baseurl: ""
+sass:
+    sass_dir: assets/css
+    style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+

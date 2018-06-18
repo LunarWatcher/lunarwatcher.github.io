@@ -1,6 +1,43 @@
+---
+---
+@import "materialize/sass/materialize.scss";
 @import "{{ site.theme }}";
 
-// Debugging help: !important may be necessary to override stuff defined in the site theme.
-.center{
-    text-align:center;   
+$grey-darken-3-alias: #424242;
+
+blockquote{
+    border-left: 4px solid $grey-darken-3-alias;
+}
+
+a{
+    color: #e8282a !important;
+}
+
+a:hover{
+    @extend .red-text, .text-lighten-1;
+}
+
+
+.page-footer, .nav-wrapper, .nav-container {
+    @extend .grey, .darken-4;
+}
+
+h1, h2, h3, h4, h5, h6{
+    @extend .red-text, .text-darken-1;
+
+}
+
+h1, h2{
+    border-bottom: 1px solid #d1d1d1;
+}
+
+// Flexbox might not work as well in Internet Explorer, but it's far from a popular browser anywyas.
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
 }
