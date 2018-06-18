@@ -2,23 +2,23 @@
     <div class = "container">
         <div class="row">
             <div class = "col l6 s12">
-                <h5 class = "white-text">Meta</h5>
-                <p class = "grey-text text-lighten-4">This site uses <a href = "https://materializecss.com/" rel = "nofollow noreferrer">materialize</a>.</p>
+                <h5>About</h5>
+                {{site.footer-description}}
             </div>
             <div class="col l4 s12">
-                <h5>Social media</h5>
+                <h5 id = "social-media">Social media</h5>
                 {% include socialmedia.html %}
-
+                {% include se-flair.html %}
             </div>
         </div>
         
         <div class="footer-copyright">
             <div class="container">
-            &copy; 2018 Olivia Zoe
+                &copy; 2018 Olivia Zoe
+                <p class="right">Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://materializecss.com/">MaterializeCSS</a></p>
             </div>
         </div>
     </div>
 </footer>
 <script type="text/javascript" src="/assets/css/materialize/js/bin/materialize.min.js"></script>
-
 <script type="text/javascript" src="/assets/js/functions.js"></script>

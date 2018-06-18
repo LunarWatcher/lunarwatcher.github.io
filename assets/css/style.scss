@@ -23,11 +23,21 @@ a:hover{
 }
 
 h1, h2, h3, h4, h5, h6{
-    @extend .pink-text, .text-lighten-2;
-    
+    @extend .red-text, .text-darken-1;
 
 }
 
 h1, h2{
     border-bottom: 1px solid #d1d1d1;
+}
+
+// Flexbox might not work as well in Internet Explorer, but it's far from a popular browser anywyas.
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
 }
