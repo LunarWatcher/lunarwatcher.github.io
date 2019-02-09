@@ -5,7 +5,14 @@ date: 18.06.2018
 summary: This post contains resources for different topics I'm interested in, including websites, tools, etc.
 ---
 
-This post contains resources and tools for stuff I'm interested in, or in general use
+This post contains resources and tools for stuff I'm interested in, or in general use. 
+
+## Disclaimer
+
+None of these are paid promotions. I also cannot guarantee that the software is safe<sup>1</sup> -- I also take no responsibility for anything that happens if you install any of the programs or plugins, or visit the URLs. Use common sense when installing stuff.
+
+
+<sub>1: They are theoretically safe (otherwise I wouldn't use them), but as with other programs, [shit does happen](https://www.dinside.no/data/populaert-gratisprogram-hadde-virus/68713332) that wasn't intended</sub>
 
 ## General tools
 
@@ -30,19 +37,44 @@ This post contains resources and tools for stuff I'm interested in, or in genera
 * [Stack Overflow](https://stackoverflow.com) - lots of answers to programming questions.
 * [Open Source Stack Exchange](https://opensource.stackexchange.com/) - Lots of answers to questions about open-source
 * [Software Recommendations Stack Exchange](https://softwarerecs.stackexchange.com/) - as the name suggests; software recommendations.
-* [Siraj Raval's YouTube channel](https://www.youtube.com/channel/UCWN3xxRkmTPmbKwht9FuE5A) - machine learning stuff
+* [Siraj Raval's YouTube channel](https://www.youtube.com/channel/UCWN3xxRkmTPmbKwht9FuE5A) - machine learning stuff.
 
 ### Tools
 
 * [JetBrains](https://www.jetbrains.com/) has a lot of useful tools, including IDE's, CI, issue trackers, etc.
 * [regex101.com](https://regex101.com/) - Useful for regex validation.
-* [Jekyll](https://jekyllrb.com) - really useful for websites, since it allows creating modular pages with templates. Also powers this website
-* [Brackets](http://brackets.io/) - Nice editor, flexible, and my personal web dev favorite
-* [Sublime Text](https://www.sublimetext.com/) - Both code and non-code editor. Beats Notepad++
+* [Jekyll](https://jekyllrb.com) - really useful for websites, since it allows creating modular pages with templates. Also powers this website.
+* [Brackets](http://brackets.io/) - Nice editor, flexible, and my personal web dev favorite.
+* [Sublime Text](https://www.sublimetext.com/) - Both code and non-code editor. Beats Notepad++.
 * [Emacs](https://www.gnu.org/software/emacs/) - extensible editor, supports a ton of programming languages. Unfortunately doesn't have auto-import, but I like it for a couple languages.
-* [Code::blocks](http://codeblocks.org/) - Open-source C++ IDE (along with some other languages)
+* [Vim](https://github.com/vim/vim) - Slowly becoming one of my favorite editors for everything but Java, Kotlin and other import-heavy languages where there are a lot of imports.
+* [VS Code](https://code.visualstudio.com/) - fantastic on Linux. On Windows, especially with Cygwin, it struggles finding stuff for auto-complete.
 
 ### Programming utilities
 
+#### General/meta
+* [Cygwin](https://www.cygwin.com/) - Linux-like terminal on Windows.
+* [tmux](https://github.com/tmux/tmux) - split terminal windows. Incredibly useful with SSH or for consoles without support for tabs.
+
+#### C++
+
+* [Conan](https://github.com/conan-io/conan) - package manager. 
+* [Ninja](https://github.com/ninja-build/ninja) - My preferred CMake generator. 
+
+
+#### Webdev
 * [SASS](https://sass-lang.com/) - Makes CSS coding a lot easier, especially with variables and imports.
-* [Cygwin](https://www.cygwin.com/) - Linux-like terminal on Windows
+
+### Vim
+
+#### Plugins
+
+* [Vundle](https://github.com/VundleVim/Vundle.vim) - Insanely simple package manager. 
+* [NERDTree](https://github.com/scrooloose/nerdtree) - File trees to get the IDE feel.
+* [Auto pairs](https://github.com/jiangmiao/auto-pairs) - closes brackets, quotes, and similar.
+* [Tmux navigator](https://github.com/christoomey/vim-tmux-navigator) - simplifies tmux-vim interop.
+* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) - Vim autocomplete.
+
+#### Themes
+
+* [Papercolor](https://github.com/NLKNguyen/papercolor-theme) - paper-like theme with a nice color scheme.
