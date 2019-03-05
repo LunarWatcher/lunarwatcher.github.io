@@ -1,7 +1,7 @@
 ---
 title: The essential skill of debugging
 layout: post
-date: 20.02.19
+date: 19.02.20
 ---
 
 I spend a lot of time on Stack Overflow, and every single day there's a lot of unresearched questions being posted. Research and basic debugging appears to be a skill that's undervalued, or for that matter, not used properly. Using a search engine and manual debugging efforts might even get you solutions faster than asking someone else.
