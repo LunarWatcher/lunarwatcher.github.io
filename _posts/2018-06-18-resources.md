@@ -73,7 +73,6 @@ None of these are paid promotions. I also cannot guarantee that the software is 
 * [NERDTree](https://github.com/scrooloose/nerdtree) - File trees to get the IDE feel.
 * [Auto pairs](https://github.com/jiangmiao/auto-pairs) - closes brackets, quotes, and similar.
 * [Tmux navigator](https://github.com/christoomey/vim-tmux-navigator) - simplifies tmux-vim interop.
-* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) - Vim autocomplete.
 
 #### Themes
 
