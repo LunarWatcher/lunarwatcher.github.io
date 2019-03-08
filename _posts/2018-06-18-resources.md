@@ -69,10 +69,11 @@ None of these are paid promotions. I also cannot guarantee that the software is 
 
 #### Plugins
 
-* [Vundle](https://github.com/VundleVim/Vundle.vim) - Insanely simple package manager. 
+* [Vim Plug](https://github.com/junegunn/vim-plug) - Like Vundle, but better and async.
 * [NERDTree](https://github.com/scrooloose/nerdtree) - File trees to get the IDE feel.
 * [Auto pairs](https://github.com/jiangmiao/auto-pairs) - closes brackets, quotes, and similar.
 * [Tmux navigator](https://github.com/christoomey/vim-tmux-navigator) - simplifies tmux-vim interop.
+* [Completor](https://github.com/maralla/completor.vim) - Async Vim 8 autocomplete (that actually works without much setup effort!)
 
 #### Themes
 
