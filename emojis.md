@@ -19,6 +19,7 @@ uwu, UwU, UWU      - shy happy
 xd                 - Dammit - not to be confused with xD 
 xD                 - laughing 
 ^^, ^.^, ^-^, ^w^  - Happy. First and last are common
+^^"                - Whoops. (Equivalent to 😅)
 (~^*^)~, ~(^*^~)   - replace the * with a matching char (see the previous one) - chasing happy
 ;-;                - sad
 :/                 - That sucks
