@@ -3,6 +3,8 @@ layout: default
 title: Zoe's emoji reference sheet
 ---
 
+# Zoe's emoji reference sheet
+
 Stored for later reference.
 
 ```
