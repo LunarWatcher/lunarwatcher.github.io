@@ -1,7 +1,7 @@
 ---
 title: Specific package updates on Raspberry Pi/Raspbian
 layout: post
-date: 16.02.19
+date: 19.02.16
 ---
 
 The Raspbian package repos are, in my experience, extremely slow with updates. Ninja pre-dates version one, Python3 is still stuck on 3.5.2, and a lot of other packages are outdated. Installing from source isn't always easy, because they get new dependencies, and suddenly you have accidentally missing packages and compiling fails. So here's a list of some install guides for various tools.
