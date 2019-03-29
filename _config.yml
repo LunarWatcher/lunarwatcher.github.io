@@ -33,8 +33,6 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
-gems: 
   - "jekyll-paginate"
 
 
