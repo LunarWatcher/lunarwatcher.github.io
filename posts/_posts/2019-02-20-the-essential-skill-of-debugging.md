@@ -31,7 +31,7 @@ To start off, here are a couple base principles:
     Versions of stuff used (i.e. browsers, language standards, plugins, runtimes, operating systems, tools, libraries, program version, you name it!), along with the existance of non-standard features (i.e. a browser plugin if it's a website issue) matters and can affect results. A browser plugin could theoretically create problems *for you* that no one else has if it's a web issue.
     
     You could also be using incompatible versions of a library with the version of a programming language or operating system, or use an OS or something else that's entirely incompatible with a third party tool or library.
-    
+
 ---
 
 With that in mind, let's move on to the next part: the actual problem solving.
@@ -68,14 +68,14 @@ Generally, there are steps:
     First of all, and I cannot stress this enough, **do not use Bing**. It doesn't produce nearly as good results on even a basic error message as Google or DuckDuckGo. Even a basic error such as a cryptic signup error on Spotify gave 4 irrelevant hits on Bing (I used Edge to see if it was a browser issue, not relevant), and a ton of relevant hits on Google. I generally use DuckDuckGo first, and fall back to Google/Startpage if I can't find anything there. TL;DR: search engines matter.
 
     It's quite simple from here: search for the biggest text you can without adding case-specific issues. If you have a stacktrace, copy-pasting the exception name, along with the message usually helps. 
+   
+    ---
     
-    i. [Rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging)
-
-        This is mainly useful for coders. Read through the code, and say what each line of code does out loud. 
+    If you're a coder, you might also find [Rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging) useful. Essentially, read through the code, and say what each line of code does out loud. 
         
-        Something I personally do is actually opening the question box on SO, mainly because it's somewhere to type. I find the minimal code necessary to reproduce it, along with explaining what the code does in the question. Surprisingly often, that makes me see what I did wrong, and I can easily patch it from there. 
+    Something I personally do is actually opening the question box on SO, mainly because it's somewhere to type. I find the minimal code necessary to reproduce it, along with explaining what the code does in the question. Surprisingly often, that makes me see what I did wrong, and I can easily patch it from there. 
         
-        There are a ton of ways to do rubber duck debugging. There are also tools for it if you want to type it. I also have to mention Emacs and the psychotherapist here, which can be used as a form of rubber duck debugger. I bet there's plugins for other IDE's or tools as well that provide similar functionality. 
+    There are a ton of ways to do rubber duck debugging. There are also tools for it if you want to type it. I also have to mention Emacs and the psychotherapist here, which can be used as a form of rubber duck debugger. I bet there's plugins for other IDE's or tools as well that provide similar functionality. 
         
 4. The next step(s)
 
