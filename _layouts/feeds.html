@@ -2,34 +2,68 @@
 layout: default
 ---
 
+{% assign date_format = "%-d %b, %Y" %}
 <div id="post-container">
 
     {{ content }}
     <hr>
     {% if site.posts.size > 0 %}
-    <h2 style="padding-bottom: 20px;" id = "recent-posts">Recent posts</h2>
-    <ul id="post-list">
-        {% for post in site.posts %}
-        <li>
-            {% assign date_format = "%-d %b, %Y" %}
-            <span class="post-meta">{{ post.date | date: date_format }}</span>
-            <h3>
-                <a class="post-link" href="{{ post.url | relative_url }}">
-                    {{ post.title | escape }}
-                </a>
-            </h3>
-            {% if post.summary %}{{post.summary}}{% else %}{{ post.excerpt }}{% endif %}
-        </li>
+        <h2 style="padding-bottom: 20px;" id = "recent-posts">Recent posts</h2>
+        {% for post in paginator.posts %}
+            <div class="article">
+                <h1><a href="{{ post.url | cgi_escape }}" class="post-link">{{ post.title }}</a></h1>
+                <span class="post-meta">Posted {{ post.date | date: date_format }}</span>
+                <p>
+                    {% if post.summary %}
+                        {{ post.summary }}
+                    {% else %}
+                        {{ post.excerpt }}
+                    {% endif %}
+                </p>
+            </div>
         {% endfor %}
-    </ul>
-
-    <p id="rss">Subscribe via <a href="{{site.baseurl}}/feed.xml">RSS</a></p>
-
     {% else %}
-    <div style="padding-top: 20px; padding-bottom: 20px;">
-        <h1>No posts</h1>
-        <p>Nothing has been posted yet :c Check back later.</p>
-    </div>
+        <div style="padding-top: 20px; padding-bottom: 20px;">
+            <h1>No posts</h1>
+            <p>Nothing has been posted yet :c Check back later.</p>
+        </div>
     {% endif %}
 
+    <div class="pagination">
+        {% if paginator.previous_page %}
+            {% assign start = 1 %}
+            <a class="btn btn-default" href="/posts/page/{{ paginator.previous_page }}">&gt;</a>
+        {% endif %}
+
+
+        {% if not start %}
+            {% assign temp = paginator.page | minus: 3 %}
+            {% if temp <= 0} 
+                {% assign start = 1 %}
+            {% else %}
+                {% assign start = temp %}
+            {% endif %}
+        {% endif %}
+        {% assign temp = paginator.page | plus: 3 %}
+        {% if temp >= paginator.pages.size %}
+            {% assign end = paginator.pages.size %}
+        {% else %}
+            {% assign end = temp %}
+        {% endif %}
+        {% assign last = end != paginator.pages.size %}
+        {% for i in (start..end) %}
+            <a class="btn btn-default" href="/posts/page/{{ i }}">{{ i }}</a>
+        {% endfor %}
+        
+        {% if not last %}
+            <a class="btn btn-default" href="/posts/page/{{ paginator.pages.size }}">{{paginator.pages.size}}</a>
+        {% endif %}
+
+
+        {% if paginator.next_page %}
+            <a class="btn btn-default" href="/posts/page/{{ paginator.next_page }}">&lt;</a>
+        {% endif %}
+    </div>
+
+    <p id="rss">Subscribe via <a href="{{site.baseurl}}/feed.xml">RSS</a></p>
 </div>

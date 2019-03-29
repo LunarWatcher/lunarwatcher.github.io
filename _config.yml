@@ -34,3 +34,10 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+gems: 
+  - "jekyll-paginate"
+
+
+paginate_path: "/posts/page/:num/"
+paginate: 15
+
