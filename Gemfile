@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'jemoji', "~> 0.9.0"
-gem "jekyll", "~> 3.7.3"
+gem "jekyll", "~> 3.7.4" 
 # Import the minima theme for some of the basic CSS. 
 gem "minima", "~> 2.1"
 gem 'jekyll-paginate', "~> 1.1.0"
