@@ -68,6 +68,8 @@ None of these are paid promotions. I also cannot guarantee that the software is 
 
 #### Plugins
 
+Note that these are some select plugins I believe deserve some extra attention. The full list of plugins I use is [available in my .vimrc](https://github.com/LunarWatcher/dotfiles/blob/master/.vimrc).
+
 * [Vim Plug](https://github.com/junegunn/vim-plug) - Like Vundle, but better and async.
 * [NERDTree](https://github.com/scrooloose/nerdtree) - File trees to get the IDE feel.
 * [Tmux navigator](https://github.com/christoomey/vim-tmux-navigator) - simplifies tmux-vim interop.
