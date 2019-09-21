@@ -14,7 +14,7 @@ $red-primary: #A2151A;
 $pink-primary: #EC8DE3;
 $pink-secondary: #F17EB2;
 
-$pink-light: #9A104F;
+$pink-light: #e00d93;
 
 $white-primary: #efefef;
 
@@ -24,26 +24,40 @@ blockquote{
 }
 
 a, a:visited {
-    color: $pink-primary !important;  
+    color: $pink-light !important;
 }
-
 a:hover {
     color: $pink-secondary !important;
 }
- 
+
+.bullet {
+    list-style: disc;
+}
 
 ul {
-    list-style: none; 
-    
-    .bullet {
-        list-style: disc;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    li {
+        padding-left: 1em;
+        text-indent: -1em;
+    }
+
+    li:before {
+        content: "♡";
+        padding-right: 5px;
     }
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: $grey-primary;
+.center {
+    text-align: center;
 }
 
+.pad20px-topbot {
+    padding: 20px 0;
+}
+
+h1, h2, h3, h4, h5, h6 { color: $grey-primary; }
 h1, h2 {
     border-bottom: 1px solid #d1d1d1;
 }
@@ -54,6 +68,7 @@ h1, h2 {
         padding: 0px;
         margin: 0px;
     }
+
 }
 
 // Navigation
@@ -63,16 +78,22 @@ h1, h2 {
     background-color: $grey-primary;
     color: $white-primary;
     overflow: auto;
+
+    a, a:visited {
+        color: $pink-primary !important;  
+    }
+
+    a:hover {
+        color: $pink-secondary !important;
+    }
 }
 
 .page-footer {
-    height: 64px;
-    line-height: 64px;
+    line-height: 1.5;
     display: inline-block;
-    
-    p, a {
-        display: inline-block;
-        height: 100%;
+    padding: 20px;
+    > * {
+        padding: 0px;
     }
 }
 
@@ -120,7 +141,7 @@ nav {
     a {
         padding: 0 16px;
         transition: 0.5s;
-        display: inline-block;
+        display: block;
         line-height: 64px;
     }
 
@@ -228,4 +249,47 @@ blockquote.spoiler {
     color: #1f1f1f;
     
 }
+
+a.btn {
+    background-color: $pink-primary;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    color: #000 !important;
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: .5s ease-in;
+}
+
+a.btn:hover {
+    background-color: $pink-light;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: $white-primary !important;
+    background-color: $grey-primary;
+}
+
+.box {
+    @extend .right;
+    width: 18%;
+    border-left: 2px solid $pink-primary;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 740px) {
+    .box {
+        width: 100%;
+        border-left: 0;
+        padding-left: 0px;
+        float: none;
+    }
+
+}
+
 

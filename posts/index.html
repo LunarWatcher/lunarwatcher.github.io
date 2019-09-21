@@ -5,7 +5,6 @@ layout: default
 {% assign date_format = "%-d %b, %Y" %}
 <div id="post-container">
 
-    <hr>
     {% if site.posts.size > 0 %}
         <h2 style="padding-bottom: 20px;" id = "recent-posts">Recent posts</h2>
         {% for post in paginator.posts %}
@@ -28,7 +27,9 @@ layout: default
         </div>
     {% endif %}
 
-    <div class="pagination">
+    <div class="pagination" style="margin-top:20px;">
+        <hr>
+        <span><b>Page:</b></span><br>
         {% if paginator.previous_page %}
             {% assign start = 1 %}
             <a class="btn btn-default" href="/posts/page/{{ paginator.previous_page }}">&lt;</a>
@@ -59,7 +60,12 @@ layout: default
             <a class="btn waves-effect waves-light red white-text" href="/posts/page/{{ paginator.total_pages }}">{{paginator.total_pages}}</a>
         {% endif %}
 
-        <a class="btn waves-effect waves-light red white-text{% if paginator.next_page %}" href="/posts/page/{{ paginator.next_page }}" {% else %} disabled" href="posts/" {% endif %}>&gt;</a>
+    <a  class = "btn {% if paginator.next_page %}"
+            href="/posts/page/{{ paginator.next_page }}" 
+        {% else %} 
+            disabled"
+            href="/posts/"
+        {% endif %}>&gt;</a>
         
     </div>
 

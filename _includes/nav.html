@@ -4,7 +4,7 @@
 
 {% for path in paths %}
     <a href="{{path}}" 
-        {% if page.active and page.active == prettyprint[forloop.index0] %}
+        {% if page.title and page.title == prettyprint[forloop.index0] %}
            class = "active"
         {% endif %}
        >{{prettyprint[forloop.index0]}}</a>
