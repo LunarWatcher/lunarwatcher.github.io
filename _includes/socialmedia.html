@@ -8,6 +8,6 @@
 {% if site.stackoverflow %} <li><a href="https://stackoverflow.com/users/{{site.stackoverflow | cgi_escape | escape}}">Stack Overflow</a></li>{% endif %}
 {% if site.deviantart %} <li><a href="https://{{site.deviantart | cgi_escape | escape}}.deviantart.com">Deviantart</a></li>{% endif %}
 {% if site.keybase %} <li><a href="https://keybase.io/{{site.keybase | cgi_escape | escape}}">Keybase</a></li>{% endif %}
-{% if site.email %} <li>Email: <a href="mailto:{{site.email | cgi_escape | escape}}">{{site.email}}</a></li>{% endif %}
+{% if site.email %} <li><a href="mailto:{{site.email | cgi_escape | escape}}">Email</a></li>{% endif %}
 {% if site.picarto %} <li><a href="https://picarto.tv/{{site.picarto | cgi_escape | escape}}">Picarto</a></li>{% endif %}
 </ul>
