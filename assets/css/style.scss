@@ -1,43 +1,231 @@
 ---
 ---
-@import "materialize/sass/materialize.scss";
+// @import "materialize/sass/materialize.scss";
 @import "{{ site.theme }}";
 
-$grey-darken-3-alias: #424242;
 
+// Primary
+$grey-primary: #1C1C1B;
+$grey-selected: #10100F;
+
+// Secondary
+$red-primary: #A2151A;
+// Highlight
+$pink-primary: #EC8DE3;
+$pink-secondary: #F17EB2;
+
+$pink-light: #9A104F;
+
+$white-primary: #efefef;
+
+// Elements 
 blockquote{
-    border-left: 4px solid $grey-darken-3-alias;
+    border-left: 4px solid $pink-primary;
 }
 
-a{
-    color: #e8282a !important;
+a, a:visited {
+    color: $pink-primary !important;  
 }
 
-a:hover{
-    @extend .red-text, .text-lighten-1;
+a:hover {
+    color: $pink-secondary !important;
+}
+ 
+
+ul {
+    list-style: none; 
+    
+    .bullet {
+        list-style: disc;
+    }
 }
 
-
-.page-footer, .nav-wrapper, .nav-container {
-    @extend .grey, .darken-4;
+h1, h2, h3, h4, h5, h6 {
+    color: $grey-primary;
 }
 
-h1, h2, h3, h4, h5, h6{
-    @extend .red-text, .text-darken-1;
-
-}
-
-h1, h2{
+h1, h2 {
     border-bottom: 1px solid #d1d1d1;
 }
 
-// Flexbox might not work as well in Internet Explorer, but it's far from a popular browser anywyas.
+.nav-container {
+    h1, h2 {
+        border-bottom: 0px !important;
+        padding: 0px;
+        margin: 0px;
+    }
+}
+
+// Navigation
+
+.page-footer, .nav-container, .primary-theme {
+    line-height: 64px;
+    background-color: $grey-primary;
+    color: $white-primary;
+    overflow: auto;
+}
+
+.page-footer {
+    height: 64px;
+    line-height: 64px;
+    display: inline-block;
+    
+    p, a {
+        display: inline-block;
+        height: 100%;
+    }
+}
+
+.nav-header {
+    float:left;
+    display: block;
+}
+
+.right {
+    display: block;
+    float: right !important;
+}
+
+.left {
+    display: block;
+    float: left !important;
+}
+
+nav {
+
+    line-height: 64px;
+    .sidenav { padding-top: 60px; };
+    height: 64px;
+
+    ul li, .nav-header {
+        float: left;
+        line-height: 64px;
+    }
+}
+
+.sidenav {
+    @extend .primary-theme;
+    float: none;
+    display: block;
+    height: 100% !important;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 1s;
+    padding: 0px;
+
+    a {
+        padding: 0 16px;
+        transition: 0.5s;
+        display: inline-block;
+        line-height: 64px;
+    }
+
+    .close {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+}
+
+.sidenav-trigger {
+    @extend .right;
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+
+        a {
+            font-size: 18px;
+            display: inline-block;
+        }
+    }
+}
+
+@media screen and (max-width: 522px) {
+    .topnav { display: none; }
+    .sidenav-trigger { display: inline-block !important; }
+    .sidenav { padding-top: 60px; }
+}
+
+
+.topnav {
+    font-size: 20px;
+
+    a {
+        display: inline-block;
+        padding: 0 15px;
+        line-height: 64px;
+    }
+    
+    a:hover {
+        background-color: $grey-selected;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+@media only screen and (min-width: 600px) {
+    .container {
+        width: 85%;
+    }
+}
+@media only screen and (min-width: 990px) {
+    .container {
+        width: 70%;
+    }
+}
+
+// Flexbox might not work as well in Internet Explorer, but who cares?
 body {
     display: flex;
     min-height: 100vh;
-    flex-direction: column;
+    flex-direction: column; 
 }
-
 main {
     flex: 1 0 auto;
+    
+    .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
 }
+
+// Spoilers
+
+.spoiler {
+    background-color: $pink-secondary;
+    transition: .5s ease-in;
+    
+    > * {
+        opacity: 0;
+        transition: opacity .5s ease-in;
+    }
+}
+
+blockquote.spoiler {
+    border-left: 4px solid $pink-primary;
+    padding: 10px 15px 10px 15px;
+}
+
+.spoiler:hover, .spoiler:active {
+    > * {
+        opacity: 1;
+    }
+    background-color: $white-primary;
+    color: #1f1f1f;
+    
+}
+

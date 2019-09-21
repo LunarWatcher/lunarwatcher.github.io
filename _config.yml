@@ -10,8 +10,6 @@ discord-server: "bjZD42j"
 discord-username: Olivia#0740
 keybase: oliviazoe0
 
-footer-description: "Hi! I'm Olivia, though I often go by Zoe. This is my website, and it contains different things I either feel like putting here, or stuff with an actual purpose (like repositories). There's also a knowledge base with random bits of information in different topics."
-
 name: LunarWatcher
 
 markdown: kramdown
@@ -34,7 +32,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - "jekyll-paginate"
-
 
 paginate_path: "/posts/page/:num/"
 paginate: 15

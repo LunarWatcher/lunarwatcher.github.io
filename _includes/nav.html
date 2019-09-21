@@ -1,0 +1,12 @@
+{% assign paths = "/index.html|/posts/|/emojis.html", "Emoji reference" | split: "|" %}
+{% assign prettyprint = "Home|Blog|Emoji reference" | split: "|" %}
+
+
+{% for path in paths %}
+    <a href="{{path}}" 
+        {% if page.active and page.active == prettyprint[forloop.index0] %}
+           class = "active"
+        {% endif %}
+       >{{prettyprint[forloop.index0]}}</a>
+{% endfor %}
+

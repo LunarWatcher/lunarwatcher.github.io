@@ -1,19 +1,16 @@
 <header>
     <nav class="nav-container">
-        <div class="nav-wrapper container">
-            <a href="/" class="brand-logo">{{site.name}}</a>
-            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/posts/">Blog</a></li>
-                <li><a href="/emojis.html">Emoji reference</a></li>
-            </ul>
+        <div class="container">
+            <h1 class="logo left"><a href="/">Olivia</a></h1>
+            <div id="sidenav" class="sidenav">
+                <a href="javascript:void(0)" class="close" onclick="closeSidenav()">&times;</a>
+                {% include nav.html %}
+            </div>
+            <div class="topnav right">
+                {% include nav.html %}
+            </div>
+            <span class="sidenav-trigger" onclick="openSidenav()">&#9776;</span>
         </div>
-        <ul class="sidenav" id = "mobile-nav">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/posts/">Blog</a></li>
-            <li><a href="/emojis.html">Emoji reference</a></li>
-        </ul>
     </nav>
 </header>
 
