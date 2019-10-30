@@ -19,24 +19,12 @@ None of these are paid promotions. I also cannot guarantee that the software is 
 
 ## Graphic design
 
-### Resource sites
-
-* [Graphic Design Stack Exchange](https://graphicdesign.stackexchange.com) - nice resource on graphic design questions.
-* [User Experience Stack Exchange](https://ux.stackexchange.com) - nice resource on user experience questions.
-
 ### Tools
 
 * [Krita](https://krita.org/) - open-source drawing software.
 * [Inkscape](https://inkscape.org/en/) - free vector art software.
 
 ## Programming
-
-### Resource sites
-
-* [Stack Overflow](https://stackoverflow.com) - lots of answers to programming questions.
-* [Open Source Stack Exchange](https://opensource.stackexchange.com/) - Lots of answers to questions about open-source
-* [Software Recommendations Stack Exchange](https://softwarerecs.stackexchange.com/) - as the name suggests; software recommendations.
-* [Siraj Raval's YouTube channel](https://www.youtube.com/channel/UCWN3xxRkmTPmbKwht9FuE5A) - machine learning stuff.
 
 ### Tools
 
