@@ -9,7 +9,7 @@ layout: default
 		{{ content }}
 	</div>
 	
-	{% if comments %}
+	{% if page.comments != false %}
         <div class="comments">
             <script src="https://utteranc.es/client.js"
                     repo="LunarWatcher/lunarwatcher.github.io"
