@@ -3,6 +3,7 @@ title: Resources
 layout: post
 date: 18.06.2018
 summary: This post contains resources for different topics I'm interested in, including websites, tools, etc.
+comments: false
 ---
 
 This post contains resources and tools for stuff I'm interested in, or in general use. 
