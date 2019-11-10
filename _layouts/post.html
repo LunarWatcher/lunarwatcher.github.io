@@ -11,6 +11,8 @@ layout: default
 	
 	{% if page.comments != false %}
         <div class="comments">
+	        <hr>
+	        <h3>Comments</h3>
             <script src="https://utteranc.es/client.js"
                     repo="LunarWatcher/lunarwatcher.github.io"
                     issue-term="pathname"
@@ -19,6 +21,7 @@ layout: default
                     crossorigin="anonymous"
                     async>
             </script>
+            <noscript>You've disabled JavaScript, which the comment system makes use of to load them on the site. The comment threads can be found <a href="https://github.com/LunarWatcher/lunarwatcher.github.io/issues">in the issues for this repo</a>.</noscript>
         </div>
 	{% endif %}
 </div>
