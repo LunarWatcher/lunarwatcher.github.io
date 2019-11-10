@@ -2,7 +2,6 @@
 title: Mutliple GitHub accounts on one computer
 summary: Short guide on using multiple GitHub accounts on one computer in a way that doesn't require manual account changing
 layout: post
-comments: true
 ---
 
 This method uses SSH keys, and builds around Bash. It works on Windows, but requires a Bash command line (type `bash` into CMD if installed, or use something like Git Bash or Cygwin)
