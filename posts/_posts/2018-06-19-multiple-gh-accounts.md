@@ -1,5 +1,5 @@
 ---
-title: Mutliple GitHub accounts on one computer
+title: Multiple GitHub accounts on one computer
 summary: Short guide on using multiple GitHub accounts on one computer in a way that doesn't require manual account changing
 layout: post
 ---
