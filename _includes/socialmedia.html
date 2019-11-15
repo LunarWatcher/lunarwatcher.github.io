@@ -1,13 +1,12 @@
 <ul id="social-media" class="heart">
-{% if site.discord-server %} <li><a href="https://discord.gg/{{site.discord-server | cgi_escape | escape }}">Discord server</a></li>{% endif %}
-{% if site.discord-username %} <li>Discord username: {{site.discord-username}}</li>{% endif %}
-{% if site.facebook %} <li><a href="https://facebook.com/{{site.facebook | cgi_escape | escape }}">Facebook</a></li>{% endif %}
-{% if site.twitter %} <li><a href="https://twitter.com/{{site.twitter | cgi_escape | escape }}">Twitter</a></li>{% endif %}
-{% if site.github %} <li><a href="https://github.com/{{site.github | cgi_escape | escape}}">GitHub</a></li>{% endif %}
-{% if site.rss %} <li><a href="{{site.rss | relative}}">RSS</a></li>{% endif %}
-{% if site.stackoverflow %} <li><a href="https://stackoverflow.com/users/{{site.stackoverflow | cgi_escape | escape}}">Stack Overflow</a></li>{% endif %}
-{% if site.deviantart %} <li><a href="https://{{site.deviantart | cgi_escape | escape}}.deviantart.com">Deviantart</a></li>{% endif %}
-{% if site.keybase %} <li><a href="https://keybase.io/{{site.keybase | cgi_escape | escape}}">Keybase</a></li>{% endif %}
-{% if site.email %} <li><a href="mailto:{{site.email | cgi_escape | escape}}">Email</a></li>{% endif %}
-{% if site.picarto %} <li><a href="https://picarto.tv/{{site.picarto | cgi_escape | escape}}">Picarto</a></li>{% endif %}
+{%- if site.discord-server -%} <li><a href="https://discord.gg/{{site.discord-server | cgi_escape | escape }}">Discord server</a></li>{%- endif -%}
+{%- if site.discord-username -%} <li>Discord username: {{site.discord-username}}</li>{%- endif -%}
+{%- if site.facebook -%} <li><a href="https://facebook.com/{{site.facebook | cgi_escape | escape }}">Facebook</a></li>{%- endif -%}
+{%- if site.twitter -%} <li><a href="https://twitter.com/{{site.twitter | cgi_escape | escape }}">Twitter</a></li>{%- endif -%}
+{%- if site.github -%} <li><a href="https://github.com/{{site.github | cgi_escape | escape}}">GitHub</a></li>{%- endif -%}
+{%- if site.rss -%} <li><a href="{{site.rss | relative}}">RSS</a></li>{%- endif -%}
+{%- if site.deviantart -%} <li><a href="https://{{site.deviantart | cgi_escape | escape}}.deviantart.com">Deviantart</a></li>{%- endif -%}
+{%- if site.keybase -%} <li><a href="https://keybase.io/{{site.keybase | cgi_escape | escape}}">Keybase</a></li>{%- endif -%}
+{%- if site.email -%} <li><a href="mailto:{{site.email | cgi_escape | escape}}">Email</a></li>{%- endif -%}
+{%- if site.picarto -%} <li><a href="https://picarto.tv/{{site.picarto | cgi_escape | escape}}">Picarto</a></li>{%- endif -%}
 </ul>

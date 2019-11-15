@@ -5,23 +5,32 @@ layout: default
 	<h1>{{ page.title }}</h1>
 
 	<div class="blog-post">
-		<p class="meta grey-text">Posted on <span class="date">{{ page.date | date: '%d %B, %Y' }}</span></p>
+            {%- assign day = page.date | date: "%-d" -%} 
+            {%- assign month = page.date | date: "%B" -%} 
+            
+            <p class="meta grey-text">Posted on <span class="date">{{month}} {{day}}
+            {%- case day -%}
+                {%- when '1' or '21' or '31' -%}st
+                {%- when '2' or '22' -%}nd
+                {%- when '3' or '23' -%}rd
+                {%- else -%}th
+            {%- endcase -%}, {{page.date | date: '%Y'}}</span></p>
 		{{ content }}
 	</div>
 	
-	{% if page.comments != false %}
-        <div class="comments">
-	    <hr>
-	    <h2>Comments</h2>
-            <script src="https://utteranc.es/client.js"
-                    repo="LunarWatcher/lunarwatcher.github.io"
-                    issue-term="pathname"
-                    label="comments"
-                    theme="github-light"
-                    crossorigin="anonymous"
-                    async>
-            </script>
-            <noscript>You've disabled JavaScript, which the comment system makes use of to load them on the site. The comment threads can be found <a href="https://github.com/LunarWatcher/lunarwatcher.github.io/issues">in the issues for this repo</a>.</noscript>
-        </div>
-	{% endif %}
+	{%- if page.comments != false -%}
+    <div class="comments">
+        <hr>
+        <h2>Comments</h2>
+        <script src="https://utteranc.es/client.js"
+                repo="LunarWatcher/lunarwatcher.github.io"
+                issue-term="pathname"
+                label="comments"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <noscript>You've disabled JavaScript, which the comment system makes use of to load them on the site. The comment threads can be found <a href="https://github.com/LunarWatcher/lunarwatcher.github.io/issues">in the issues for this repo</a>.</noscript>
+    </div>
+	{%- endif -%}
 </div>

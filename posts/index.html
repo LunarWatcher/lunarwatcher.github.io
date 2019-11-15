@@ -2,70 +2,82 @@
 layout: default
 ---
 
-{% assign date_format = "%-d %b, %Y" %}
 <div id="post-container">
 
-    {% if site.posts.size > 0 %}
+    {%- if site.posts.size > 0 -%}
         <h2 style="padding-bottom: 20px;" id = "recent-posts">Recent posts</h2>
-        {% for post in paginator.posts %}
+        {%- for post in paginator.posts -%}
             <div class="article">
                 <h1><a href="{{ post.url }}" class="post-link">{{ post.title }}</a></h1>
-                <span class="post-meta">Posted {{ post.date | date: date_format }}</span>
+                
+                {%- assign day = post.date | date: "%-d" -%} 
+                {%- assign month = post.date | date: "%B" -%} 
+                <span class="post-meta">Posted on {{month}} {{day}}
+
+                    
+                    
+                    {%- case day -%}
+                        {%- when '1' or '21' or '31' -%}st
+                        {%- when '2' or '22' -%}nd
+                        {%- when '3' or '23' -%}rd
+                        {%- else -%}th
+                    {%- endcase -%}, {{post.date | date: '%Y'}}
+                </span>
                 <p>
-                    {% if post.summary %}
+                    {%- if post.summary -%}
                         {{ post.summary }}
-                    {% else %}
+                    {%- else -%}
                         {{ post.excerpt }}
-                    {% endif %}
+                    {%- endif -%}
                 </p>
             </div>
-        {% endfor %}
-    {% else %}
+        {%- endfor -%}
+    {%- else -%}
         <div style="padding-top: 20px; padding-bottom: 20px;">
             <h1>No posts</h1>
             <p>Nothing has been posted yet :c Check back later.</p>
         </div>
-    {% endif %}
+    {%- endif -%}
 
     <div class="pagination" style="margin-top:20px;">
         <hr>
         <span><b>Page:</b></span><br>
-        {% if paginator.previous_page %}
-            {% assign start = 1 %}
+        {%- if paginator.previous_page -%}
+            {%- assign start = 1 -%}
             <a class="btn btn-default" href="/posts/page/{{ paginator.previous_page }}">&lt;</a>
-        {% endif %}
+        {%- endif -%}
 
 
-        {% if start == null %}
-            {% assign temp = paginator.page | minus: 3 %}
-            {% if temp <= 0 %} 
-                {% assign start = 1 %}
-            {% else %}
-                {% assign start = temp %}
-            {% endif %}
-        {% endif %}
-        {% assign temp = paginator.page | plus: 3 %}
-        {% if temp >= paginator.total_pages %}
-            {% assign end = paginator.total_pages %}
-        {% else %}
-            {% assign end = temp %}
-        {% endif %}
-        {% if end >= paginator.total_pages %} {% assign last = false %} {% else %} {% assign last = true %} {% endif %}
+        {%- if start == null -%}
+            {%- assign temp = paginator.page | minus: 3 -%}
+            {%- if temp <= 0 -%} 
+                {%- assign start = 1 -%}
+            {%- else -%}
+                {%- assign start = temp -%}
+            {%- endif -%}
+        {%- endif -%}
+        {%- assign temp = paginator.page | plus: 3 -%}
+        {%- if temp >= paginator.total_pages -%}
+            {%- assign end = paginator.total_pages -%}
+        {%- else -%}
+            {%- assign end = temp -%}
+        {%- endif -%}
+        {%- if end >= paginator.total_pages -%} {%- assign last = false -%} {%- else -%} {%- assign last = true -%} {%- endif -%}
             
-        {% for i in (start..end) %}
-        <a class="btn waves-effect waves-light red white-text" {% if i != 1 %} href="/posts/page/{{ i }}" {% else %} href="/posts/" {% endif %}>{{ i }}</a>
-        {% endfor %}
+        {%- for i in (start..end) -%}
+        <a class="btn waves-effect waves-light red white-text" {%- if i != 1 -%} href="/posts/page/{{ i }}" {%- else -%} href="/posts/" {%- endif -%}>{{ i }}</a>
+        {%- endfor -%}
         
-        {% if last == true %}
+        {%- if last == true -%}
             <a class="btn waves-effect waves-light red white-text" href="/posts/page/{{ paginator.total_pages }}">{{paginator.total_pages}}</a>
-        {% endif %}
+        {%- endif -%}
 
-    <a  class = "btn {% if paginator.next_page %}"
+    <a  class = "btn {%- if paginator.next_page -%}"
             href="/posts/page/{{ paginator.next_page }}" 
-        {% else %} 
+        {%- else -%} 
             disabled"
             href="/posts/"
-        {% endif %}>&gt;</a>
+        {%- endif -%}>&gt;</a>
         
     </div>
 

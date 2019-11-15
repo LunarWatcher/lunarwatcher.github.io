@@ -1,12 +1,9 @@
-{% assign paths = "/index.html|/posts/|/emojis.html", "Emoji reference" | split: "|" %}
-{% assign prettyprint = "Home|Blog|Emoji reference" | split: "|" %}
-
-
-{% for path in paths %}
+{%- assign paths = "/index.html|/posts/|/emojis.html", "Emoji reference" | split: "|" -%}
+{%- assign prettyprint = "Home|Blog|Emoji reference" | split: "|" -%}
+{%- for path in paths -%}
     <a href="{{path}}" 
-        {% if page.title and page.title == prettyprint[forloop.index0] %}
+        {%- if page.title and page.title == prettyprint[forloop.index0] -%}
            class = "active"
-        {% endif %}
-       >{{prettyprint[forloop.index0]}}</a>
-{% endfor %}
+        {%- endif %}>{{prettyprint[forloop.index0]}}</a>
+{%- endfor -%}
 

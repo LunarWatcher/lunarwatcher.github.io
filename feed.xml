@@ -7,8 +7,8 @@ layout: null
         <title>Knowledge base</title>
         <description>Random bits of information</description>
         <link>{{ site.url }}</link>
-        {% for post in site.posts %}
-        {% unless post.draft %}
+        {%- for post in site.posts -%}
+        {%- unless post.draft -%}
         <item>
             <title>{{ post.title | xml_escape }}</title>
             <description>{{ post.content | xml_escape }}</description>
@@ -16,7 +16,7 @@ layout: null
             <link>{{ post.url | prepend: site.url }}</link>
             <guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
         </item>
-        {% endunless %}
-        {% endfor %}
+        {%- endunless -%}
+        {%- endfor -%}
     </channel>
 </rss>
