@@ -6,7 +6,7 @@ description: I explain why I'm leaving the network, along with my explanation of
 
 For those of you who haven't paid attention to the recent mess on Stack Exchange, there's quite a few things going on. The current issues started with SE firing a moderator over a change to the CoC (Code of Conduct) that enforced correct pronoun use. SE has stated it was a violation of the (at the time) current CoC, but they're still unwilling to tell the moderator in question what she did. There's a [recap here](https://meta.stackexchange.com/q/333965/332043){:rel="nofollow noreferrer"}.
 
-I want to be clear before I continue: I support the changes to the Code of Conduct, but I personally believe the implementation should've been done in a way that doesn't put targets us LGBTQ+ users. The strictness of the CoC has made free speech and coerced speech be thrown in as arguments against the CoC. People see the CoC as a "do this or else" rather than as a way to implement guidelines that give support to preferred pronouns, as well as a way of handling cases where someone intentionally misgenders as a way of being offensive.
+I want to be clear before I continue: I support the changes to the Code of Conduct, but I personally believe the implementation should've been done in a way that doesn't put targets on us LGBTQ+ users. The strictness of the CoC has made free speech and coerced speech be thrown in as arguments against the CoC. People see the CoC as a "do this or else" rather than as a way to implement guidelines that give support to preferred pronouns, as well as a way of handling cases where someone intentionally misgenders as a way of being offensive.
 
 {% include toc.html %}
 
@@ -54,7 +54,7 @@ In July, [concerns and questions on a different matter](https://meta.stackoverfl
 
 ## Phase 2: Licensing 
 
-In September 2019, [SE announced they were changing the license from CC-By-SA 3.0 to 4.0](https://meta.stackexchange.com/q/333089/332043){:rel="nofollow noreferrer"}. I personally have no problem with the license, but the nature of the change brought up doubt from underlying situations. An answer posted to said announcement suggested it wasn't legal, a stance we still haven't gotten an answer to. 
+In September 2019, [SE announced they had changed the license from CC-By-SA 3.0 to 4.0](https://meta.stackexchange.com/q/333089/332043){:rel="nofollow noreferrer"}. I personally have no problem with the license, but the nature of the change brought up doubt from underlying situations. An answer posted to said announcement suggested it wasn't legal, a stance we still haven't gotten an answer to. 
 
 An answer [was posted later](https://meta.stackexchange.com/a/333912/332043){:rel="nofollow noreferrer"} that explained their reasoning, but didn't explain whether it was legal or not. None of the concerns posted by their users had been addressed. The situation, at least for me, isn't as much about the license as it is about the nature of the change. If they change it to CC-By-SA 4.0 illegally, how are we protected from a sudden change to a license that doesn't allow as open use? 
 

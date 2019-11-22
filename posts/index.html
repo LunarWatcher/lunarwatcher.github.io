@@ -12,24 +12,19 @@ layout: default
                 
                 {%- assign day = post.date | date: "%-d" -%} 
                 {%- assign month = post.date | date: "%B" -%} 
-                <span class="post-meta">Posted on {{month}} {{day}}
-
-                    
-                    
+                <span class="post-meta">Posted on {{month}} {{day}}  
                     {%- case day -%}
                         {%- when '1' or '21' or '31' -%}st
                         {%- when '2' or '22' -%}nd
                         {%- when '3' or '23' -%}rd
                         {%- else -%}th
-                    {%- endcase -%}, {{post.date | date: '%Y'}}
-                </span>
-                <p>
-                    {%- if post.summary -%}
-                        {{ post.summary }}
-                    {%- else -%}
+                    {%- endcase -%}, {{post.date | date: '%Y'}}</span>
+                
+                {%- if post.summary -%}
+                    {{ post.summary }}
+                {%- else -%}
                         {{ post.excerpt }}
-                    {%- endif -%}
-                </p>
+                {%- endif -%}
             </div>
         {%- endfor -%}
     {%- else -%}
@@ -65,18 +60,17 @@ layout: default
         {%- if end >= paginator.total_pages -%} {%- assign last = false -%} {%- else -%} {%- assign last = true -%} {%- endif -%}
             
         {%- for i in (start..end) -%}
-        <a class="btn waves-effect waves-light red white-text" {%- if i != 1 -%} href="/posts/page/{{ i }}" {%- else -%} href="/posts/" {%- endif -%}>{{ i }}</a>
+        <a class="btn waves-effect waves-light red white-text" {% if i != 1 %} href="/posts/page/{{ i }}" {% else %} href="/posts/" {% endif %}>{{ i }}</a>
         {%- endfor -%}
         
         {%- if last == true -%}
-            <a class="btn waves-effect waves-light red white-text" href="/posts/page/{{ paginator.total_pages }}">{{paginator.total_pages}}</a>
+        <a class="btn waves-effect waves-light red white-text" href="/posts/page/{{ paginator.total_pages }}">{{paginator.total_pages}}</a>
         {%- endif -%}
 
     <a  class = "btn {%- if paginator.next_page -%}"
             href="/posts/page/{{ paginator.next_page }}" 
         {%- else -%} 
-            disabled"
-            href="/posts/"
+            disabled" href="/posts/"
         {%- endif -%}>&gt;</a>
         
     </div>
