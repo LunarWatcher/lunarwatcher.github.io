@@ -1,0 +1,19 @@
+<!-- Boring metadata -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+<meta http-equiv="Content-language" content = "en-US"/>
+
+<!-- Visible metadata -->
+<title>{{ .Title }} | {{ .Site.Title }}</title>
+
+<!-- Scripts and stylesheets -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+{{ $base := resources.Get "scss/style.scss" }}
+{{ $style := $base | resources.ToCSS | resources.Minify }}
+<link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "/blog/feed.xml" | absURL }}" />
+

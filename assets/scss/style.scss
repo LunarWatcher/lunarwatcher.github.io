@@ -1,0 +1,372 @@
+@import "syntax.scss";
+
+// Primary
+$grey-primary: #1C1C1B;
+$grey-selected: #10100F;
+
+// Secondary
+$red-primary: #A2151A;
+// Highlight
+$pink-primary: #EC8DE3;
+$pink-secondary: #F17EB2;
+
+$pink-light: #e00d93;
+
+$white-primary: #efefef;
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, ol, ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, ol, ul {
+    margin-bottom: 15px;
+}
+
+.footer {
+    * {
+        margin-top: 15px;
+    }
+}
+
+body {
+    font: 400 16px/1.5 -apple-system,BlinkMacSystemFont,
+        "Segoe UI",Roboto,Helvetica,Arial,sans-serif,
+        "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-kerning: normal;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+ul.pagination {
+
+    display: flex;
+    justify-content: center;
+    margin: 1em 0 0;
+    padding: 0.5em 0;
+    list-style: none;
+
+    li:before {
+        content: "";
+    }
+
+}
+
+ul.pagination li {
+    padding: 0 1em;
+}
+
+// Elements 
+blockquote{
+    border-left: 4px solid $pink-primary;
+}
+
+a, a:visited {
+    color: $pink-light !important;
+}
+a:hover {
+    color: $pink-secondary !important;
+}
+
+.bullet {
+    list-style: disc;
+}
+
+.null-list {
+    list-style: none;
+    li:before {
+        content: "" !important;
+    }
+}
+
+ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    li {
+        padding-left: 1em;
+        text-indent: -1em;
+    }
+
+    li:before {
+        content: "♡";
+        padding-right: 5px;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.pad20px-topbot {
+    padding: 20px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    color: $grey-primary; 
+    font-weight: 400;
+}
+h1, h2 {
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.nav-container {
+    h1, h2 {
+        border-bottom: 0px !important;
+        padding: 0px;
+        margin: 0px;
+    }
+
+}
+
+// Navigation
+
+.page-footer, .nav-container, .primary-theme {
+    line-height: 64px;
+    background-color: $grey-primary;
+    color: $white-primary;
+    overflow: auto;
+
+    a, a:visited {
+        color: $pink-primary !important;  
+    }
+
+    a:hover {
+        color: $pink-secondary !important;
+    }
+}
+
+.page-footer {
+    line-height: 1.5;
+    display: inline-block;
+    padding: 20px;
+    > * {
+        padding: 0px;
+    }
+}
+
+.nav-header {
+    float:left;
+    display: block;
+}
+
+.right {
+    display: block;
+    float: right !important;
+}
+
+.left {
+    display: block;
+    float: left !important;
+}
+
+nav {
+
+    line-height: 64px;
+    .sidenav { padding-top: 60px; };
+    height: 64px;
+
+    ul li, .nav-header {
+        float: left;
+        line-height: 64px;
+    }
+}
+
+.sidenav {
+    @extend .primary-theme;
+    float: none;
+    display: block;
+    height: 100% !important;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 1s;
+    padding: 0px;
+
+    a {
+        padding: 0 16px;
+        transition: 0.5s;
+        display: block;
+        line-height: 64px;
+    }
+
+    .close {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+}
+
+.sidenav-trigger {
+    @extend .right;
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+
+        a {
+            font-size: 18px;
+            display: inline-block;
+        }
+    }
+}
+
+@media screen and (max-width: 522px) {
+    .topnav { display: none; }
+    .sidenav-trigger { display: inline-block !important; }
+    .sidenav { padding-top: 60px; }
+}
+
+
+.topnav {
+    font-size: 20px;
+
+    a {
+        display: inline-block;
+        padding: 0 15px;
+        line-height: 64px;
+    }
+    
+    a:hover {
+        background-color: $grey-selected;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+@media only screen and (min-width: 600px) {
+    .container {
+        width: 85%;
+    }
+}
+@media only screen and (min-width: 990px) {
+    .container {
+        width: 70%;
+    }
+}
+
+// Flexbox might not work as well in Internet Explorer, but who cares?
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column; 
+}
+main {
+    display: block;
+    flex: 1 0 auto;
+    
+    .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+}
+
+// Spoilers
+
+.spoiler {
+    background-color: $pink-secondary;
+    transition: .5s ease-in;
+    
+    > * {
+        opacity: 0;
+        transition: opacity .5s ease-in;
+    }
+}
+
+blockquote.spoiler {
+    border-left: 4px solid $pink-primary;
+    padding: 10px 15px 10px 15px;
+}
+
+.spoiler:hover, .spoiler:active {
+    > * {
+        opacity: 1;
+    }
+    background-color: $white-primary;
+    color: #1f1f1f;
+    
+}
+
+a.btn {
+    background-color: $pink-primary;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    color: #000 !important;
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: .5s ease-in;
+}
+
+a.btn:hover {
+    background-color: $pink-light;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: $white-primary !important;
+    background-color: $grey-primary;
+}
+
+.box {
+    @extend .right;
+    width: 18%;
+    border-left: 2px solid $pink-primary;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 740px) {
+    .box {
+        width: 100%;
+        border-left: 0;
+        padding-left: 0px;
+        float: none;
+    }
+
+}
+
+h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+// Blogging 
+
+.meta {
+    font-size: 12px;
+}
+
+.grey-text {
+    color: #666666;
+}
+.post-meta {
+    font-size: 14px;
+    color:#828282
+}
+
+div.article {
+    h1 {
+        padding-bottom: 5px !important;
+    }
+}
+

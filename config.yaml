@@ -1,0 +1,24 @@
+baseURL: https://lunarwatcher.github.io
+disablePathToLower: true
+languageCode: en-us
+title: LunarWatcher
+publishDir: site
+permalinks:
+  posts: /posts/:year/:month/:day/:slug
+
+uglyurls: true
+
+menu:
+  main:
+  - identifier: Home 
+    name: Home 
+    url: "/"
+    weight: -110
+  - identifier: Blog
+    name: Blog
+    url: "/posts/"
+    weight: -100
+  - identifier: Emoji reference 
+    name: Emoji reference
+    url: "/emojis.html"
+    weight: -90

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Zoe's emoji reference sheet
 ---
 
