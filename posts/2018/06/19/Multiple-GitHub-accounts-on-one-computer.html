@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+<meta http-equiv="Content-language" content = "en-US"/>
+
+
+<title>Multiple GitHub accounts on one computer | LunarWatcher</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="https://lunarwatcher.github.io/scss/style.min.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+<link rel="alternate" type="application/rss+xml" title="LunarWatcher" href="https://lunarwatcher.github.io/blog/feed.xml" />
+
+
+    
+        
+
+    </head>
+
+    <body>
+        <header>
+    <nav class="nav-container">
+        <div class="container">
+            <h1 class="logo left"><a href="/">Olivia</a></h1>
+            <div id="sidenav" class="sidenav">
+                <a href="javascript:void(0)" class="close" onclick="closeSidenav()">&times;</a>
+                
+
+<a href="/">    
+    Home
+</a>
+
+
+
+<a href="/posts/">    
+    Blog
+</a>
+
+
+
+<a href="/emojis.html">    
+    Emoji reference
+</a>
+
+
+
+            </div>
+            <div class="topnav right">
+                
+
+<a href="/">    
+    Home
+</a>
+
+
+
+<a href="/posts/">    
+    Blog
+</a>
+
+
+
+<a href="/emojis.html">    
+    Emoji reference
+</a>
+
+
+
+            </div>
+            <span class="sidenav-trigger" onclick="openSidenav()">&#9776;</span>
+        </div>
+    </nav>
+</header>
+
+
+
+
+        <main>
+            <div class="container">
+                
+
+<h1>Multiple GitHub accounts on one computer</h1>
+<span class="post-meta">Posted on June 19, 2018</span>
+
+
+<p>This method uses SSH keys, and builds around Bash. It works on Windows, but requires a Bash command line (type <code>bash</code> into CMD if installed, or use something like Git Bash or Cygwin)</p>
+<p><code>cd</code> into <code>~/.ssh</code>. Create the directory if it doesn't exist.</p>
+<p>Generate keys:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ssh-keygen -t rsa -b <span class="m">4096</span> -f ~/.ssh/github_main -C <span class="s2">&#34;main.email@example.com&#34;</span>
+$ ssh-keygen -t rsa -b <span class="m">4096</span> -f ~/.ssh/github_secondary -C <span class="s2">&#34;secondary.email@example.com&#34;</span>
+<span class="c1"># Repeat for more</span>
+</code></pre></div><p>Still in <code>~/.ssh/</code>:</p>
+<p>Create <code>config</code> if it doesn't exist:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">touch config
+</code></pre></div><p>Edit it:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">start config
+</code></pre></div><p>Add this. Add additional ones for more accounts:</p>
+<pre><code>Host github.com
+  User git
+  IdentityFile ~/.ssh/github_main
+
+Host secondary.github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github_secondary
+</code></pre><p>Copy the SSH key:</p>
+<p>Option 1: <code>cat github_main.pub</code>. Copy what it prints into the console</p>
+<p>Option 2: Copy straight to the clipboard</p>
+<ol>
+<li>OS X: <code>cat github_main.pub | pbcopy</code></li>
+<li>Linux: <code>cat github_main.pub | xclip</code></li>
+<li>Windows: <code>cat github_main.pub | clip</code></li>
+</ol>
+<p>Add the key to your GitHub account (<a href="https://github.com/settings/keys">direct link to github.com/settings/keys</a>). Repeat for other accounts and other keys. Make sure you copy the right key, and make sure you copy the public version (<code>.pub</code>).</p>
+<p>Finally, change remotes where necessary. If you have three accounts and the config looks like this:</p>
+<pre><code>Host github.com
+  User git
+  IdentityFile ~/.ssh/github_main
+
+Host secondary.github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github_secondary
+Host tertiary.github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github_tertiary 
+</code></pre><p>That means:</p>
+<ul>
+<li>The main account uses SSH URLs like <code>git@github.com:LunarWatcher/lunarwatcher.github.io.git</code></li>
+<li>The second account uses SSH URLs like <code>git@secondary.github.com:LunarWatcher/lunarwatcher.github.io.git</code></li>
+<li>The third account uses SSH URLs like <code>git@tertiary.github.com:LunarWatcher/lunarwatcher.github.io.git</code></li>
+</ul>
+<p>Notice that the second and third don't use <code>github.com</code> as the URL, they use <code>secondary.github.com</code> and <code>tertiary.github.com</code> respectively. The reason this works is because of the config file; The host name makes sure the traffic is actually directed to <code>github.com</code> for <code>secondary.github.com</code>, but it uses a different SSH key (see the <code>IdentityFile</code> value). Same applies for the third one, just with a separate file.</p>
+<p>Therefore, some remotes need changing.</p>
+<p>You should only use SSH to keep track of this. If you use HTTPS somewhere, change it to the appropriate version of the remote. The example one used earlier (<code>git@github.com:LunarWatcher/lunarwatcher.github.io.git</code>) is the URL to this repo. If you have two accounts, and pull using that exact one, assuming <code>Host github.com</code> is defined, that account will be used to pull. If you change to <code>secondary.github.com</code> (make sure the rest of the remote stays the same), the second account will be used to pull. Obviously, if you don't change the username and email, the commits will be done in whatever config the global value is set to. Change the local config where necessary using <code>git config user.email &quot;your.email@example.com&quot;</code> and the same for the username. Without <code>--global</code>, it's set for the repo.</p>
+<p>Anyways, for the remotes. There's no need to remove and recreate them. You can call <code>git config remote.remotename.url git@github.com:username/reponame.git</code> to change the URL of the remote. Change <code>github.com</code> to the appropriate version if you're using the non-main account.</p>
+<p>And for new repos, always use SSH. And, as already mentioned a few times, change the <code>github.com</code> part of it if you're using a separate account.</p>
+<p>And you should be good to go! You can now use SSH keys to access multiple GitHub accounts on one computer without removing logins.</p>
+
+
+
+    <div class="comments">
+        <hr>
+        <h2 style="padding-top: 20px !important;">Comments</h2>
+        <script src="https://utteranc.es/client.js"
+                repo="LunarWatcher/lunarwatcher.github.io"
+                issue-term="pathname"
+                label="comments"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <noscript>You've disabled JavaScript, which the comment system makes use of to load them on the site. The comment threads can be found <a href="https://github.com/LunarWatcher/lunarwatcher.github.io/issues">in the issues for this repo</a>.</noscript>
+    </div>
+
+
+
+            </div> 
+        </main>
+        
+        <footer class="page-footer">
+    <div class="footer-copyright">
+        <div class="container" style="overflow: auto;">
+            &copy; Olivia Zoe, 2019 (<a href="https://github.com/LunarWatcher/lunarwatcher.github.io/blob/master/LICENSE">license</a>)
+            <p class="right">Powered by <a href="https://gohugo.io/">Hugo</a></p>
+        </div>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="https://lunarwatcher.github.io/js/functions.min.js"></script>
+
+
+    </body>
+</html>
+

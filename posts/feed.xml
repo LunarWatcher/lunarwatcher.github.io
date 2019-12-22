@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on LunarWatcher</title>
-    <link>https://lunarwatcher.github.io/</link>
-    <description>Recent content in Home on LunarWatcher</description>
+    <title>Blog on LunarWatcher</title>
+    <link>https://lunarwatcher.github.io/posts/</link>
+    <description>Recent content in Blog on LunarWatcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 15 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://lunarwatcher.github.io/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lunarwatcher.github.io/posts/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -46,16 +46,6 @@ Note This is currently targeting a version of Raspbian that doesn&#39;t support 
       
       <guid>https://lunarwatcher.github.io/posts/2018/06/18/Resources.html</guid>
       <description>This post contains resources for different topics I&#39;m interested in, including websites, tools, etc.</description>
-    </item>
-    
-    <item>
-      <title>Zoe&#39;s emoji reference sheet</title>
-      <link>https://lunarwatcher.github.io/emojis.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://lunarwatcher.github.io/emojis.html</guid>
-      <description>Zoe&#39;s emoji reference sheet Stored for later reference.
-:squint: - Discord-style squinting o_o, O_o. o_O, O_O - surprised - also exists with dot variants and regular dash (-) variants&amp;gt;.&amp;gt;, &amp;lt;.&amp;lt; - whaaat?&amp;gt;.&amp;lt;,&amp;gt;-&amp;lt; - Dammit owo,OwO,OWO - interested/excited(/surprised (rare))uwu, UwU, UWU - shy happy :sloth: - Discord-style emote, SeriousSloth on twitch. For context: https://cdn.discordapp.com/emojis/366670406817677333.png:* - no mouthxd - Dammit - not to be confused with xD xD - laughing ^^, ^.</description>
     </item>
     
   </channel>
