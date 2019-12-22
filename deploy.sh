@@ -21,3 +21,10 @@ git commit -m "$msg"
 # Push source and build repos.
 git push origin master
 
+# Commit the site source
+cd ..
+
+git add -A
+
+git commit -m "$msg"
+git push origin source
