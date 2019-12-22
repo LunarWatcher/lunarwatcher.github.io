@@ -14,5 +14,6 @@ Nowadays I mostly work with C++ (when I'm not drawing), but I also know and use 
 
 # Social media 
 
+{{< mdpartial "socialmedia.html" >}}
 
 

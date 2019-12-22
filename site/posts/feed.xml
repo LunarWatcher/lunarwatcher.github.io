@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on LunarWatcher</title>
+    <link>https://lunarwatcher.github.io/posts/</link>
+    <description>Recent content in Blog on LunarWatcher</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://lunarwatcher.github.io/posts/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why I&#39;m leaving Stack Exchange</title>
+      <link>https://lunarwatcher.github.io/posts/2019/11/15/why-im-leaving-stack-exchange.html</link>
+      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarwatcher.github.io/posts/2019/11/15/why-im-leaving-stack-exchange.html</guid>
+      <description>Introduction For those of you who haven&#39;t paid attention to the recent mess on Stack Exchange, there&#39;s quite a few things going on. The current issues started with SE firing a moderator over a change to the CoC (Code of Conduct) that enforced correct pronoun use. SE has stated it was a violation of the (at the time) current CoC, but they&#39;re still unwilling to tell the moderator in question what she did.</description>
+    </item>
+    
+    <item>
+      <title>Specific package updates on Raspberry Pi/Raspbian</title>
+      <link>https://lunarwatcher.github.io/posts/2019/02/16/Specific-package-updates-on-Raspberry-Pi/Raspbian.html</link>
+      <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarwatcher.github.io/posts/2019/02/16/Specific-package-updates-on-Raspberry-Pi/Raspbian.html</guid>
+      <description>The Raspbian package repos are, in my experience, extremely slow with updates. Ninja pre-dates version one, Python3 is still stuck on 3.5.2, and a lot of other packages are outdated. Installing from source isn&#39;t always easy, because they get new dependencies, and suddenly you have accidentally missing packages and compiling fails. So here&#39;s a list of some install guides for various tools.
+Note This is currently targeting a version of Raspbian that doesn&#39;t support 64 bit.</description>
+    </item>
+    
+    <item>
+      <title>Multiple GitHub accounts on one computer</title>
+      <link>https://lunarwatcher.github.io/posts/2018/06/19/Multiple-GitHub-accounts-on-one-computer.html</link>
+      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarwatcher.github.io/posts/2018/06/19/Multiple-GitHub-accounts-on-one-computer.html</guid>
+      <description>Short guide on using multiple GitHub accounts on one computer in a way that doesn&#39;t require manual account changing</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>https://lunarwatcher.github.io/posts/2018/06/18/Resources.html</link>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://lunarwatcher.github.io/posts/2018/06/18/Resources.html</guid>
+      <description>This post contains resources for different topics I&#39;m interested in, including websites, tools, etc.</description>
+    </item>
+    
+  </channel>
+</rss>

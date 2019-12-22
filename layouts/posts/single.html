@@ -3,6 +3,28 @@
 <h1>{{ .Title }}</h1>
 <span class="post-meta">Posted on {{ .Date.Format "January 2, 2006" }}</span>
 
+{{ if .Params.toc }}
+
+    {{ partial "toc.html" . }}
+    <hr>
+
+{{ end }}
 {{ .Content }}
+
+{{ if not .Params.nocomments }}
+    <div class="comments">
+        <hr>
+        <h2 style="padding-top: 20px !important;">Comments</h2>
+        <script src="https://utteranc.es/client.js"
+                repo="LunarWatcher/lunarwatcher.github.io"
+                issue-term="pathname"
+                label="comments"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <noscript>You've disabled JavaScript, which the comment system makes use of to load them on the site. The comment threads can be found <a href="https://github.com/LunarWatcher/lunarwatcher.github.io/issues">in the issues for this repo</a>.</noscript>
+    </div>
+{{ end }}
 
 {{ end }}

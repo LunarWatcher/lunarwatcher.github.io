@@ -12,16 +12,20 @@
 
     {{ .Content }}
 
-    {{ range (.Paginate (.Data.Pages.GroupByDate "2006") 1).PageGroups  }}
+    {{ range (.Paginate (.Data.Pages.GroupByDate "2006") 20).PageGroups  }}
 
     <div class="posts">
         {{ range .Pages }}
         <div class="article">
             <h1><a href="{{ .Permalink }}">{{ if .Draft }}{{ T "draft" }}: {{ end }}{{ .Title | markdownify }}</a></h1>
             <time class="post-meta">{{ .Date.Format "January 2, 2006" }}</time>
+            <p>{{ .Summary }}</p>
+              <div>
+                <a href="{{ .RelPermalink }}">Read More...</a>
+              </div>
         </div>
         {{ end }}
-    </ul>
+    </div>
     
     {{ end }}
 

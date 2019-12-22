@@ -7,6 +7,22 @@ permalinks:
   posts: /posts/:year/:month/:day/:slug
 
 uglyurls: true
+pygmentsUseClasses: true
+
+markup:
+  goldmark:
+    extensions:
+      linkify: false
+  highlight: 
+    style: emacs 
+  tableOfContents: 
+    endLevel: 6
+    startLevel: 1
+
+outputFormats:
+  RSS:
+    mediatype: application/rss
+    baseName: feed
 
 menu:
   main:

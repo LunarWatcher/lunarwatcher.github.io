@@ -4,7 +4,10 @@ description: I explain why I'm leaving the network, along with my explanation of
   of the recent events that have taken place.
 title: Why I'm leaving Stack Exchange
 slug: why-im-leaving-stack-exchange
+toc: true
 ---
+
+# Introduction
 
 For those of you who haven't paid attention to the recent mess on Stack Exchange, there's quite a few things going on. The current issues started with SE firing a moderator over a change to the CoC (Code of Conduct) that enforced correct pronoun use. SE has stated it was a violation of the (at the time) current CoC, but they're still unwilling to tell the moderator in question what she did. There's a <a href="https://meta.stackexchange.com/q/333965/332043" rel="nofollow noreferrer">recap here</a>.
 

@@ -2,16 +2,29 @@
 <html lang="en-US">
     <head>
         {{ partial "head.html" . }}
+    
+        {{ if .Params.toc }}
+        <style>
+@media screen and (min-width: 1088px) {
+
+    .toc h2 {
+        border-bottom: none !important;
+    }
+
+}
+        </style>
+        {{ end  }}
+
     </head>
 
     <body>
         {{ partial "header.html" . }}
-        
+
         <main>
             <div class="container">
                 {{ block "main" . }}
                 {{ end }}
-            </div>
+            </div> 
         </main>
         
         {{ partial "footer.html" . }}

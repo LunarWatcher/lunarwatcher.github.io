@@ -1,5 +1,5 @@
 ---
-comments: false
+nocomments: true
 date: "2018-06-18T00:00:00Z"
 summary: This post contains resources for different topics I'm interested in, including
   websites, tools, etc.

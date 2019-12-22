@@ -95,6 +95,19 @@ ul {
     }
 }
 
+ol {
+    margin-left: 30px;
+}
+
+ul {
+    margin-left: 0;
+    padding-left: 0;
+    li {
+        padding-left: 1em;
+        text-indent: -1em;
+    }
+}
+
 .center {
     text-align: center;
 }
@@ -165,7 +178,7 @@ h1, h2 {
     float: left !important;
 }
 
-nav {
+header nav {
 
     line-height: 64px;
     .sidenav { padding-top: 60px; };
@@ -365,8 +378,30 @@ h3, h4, h5, h6 {
 }
 
 div.article {
+    padding-bottom: 3px;
+    border-bottom: 1px dashed black; 
     h1 {
-        padding-bottom: 5px !important;
+        border-bottom: none !important;
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
     }
 }
+
+#TableOfContents {
+    font-size: 13px !important;
+    overflow: auto;
+}
+
+#TableOfContents ul ul {
+    margin-bottom: 0px;
+}
+
+#TableOfContents > ul > li > ul > li > a {
+  font-weight: bold;
+}
+
+#TableOfContents > ul > li > ul > li > ul > li > ul > li > ul > li  {
+    display: none;
+}
+
 
