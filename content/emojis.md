@@ -15,7 +15,7 @@ owo,OwO,OWO        - interested/excited(/surprised (rare))
 uwu, UwU, UWU      - shy happy 
 :sloth:            - Discord-style emote, SeriousSloth on twitch. For context: https://cdn.discordapp.com/emojis/366670406817677333.png
 :*                 - no mouth
-xd                 - Dammit - not to be confused with xD 
+xd                 - Dammit - NOT to be confused with xD 
 xD                 - laughing 
 ^^, ^.^, ^-^, ^w^  - Happy. First and last are common
 ^^"                - Whoops. (Equivalent to 😅)

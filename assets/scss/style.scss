@@ -65,6 +65,10 @@ ul.pagination li {
 // Elements 
 blockquote{
     border-left: 4px solid $pink-primary;
+    padding-left: 10px;
+
+    background-color: #ffe8f6;
+    border-radius: 4px;
 }
 
 a, a:visited {
@@ -264,17 +268,17 @@ header nav {
     }
 }
 
-.container {
+.container, .toc-container{
     margin: 0 auto;
     width: 90%;
 }
 @media only screen and (min-width: 600px) {
-    .container {
+    .container, .toc-container {
         width: 85%;
     }
 }
 @media only screen and (min-width: 990px) {
-    .container {
+    .container, .toc-container {
         width: 70%;
     }
 }
@@ -285,7 +289,7 @@ body {
     min-height: 100vh;
     flex-direction: column; 
 }
-main {
+main, .toc-container {
     display: block;
     flex: 1 0 auto;
     
@@ -377,9 +381,18 @@ h3, h4, h5, h6 {
 .grey-text {
     color: #666666;
 }
+
 .post-meta {
     font-size: 14px;
-    color:#828282
+    color: #828282 !important;
+}
+
+.post-tag, .post-tag:visited {
+    @extend .post-meta;
+}
+
+.post-tag:active, .post-tag:hover {
+    color: $pink-light !important;
 }
 
 div.article {

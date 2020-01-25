@@ -1,12 +1,12 @@
 <footer class="page-footer">
     <div class="footer-copyright">
         <div class="container" style="overflow: auto;">
-            &copy; Olivia Zoe, 2019 (<a href="https://github.com/LunarWatcher/LunarWatcher.github.io/tree/source">Website source</a>, <a href="https://github.com/LunarWatcher/lunarwatcher.github.io/blob/source/LICENSE">license</a>)
+            &copy; Olivia Zoe, 2019-2020 (<a href="https://github.com/LunarWatcher/LunarWatcher.github.io/tree/source">Website source</a>, <a href="https://github.com/LunarWatcher/lunarwatcher.github.io/blob/source/LICENSE">license</a>)
             <p class="right">Powered by <a href="https://gohugo.io/">Hugo</a></p>
         </div>
     </div>
 </footer>
 
 {{ $js := resources.Get "js/functions.js" | resources.Minify }}
-<script type="text/javascript" src="{{ $js.Permalink }}"></script>
+<script type="text/javascript" src="{{ $js.Permalink | lower}}"></script>
 

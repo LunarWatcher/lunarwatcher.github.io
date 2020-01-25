@@ -2,6 +2,7 @@
 date: "2018-06-19T00:00:00Z"
 summary: Short guide on using multiple GitHub accounts on one computer in a way that
   doesn't require manual account changing
+tags: ["git"]
 title: Multiple GitHub accounts on one computer
 ---
 

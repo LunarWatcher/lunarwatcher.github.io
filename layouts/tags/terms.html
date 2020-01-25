@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<h1>Site {{ .Title }}</h1>
+
+<ul>
+    {{ range .Pages }}
+        <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ if isset .Params "description" }}
+                <br>
+                <i>Tag description: </i>{{ .Params.description }}
+            {{ end }}
+        </li>
+    {{ end }}
+</ul>
+
+{{ end }}

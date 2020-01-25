@@ -5,7 +5,9 @@ description: I explain why I'm leaving the network, along with my explanation of
 title: Why I'm leaving Stack Exchange
 slug: why-im-leaving-stack-exchange
 toc: true
+tags: ["stackexchange", "blogging"]
 ---
+
 
 # Introduction
 
@@ -13,9 +15,13 @@ For those of you who haven't paid attention to the recent mess on Stack Exchange
 
 I want to be clear before I continue: I support the changes to the Code of Conduct, but I personally believe the implementation should've been done in a way that doesn't put targets on us LGBTQ+ users. The strictness of the CoC has made free speech and coerced speech be thrown in as arguments against the CoC. People see the CoC as a "do this or else" rather than as a way to implement guidelines that give support to preferred pronouns, as well as a way of handling cases where someone intentionally misgenders as a way of being offensive.
 
+> Editor's note (25.01.2020): 
+> I've been paying some attention to the situation in the SE network after I left. One major change following this post is the firing of [two community managers](https://meta.stackexchange.com/q/342031), with a since deleted Tweet pointing to at least three people being fired. Additionally, Monica appears to have taken legal action, but the outcome isn't made public because of lawyer stuff. SE has continued down the same path they've been on, with little change. The CEO recently posted [a blog](https://stackoverflow.blog/2020/01/21/scripting-the-future-of-stack-2020-plans-vision/) (the statistics contain copy-pasta from a previous post on the blog, posted by someone else) with future updates, but at least to me, this still feels like empty promises. The point being, the situation has escalated further. I will not be updating this post to reflect these changes, but keep that in mind while reading: the situation presented here applied when I left, and has since gotten worse.
+
 # Note
 
-I'm not a moderator, nor am I a staff member. I'm one of a few million users participating in the Stack Exchange network. 
+I'm not a moderator, nor am I a staff member at Stack Exchange. I'm one of a few million users participating in the Stack Exchange network. 
+
 
 # Old background 
 
