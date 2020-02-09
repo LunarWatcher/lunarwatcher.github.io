@@ -1,18 +1,8 @@
 ---
-title: "Annoying bugs: Linux Edition"
-date: 2020-01-28T21:19:35+01:00
-description: This contains a list of problems I've had with Linux, that are incredibly annoying, but relatively easy to fix. They're stored here both for use by others, as well as use by me when I inevitably forget exactly what I need to do.
-tags: ["linux", "annoying-bugs"]
-toc: true
+title: "Linux does not boot past the splash screen with a NVIDIA graphics card"
+date: 2020-02-09T14:45:48+01:00
+tags: ["annoying-bugs-linux-edition",  "linux", "nvidia", "ubuntu-et-al"]
 ---
-
-# Introduction
-
-This is the first entry, and the Linux entry into a series I call annoying bugs. This is stuff I spent too much time on the first time around, and don't want to spend as much time on again. This also exists in case these issues are wide-spread. A primary criteria for addition to the list is that it's extremely hard to find resources online, and less with a sensible explanation. 
-
-This list is also ongoing. Whenever I find something to match my weird, dynamic criteria for addition, I'll add them to the list.
-
-# [Ubuntu and derivatives] The system does not boot past Grub after installing on a system with a NVIDIA graphics card
 
 *Tested on Linux Mint 19.3*
 
@@ -32,6 +22,5 @@ linux /boot/vmlinuz-<version>-generic [...] ro quiet splash $vt_handoff nomodese
 ```
 
 Click the keybind to boot, and if you get in (if you don't, this doesn't work, or you did something wrong), go straight to the driver manager and install the proprietary nvidia drivers. You can install other stuff while you're at it, but fixing the graphics drivers is _the_ priority. After a reboot, the system should boot properly. 
-
 
 
