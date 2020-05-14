@@ -18,6 +18,12 @@ I want to be clear before I continue: I support the changes to the Code of Condu
 > Editor's note (25.01.2020): 
 > I've been paying some attention to the situation in the SE network after I left. One major change following this post is the firing of [two community managers](https://meta.stackexchange.com/q/342031), with a since deleted Tweet pointing to at least three people being fired. Additionally, Monica appears to have taken legal action, but the outcome isn't made public because of lawyer stuff. SE has continued down the same path they've been on, with little change. The CEO recently posted [a blog](https://stackoverflow.blog/2020/01/21/scripting-the-future-of-stack-2020-plans-vision/) (the statistics contain copy-pasta from a previous post on the blog, posted by someone else) with future updates, but at least to me, this still feels like empty promises. The point being, the situation has escalated further. I will not be updating this post to reflect these changes, but keep that in mind while reading: the situation presented here applied when I left, and has since gotten worse.
 
+---
+
+> Editor's note (14.05.20):
+> I returned to Stack Exchange a couple months ago, following a potential strike that was canceled after SE started answering. After this, they've generally connected more with the community, and they've gotten a lot better. Progress is finally being made, so I am back.
+> At the same time, this is at a very reduced capacity, because there are aspects of the site that annoy me for various personal reasons. Additionally, taking time away from SE made me realize I have a lot of stuff I'd also like to do.
+
 # Note
 
 I'm not a moderator, nor am I a staff member at Stack Exchange. I'm one of a few million users participating in the Stack Exchange network. 
