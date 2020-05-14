@@ -28,7 +28,7 @@ This is **not** meant as a perfect, 100% guaranteed to work guide. This post exi
 
 First off, you need your "domain". This "domain" isn't actually a domain, but a local DNS record. A domain is just a string of text that gets converted to an IP by a DNS provider, but this one only works if you're using pihole as your DNS. There's probably a way to set this up with an IP as well, but since the HTTPS cert is used for the dashboard, it shouldn't break much. If you can connect to the dashboard, you can probably connect through SSH or connect the DNS.
 
-![image showing the local DNS records settings page in the pihole web interface](/img/pihole-loca-dns-records.png)
+![image showing the local DNS records settings page in the pihole web interface](/img/pihole-local-dns-records.png)
 
 To set this up, you need to open the pihole dashboard, and log in. There's probably a way to do this from the command line, but I personally wanted a simple solution. Go to the "Local DNS settings" option in the left navbar. This lets you add custom DNS lookup rules. Fill in the domain field with whatever domain you want to use, and the IP with the IP of the pihole device. In my case, I used `pihole.lan`, and with my Raspberry Pi hosted on `192.168.11.216`. This is an internal IPv4 address; if you're running pihole on a VPS, you use the IP of your VPS.
 
