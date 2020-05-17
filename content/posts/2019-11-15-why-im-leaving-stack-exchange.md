@@ -9,7 +9,7 @@ tags: ["stackexchange", "blogging"]
 ---
 
 
-# Introduction
+## Introduction
 
 For those of you who haven't paid attention to the recent mess on Stack Exchange, there's quite a few things going on. The current issues started with SE firing a moderator over a change to the CoC (Code of Conduct) that enforced correct pronoun use. SE has stated it was a violation of the (at the time) current CoC, but they're still unwilling to tell the moderator in question what she did. There's a <a href="https://meta.stackexchange.com/q/333965/332043" rel="nofollow noreferrer">recap here</a>.
 
@@ -24,12 +24,12 @@ I want to be clear before I continue: I support the changes to the Code of Condu
 > I returned to Stack Exchange a couple months ago, following a potential strike that was canceled after SE started answering. After this, they've generally connected more with the community, and they've gotten a lot better. Progress is finally being made, so I am back.
 > At the same time, this is at a very reduced capacity, because there are aspects of the site that annoy me for various personal reasons. Additionally, taking time away from SE made me realize I have a lot of stuff I'd also like to do.
 
-# Note
+## Note
 
 I'm not a moderator, nor am I a staff member at Stack Exchange. I'm one of a few million users participating in the Stack Exchange network. 
 
 
-# Old background 
+## Old background 
 
 There's quite a lot of background leading up to why the situation escalated the way it did. This isn't strictly related to the current situation, so feel free to skip to the next part. 
 
@@ -49,7 +49,7 @@ There's more or less something for everyone to complain about, for both new user
 
 Half the reason this happened was because communication broke down between the community and the company, which we're still feeling today. The lack of communications and improvements has caused a lot of tension, which is why I've mentioned these things. They establish a background as to why the current situation exploded. In addition, they're factors that have bothered me personally, but on their own is something I considered negligible. I did go on a strike because of it, but after feature requests started being implemented, I returned for a while. 
 
-# The current situation 
+## The current situation 
 
 The current situation is a complex build of multiple factors. The three primary factors are the (presumably illegal) license change, Monica being fired, and the CoC change. In addition to these, there's also others that factor in, namely the hard ad policy and the continued communication breakdown, presumably along with some others I've missed. 
 
@@ -57,7 +57,7 @@ Before I continue, I need to stress that this is my opinion, and this is how I v
 
 Also, note that some of these phases overlap or run in parallel. 
 
-## Phase 1: Ads 
+### Phase 1: Ads 
 
 In June 2019, <a href="https://meta.stackexchange.com/q/329763/332043" rel="nofollow noreferrer">SE introduced advertisements across the network</a>. This on its own is perfectly fine - they need to pay their employees and cover their operational costs. The problem is that they're allowing animated ads, and have let a lot of bad ads through. Some examples include outright scams, ads of malicious behavior (notably ads that redirect the page), NSFW ads, and generally placing inappropriate ads on the page. Some of these issues are discussed in various answers on the previously linked question.
 
@@ -67,13 +67,13 @@ The ad issue is where things started going down the drain, for real. An early re
 
 In July, <a href="https://meta.stackoverflow.com/q/387546/6296561" rel="nofollow noreferrer">concerns and questions on a different matter</a> also went unanswered. I personally have an answer on that question that still hasn't been answered. I even asked direct questions in chat, and got ignored. I consider this a start, but not big enough to mark the beginning of users being ignored, because they were still involved, even if they didn't say much. In the ad event, they posted and ignored absolutely everything. 
 
-## Phase 2: Licensing 
+### Phase 2: Licensing 
 
 In September 2019, <a href="https://meta.stackexchange.com/q/333089/332043" rel="nofollow noreferrer">SE announced they had changed the license from CC-By-SA 3.0 to 4.0</a>. I personally have no problem with the license, but the nature of the change brought up doubt from underlying situations. An answer posted to said announcement suggested it wasn't legal, a stance we still haven't gotten an answer to. 
 
 An answer <a href="https://meta.stackexchange.com/a/333912/332043" rel="nofollow noreferrer">was posted later</a> that explained their reasoning, but didn't explain whether it was legal or not. None of the concerns posted by their users had been addressed. The situation, at least for me, isn't as much about the license as it is about the nature of the change. If they change it to CC-By-SA 4.0 illegally, how are we protected from a sudden change to a license that doesn't allow as open use? 
 
-## Phase 3: Monica
+### Phase 3: Monica
 
 This is the big one and one most regulars on SE have heard about, along with phase 4 (the CoC change).
 
@@ -81,7 +81,7 @@ There's quite a few components to this, but to sum it up: Monica had concerns ab
 
 To be honest, there are worse moderators out there. She wanted to continue using genderless language, and an early draft of the CoC is said to not have a clause specifying pronoun use was on the level of "where you use it normally". The first version of the CoC at least shows this: it mixed the use of "must use preferred pronouns when specified" along with "as you naturally write", which I bet caused confusion. This is a story for later. 
 
-### Phase 3.1: Moderators leave 
+#### Phase 3.1: Moderators leave 
 
 Following this change, <a href="https://meta.stackexchange.com/q/333965/332043" rel="nofollow noreferrer">many moderators left</a>. There's said to be over 600 moderator positions across the network, and with some moderators spanning multiple positions, about 500 unique moderators. There are exact numbers on this somewhere, but I'm not going to look for it. Someone sent me a comment a while ago, but this was much earlier in the events, at which point 10% of the moderator positions were vacant. By my current guesstimations, the number should be somewhere between 10% and 20%, unless there's lots of moderators silently stopping in protest. 
 
@@ -89,7 +89,7 @@ Some moderators left in support of Monica, others in protest of the future CoC c
 
 After some of the first moderators left, we got three official responses. These were from the same person involved with the removal of Hot Meta Posts, but really shouldn't have been posted ever. These are the answers (not in order): <a href="https://meta.stackoverflow.com/a/389908/6296561" rel="nofollow noreferrer">on meta.SO</a>, <a href="https://judaism.meta.stackexchange.com/a/5197" rel="nofollow noreferrer">on judaism.SE</a>, and <a href="https://cs.meta.stackexchange.com/a/1654" rel="nofollow noreferrer">on CS.SE</a>. These answers were more or less copy-pasta, and personally made me angry. Aza's resignation notice explained how community managers used moderators as expendable resources, and this just made that seem much more realistic. The answer makes it seem like all she thinks these moderators deserve is copy-pasta, hence why I said it would've been better not to post it. 
 
-### Phase 3.2: Media 
+#### Phase 3.2: Media 
 
 A while into the drama, a newspaper (The Register) reached out to SE to get a statement. They did get one. Now, at this point they've ignored both their community, as well as the person they fired who requested to know why *specifically*, but they still reached out to the media, and labeled Monica a bigot. 
 
@@ -99,7 +99,7 @@ Moreover, and I've been around long enough to see both real hate as well as Moni
 
 Moreover, [according to Monica](https://cellio.dreamwidth.org/2064709.html), there was another moderator who was truly rude, and that event went without consequences. SE claims they want to be inclusive, but at the same time protect moderators like that, and that annoys me more than I can accurately describe. 
 
-### Phase 3.3: Legal action 
+#### Phase 3.3: Legal action 
 
 You can probably figure where this is going by the title. On October 28th 2019, [Monica started a GoFundMe campaign to take legal action against SE](https://www.gofundme.com/f/stop-stack-overflow-from-defaming-its-users). 
 
@@ -107,9 +107,9 @@ The campaign is still running and the process has started, but on November 14th,
 
 I left a comment on there I expected to be answered, and it took two additional comments - one specifying I was actually asking and one saying I considered the silence as an affirmative answer before I actually got a response. This broke a silent front we've been given by the Director of Public Q&A (the person who posted the copy-pasta, took lead on the Hot Meta Post removal, and presumably more I'm not aware of). I was happy that I actually got a reply, but I worry what the reasons could be for me needing to push to get an actual answer. It wasn't quite the answer I was hoping for, but the reply to the letters haven't been cancelled, and that's good enough for me at the moment. 
 
-## Phase 4: The Code of Conduct is released
+### Phase 4: The Code of Conduct is released
 
-### Phase 4.1: Apologies
+#### Phase 4.1: Apologies
 The first "apology" was posted on <a href="https://meta.stackexchange.com/q/334248/332043" rel="nofollow noreferrer">October 3rd</a>, and was about as bad as the copy-pasta. The Director of Public Q&A again took the lead, and the post made a dehumanizing comparison with "shipping software on a Friday" when referring to Monica's firing. Gold and green forests were promised, while the core of the problem was ignored. 
 
 The second "apology" was posted <a href="https://meta.stackexchange.com/q/334551/332043" rel="nofollow noreferrer">3 days later (October 6th 2019)</a>. This was very, very promising and I initially said "thank you" when I posted an answer, because I finally thought SE cared. Again, more gold and green forests were promised, but it was a significant step in the right direction.
@@ -122,7 +122,7 @@ Additionally, they apologized to LGBTQ+-users because their handling of the situ
 
 And it doesn't end there - there's [an external threat](https://meta.stackexchange.com/q/335785/332043) that potentially makes LGBTQ+-users unsafe on SE. SE's hard CoC push alongside firing and ignoring Monica made LGBTQ+ users get blamed, at least in some cases. Had the situation with Monica been resolved before the CoC push, said threat might never have appeared. The way SE handled the release of the CoC has been extremely horrible. 
 
-### Phase 4.2: The letters
+#### Phase 4.2: The letters
 
 On October 6th, 4 days before the initial CoC release, [a lot of mods created an open letter to SE](https://meta.stackexchange.com/q/334575/332043). From what I can tell, this has been in the works for a while. This addressed concerns regarding the community as a whole, in addition to concerns from LGBTQ+-users as a separate letter. 
 
@@ -130,7 +130,7 @@ On the 8th, we were promised a reply At Some Point:tm:. The letters are to this 
 
 Another red flag is that the Director of Public Q&A, who took point on the letters too, ignored status requests for over a month. I pinged her a few days in a row before OP of the question asked me to stop over unwanted notifications, without any reply. Half the reason I did that was to remind her there were people expecting answers. The lack of replies is now possible to classify as intended. She had multiple reminders, and chose to ignore them. SE continuing to ignore their users is very bad in terms of a future. Currently, I don't see SE having one. 
 
-### Phase 4.3: The release
+#### Phase 4.3: The release
 
 The first version of the CoC FAQ was released on [October 10th 2019](https://web.archive.org/web/20191023013715/https://meta.stackexchange.com/questions/334900/official-faq-on-gender-pronouns-and-code-of-conduct-changes). The FAQ was deleted when the new one showed up, but I'll get back to the new one later.
 
@@ -140,7 +140,7 @@ Fortunately, <a href="https://meta.stackexchange.com/q/335173/332043" rel="nofol
 
 Unfortunately, it created a further divide in the community, and caused a lot of internal fights. At this point, MSE was down from four to two moderators: one (Monica) was fired, and another decided to take a break. The moderator who took a break returned later, but flag handling speeds were horribly low. It let discussions taking a turn for rudeness get completely out of control before someone stepped in. 
 
-### Phase 4.4: The new release
+#### Phase 4.4: The new release
 
 The <a href="https://meta.stackexchange.com/q/336364/332043" rel="nofollow noreferrer">second version of the CoC</a> was released on October 23rd, 13 days after the first version was posted. Communication on the first one broke down, and concerns went unanswered. 
 
@@ -151,7 +151,7 @@ I need to clarify this: I've mentioned opposition against the CoC explicitly a f
 Moreover, when it comes to enforcing the CoC, it can cause a lot of problems when it's managed by people who don't necessarily know where the line between good-faith and trolling lies. I don't always know either, but I've gotten pretty good at telling the difference. At the end of the day, it's still not technically possible to identify trolling attempts with 100% accuracy, but the problem appears <a href="https://meta.stackexchange.com/a/338197" rel="nofollow noreferrer">when even staff</a> misidentify situations. In this specific case, a name was used as a replacement for pronouns. This hasn't been fully covered by the CoC either - it pushes hard on pronouns, but doesn't specify what happens in the lack of a pronoun, or where a name is preferred instead. I'm saying "or" because I'm not entirely sure if the lack of a pronoun always implies a name. Anyway, the use of names of course sparked a new debate that more or less attempted to invalidate this practice. There are people who don't use gender pronouns at all, and that's their right. <a href="https://meta.stackexchange.com/q/338453" rel="nofollow noreferrer">This post</a> elaborates on the problems further.
 
 
-# My position 
+## My position 
 
 For those of you who don't know me, I'm trans and heavily active on Stack Exchange. I've mainly been active on Stack Overflow, and especially in moderation, but also on other sites. I'm also on the autism spectrum (Asperger), which gave me a hard time getting started in the network.
 

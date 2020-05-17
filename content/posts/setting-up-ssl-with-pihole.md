@@ -6,7 +6,7 @@ slug: setting-up-ssl-with-pihole-without-a-fqdn
 tags: ["pihole", "linux"]
 ---
 
-# Introduction
+## Introduction
 
 This post aims to present an alternative way to generate SSL certificates for your pihole web interface. This is specifically targeted at people without a FQDN (Fully Qualified Domain Name), regardless of whether pihole is hosted locally or on a VPS. Note that this has only tested on a locally hosted pihole instance, running on a Raspberry Pi 3B+. As usual, apply common sense before running commands from strangers on the internet - just because it worked on my system, doesn't necessarily mean it'll work in general. While we're at it, if this is properly configured, it shouldn't cause any problems. Even an invalid SSL certificate would just affect your connection, and not something like SSH or pihole in general.
 

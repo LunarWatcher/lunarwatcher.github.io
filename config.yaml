@@ -14,11 +14,13 @@ markup:
   goldmark:
     extensions:
       linkify: false
+    renderer:
+      unsafe: true
   highlight: 
     style: emacs 
   tableOfContents: 
     endLevel: 6
-    startLevel: 1
+    startLevel: 2
 
 outputFormats:
   RSS:
