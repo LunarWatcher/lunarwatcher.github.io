@@ -35,16 +35,16 @@ menu:
   - identifier: Home 
     name: Home 
     url: "/"
-    weight: -110
+    weight: 1
   - identifier: Blog
     name: Blog
     url: "/posts/"
-    weight: -100
-  - identifier: Emoji reference 
-    name: Emoji reference
-    url: "/emojis.html"
-    weight: -80
+    weight: 2
   - identifier: Tags
     name: Tags
     url: "/tags.html"
-    weight: -90
+    weight: 3
+  - identifier: Emoji reference 
+    name: Emoji reference
+    url: "/emojis.html"
+    weight: 4
