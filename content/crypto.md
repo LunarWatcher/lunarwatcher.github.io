@@ -8,7 +8,7 @@ Starting July 4th 2020, I'll be signing my commit messages using [rsa4096/bb69e2
 
 These signatures are made with a public subkey with the fingerprint BB69 E2FD F382 8CA2 04C9 260F D12A 3031 7208 673E. You can pull this key with:
 ```
-
+gpg --keyserver keyserver.ubuntu.com --recv-keys bb69e2fdf3828ca204c9260fd12a30317208673e
 ```
 
 ---
