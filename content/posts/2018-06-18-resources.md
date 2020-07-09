@@ -6,7 +6,7 @@ summary: This post contains resources for different topics I'm interested in, in
 title: Resources
 ---
 
-This post contains resources and tools for stuff I'm interested in, or in general use. 
+This post contains resources and tools for stuff I'm interested in, or in general use. Last update: 09.07.2020 
 
 ## Disclaimer
 
@@ -29,19 +29,13 @@ None of these are paid promotions. I also cannot guarantee that the software is 
 
 ### Tools
 
-* [JetBrains](https://www.jetbrains.com/) has a lot of useful tools, including IDE's, CI, issue trackers, etc.
 * [regex101.com](https://regex101.com/) - Useful for regex validation.
-* [Jekyll](https://jekyllrb.com) - really useful for websites, since it allows creating modular pages with templates. Also powers this website.
-* [Brackets](http://brackets.io/) - Nice editor, flexible, and my personal web dev favorite.
-* [Sublime Text](https://www.sublimetext.com/) - Both code and non-code editor. Beats Notepad++.
-* [Emacs](https://www.gnu.org/software/emacs/) - extensible editor, supports a ton of programming languages. Unfortunately doesn't have auto-import, but I like it for a couple languages.
-* [Vim](https://github.com/vim/vim) - Currently my favorite editor.
-
+* [Hugo](https://gohugo.io) - static page generator. Also powers this website
+* [Vim](https://github.com/vim/vim) - Currently my main and favorite editor.
 
 ### Programming utilities
 
 #### General/meta
-* [Cygwin](https://www.cygwin.com/) - Linux-like terminal on Windows.
 * [tmux](https://github.com/tmux/tmux) - split terminal windows. Incredibly useful with SSH or for consoles without support for tabs.
 
 #### C++
@@ -61,16 +55,25 @@ Note that these are some select plugins I believe deserve some extra attention. 
 
 * [Vim Plug](https://github.com/junegunn/vim-plug) - Like Vundle, but better and async.
 * [NERDTree](https://github.com/scrooloose/nerdtree) - File trees to get the IDE feel.
-* [Tmux navigator](https://github.com/christoomey/vim-tmux-navigator) - simplifies tmux-vim interop.
-* [Deoplete](https://github.com/Shougo/deoplete.nvim) - async, and extremely extendible.
-    * [LanguageClient-neovim](https://github.com/autozimu/LanguageClient-neovim) - works with Vim 8 too. Adds some inline linting as well as extending autocomplete. 
 * [Goyo](https://github.com/junegunn/goyo.vim) - focus enhancer 
 * [Limelight.vim](https://github.com/junegunn/limelight.vim) - along with Goyo, it gives a really nice text writing experience.
 * [Vimwiki](https://github.com/vimwiki/vimwiki) - perfect for notes, as well as wiki-style personal notes/documentation.
 * [Startify](https://github.com/mhinz/vim-startify) - beautiful start page
-* [tagbar](https://github.com/majutsushi/tagbar) - Lists tags in files; similar to the file structure overview in some IDEs. Also lists keybinds in `.vim`/`.vimrc` files.
 
 #### Themes
 
 * [Papercolor](https://github.com/NLKNguyen/papercolor-theme) - paper-like theme with a nice color scheme.
 
+### Firefox plugins
+
+* [ClearURLs](https://addons.mozilla.org/en-US/firefox/addon/clearurls/) - big extension to remove several types of tracking, including tracking in Google results
+* [DecentralEyes](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/) - loads common JavaScript plugins from a local cache instead of using certain CDNs
+* [CanvasBlocker](https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/) - helps block certain types of canvas-based fingerprinting techniques.
+* [UA switcher and manager](https://addons.mozilla.org/en-US/firefox/addon/user-agent-string-switcher/) - changing the UA to a popular one helps make fingerprinting harder
+* [Don't touch my tabs!](https://addons.mozilla.org/en-US/firefox/addon/dont-touch-my-tabs/) - adds rel=noopener to all cross-site URLs
+* [Redirect AMP to HTML](https://addons.mozilla.org/en-US/firefox/addon/amp2html/) - Prevents [google from taking more control of the internet](https://theinternetbytes.com/2020/07/03/where-am-i/)
+* [BitWarden](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/) - password manager
+* [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) - blocks ads, trackers, annoying elements, and whatever else I want to go away
+* [Image search options](https://addons.mozilla.org/en-US/firefox/addon/image-search-options/) - makes it easy to search images and gifs across several sites
+* [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/) - Enforces HTTPS
+* [Multi-account containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/) - helps separate sessions
