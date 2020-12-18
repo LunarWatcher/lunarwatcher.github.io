@@ -10,15 +10,15 @@ There's arguably more than enough of these posts on the internet as it is, but a
 
 **Disclaimer:** My sense of time is trash. All times listed should be assumed to be guesstimates. If a certain bit of time doesn't make sense, it's most likely my fault.
 
-# Background
+## Background
 
-## The beginning
+### The beginning
 
 I started coding about 6 years ago, and the first language I learned was Java. Like the vast majority of Java devs at the time, I started using Eclipse. At the time, JetBrains wasn't big enough to have crept into every bit of Java dev.
 
 The start was alright, I messed around with it, and liked it quite a bit. I used it for several languages that I largely learned because I had nothing better to do with my time, and it just worked. Until I tried Android.
 
-## The Android phase
+### The Android phase
 
 I spent about 4 years actively doing Android stuff, for whatever reason. I made a lot of useless apps, most of which ended up in a dusty corner of my harddrive never to be seen again, and definitely for a good reason.
 
@@ -26,13 +26,13 @@ I tried getting started with Eclipse, and after a few tries and a lot of trouble
 
 I was forced to switch over because Google were going to phase out Eclipse. Not gonna lie, the first time I used Android Studio, which is based on IntelliJ, I fell in love. It was fast, it was modern, and it made Eclipse look like some program from the 90s both visually and technically. Shortly after, I switched over to JetBrains products for Java, and later got it for Python as well.
 
-## The webdev phase
+### The webdev phase
 
 I started venturing into webdev about 3-4 years ago, in parallel with a lot of other stuff (I'm weird, okay?). Found brackets, stuck with that, was mildly unsatisfied, switched to Atom.
 
 I stuck with Atom, and used that for web stuff for a good 6 months to a year. Then I heard about Sublime and wanted to try that. It stuck for some smaller things. 3-4 years ago, I had Atom, Brackets, IntelliJ, PyCharm, Android Studio, Sublime Text, and probably more installed. (I'm leaving out Notepad++ because I didn't use it for proper coding, but I used it for editing some things from time to time, primarily JSON).
 
-## The Kotlin phase
+### The Kotlin phase
 
 I got into Kotlin in late 2017, but started using it more and more up until the end of 2018. At the time, I was still stuck on my old, heavily used and abused computer. As Windows tends to do on old devices, it was getting slower. This eventually forced me over on Linux, but that's also another story.
 
@@ -44,7 +44,7 @@ My frustration with IntelliJ peaked and I got to a point where I felt I had to g
 
 I did discover VS Code in the process, and it became a core element in the next phase:
 
-## The C++ phase
+### The C++ phase
 
 Admittedly, the C++ phase is a two-parter. I initially started in 2018 and worked for a few months, then took a break for various personal reasons, and came back to it at the end of 2019. I've since been working continuously in C++.
 
@@ -56,7 +56,7 @@ At this point, VS Code was getting on my nerves, and so did everything built on 
 
 Towards the end, I was using Eclipse, and I actually checked this because it's one of the few events that are easy to find.
 
-# Who cares?
+## Who cares?
 
 Glad you asked!
 
@@ -70,7 +70,7 @@ I slightly dismissed it with the excuse that navigation in Vim and Emacs is hard
 
 In January, I asked for a bit of help. I got myself set up with a .vimrc heavily based off their vimrc, and it pretty much escalated from there. I got started with the mandatory config and a plugin manager, as well as some plugins and a minor workflow. The clusterfuck C++ toolchain hacks on Windows are unrelated here, but I had an editor, and I was using it.
 
-# Yes, but why?
+## Yes, but why?
 
 Do you remember all the editors I've mentioned so far? I've even left out some because I don't remember all. One of the things that bothered me before I started using Vim was exactly the number of different editors. One editor for Python, one for webdev, one for Java/Kotlin, one for C++, one for this, and one for that, and one for this specific niche use, and some other for editing certain files. The number of editors on my system was ridiculous. Nowadays, except a standard preinstalled text editor and LibreOffice, I have Vim.
 
@@ -86,7 +86,7 @@ Just for good measure, modal editing is the concept of having separate modes for
 
 Remember the bit I said about package managers earlier? This largely matters because Vim requires config to be usable. I always assumed people just used plain Vim, which is why the person who helped me get started actually did manage to help me get started. They opened my eyes to the existence of package managers, which I hadn't thought about because it wasn't built-in. Most mainstream editors today offer extremely little scripting, and very few of them offer the ability to write package managers or other functionality that overhauls the base software. That is a major strength Vim has, and admittedly Emacs too, even if I'm not a fan of (l((i)((((s))(p))))). As a result, Vim appears to be a lot scarier and hard to use than it actually is. Yes, modal editing is something that takes time to learn, but achieving that, it's still more than achievable to customize the editor **with little effort.** I need to highlight this bit and reiterate that my `.vimrc` is largely over-engineered, and doesn't represent the average complexity, or even the smallest config necessary to get you up and running. Different requirements also result in different config requirements, and as a generalist, my config requirements tend to be a lot more complex than absolutely necessary.
 
-# Summary
+## Summary
 
 To sum it up, I switched to Vim after the right word at the right time saved me from an editor mess. Since then, I've gotten more into it and started tinkering a lot with it. As a side-effect, I've also gotten extremely used to the command line. This is, however, not a requirement, but it happened because I wanted to make my workflow heavily terminal-centric. The primary reasons I use Vim are for its flexibility, performance, modal editing, and ability to do whatever the fuck I feel like with my editor. In fact, this entire blog and even this article has been written in Vim, some times making use of a few writing plugins I have for making writing over a longer period of time a more enjoyable experience. Vim is one of the weirdly few editors where if I don't like something, I change it. More importantly, I _can_ change it, and usually easily. Most of the editors I have used have often ended up sacrificing customizability for development around a specific workflow - a workflow that might not be entirely for me.
 And yes, I've made mistakes using other editors that might seem obvious to people using them actively, but what happened cannot be undone. With an increase in the functionality I feel I need to have a good code editor, Vim is feeling more and more natural to use. It's also living proof of what happens when you have a community of developers develop an editor, as well as a community of developers continuously writing plugins based on individual needs. Forks of Vim have also come into existence when the community found that core bits of the editor were lacking. I still prefer plain Vim, but most notably Neovim has helped to drag Vim's development in a modern direction. For an editor from the 90s, it's still very much alive.
