@@ -12,10 +12,11 @@ o_o, O_o. o_O, O_O - surprised - also exists with dot variants and regular dash 
 >.>, <.<           - whaaat?
 >.<,>-<            - Dammit 
 owo,OwO,OWO        - interested/excited(/surprised (rare))
-uwu, UwU, UWU      - shy happy 
+uwu, UwU, UWU      - shy happy (ish)
 :sloth:            - Discord-style emote, SeriousSloth on twitch. For context: https://cdn.discordapp.com/emojis/366670406817677333.png
+:kekw:             - Another Discord-style emote; good 'ol laughing spanish guy.
 :*                 - no mouth
-xd                 - Dammit - NOT to be confused with xD 
+xd                 - Dammit, duh, or fuck - NOT to be confused with xD 
 xD                 - laughing 
 ^^, ^.^, ^-^, ^w^  - Happy. First and last are common
 ^^"                - Whoops. (Equivalent to 😅)
