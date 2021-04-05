@@ -40,7 +40,7 @@ Whatever you end up with, make sure you stay with it, because you'll need it.
 
 This is the part that took a while to figure out. The main advantage with using LetsEncrypt over self-signing is that it uses a CA that's trusted in most browsers out of the box. Self-signing requires manually adding the root CA to your browser or device for it to be supported. If you don't, your browser will warn you that the certificate couldn't be verified - all the usual boring stuff. These can be ignored, but if you're like me and prefer not having warnings, I'll be getting back to that soon.
 
-To make a long story short, here's a script for generating the certs:
+To make a long story short, here's a shell (`.sh`) script for generating the certs:
 
 ```bash
 # Meta: certificate locations
