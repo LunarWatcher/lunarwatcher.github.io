@@ -6,9 +6,11 @@
 
 <!-- Visible metadata -->
 <title>{{ .Title }} | {{ .Site.Title }}</title>
-
 <!-- Scripts and stylesheets -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ (resources.Get "js/jquery.min.js").Permalink }}"></script>
+{{ if .Params.mermaid }}
+<script src="{{ (resources.Get "js/mermaid.min.js").Permalink }}"></script>
+{{ end }}
 
 {{ $base := resources.Get "scss/style.scss" }}
 {{ $style := $base | resources.ToCSS | resources.Minify }}
