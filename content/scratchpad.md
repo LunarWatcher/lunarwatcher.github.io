@@ -8,6 +8,8 @@ This is a personal sandbox for markdown. It's preserved and shipped largely as a
 
 ---
 
+# Mermaid graphs
+
 {{<mermaid>}}
 graph LR;
     A[This is a tag] -->|Line Label| B
