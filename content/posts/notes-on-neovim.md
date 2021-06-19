@@ -66,7 +66,7 @@ Repetitions of how Vim's code is horrible are one of the arguments that've also 
 
 And just to be abundantly clear here, I'm not saying that everything about nvim is wrong or horrible. There are good parts of neovim, but the primary selling points for me have been adopted into vim, making the differences between the two fairly small in some areas. There's the seemingly small things that just build up over time that makes it a bad option for me. A few system compatibility issues also make it substantially less attractive for me - I like using one editor that works on any computer I'm on. That's interestingly not a description that fits Neovim.
 
-... nor does it entirely fit Vim. Vim is substantially faster on Linux than Windows for an instance, but to be fair, Windows. You can only ask for so much from it.
+... nor does it entirely fit Vim. Vim is substantially faster on Linux than Windows for an instance, largely due to internal mechanics of process spawning.
 
 I'm also not saying Vim does everything perfectly. It most definitely has its flaws, both in the processes surrounding Vim, as well as in the editor itself. Not to forget the code, but at the end of the day, I'll still stick with the editor that gives me the least amount of a headache - and that's Vim. I really do hope Vim influences Neovim and vice versa, though. Competition often helps bring out the best in editors, and Vim has historically not had that many direct competitors.
 
