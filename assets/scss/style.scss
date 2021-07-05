@@ -291,7 +291,6 @@ header nav {
     }
 }
 
-// Flexbox might not work as well in Internet Explorer, but who cares?
 body {
     display: flex;
     min-height: 100vh;
@@ -359,22 +358,22 @@ a.disabled {
     background-color: $grey-primary;
 }
 
-.box {
-    @extend .right;
-    width: 18%;
-    border-left: 2px solid $pink-primary;
-    padding-left: 10px;
-}
+// the fuck were these for?
+//.box {
+    //@extend .right;
+    //width: 18%;
+    //border-left: 2px solid $pink-primary;
+    //padding-left: 10px;
+//}
 
-@media screen and (max-width: 740px) {
-    .box {
-        width: 100%;
-        border-left: 0;
-        padding-left: 0px;
-        float: none;
-    }
-
-}
+//@media screen and (max-width: 740px) {
+    //.box {
+        //width: 100%;
+        //border-left: 0;
+        //padding-left: 0px;
+        //float: none;
+    //}
+//}
 
 h3, h4, h5, h6 {
     font-weight: bold;
@@ -430,4 +429,7 @@ div.article {
     display: none;
 }
 
-
+// who in the fuck thought 6px is readable?!
+.cardinality > text {
+    font-size: 12px;
+}

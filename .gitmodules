@@ -2,3 +2,6 @@
 	path = public
 	url = git@github.com:LunarWatcher/LunarWatcher.github.io.git
 	branch = master
+[submodule "mermaid"]
+	path = mermaid
+	url = https://github.com/mermaid-js/mermaid

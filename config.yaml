@@ -44,7 +44,11 @@ menu:
     name: Tags
     url: "/tags.html"
     weight: 3
+  - identifier: Notes
+    name: Notes
+    url: "/notes/"
+    weight: 4
   - identifier: Emoji reference 
     name: Emoji reference
     url: "/emojis.html"
-    weight: 4
+    weight: 5
