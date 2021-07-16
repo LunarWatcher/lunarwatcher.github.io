@@ -1,8 +1,8 @@
 <ul>
-    <li><a href="//discord.gg/bJgdwZJYXY">Discord server</a></li>
-    <li>Discord username: Olivia#0740</li>
-    <li><a href="//twitter.com/OliviaZoe0">Twitter</a></li>
-    <li><a href="//github.com/LunarWatcher">GitHub</a></li>
-    <li><a href="//oliviazoe0.deviantart.com">DeviantArt</a></li>
-    <li><a href="//lunarwatcher.github.io/posts/feed.xml">Blog RSS feed</a></li>
+    <li class="target-highlight" id="somediscord"><a href="https://discord.gg/{{ .Site.Params.discord }}">Discord server</a></li>
+    <li class="target-highlight" id="somediscordusr">Discord username: {{.Site.Params.discord_user}}</li>
+    <li class="target-highlight" id="sometwitter"><a href="https://twitter.com/{{.Site.Params.twitter}}">Twitter</a></li>
+    <li class="target-highlight" id="somegithub"><a href="https://github.com/LunarWatcher">GitHub</a></li>
+    <li class="target-highlight" id="somedeviantart"><a href="https://{{.Site.Params.deviantart}}.deviantart.com">DeviantArt</a></li>
+    <li class="target-highlight" id="someblog"><a href="https://lunarwatcher.github.io/posts/feed.xml">Blog RSS feed</a></li>
 </ul>

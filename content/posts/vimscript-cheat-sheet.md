@@ -24,12 +24,15 @@ This is largely meant to cover "lesser known" functions, but will cover others t
 ## Vim features
 
 | Keyword | Description | Tags |
+| --- | --- | --- |
 | `silent!` | Bang version of `silent`, and it completely discards errors. Put it in front of anything causing an error, and it'll be handled quietly. | errors, error handling |
+| `scriptversion` | (New Vim only): makes it possible to set the language standard. Not to be confused with `vim9script`, though it's in a similar alley for classic strings | version |
 
 ## Strings
 | Function | Description | Tags |
 | -------- | ----------- | ---- |
 | `split()` | Potentially familiar, but the second argument supports regex | split |
+| `..` | Alternative to `.` for string concatenation. Does the exact same thing but with no a mbiguity with the standard access operator, which also happens to be `.`. | String concatenation operator |
 
 ## Regex
 

@@ -52,3 +52,10 @@ menu:
     name: Emoji reference
     url: "/emojis.html"
     weight: 5
+
+params:
+  discord: bJgdwZJYXY
+  discord_user: Olivia#0740
+  twitter: OliviaZoe0
+  github: LunarWatcher
+  deviantart: oliviazoe0

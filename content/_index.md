@@ -14,4 +14,6 @@ I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles).
 
 # Social media
 
+([Contact etiquette](/contact.html))
+
 {{< mdpartial "socialmedia.html" >}}
