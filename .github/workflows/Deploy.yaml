@@ -1,7 +1,7 @@
 name: Deploy pages
 on:
   push:
-    branches: [ master ]
+    branches: [ source ]
   workflow_dispatch:
 
 jobs:
