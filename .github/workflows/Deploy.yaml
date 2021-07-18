@@ -30,4 +30,4 @@ jobs:
           git config --global user.name github-actions[bot]
           git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
           hugo --minify
-          cd public && git add -A && git commit -m "Deploy changes" && git push origin master
+          cd public && git add -A && git commit -m "Deploy changes for ${GITHUB_SHA}" && git push origin master
