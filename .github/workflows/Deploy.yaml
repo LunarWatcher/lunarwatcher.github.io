@@ -15,7 +15,7 @@ jobs:
         with:
           repository: LunarWatcher/LunarWatcher.github.io
           ref: master
-          path: LunarWatcher.github.io/public
+          path: public
       - uses: actions/setup-python@v2
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -25,7 +25,6 @@ jobs:
       - name: Run hugo and commit
         run: |
           pwd
-          cd $GITHUB_WORKSPACE/LunarWatcher.github.io
           git config --global user.name github-actions[bot]
           git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
           hugo --minify
