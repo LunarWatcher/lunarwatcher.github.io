@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        submodules: true
       - uses: actions/setup-python@v2
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
