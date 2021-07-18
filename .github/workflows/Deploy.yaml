@@ -23,6 +23,7 @@ jobs:
           hugo-version: '0.85.0'
           extended: true
       - name: Run hugo and commit
+        shell: bash
         run: |
           pwd
           cd public && rm -rf !(".git") && cd ..
