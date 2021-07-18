@@ -4,11 +4,8 @@
 
     {{ $baseurl := .Site.BaseURL }}
 
-    {{ if and (eq .Data.Singular "tag") (not (eq .Title "Tags")) }}
-        <h2>#{{ .Title | lower }}</h2>
-    {{ else }}
-        <h2>{{ .Title }}</h2>
-    {{ end }}
+    <h2>{{ .Title }}</h2>
+
     {{ .Content }}
 
     <div class="tag-list">

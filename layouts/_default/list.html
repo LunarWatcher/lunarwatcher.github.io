@@ -18,8 +18,8 @@
         <div class="article">
             <h1><a href="{{ .Permalink }}">{{ if .Draft }}{{ T "draft" }}: {{ end }}{{ .Title | markdownify }}</a></h1>
             <time class="post-meta">{{ .Date.Format "January 2, 2006" }}</time>
-            {{ if .Params.Type }}
-                <br><span class="post-meta">Post type: {{ .Params.Type }}</span>
+            {{ if .Params.Category }}
+                <br><span class="post-meta">Post type: {{ .Params.Category }}</span>
             {{ end }}
             {{ if .Params.Tags }}
                 {{ partial "tags.html" . }}
