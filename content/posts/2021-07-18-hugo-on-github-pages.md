@@ -48,7 +48,7 @@ My old approach used a shell file I named `deploy.sh`. All it did was build, cd 
 
 The massive downside to this was that I took ownership of the commit, which heavily scews my language statistics towards HTML and CSS when I haven't written in either. The pure amount of changes made to a static site when a tiny change is made is insane, by the way.
 
-Anyway, the up to date action can be found [in the repo for this site](https://github.com/LunarWatcher/lunarwatcher.github.io/blob/source/.github/workflows/Deploy.yaml), but here it is at the time of writing:
+Anyway, the up to date action can be found [in the repo for this site](https://github.com/LunarWatcher/lunarwatcher.github.io/blob/master/.github/workflows/Deploy.yaml), but here it is at the time of writing:
 
 ```yaml
 name: Deploy pages
@@ -83,7 +83,7 @@ jobs:
           git config --global user.name github-actions[bot]
           git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
           hugo --minify
-          cd public && git add -A && git commit -m "Deploy changes for ${GITHUB_SHA}" && git push origin master
+          cd public && git add -A && git commit -m "Deploy changes for ${GITHUB_SHA}" && git push origin deployment
 ```
 
 Note the second `actions/checkout@v2`: this is done to clone the deployment branch. Make sure you replace the repo reference with your own reference and the correct branch, if you don't use `master` and `deployment`. Again, there's a number of naming schemes, use whatever works for you. A side-effect of using actions/checkout is that it sets up the GitHub token automagically, meaning you don't have to figure out how that works. (I mean, I have no idea how to push with a custom token. This is definitely the easiest option)
