@@ -2,6 +2,7 @@
 title: Notes
 url: /notes
 layout: single
+nocomments: true
 ---
 
 I make some of my notes public, for no reason in particular.
@@ -12,3 +13,9 @@ Again, these are notes, and may be suboptimal, or just blatantly wrong. Take the
 
 ### Design
 * [Physics engine design](physics-engine-design.html)
+
+### OpenGL
+#### Physics
+* [Matrix mouse picking](matrix-mouse-picking.html)
+
+

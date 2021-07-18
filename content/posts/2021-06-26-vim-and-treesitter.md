@@ -1,6 +1,7 @@
 ---
 title: "Vim and tree-sitter: the Neovim detail that makes a patchless Vim implementation viable"
 date: 2021-06-26T17:24:41+02:00
+tags: ["vim", "neovim", "treesitter"]
 ---
 
 Tree-sitter, on paper, is fancy. Near universal highlighting in flexible queries that seems to be a lot more fancy than Vim's standard highlighting. Neovim's implementation is even set up in a way that can be customized further by having built-in highlighting definitions, and tree-sitter highlighting. While not always necessary, it provides the option for extending with additional tree-sitter types, all of which can make some colorschemes more vibrant, without actually breaking it.

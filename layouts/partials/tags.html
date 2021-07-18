@@ -1,4 +1,4 @@
-{{ $taxonomy := "tags" }} 
+{{ $taxonomy := "tags" }}
 {{ with .Param $taxonomy }}
     <p class="post-meta">Tags:
     {{ range $index, $tag := . }}

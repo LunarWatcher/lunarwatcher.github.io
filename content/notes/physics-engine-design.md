@@ -2,6 +2,8 @@
 title: "Physics engine design"
 date: 2021-07-05T12:33:21+02:00
 mermaid: 1
+tags: ["physics"]
+type: "Note"
 ---
 
 *(primarly written [for an existing project](https://github.com/LunarWatcher/Genesis))*
