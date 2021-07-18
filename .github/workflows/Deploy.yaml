@@ -24,7 +24,7 @@ jobs:
           extended: true
       - name: Run hugo and commit
         run: |
-          cd $GITHUB_WORKSPACE/LunarWatcher.github.io/public
+          cd $GITHUB_WORKSPACE/LunarWatcher.github.io
           git config --global user.name github-actions[bot]
           git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
           hugo --minify
