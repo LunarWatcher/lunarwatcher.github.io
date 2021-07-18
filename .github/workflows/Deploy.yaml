@@ -11,6 +11,11 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
+      - uses: actions/checkout@v2
+        with:
+          repository: https://github.com/LunarWatcher/LunarWatcher.github.io
+          ref: master
+          path: LunarWatcher.github.io/public
       - uses: actions/setup-python@v2
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -19,8 +24,8 @@ jobs:
           extended: true
       - name: Run hugo and commit
         run: |
+          cd $GITHUB_WORKSPACE/LunarWatcher.github.io/public
           git config --global user.name github-actions[bot]
           git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git clone -b master https://github.com/lunarwatcher/lunarwatcher.github.io public
           hugo --minify
           cd public && git add -A && git commit -m "Deploy changes" && git push origin master
