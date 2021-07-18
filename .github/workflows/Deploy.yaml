@@ -13,7 +13,7 @@ jobs:
           submodules: true
       - uses: actions/checkout@v2
         with:
-          repository: https://github.com/LunarWatcher/LunarWatcher.github.io
+          repository: LunarWatcher/LunarWatcher.github.io
           ref: master
           path: LunarWatcher.github.io/public
       - uses: actions/setup-python@v2
