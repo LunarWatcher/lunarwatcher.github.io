@@ -11,23 +11,17 @@
     {{ end }}
     {{ .Content }}
 
-    {{ range (.Paginate (.Data.Pages.GroupByDate "2006") 20).PageGroups  }}
-
-    <div class="posts">
+    <div class="tag-list">
         {{ range .Pages }}
         <div class="tag-container">
-            <p><a href="{{ .Permalink }}">{{ if .Draft }}{{ T "draft" }}: {{ end }}{{ .Title | markdownify }}</a></p>
+            <p><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></p>
             {{ if .Params.description }}
                 <p>{{.Params.description}}</p>
             {{ end }}
         </div>
         {{ end }}
     </div>
-    
-    {{ end }}
 
 </section>
-
-{{ template "_internal/pagination.html" . }}
 
 {{ end }}

@@ -460,8 +460,15 @@ table {
 }
 // }}}
 // Tag list.html {{{
+.tag-list {
+
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
 .tag-container {
-    float: left;
     width: 200px;
     background-color: #fafafa;
     margin: 10px;
