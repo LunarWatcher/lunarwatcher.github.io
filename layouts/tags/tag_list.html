@@ -11,9 +11,11 @@
     <div class="tag-list">
         {{ range .Pages }}
         <div class="tag-container">
-            <p><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></p>
+            <p><a href="{{ .Permalink }}">#{{ .Title | markdownify }}</a></p>
             {{ if .Params.description }}
                 <p>{{.Params.description}}</p>
+            {{ else if isset .Site.Params.tags .Title }}
+                <p>{{ index .Site.Params.tags .Title }}</p>
             {{ end }}
         </div>
         {{ end }}

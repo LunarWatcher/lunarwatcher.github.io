@@ -13,17 +13,18 @@
 }
 
 @media screen and (min-width: 1212px) {
+    main {
+        display: flex;
+        align-items: flex-start;
+    }
     #content {
-        width: 73% !important; 
-        float: left !important;
         padding: 4px;
-        margin-left: 309px; /* Factors in the padding from .toc-container */
+        /*margin-left: 309px; /* Factors in the padding from .toc-container */
     }
     .toc-container {
         width: 289px !important;
-        position: fixed;
-        float: left !important;
-        height: 100%;
+        align-self: flex-start;
+        top: 0;
     }
 }
 @media screen and (max-width: 1211px) {
@@ -34,6 +35,25 @@
 }
 .toc-container {
     padding: 10px;
+    overflow: visible;
+    flex: 0 1 auto;
+}
+
+#TableOfContents {
+    font-size: 13px !important;
+    overflow: auto;
+}
+
+#TableOfContents ul ul {
+    margin-bottom: 0px;
+}
+
+#TableOfContents > ul > li > ul > li > a {
+  font-weight: bold;
+}
+
+#TableOfContents > ul > li > ul > li > ul > li > ul > li > ul > li  {
+    display: none;
 }
         </style>
         {{ end  }}

@@ -13,7 +13,7 @@ disablePathToLower: false
 markup:
   goldmark:
     extensions:
-      linkify: false
+      linkify: true
     renderer:
       unsafe: true
   highlight: 
@@ -59,3 +59,5 @@ params:
   twitter: OliviaZoe0
   github: LunarWatcher
   deviantart: oliviazoe0
+  tags:
+    c++: Posts and notes about the C++ language. This description pretty much only exists so I can test whether or not my config.yaml-based system for descriptions work :)

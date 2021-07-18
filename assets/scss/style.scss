@@ -412,23 +412,6 @@ div.article {
     }
 }
 
-#TableOfContents {
-    font-size: 13px !important;
-    overflow: auto;
-}
-
-#TableOfContents ul ul {
-    margin-bottom: 0px;
-}
-
-#TableOfContents > ul > li > ul > li > a {
-  font-weight: bold;
-}
-
-#TableOfContents > ul > li > ul > li > ul > li > ul > li > ul > li  {
-    display: none;
-}
-
 // who in the fuck thought 6px is readable?!
 .cardinality > text {
     font-size: 12px;
