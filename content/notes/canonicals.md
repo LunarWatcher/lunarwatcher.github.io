@@ -67,6 +67,8 @@ Note that certain exceptions are instead listed as [a part of Java](#java)
 * IMEI null: https://stackoverflow.com/q/55173823/6296561
 * getExternalStorageDirectory deprecated: https://stackoverflow.com/q/57116335/6296561
 
+### Fragments
+* `findViewByID` in fragment: https://stackoverflow.com/q/6495898/6296561
 
 ## Kotlin
 
