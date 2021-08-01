@@ -108,9 +108,8 @@ See [Java](#java) for some base exceptions
 
 ### Conflicts
 * Find: https://stackoverflow.com/q/21311727/6296561
-* Duplicate class: https://stackoverflow.com/a/56029604/6296561
-* Exclude package: https://stackoverflow.com/q/30942825/6296561
 * Duplicate classes: https://stackoverflow.com/q/56029393/6296561
+* Exclude package: https://stackoverflow.com/q/30942825/6296561
 
 ## Android Studio
 
