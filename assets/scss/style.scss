@@ -1,3 +1,15 @@
+/*
+Dear past me...
+The fuck is this garbage?
+
+The CSS is so fucking messy it makes international politics look
+like something someone literally born yesterday could do.
+Fix your shit
+Thanks,
+Future you.
+
+P.S.: The fuck?!
+ */
 @import "syntax.scss";
 
 // Primary
@@ -86,10 +98,12 @@ a:hover {
     color: $pink-secondary !important;
 }
 
+// Bullet what?
 .bullet {
     list-style: disc;
 }
 
+// The fuck kind of name is this?
 .null-list {
     list-style: none;
     li:before {
@@ -97,6 +111,7 @@ a:hover {
     }
 }
 
+// WHY?!
 ul {
     list-style: none;
     margin-left: 0;
@@ -116,19 +131,12 @@ ol {
     margin-left: 30px;
 }
 
-ul {
-    margin-left: 0;
-    padding-left: 0;
-    li {
-        padding-left: 1em;
-        text-indent: -1em;
-    }
-}
 
 .center {
     text-align: center;
 }
 
+// Fantastic job.
 .pad20px-topbot {
     padding: 20px 0;
 }
@@ -137,6 +145,7 @@ a {
     text-decoration: none;
 }
 
+// Dupes?
 h1, h2, h3, h4, h5, h6 { 
     color: $grey-primary; 
     font-weight: 400;
@@ -185,6 +194,7 @@ h1, h2 {
     display: block;
 }
 
+// Just use flexbox, dipshit. This isn't the dark ages.
 .right {
     display: block;
     float: right !important;
@@ -206,7 +216,7 @@ header nav {
         line-height: 64px;
     }
 }
-
+// Why do you do this to me?
 .sidenav {
     @extend .primary-theme;
     float: none;
@@ -255,7 +265,7 @@ header nav {
     }
 }
 
-@media screen and (max-width: 522px) {
+@media screen and (max-width: 670px) {
     .topnav { display: none; }
     .sidenav-trigger { display: inline-block !important; }
     .sidenav { padding-top: 60px; }
@@ -276,6 +286,7 @@ header nav {
     }
 }
 
+// The fuck, could you possibly make the names on these any more vague?
 .container, .toc-container{
     margin: 0 auto;
     width: 90%;
@@ -307,7 +318,7 @@ main, .toc-container {
 
 }
 
-// Spoilers
+// Spoilers {{{
 
 .spoiler {
     background-color: $pink-secondary;
@@ -332,7 +343,9 @@ blockquote.spoiler {
     color: #1f1f1f;
     
 }
+// }}}
 
+// Link stuff {{{
 a.btn {
     background-color: $pink-primary;
     width: 20px;
@@ -357,7 +370,7 @@ a.disabled {
     color: $white-primary !important;
     background-color: $grey-primary;
 }
-
+// }}}
 // the fuck were these for?
 //.box {
     //@extend .right;
@@ -456,6 +469,39 @@ table {
     background-color: #fafafa;
     margin: 10px;
     padding: 10px;
+}
+// }}}
+// Flexbox {{{
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+.flex-item {
+    flex: 1 1 300px;
+    min-width: 300px;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+}
+.flex-right {
+}
+
+// }}}
+// Table v2 {{{
+.plain-table-container > table {
+    border-style: none;
+    * {
+        border-style: none;
+    }
+    th {
+        padding-right: 2cm;
+    }
+    
+}
+tbody tr th {
+    text-align: left;
 }
 // }}}
 // vim:sw=4
