@@ -28,6 +28,9 @@
                 {{ end }}
             </p>
             {{ end }}
+            {{ if isset . "license" }}
+            <p>License: {{.license}}</p>
+            {{ end }}
             <p>{{ .description | markdownify}}</p>
         </div>
     {{ end }}

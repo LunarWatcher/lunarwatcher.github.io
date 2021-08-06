@@ -131,7 +131,7 @@ params:
     - name: Dawn
       languages: [Vimscript]
       state: ma
-      license: MIT
+      license: See repository (MIT + unlicense)
       link: https://github.com/LunarWatcher/Dawn
       description: |
         Generates projects in Vim, similar to what an IDE would, but with complete freedom wrt. what's generated.
