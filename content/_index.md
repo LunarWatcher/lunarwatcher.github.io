@@ -4,7 +4,7 @@ title: Home
 ---
 
 <div class="flex-container">
-    <div class="flex-item">
+    <div class="flex-item" style="flex: 2 1 300px;">
 {{< render >}}
 # About me
 
@@ -16,7 +16,7 @@ I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles).
 {{</ render >}}
     </div>
     <div class="flex-item flex-right">
-        <div class="plain-table-container" style="max-width: 400px;">
+        <div class="plain-table-container">
             <h1>Various info</h1>
             <table>
                 <tbody>
