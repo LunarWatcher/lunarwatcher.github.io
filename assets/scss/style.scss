@@ -82,7 +82,7 @@ ul.pagination li {
     padding: 0 1em;
 }
 
-// Elements 
+// Elements
 blockquote{
     border-left: 4px solid $pink-primary;
     padding-left: 10px;
@@ -146,8 +146,8 @@ a {
 }
 
 // Dupes?
-h1, h2, h3, h4, h5, h6 { 
-    color: $grey-primary; 
+h1, h2, h3, h4, h5, h6 {
+    color: $grey-primary;
     font-weight: 400;
 }
 h1, h2 {
@@ -172,7 +172,7 @@ h1, h2 {
     overflow: auto;
 
     a, a:visited {
-        color: $pink-primary !important;  
+        color: $pink-primary !important;
     }
 
     a:hover {
@@ -280,7 +280,7 @@ header nav {
         padding: 0 15px;
         line-height: 64px;
     }
-    
+
     a:hover {
         background-color: $grey-selected;
     }
@@ -305,12 +305,12 @@ header nav {
 body {
     display: flex;
     min-height: 100vh;
-    flex-direction: column; 
+    flex-direction: column;
 }
 main, .toc-container {
     display: block;
     flex: 1 0 auto;
-    
+
     .container {
         margin-top: 20px;
         margin-bottom: 20px;
@@ -323,7 +323,7 @@ main, .toc-container {
 .spoiler {
     background-color: $pink-secondary;
     transition: .5s ease-in;
-    
+
     > * {
         opacity: 0;
         transition: opacity .5s ease-in;
@@ -341,7 +341,7 @@ blockquote.spoiler {
     }
     background-color: $white-primary;
     color: #1f1f1f;
-    
+
 }
 // }}}
 
@@ -392,7 +392,7 @@ h3, h4, h5, h6 {
     font-weight: bold;
 }
 
-// Blogging 
+// Blogging
 
 .meta {
     font-size: 12px;
@@ -417,7 +417,7 @@ h3, h4, h5, h6 {
 
 div.article {
     padding-bottom: 3px;
-    border-bottom: 1px dashed black; 
+    border-bottom: 1px dashed black;
     h1 {
         border-bottom: none !important;
         margin-bottom: 0px !important;
@@ -446,10 +446,7 @@ table, th, tr, td {
     border: 1px solid black;
     border-collapse: collapse;
     padding: 3px;
-} 
-//tbody>tr:nth-child(even) {
-    //background-color: adjust-color($pink-secondary, $saturation: -46%, $lightness: 20%);
-//}
+}
 table {
     margin-top: 2px;
     margin-bottom: 8px;
@@ -472,20 +469,53 @@ table {
 }
 // }}}
 // Flexbox {{{
+// TODO: merge the tag flexbox and the home page flexbox
 .flex-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px; 
+    gap: 20px;
+}
+.flex-col {
+    @extend .flex-container;
+    flex-direction: column;
+}
+.flex-nowrap {
+    flex-wrap: none;
+}
+.flex-nostretch {
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.flex-box {
+    flex-wrap: wrap;
+    flex-direction: column;
+    display: flex;
 }
 .flex-item {
-    flex: 1 1 300px;
+    flex: 1 0 300px;
     min-width: 300px;
     max-width: -webkit-fit-content;
     max-width: -moz-fit-content;
     max-width: fit-content;
 }
-.flex-right {
+.flex-item-box {
+    // Use the flex-basis you dense little fuck.
+    // `auto` is bad for your health
+    flex: 1 1 320px;
+    min-width: 320px !important;
+    padding-left: 4px;
+    padding-right: 4px;
+
+}
+.flex-box-tab {
+    background-color: lighten($pink-primary, 20%);
+    padding: 4px;
+    border-radius: 5px;
+    
+}
+p.flex-box-name  {
+    font-size: 1.5em;
 }
 
 // }}}
@@ -498,10 +528,28 @@ table {
     th {
         padding-right: 2cm;
     }
-    
+
 }
 tbody tr th {
     text-align: left;
 }
+// }}}
+// Fancy link shit {{{
+.button, .button:visited, button:active {
+    @extend .shade-box;
+    background-color: $pink-secondary;
+    color: white !important;
+    padding: 4px;
+    margin: 10px !important;
+    border-radius: 2px;
+    font-size: 1.5em;
+}
+.shade-box {
+    box-shadow: 0 7px 14px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+    padding: 10px;
+}
+// }}}
+// Generic shit {{{
+.pad2px { padding: 2px; }
 // }}}
 // vim:sw=4

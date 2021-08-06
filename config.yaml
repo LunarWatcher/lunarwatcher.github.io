@@ -67,3 +67,133 @@ params:
   deviantart: oliviazoe0
   tags:
     c++: Posts and notes about the C++ language. This description pretty much only exists so I can test whether or not my config.yaml-based system for descriptions work :)
+  projects:
+    - name: This website :)
+      languages: [HTML, SCSS, JavaScript, Go templates]
+      state: ad
+      link: https://github.com/LunarWatcher/lunarwatcher.github.io
+      license: See repository
+      description: |
+        My website (you're here!), where I put whatever I feel like adding, and periodically torture myself with aligning divs.
+    - name: Genesis
+      languages: [C++, GLSL, CMake]
+      state: ad
+      link: https://github.com/lunarwatcher/Genesis
+      license: MIT
+      description: |
+        WIP game with currently no gameplay, because I wanted to do something with shaders.
+    - name: Dragon
+      languages: [Python]
+      state: ad
+      link: https://github.com/LunarWatcher/Dragon
+      license: MIT
+      description: |
+        Dragon is a bot to handle the "grunt work" of edits. This primarily means stuff that can be done with little effort,
+        but that's time-consuming due to the quantity.
+    - name: Skye
+      languages: [Vimscript, Vim9script, C++]
+      state: sp
+      license: MIT
+      link: https://github.com/LunarWatcher/Skye.vim
+      description: |
+        An attempt at integrating some GitHub support into Vim, because nothing quite says masochism like Vimscript and C++ interop with web requests.
+
+        Vim and terminals already have plenty of support for Git, but GitHub support in Vim is scarce.
+    - name: Acacia
+      languages: [Vimscript, C++]
+      state: sp
+      license: MIT
+      link: https://github.com/LunarWatcher/Acacia
+      description: |
+        Acacia tries to bring tree-sitter into Vim, accelerated by how Neovim's entire highlighting API is outside its core, proving the sustainability
+        of a project like this, even without tree-sitter support in Vim itself.
+    - name: Auto pairs
+      languages: [Vimscript]
+      state: ma
+      license: MIT
+      link: https://github.com/LunarWatcher/auto-pairs
+      description: |
+        Initially a fork from [jiangmiao/auto-pairs](//github.com/jiangmiao/auto-pairs), but that today consists of heavy improvements to the original.
+
+        With several huge feature updates, the project aims to keep auto-pairs alive, even if its original author disappeared without arranging
+        future maintenance.
+    - name: Amber
+      languages: [Vimscript]
+      state: ma
+      license: MIT
+      link: https://github.com/LunarWatcher/Amber
+      description: |
+        Heavily inspired by a Neovim plugin, Amber tries to make the colorscheme design process less painful
+        by letting you edit and preview live.
+
+        While there's certain restrictions on vimscript (because Vim _really_ doesn't like reloading that),
+        all standard `highlight`s are supported, as well as with support for variables.
+    - name: Dawn
+      languages: [Vimscript]
+      state: ma
+      license: MIT
+      link: https://github.com/LunarWatcher/Dawn
+      description: |
+        Generates projects in Vim, similar to what an IDE would, but with complete freedom wrt. what's generated.
+
+        There's built-in structures for (my) C++ CMake structure, and a standard Vimscript structure.
+        The repo is open for additional templates, however, and users can additionally customize existing templates,
+        or add completely new ones.
+    - name: DiscordWebhooks.cpp
+      link: https://github.com/LunarWatcher/DiscordWebhooks.cpp
+      state: po
+      languages: [C++]
+      license: MIT
+      description: |
+        Reads RSS feeds and sends updates to channels through webhooks.
+
+        Self-hosted, bot-less option to various RSS bots. (Built because one of said bots were
+        far too flaky, prompting me to make one instead of hoping it works and doesn't have another
+        multi-day streak of downtime)
+    - name: doctor.vim
+      state: in
+      license: MIT
+      languages: [Vimscript, Vim9Script]
+      link: https://github.com/LunarWatcher/doctor.vim
+      description: |
+        doctor.el, but in Vim.
+
+        Primarily intended to be a debug companion.
+    - name: Taskranger
+      state: de
+      license: MIT
+      link: https://github.com/LunarWatcher/Taskranger
+      description: |
+        An attempt at making an alternative to Taskwarrior, but that eventually died because my needs changed, along with my managing needs.
+      languages:
+        - C++
+  projectstate:
+    # vvvv commitment right here
+    ad:
+      name: Active
+      span: projact
+      desc: Projects in active development
+    sp:
+      name: Side-project
+      span: projside
+      desc: Side-projects that are in active development, but that aren't in as active development as main projects.
+    ma:
+      name: Maintained
+      span: projmain
+      desc: Projects that are being maintained, but that aren't under active development. Primarily applies the projects where ideas have dried up.
+    in:
+      name: Inactive
+      span: projin
+      desc: Projects that are currently not receiving any attention.
+    po:
+      name: Patches only
+      span: projpat
+      desc: Projects only receiving patches.
+    ab:
+      name: Abandoned
+      span: projaban
+      desc: Projects that have been abandoned intentionally
+    de:
+      name: Dead
+      span: projdead
+      desc: Projects that have been abandoned due to circumstance, including (but not limited to) loss of interest, loss of need, or my focus being pulled elsewhere.

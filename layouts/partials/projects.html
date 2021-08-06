@@ -1,0 +1,40 @@
+<p>Legend:</p>
+{{ $states := .Site.Params.projectstate }}
+<ul>
+    {{ range $states }}
+    <li><span class="{{ .span }} pad2px">{{ .name }}</span>: {{ .desc }}</li>
+    {{ end }}
+</ul>
+
+<div class="projects flex-container center-823" style="margin-bottom: 3px;">
+    {{ range .Site.Params.projects }}
+        <div class="project flex-item-box shade-box">
+            <p class="flex-box-name">
+            {{ if isset . "link" }}
+            <a href="{{ .link }}">{{ .name }}</a>
+            {{ else }}
+                {{ .name }}
+            {{ end }}
+            {{ if and (isset . "state") (isset $states .state) }}
+                {{ with (index $states .state) }}
+                <span class="flex-box-tab {{ .span }}">{{.name}}</span>
+                {{ end }}
+            {{ end }}
+            </p>
+            {{ if isset . "languages" }}
+            <p>Written in:
+                {{ range .languages }}
+                <span class="flex-box-tab" data="{{ . }}">{{ . }}</span>
+                {{ end }}
+            </p>
+            {{ end }}
+            <p>{{ .description | markdownify}}</p>
+        </div>
+    {{ end }}
+</div>
+<br>
+<p>Note that not all repositories are listed here, either because they're not important, because they don't fit into the purpose of the list, or because I simply didn't care enough to put it on there. The full repo list is <a href="https://github.com/LunarWatcher?tab=repositories">on GitHub</a>.</p>
+
+{{ $base := resources.Get "scss/projects.scss" }}
+{{ $style := $base | resources.ToCSS | resources.Minify }}
+<link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
