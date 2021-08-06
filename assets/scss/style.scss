@@ -452,22 +452,6 @@ table {
     margin-bottom: 8px;
 }
 // }}}
-// Tag list.html {{{
-.tag-list {
-
-    flex: 1 0 auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-}
-.tag-container {
-    width: 200px;
-    background-color: #fafafa;
-    margin: 10px;
-    padding: 10px;
-}
-// }}}
 // Flexbox {{{
 // TODO: merge the tag flexbox and the home page flexbox
 .flex-container {
