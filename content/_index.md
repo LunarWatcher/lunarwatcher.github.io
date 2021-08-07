@@ -13,6 +13,9 @@ Hiya! I'm Olivia (AKA Zoe, LunarWatcher, and a few other nick- and usernames). I
 Nowadays I mostly work with C++ (when I'm not drawing or [growing the factory](https://factorio.com)), but I also know and use a bunch of other languages, some times just because I can. In case the URL of this website didn't give it away already, I keep all my projects [on GitHub](//github.com/LunarWatcher), though there's also [an overview here](#projects).
 
 I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles).
+
+![Visitor counter](https://count.getloli.com/get/@LunarWatcherGitHubWeb?theme=rule34)
+
 {{</ render >}}
     </div>
     <div class="flex-item flex-right">
