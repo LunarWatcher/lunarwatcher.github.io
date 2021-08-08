@@ -26,7 +26,7 @@ This page contains all the various dupes I've found, sorted by categories.
 * Fragment->fragment: https://stackoverflow.com/q/5194548/6296561
 
 ### Crashing
-* It crashed: https://stackoverflow.com/q/56029393/6296561
+* It crashed: https://stackoverflow.com/q/23353173/6296561
 * Not responding: https://stackoverflow.com/q/704311/6296561
 
 Note that certain exceptions are instead listed as [a part of Java](#java)
