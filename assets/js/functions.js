@@ -16,11 +16,9 @@ function uwu() {
     let emojis = [
         "owo", "OwO",
         "uwu", "UwU",
-        ":3", "x3"
-    ];
-    let otherCrap = [
+        ":3", "x3",
         "rawr x3",
-        "<i>notices button</i>"
+        "<i>howls</i>"
     ];
 
     let body = document.body.getElementsByTagName("main")[0];
