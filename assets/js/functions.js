@@ -18,7 +18,9 @@ function uwu() {
         "uwu", "UwU",
         ":3", "x3",
         "rawr x3",
-        "<i>howls</i>"
+        "howls uwu",
+        "growl (╬ Ò ‸ Ó)",
+        "(* ^ ω ^)"
     ];
 
     let body = document.body.getElementsByTagName("main")[0];
