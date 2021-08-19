@@ -35,6 +35,7 @@ outputFormats:
 
 taxonomies:
   tag: tags
+  series: series
 
 menu:
   main:

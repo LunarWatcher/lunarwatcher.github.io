@@ -1,12 +1,14 @@
 {{ define "main" }}
 
 <h1>{{ .Title }}</h1>
-<span class="post-meta">Posted on {{ .Date.Format "January 2, 2006" }}</span>
+<span class="post-meta">Posted on {{ partial "dformat.html" . }}</span>
 
 {{ if isset .Params "tags" }}
     {{ partial "tags.html" .}}
 {{ end  }}
-
+{{ if isset .Params "series" }}
+    {{ partial "series.html" . }}
+{{ end }}
 {{ .Content }}
 
 {{ if not .Params.nocomments }}
