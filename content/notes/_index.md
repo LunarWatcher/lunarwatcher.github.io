@@ -28,3 +28,6 @@ Some of these may not be optimized for reading by other people either. Unlike [m
 
 ## Stack Overflow
 * [Canonicals](canonicals.html)
+
+## C++
+* [Macro cheatsheet](macro-cheatsheet.html)
