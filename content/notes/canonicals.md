@@ -88,7 +88,7 @@ See [Java](#java) for some base exceptions
 #### Generic exceptions
 * NullPointer: https://stackoverflow.com/q/218384
 * NumberFormat: https://stackoverflow.com/q/39849984/6296561
-* IndexOutOfBounds: https://stackoverflow.com/q/40006317/6296561
+* StringIndexOutOfBounds: https://stackoverflow.com/q/40006317/6296561
 * ArrayIndexOutOfBounds: https://stackoverflow.com/q/5554734/6296561
 * ClassCast: https://stackoverflow.com/q/907360/6296561
 
