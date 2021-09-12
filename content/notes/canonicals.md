@@ -80,6 +80,12 @@ See [Java](#java) for some base exceptions
 
 * Must implement abstract: https://stackoverflow.com/q/44189319/6296561
 
+### Compile-time errors (JVM)
+
+* Platform declaration conflict with generics: https://stackoverflow.com/q/51580168/6296561
+* Java function conflicts with variable getter: https://stackoverflow.com/q/44035263/6296561
+
+
 ## Java
 
 ### Crashing
