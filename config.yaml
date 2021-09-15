@@ -75,7 +75,7 @@ params:
       link: https://github.com/LunarWatcher/lunarwatcher.github.io
       license: See repository
       description: |
-        My website (you're here!), where I put whatever I feel like adding, and periodically torture myself with aligning divs.
+        My website (you're here!), where I add whatever I feel like adding, and periodically torture myself with aligning divs in flexboxes (including the flexbox you're reading this in right now).
     - name: Genesis
       languages: [C++, GLSL, CMake]
       state: ad
@@ -91,6 +91,14 @@ params:
       description: |
         Dragon is a bot to handle the "grunt work" of edits. This primarily means stuff that can be done with little effort,
         but that's time-consuming due to the quantity.
+    - name: upm
+      languages: [C++, CMake, Shell]
+      state: ad
+      link: https://github.com/LunarWatcher/upm
+      license: MIT
+      description: |
+        upm is a package manager meant to keep stuff up to date. Particularly useful on distros (*cough cough Debian and derivatives*) where the repos are
+        severely out of date, and minimum version dependencies have passed the unnecessarily old version in the repos.
     - name: Skye
       languages: [Vimscript, Vim9script, C++]
       state: sp
