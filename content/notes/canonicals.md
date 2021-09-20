@@ -79,6 +79,7 @@ Note that certain exceptions are instead listed as [a part of Java](#java)
 See [Java](#java) for some base exceptions
 
 * Must implement abstract: https://stackoverflow.com/q/44189319/6296561
+* Parameter specified as non-null is null: https://stackoverflow.com/q/44885783/6296561
 
 ### Compile-time errors (JVM)
 
