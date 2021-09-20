@@ -112,10 +112,14 @@ See [Java](#java) for some base exceptions
 
 ## Gradle
 
+### Generic
+* Uses deprecated API: https://stackoverflow.com/q/18311964/6296561
+
 ### Conflicts
 * Find: https://stackoverflow.com/q/21311727/6296561
 * Duplicate classes: https://stackoverflow.com/q/56029393/6296561
 * Exclude package: https://stackoverflow.com/q/30942825/6296561
+
 
 ## Android Studio
 
