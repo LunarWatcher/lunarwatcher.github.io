@@ -70,6 +70,7 @@ params:
   deviantart: oliviazoe0
   tags:
     c++: Posts and notes about the C++ language. This description pretty much only exists so I can test whether or not my config.yaml-based system for descriptions work :)
+    hacktoberfest: Posts about [Hacktoberfest](https://hacktoberfest.digitalocean.com/), a yearly event centered around contributing to open-source.
   projects:
     - name: This website :)
       languages: [HTML, SCSS, JavaScript, Go templates]

@@ -13,9 +13,9 @@
         <div class="shade-box" style="min-width: 200px; flex: 0 1 200px;">
             <p><a href="{{ .Permalink }}">#{{ .Title | markdownify }}</a></p>
             {{ if .Params.description }}
-                <p>{{.Params.description}}</p>
+                <p>{{ .Params.description }}</p>
             {{ else if isset .Site.Params.tags .Title }}
-                <p>{{ index .Site.Params.tags .Title }}</p>
+                <p>{{ index .Site.Params.tags .Title | markdownify }}</p>
             {{ end }}
         </div>
         {{ end }}
