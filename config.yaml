@@ -15,6 +15,7 @@ markup:
   goldmark:
     extensions:
       linkify: true
+      typographer: false
     renderer:
       unsafe: true
   highlight: 
