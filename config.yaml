@@ -11,6 +11,7 @@ pygmentsUseClasses: true
 disablePathToLower: false
 
 markup:
+  enableEmoji: true
   goldmark:
     extensions:
       linkify: true
