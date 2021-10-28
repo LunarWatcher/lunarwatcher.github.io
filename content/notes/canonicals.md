@@ -106,6 +106,10 @@ See [Java](#java) for some base exceptions
 ##### Begin object
 * but was string: https://stackoverflow.com/q/28418662/6296561
 
+### Syntax abuse
+
+* Top-level statements: https://stackoverflow.com/q/6151218/6296561
+
 ## Flutter
 
 ### Flutter --licenses
