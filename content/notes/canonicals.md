@@ -70,6 +70,9 @@ Note that certain exceptions are instead listed as [a part of Java](#java)
 ### Fragments
 * `findViewByID` in fragment: https://stackoverflow.com/q/6495898/6296561
 
+### Firebase
+* Null after callback: https://stackoverflow.com/q/57330766/6296561
+
 ## Kotlin
 
 ### Java interop
