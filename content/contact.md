@@ -37,5 +37,5 @@ Please consider opening an issue rather than contacting me directly. This is exc
 
 If not otherwise listed here, there's no particular restrictions aside the obvious one: _don't be an asshole_.
 
-I'm also completely fine with being DMed for pure social reasons.
+I'm also completely fine with being DMed for purely social reasons. I don't bite (unless bitten first).
 
