@@ -113,6 +113,10 @@ See [Java](#java) for some base exceptions
 
 * Top-level statements: https://stackoverflow.com/q/6151218/6296561
 
+### Compile time errors
+
+* Static reference to non-static: https://stackoverflow.com/q/4969171/6296561
+
 ## Flutter
 
 ### Flutter --licenses
