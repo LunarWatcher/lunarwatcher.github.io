@@ -26,6 +26,9 @@ Some of these may not be optimized for reading by other people either. Unlike [m
 ### OpenGL
 * [Matrix mouse picking](matrix-mouse-picking.html)
 
+### Logs
+* [Devlogs #1 + intro](devlogs-1.html)
+
 ## Stack Overflow
 * [Canonicals](canonicals.html)
 
