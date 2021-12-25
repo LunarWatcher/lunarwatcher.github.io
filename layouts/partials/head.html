@@ -7,9 +7,9 @@
 <!-- Visible metadata -->
 <title>{{ .Title }} | {{ .Site.Title }}</title>
 <!-- Scripts and stylesheets -->
-<script src="{{ (resources.Get "js/jquery.min.js").Permalink }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {{ if .Params.mermaid }}
-<script src="{{ (resources.Get "js/mermaid.min.js").Permalink }}"></script>
+<script src="https://unpkg.com/browse/mermaid@8.8.0/dist/mermaid.min.js"></script>
 {{ end }}
 
 {{ $base := resources.Get "scss/style.scss" }}
