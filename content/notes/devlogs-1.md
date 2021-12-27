@@ -14,4 +14,12 @@ Still not sure what m and ms really do. I'd assume the s indicates "start", cons
 
 I wonder if the two loops can be merged? Need to revisit for 4.0.0
 
+## 26.12.2021
+
+### Dawn
+
+Handled a PR for a go template that introduced some doubt around how I'm handling output. Verbosity was intended to keep track of any changes made, but that might also be undesired.
+
+Also not a super fan of git being hard-coded into templates. Might be worth introducing an option to auto-commit after generation, and then removing it from the template. Error handling doesn't appear to be a problem though, so it's fine for now, but would be about the least opinionated way of fixing it; i.e. supporting both in a configurable way, to make sure everyone's happy.
+
 [ap-55]: https://github.com/LunarWatcher/auto-pairs/issues/55
