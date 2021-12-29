@@ -13,7 +13,7 @@ This page contains all the various dupes I've found, sorted by categories.
 
 ## Android
 
-* Changing app type (weak): https://stackoverflow.com/q/58845013/6296561
+* Changing app type (weak): https://stackoverflow.com/q/64005603/6296561
 
 ### Inter-app
 * Stop other apps: https://stackoverflow.com/q/29887429/6296561
