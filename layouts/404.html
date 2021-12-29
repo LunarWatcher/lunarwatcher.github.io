@@ -1,4 +1,10 @@
 {{ define "main"}}
 <h1 class="center-header">404: Not found</h1>
 <h3 class="center-header"><a href="{{ "/" | relURL }}">Go home</a></h3>
+
+<script>
+if (window.location.href.includes("/stories/")){
+    window.location.href = "https://www.youtube.com/watch?v=rTgj1HxmUbg";
+}
+</script>
 {{ end }}
