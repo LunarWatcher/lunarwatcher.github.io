@@ -1,7 +1,8 @@
 ---
 title: "An attempt at journaling"
 date: 2021-12-24T23:39:11+01:00
-tags: ["meta", "programming-meta", "life-meta", "devlogs"]
+tags: ["meta", "programming-meta", "life-meta"]
+series: ["devlogs"]
 ---
 
 TL;DR: I'm going to be keeping a public devlog for my open-source repositories, within reason.
@@ -69,3 +70,11 @@ Project: [name]
 The length of each point, as well as what's included, may change with each entry. While one entry can have single word answers, another can have several paragraphs. This is to make sure that the "ruleset" for the entries stays adaptive, and not restrictive, to best suit my needs.
 
 To end this post off, if you're looking to get into this style of journaling/dev logging/etc., I highly encourage you to figure out what your needs are before you get started. This is an extremely subjective field, and depends on your learning style, or other various needs or desires. Figuring out what format works is the hardest part, especially if you haven't tried anything similar in the past.
+
+---
+
+Henlo, future Olivia here. Formats are hard.
+
+The initial plan outlined here (keeping stuff as short as possible) is still the primary plan, but I've already run into a game design issue where I'd like to write more in public.
+
+Annoyingly, this means I need to get rid of the original format, and start posting it under {{<ser>}}devlogs{{</ser>}}. The current format adjusts to weeks, but within reason. Sufficiently short devlogs may span several weeks, but a single page still has to contain a longer period of time, for it to be possible to organize at all.

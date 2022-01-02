@@ -374,22 +374,6 @@ a.disabled {
     background-color: $grey-primary;
 }
 // }}}
-// the fuck were these for?
-//.box {
-    //@extend .right;
-    //width: 18%;
-    //border-left: 2px solid $pink-primary;
-    //padding-left: 10px;
-//}
-
-//@media screen and (max-width: 740px) {
-    //.box {
-        //width: 100%;
-        //border-left: 0;
-        //padding-left: 0px;
-        //float: none;
-    //}
-//}
 
 h3, h4, h5, h6 {
     font-weight: bold;
@@ -434,6 +418,57 @@ div.article {
         float: right;
         padding-top: 1.1%;
     }
+}
+
+// Table of contents
+@media screen and (min-width: 1088px) {
+    .toc h2 {
+        border-bottom: none !important;
+    }
+}
+
+@media screen and (min-width: 1212px) {
+    main {
+        display: flex;
+        align-items: flex-start;
+    }
+    #content {
+        padding: 4px;
+        /*margin-left: 309px; /* Factors in the padding from .toc-container */
+    }
+    .toc-container {
+        width: 289px !important;
+        align-self: flex-start;
+        top: 0;
+    }
+}
+@media screen and (max-width: 1211px) {
+    .toc-container {
+        float: none !important;
+        margin: 0 auto;
+    }
+}
+.toc-container {
+    padding: 10px;
+    overflow: visible;
+    flex: 0 1 auto;
+}
+
+#TableOfContents {
+    font-size: 13px !important;
+    overflow: auto;
+}
+
+#TableOfContents ul ul {
+    margin-bottom: 0px;
+}
+
+#TableOfContents > ul > li > ul > li > a {
+  font-weight: bold;
+}
+
+#TableOfContents > ul > li > ul > li > ul > li > ul > li > ul > li  {
+    display: none;
 }
 
 // tables {{{
@@ -528,5 +563,11 @@ tbody tr th {
 // }}}
 // Generic shit {{{
 .pad2px { padding: 2px; }
+// }}}
+// Post listing {{{
+.meta-container {
+    margin-bottom: 9px;
+    border-bottom: dotted 1px black;
+}
 // }}}
 // vim:sw=4

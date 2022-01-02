@@ -17,13 +17,18 @@
         {{ range .Pages }}
         <div class="article">
             <h1><a href="{{ .Permalink }}">{{ if .Draft }}{{ T "draft" }}: {{ end }}{{ .Title | markdownify }}</a></h1>
-            <time class="post-meta">{{ partial "dformat.html" . }}</time>
-            {{ if .Params.Category }}
-                <br><span class="post-meta">Post type: {{ .Params.Category }}</span>
-            {{ end }}
-            {{ if .Params.Tags }}
-                {{ partial "tags.html" . }}
-            {{ end }}
+            <div class="meta-container">
+                <time class="post-meta">{{ partial "dformat.html" . }}</time><br>
+                {{ if .Params.Category }}
+                    <br><span class="post-meta">Post type: {{ .Params.Category }}</span>
+                {{ end }}
+                {{ if .Params.Tags }}
+                    {{ partial "tags.html" . }}
+                {{ end }}
+                {{ if .Params.series }}
+                    {{ partial "series.html" . }}
+                {{ end }}
+            </div>
             <p>{{ .Summary }}</p>
             <div>
                 <a href="{{ .RelPermalink }}">Read More...</a>
