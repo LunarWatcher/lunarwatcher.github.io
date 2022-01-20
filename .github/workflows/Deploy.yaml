@@ -25,9 +25,9 @@ jobs:
       - name: Run hugo and commit
         shell: bash
         run: |
-          pwd
-          cd public && git rm -rf . && cd ..
+          mkdir public 
+          hugo --minify
+          cd public && git init && git add -A
           git config --global user.name github-actions[bot]
           git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
-          hugo --minify
-          cd public && git add -A && git commit -m "Deploy changes for ${GITHUB_SHA}" && git push origin deployment
+          git commit -m "Deploy changes for ${GITHUB_SHA}" && git push origin deployment --force
