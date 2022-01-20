@@ -32,5 +32,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: deployment
-          force: false
+          force: true
           directory: public
