@@ -156,3 +156,7 @@ See [Java](#java) for some base exceptions
 
 ### Linking
 * Undefined reference: https://stackoverflow.com/q/12573816/6296561
+
+## Meta
+
+* Political display name: https://meta.stackoverflow.com/a/349167/6296561
