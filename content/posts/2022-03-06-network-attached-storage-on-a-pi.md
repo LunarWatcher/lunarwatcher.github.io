@@ -35,4 +35,4 @@ Granted, there are better ways of doing a hacky NAS, but being a Linux main, thi
 
 As a reminder, the measurements done were purely on the network speed, and the HDD was never a part of the 320-330Mbps measurement. Consequently, I have no idea whether it's able to keep up. I could check, of course, but I could also not, which I settled on. It keeps up with what I need it to do, and that remains good enough for me.
 
-**TL;DR:** SSHFS is the best of the protocols I've tried, though there's definitely better options and hardware to explore. Having a (heavily abused) Pi 3B+ for pulling the load probably isn't helping performance, but it keeps up and that's all I want. In either case, it's an option worth exploring if you're messing around with self-created NAS systems.
+**TL;DR:** SSHFS is the best of the protocols I've tried, though there's definitely better options and hardware to explore. Having a (heavily abused; it's running Pi-hole and a number:tm: of bots) Pi 3B+ for pulling the load probably isn't helping performance, but it keeps up and that's all I want. In either case, it's an option worth exploring if you're messing around with self-created NAS systems.
