@@ -1,6 +1,6 @@
 baseURL: https://lunarwatcher.github.io
 disablePathToLower: true
-languageCode: en-ub
+languageCode: en-uk
 title: Olivia's blog
 publishDir: public
 permalinks:
