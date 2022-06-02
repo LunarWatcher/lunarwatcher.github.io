@@ -1,4 +1,3 @@
-
 function openSidenav() {
     document.getElementById("sidenav").style.width = "100%";
 }

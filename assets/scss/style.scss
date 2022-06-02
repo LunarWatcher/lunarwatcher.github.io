@@ -571,4 +571,9 @@ tbody tr th {
     border-bottom: dotted 1px black;
 }
 // }}}
+// Page list; I assume I can extend this to support other styles anyway {{{
+.page-groups {
+    display: flex;
+}
+// }}}
 // vim:sw=4
