@@ -2,7 +2,7 @@
 
 <h1>{{ .Title }}</h1>
 <span class="post-meta">Posted on {{ partial "dformat.html" . }}</span>
-
+<br>
 {{ if isset .Params "tags" }}
     {{ partial "tags.html" .}}
 {{ end  }}
