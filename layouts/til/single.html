@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+<h1>{{ .Title }}</h1>
+<span class="post-meta">Posted on {{ partial "dformat.html" . }}</span>
+
+{{ if isset .Params "tags" }}
+    {{ partial "tags.html" .}}
+{{ end  }}
+<p class="post-meta">This post is a part of <a href="/til/">TIL</a>; a series containing short posts of lessons I've learned the hard way.</p>
+{{ .Content }}
+
+{{ if not .Params.nocomments }}
+    <div class="comments">
+        <hr>
+        <h2 style="padding-top: 20px !important;">Comments</h2>
+        <i><p>All comments posted either through utteranc.es or manually on the associated GitHub issue end up on an associated issue in the <a href="https://github.com/LunarWatcher/lunarwatcher.github.io">website GitHub repo</a>, and as such are required to follow the <a href="https://github.com/LunarWatcher/lunarwatcher.github.io/blob/master/.github/CODE_OF_CONDUCT.md">project code of conduct</a>. Remember this while writing comments.</p></i>
+
+        <script src="https://utteranc.es/client.js"
+                repo="LunarWatcher/lunarwatcher.github.io"
+                issue-term="pathname"
+                label="comments"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <noscript>You've disabled JavaScript, which the comment system makes use of to load them on the site. The comment threads can be found <a href="https://github.com/LunarWatcher/lunarwatcher.github.io/issues">in the issues for this repo</a>, if you don't trust this site and/or utterances. Note that unless someone has already commented, there isn't an issue made for this page yet.</noscript>
+    </div>
+{{ end }}
+
+{{ end }}

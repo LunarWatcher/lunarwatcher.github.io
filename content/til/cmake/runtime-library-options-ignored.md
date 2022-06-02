@@ -1,6 +1,5 @@
 ---
 title: "Runtime library conflicts with CMake, and why CMake doesn't respect your options"
-type: posts
 tags: ["cmake"]
 date: 2022-06-02T19:01:26+02:00
 ---
