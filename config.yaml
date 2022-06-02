@@ -55,10 +55,14 @@ menu:
     name: Notes
     url: "/notes/"
     weight: 4
+  - identifier: TIL
+    name: TIL
+    url: "/til/"
+    weight: 5
   - identifier: Emoji reference 
     name: Emoji reference
     url: "/emojis.html"
-    weight: 5
+    weight: 6
 
 params:
   discord: y3vd2vAYru
