@@ -30,11 +30,11 @@ After that, it's just a matter of setting up a proxy connection to use `localhos
 
 Admittedly, I haven't tested whether or not that command results in a part accessible to the rest of the network, but my use-case is so limited it's likely irrelevant. 
 
-## Windows and an SSH-centric system
+## How Windows deals with an SSH-centric system
 
-Windows wasn't my main focus when setting up an SSH NAS, because I wasn't expecting to use it as a driver OS, well, ever. Personally, anyway; I'm sure I'll have jobs in the future where I get stuck on Windows, but my NAS ain't for work, so that's absolutely irrelevant. 
+Windows wasn't my main focus when setting up an SSH NAS, because I wasn't expecting to use it as a driver OS, well, ever. Personally, anyway; I'm sure I'll have jobs in the future where I get stuck on Windows, but my NAS ain't for work, so that's absolutely irrelevant. It's no secret that Windows is a pain to work with at times, and support for ssh came shockingly late.
 
-Sshfs on Windows is... not great.
+As a result, it probably doesn't come as a shock that sshfs on Windows is... not great.
 
 I've mainly mounted from the terminal on Linux, in part because my private key is password protected, and adding a network share to fstab is scary. I know, weak argument, but I prefer messing with high-level stuff that can't fuck up my OS if I make a single typo.
 
@@ -57,6 +57,8 @@ Bonus: using `sshfs.exe` instead of `sshfs.exe` makes the disk fully impossible 
 Windows' UI does _not_ like the password protected private key, and neither do any of the other GUIs; neither sirikali nor sshfs-win-manager work with password-protected private keys.
 
 Password-protecting might be the reason it's a bit annoying on Linux as well, admittedly, but it's so much more convenient to work with, at least for my relatively limited use at the moment. The command isn't a clusterfuck anyway.
+
+How extensively Windows can be used in an SSH-centric system is unclear at the moment. It barely supports the basics at the time of writing. Consequently, I wouldn't recommend going full SSH if you plan on having any Windows computers actively using it.
 
 ## Closing words
 
