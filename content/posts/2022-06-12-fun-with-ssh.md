@@ -52,9 +52,11 @@ set PATH=C:\Program Files\SSHFS-Win\bin\;%PATH%
 sshfs-win.exe svc \sshfs.kr\pi@<ip>\<path> Z:
 ```
 
-Bonus: using `sshfs.exe` instead of `sshfs.exe` makes the disk fully impossible to unmount, at least if `-d` isn't supplied. It's registered as a local disk. 
+Bonus: using `sshfs.exe` instead of `sshfs-win.exe` makes the disk fully impossible to unmount, at least if `-d` isn't supplied. It's registered as a local disk with `sshfs.exe` for whatever reason, and the explorer does not provide a button for unmounting. Killing the sshfs process simply makes the explorer error out, but it doesn't remove the disk.
 
-Windows' UI does _not_ like the password protected private key, and neither do any of the other GUIs; neither sirikali nor sshfs-win-manager work with password-protected private keys.
+Rebooting did make the drive go away, but that's a bit overkill.
+
+Windows' own UI does _not_ like the password protected private key, and neither do any of the other UIs; neither sirikali nor sshfs-win-manager work with password-protected private keys.
 
 Password-protecting might be the reason it's a bit annoying on Linux as well, admittedly, but it's so much more convenient to work with, at least for my relatively limited use at the moment. The command isn't a clusterfuck anyway.
 
