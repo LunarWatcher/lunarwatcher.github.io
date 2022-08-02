@@ -78,6 +78,12 @@ params:
       license: See repository
       description: |
         My website (you're here!), where I add whatever I feel like adding, and periodically torture myself with aligning divs in flexboxes (including the flexbox you're reading this in right now).
+    - name: Dotfiles
+      languages: [Vimscript, "vim9script (soon:tm:)", makefiles, vim snippets]
+      state: ad
+      link: https://github.com/LunarWatcher/dotfiles
+      license: unlicense
+      description: A collection of dotfiles I use. Expands whenever I see a need to.
     - name: Genesis
       languages: [C++, GLSL, CMake]
       state: ad
@@ -91,10 +97,10 @@ params:
       link: https://github.com/LunarWatcher/Dragon
       license: MIT
       description: |
-        Dragon is a bot to handle the "grunt work" of edits. This primarily means stuff that can be done with little effort,
+        Dragon is a bot to handle the "grunt work" of edits on Stack Overflow. This primarily means stuff that can be done with little effort,
         but that's time-consuming due to the quantity.
     - name: upm
-      languages: [C++, CMake, Shell]
+      languages: [C++, CMake, Shell, Lua]
       state: ad
       link: https://github.com/LunarWatcher/upm
       license: MIT
@@ -161,8 +167,15 @@ params:
         Self-hosted, bot-less option to various RSS bots. (Built because one of said bots were
         far too flaky, prompting me to make one instead of hoping it works and doesn't have another
         multi-day streak of downtime)
+    - name: Vimsence-concurrent
+      link: https://github.com/LunarWatcher/vimsence-concurrent
+      state: upc
+      languages: [TBD]
+      license: MIT
+      description: |
+        vimsence, but concurrent, vim9-compatible, and running on jobs
     - name: doctor.vim
-      state: in
+      state: de
       license: MIT
       languages: [Vimscript, Vim9Script]
       link: https://github.com/LunarWatcher/doctor.vim
@@ -208,3 +221,7 @@ params:
       name: Dead
       span: projdead
       desc: Projects that have been abandoned due to circumstance, including (but not limited to) loss of interest, loss of need, or my focus being pulled elsewhere.
+    upc:
+      name: Upcoming
+      span: projupc
+      desc: Upcoming projects; stay tuned!
