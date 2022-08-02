@@ -124,6 +124,13 @@ params:
       description: |
         Acacia tries to bring tree-sitter into Vim, accelerated by how Neovim's entire highlighting API is outside its core, proving the sustainability
         of a project like this, even without tree-sitter support in Vim itself.
+    - name: Vimsence-concurrent
+      link: https://github.com/LunarWatcher/vimsence-concurrent
+      state: upc
+      languages: [TBD]
+      license: MIT
+      description: |
+        vimsence, but concurrent, vim9-compatible, and running on jobs
     - name: Auto pairs
       languages: [Vimscript]
       state: ma
@@ -167,13 +174,6 @@ params:
         Self-hosted, bot-less option to various RSS bots. (Built because one of said bots were
         far too flaky, prompting me to make one instead of hoping it works and doesn't have another
         multi-day streak of downtime)
-    - name: Vimsence-concurrent
-      link: https://github.com/LunarWatcher/vimsence-concurrent
-      state: upc
-      languages: [TBD]
-      license: MIT
-      description: |
-        vimsence, but concurrent, vim9-compatible, and running on jobs
     - name: doctor.vim
       state: de
       license: MIT
