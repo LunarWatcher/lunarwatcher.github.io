@@ -462,6 +462,42 @@ As is tradition with the Lua API, there's different functions for different retu
 * `lua_pushinteger`
 * `lua_pushnumber`
 * `lua_pushboolean`
+* `lua_pushcfunction`
+* `lua_pushnil`
+* ... there's quite a few of these, and I highly encourage you to look them up [in the manual](https://www.lua.org/manual/5.4/manual.html)
+
+There's additionally functions for table operations, metatables, and userdata, but those are a topic for another time.
+
+Let's demonstrate one of these; we'll start by defining a function in the header file:
+```cpp
+extern int demo_mathmagic(lua_State* state);
+```
+
+The goal of this function is to take a number as input, add the number 42, and return the value.
+
+We already covered input arguments, so that's straight-forward:
+```cpp
+double rawNumber = lua_tonumber(state, 1) + 42;
+```
+
+Adding in 42 directly saves us a second statement, though I've decided to save it in a variable for clarity in the article. Now we push the number and return 1:
+
+```cpp
+lua_pushnumber(state, rawNumber);
+return 1;
+```
+
+After `pushnumber()`, our stack consists of two elements (or more if there's more arguments); at position 1, there's the input number, and at position 2, there's `inputNumber + 42`, but obviously in the form of a number and not a mathematical expression. If our number was 0, that means position 1 contains the number 0, and position 2 contains the number 42.
+
+As outlined earlier, `return 1` signals to Lua that the top element of the stack (position 2) is a return value. You can verify that it works by running a couple calls against the function:
+```lua
+print(demo.mathmagic(0));
+print(demo.mathmagic(10));
+```
+
+However, it's worth noting that in this process, the integers are converted to doubles, to support decimal numbers. This means `demo.mathmagic(0.4)` results in 42.4, rather than 42, 43, or something else, all depending on how the internal rounding is handled when the type is converted from a double to an integer in the Lua API.
+
+Using these together in a bigger example is left as an exercise to the reader, in whatever way you see fit. Until tables become a topic, return values themselves are shockingly trivial, and are much clearer to work with than function parameters. You use a relevant function for the thing you're returning to add the thing to the stack, make your C function return the correct number corresponding to the number of return values, and voila, you have a return value of whatever type you may have.
 
 #### Side-note: memory management and userdata
 

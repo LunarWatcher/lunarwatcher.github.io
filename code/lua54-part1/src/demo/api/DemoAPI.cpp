@@ -52,6 +52,14 @@ int demo_cerrargs(lua_State* state) {
     return 0;
 }
 
+int demo_mathmagic(lua_State* state) {
+    
+    double rawNumber = lua_tonumber(state, 1) + 42;
+    lua_pushnumber(state, rawNumber);
+
+    return 1;
+}
+
 int luaopen_demo(lua_State* state) {
     // This array contains all the functions exported by your library.
     // The last element has to be {nullptr, nullptr} (or {NULL, NULL} for
@@ -65,6 +73,7 @@ int luaopen_demo(lua_State* state) {
         {"cerr", demo_cerr},
         {"cerrarg", demo_cerrarg},
         {"cerrargs", demo_cerrargs},
+        {"mathmagic", demo_mathmagic},
         {nullptr, nullptr}
     };
     luaL_newlib(state, functions);

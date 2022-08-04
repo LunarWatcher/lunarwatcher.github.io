@@ -18,3 +18,7 @@ demo.cerrargs("b");
 demo.cerrargs(false, true, false, 420, "a", nil, nil, nil)
 
 print("Hello, World!");
+
+print(demo.mathmagic(0));
+print(demo.mathmagic(10));
+print(demo.mathmagic(0.4));
