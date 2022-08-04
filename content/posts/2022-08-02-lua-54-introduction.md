@@ -169,6 +169,8 @@ int main() {
 
 If not, or when you're done, it's time to move on to one of the main reasons to embed Lua; customizable APIs.
 
+You're also not limited to just one file. You can run several, or mix it in with line execution (which I won't be covering).
+
 ### An initial library
 
 Libraries are just a fancy way of saying a thing you `require`, though I've also seen them called modules. The exact name isn't particularly important. What is, is how they're defined.
@@ -314,11 +316,13 @@ Simply put, the indices are offsets compared to either the top or the bottom, th
 
 Many operations with return types results in values being added to the stack. If you're not sure what you're dealing with in any given situation, [this great Stack Overflow answer](https://stackoverflow.com/a/59097940/6296561) includes a method for printing the stack, which is insanely useful if you're feeling insecure about the Lua stack.
 
+I'll cover the push arguments later, but it's worth taking note of `lua_pop()`. This function removes an item from the stack, and it takes an index in the same system described here. It's particularly useful to get rid of unwanted or temporary values, though that's worth covering later in more depth.
+
 ### Arguments and return values
 
 A lot of library functions you make are going to take arguments, and/or return values from the function.
 
-As a heads-up, I'll cover tables with and without metatables, and what exactly both those are, in a later article. For now, we'll stick with primitive input and output types.
+As a heads-up, I'll cover tables with and without metatables, and what exactly both those are, in a later article. For now, we'll stick with primitive input and output types, that being strings, ints, bools, and the obligatory nil (null) value.
 
 #### Arguments
 
@@ -449,6 +453,15 @@ demo.cerrargs(false, true, false, 420, "a", nil, nil, nil)
 Don't forget to add your new function to the functions array in `luaopen_demo`!
 
 #### Return values
+
+Previously, I mentioned how the return values work. By returning an int from the C API functions, you define the number of arguments to return. What this means is, simply, that return values are handled by returning the number of arguments from your API functions, and prior to the return, pushing all the return values onto the stack.
+
+As is tradition with the Lua API, there's different functions for different return types:
+
+* `lua_pushstring`
+* `lua_pushinteger`
+* `lua_pushnumber`
+* `lua_pushboolean`
 
 #### Side-note: memory management and userdata
 
