@@ -25,7 +25,7 @@ Back to the C API itself, this series cannot cover everything. It is expected yo
 
 And it will not cover:
 * General API design; though [Factorio](https://lua-api.factorio.com/latest/) is a solid case for demonstrating good API design (and on the other side, neovim shows how _not_ to do a Lua API, but that's a story for another time)
-* Programming basics or the basics of Lua
+* Programming basics or the basics of Lua; consider taking a dedicated programming course first, or reading a C or C++ book.
 
 The plan for the series, at the time of writing, is:
 
