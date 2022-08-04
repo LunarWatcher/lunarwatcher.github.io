@@ -1,5 +1,5 @@
 ---
-title: Lua 5.4: introduction to the C API
+title: "Lua 5.4: introduction to the C API"
 date: 2022-08-02T22:00:38+02:00
 series: "lua 5.4"
 tags: ["lua5.4"]
