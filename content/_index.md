@@ -14,8 +14,6 @@ Nowadays I mostly work with C++ (when I'm not drawing or [growing the factory](h
 
 I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles).
 
-![Visitor counter](https://count.getloli.com/get/@LunarWatcherGitHubWeb?theme=rule34)
-
 {{</ render >}}
     </div>
     <div class="flex-item flex-right">
