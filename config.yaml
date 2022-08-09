@@ -1,5 +1,5 @@
 baseURL: https://lunarwatcher.github.io
-languageCode: en-uk
+languageCode: en-GB
 title: Olivia's blog
 publishDir: public
 permalinks:

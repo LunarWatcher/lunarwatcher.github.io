@@ -5,6 +5,8 @@
 <meta http-equiv="Content-language" content = "en-GB"/>
 <meta name="google-site-verification" content="LcVM28dDCQR2BheUMJZ7wcfvXxSRqurrQ4u4G2g1b2s" />
 
+<link rel="canonical" href="{{ .Permalink }}">
+
 <!-- Visible metadata -->
 <title>{{ .Title }} | {{ .Site.Title }}</title>
 <!-- Scripts and stylesheets -->
@@ -18,10 +20,20 @@
 <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
 
 <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "/blog/feed.xml" | absURL }}" />
-<!--
+
+<!-- OpenGraph {{{ -->
 <meta property="og:title" content="{{ .Title }}" />
-<meta property="og:url" content="https://lunarwatcher.github.io/newsletter.html" />
+<meta property="og:url" content="{{ .Permalink }}" />
 {{ if .Params.description }}
 <meta property="og:description" content="{{ .Params.description }}" />
+{{ else }}
+<meta property="og:description" content="{{ .Summary }}"
 {{ end }}
--->
+<meta property="og:site_name" content="{{ site.Title }}" />
+<meta property="og:locale" content="{{ site.languageCode }}" />
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/4/48/Gay_Pride_Flag.svg" />
+<!-- }}} -->
+<!-- Twitter {{{ -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:creator" content="@{{ Site.params.twitter }}"
+<!-- }}} -->
