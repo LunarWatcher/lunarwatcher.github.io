@@ -1,5 +1,8 @@
 ---
+title: Privacy policy
 ---
+
+**Last updated:** 09.08.2022. See [the GH repo](https://github.com/LunarWatcher/lunarwatcher.github.io/blob/master/content/privacy.md) for page history.
 
 **TL;DR:** (but not a substitute for the full policy); I do not collect data, though GitHub Pages may, external CDNs may, and any content embedded may also collect data. See the privacy policies of the external services to see what they collect, if anything.
 
@@ -9,6 +12,8 @@ This website does not intentionally collect any data.
 * No cookies
 * No FLoCs
 * No other scripts intentionally trying to get me data
+
+None of the data that is collected is under my control, nor is it collected for my use.
 
 ## Third party content
 
