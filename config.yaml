@@ -124,13 +124,13 @@ params:
       description: |
         Acacia tries to bring tree-sitter into Vim, accelerated by how Neovim's entire highlighting API is outside its core, proving the sustainability
         of a project like this, even without tree-sitter support in Vim itself.
-    - name: Vimsence-concurrent
-      link: https://github.com/LunarWatcher/vimsence-concurrent
+    - name: doesnotfail2ban
+      link: https://github.com/LunarWatcher/doesnotfail2ban
       state: upc
-      languages: [TBD]
+      languages: [C++]
       license: MIT
       description: |
-        vimsence, but concurrent, vim9-compatible, and running on jobs. The repo is private until the initial release.
+        fail2ban but functional, fast, and reliable, with a higher focus on statistics and data
     - name: Auto pairs
       languages: [Vimscript]
       state: ma
