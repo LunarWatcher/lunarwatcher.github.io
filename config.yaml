@@ -224,4 +224,4 @@ params:
     upc:
       name: Upcoming
       span: projupc
-      desc: Upcoming projects; stay tuned!
+      desc: Upcoming projects; stay tuned! The repos for these projects exist, but have not been made public
