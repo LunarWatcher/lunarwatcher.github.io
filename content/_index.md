@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Home
+description: 
 ---
 
 <div class="flex-container">
@@ -30,16 +31,12 @@ I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles).
                         <td>Vim</td>
                     </tr>
                     <tr>
-                        <th>Primary languages</th>
-                        <td>C++ (Conan, CMake), Vimscript, shell, Python</td>
+                        <th>Primary programming languages</th>
+                        <td>C++ (Conan, CMake), Vimscript, shell (bash/zsh-flavoured), Python</td>
                     </tr>
                     <tr>
-                        <th>Flexboxes</th>
-                        <td>Probably too many</td>
-                    </tr>
-                    <tr>
-                        <th>Out of ideas for table content?</th>
-                        <td>Yes</td>
+                        <th>Timezone</th>
+                        <td>UTC+1 (UTC+2 during summer [by force](https://www.bloomberg.com/news/articles/2021-03-11/will-daylight-saving-time-ever-end); fuck DST)</td>
                     </tr>
                 </tbody>
             </table>
