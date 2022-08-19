@@ -31,6 +31,8 @@ ss >> std::get_time(tm, timePattern.c_str());
 auto res = std::chrono::system_clock::from_time_t(std::mktime(tm));
 ```
 
+The idea here is to let the parser override the time in all undefined fields. This means that everything else is compared relative to today. Did only the day, month, and time get inputted? Use the current year, infer the millis from that. Stonks!
+
 Though honestly, std::chrono having such abysmal support presents challenges. To print it, it has to be converted back to a `struct tm`, and shoved through `put_time`, or alternatively `strftime` if you happen to understand the parameters of it.
 It might be worth just leaving it as an `std::tm` instead to avoid unnecessary conversions.
 
