@@ -21,4 +21,4 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til), this is a long list
 
 ## Conan
 
-* [The modern way to limit Conan's CPU use]({{<ref path="/til/cpu-core-limiting.md">}})
+* [The modern way to limit Conan's CPU use]({{<ref path="/til/conan/cpu-core-limiting.md">}})
