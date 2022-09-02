@@ -13,8 +13,12 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til), this is a long list
 
 ## C++
 
-* [C++ time sucks: incomplete time parsing](/til/cpp/incomplete-time-parsing.md)
+* [C++ time sucks: incomplete time parsing]({{<ref path="/til/cpp/incomplete-time-parsing.md">}})
 
 ## CMake
 
-* [Setting the MSVC runtime library in CMake, and why CMake doesn't respect your options](/til/cmake/runtime-library-options-ignored.html)
+* [Setting the MSVC runtime library in CMake, and why CMake doesn't respect your options]({{<ref path="/til/cmake/runtime-library-options-ignored.md">}})
+
+## Conan
+
+* [The modern way to limit Conan's CPU use]({{<ref path="/til/cpu-core-limiting.md">}})
