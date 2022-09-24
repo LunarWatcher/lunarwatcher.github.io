@@ -36,7 +36,7 @@ I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles).
                     </tr>
                     <tr>
                         <th>Timezone</th>
-                        <td>UTC+1 (UTC+2 during summer [by force](https://www.bloomberg.com/news/articles/2021-03-11/will-daylight-saving-time-ever-end); fuck DST)</td>
+                        <td>UTC+1 (UTC+2 during summer <a href="https://www.bloomberg.com/news/articles/2021-03-11/will-daylight-saving-time-ever-end">by force</a>; fuck DST)</td>
                     </tr>
                 </tbody>
             </table>
