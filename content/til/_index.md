@@ -22,3 +22,7 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til), this is a long list
 ## Conan
 
 * [The modern way to limit Conan's CPU use]({{<ref path="/til/conan/cpu-core-limiting.md">}})
+
+## Linux
+
+* [Disabling SSH password auth on Ubuntu Server]({{<ref path="/til/linux/disable-password-auth-ubuntu-server.md">}})
