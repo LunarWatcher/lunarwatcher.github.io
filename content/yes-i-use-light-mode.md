@@ -15,7 +15,7 @@ Some commonly cited reasons for using dark mode:
 * It's easier to read
 * It's better working in the dark with dark mode
 * It looks better
-* "I don't want a flashlight", [commonly accompanied with this thought of developers who use light mode](https://twitter.com/discord/status/974022175379222528) (tweet not embedded due to privacy issues from Twitter injecting bullshit I didn't ask for on my website)<br>
+* "I don't want a flashlight", [commonly accompanied with this thought of developers who use light mode](https://twitter.com/discord/status/974022175379222528) (tweet not embedded due to privacy issues from Twitter injecting bullshit I didn't ask for onto my website)<br>
     ... and this general attitude shows up far too often. 
 
 Admittedly, I do use dark mode for a couple programs, and I know dark mode does have some uses. Having a dark/light mode that automatically switches based on the time of day in a car has practical uses, but that isn't a screen you should be staring at for several hours straight anyway. I also use dark mode in Krita, in part because I won't be staring at the interface itself. Using dark mode reduces the attention the interface, which I won't be looking to much at anyway, tries to get. Also, the canvas itself usually starts out on a light grey color, so it's mixed.
