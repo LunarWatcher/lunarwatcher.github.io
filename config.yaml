@@ -115,14 +115,6 @@ params:
         An attempt at integrating some GitHub support into Vim, because nothing quite says masochism like Vimscript and C++ interop with web requests.
 
         Vim and terminals already have plenty of support for Git, but GitHub support in Vim is scarce.
-    - name: Acacia
-      languages: [Vimscript, C++]
-      state: sp
-      license: MIT
-      link: https://github.com/LunarWatcher/Acacia
-      description: |
-        Acacia tries to bring tree-sitter into Vim, accelerated by how Neovim's entire highlighting API is outside its core, proving the sustainability
-        of a project like this, even without tree-sitter support in Vim itself.
     - name: doesnotfail2ban
       link: https://github.com/LunarWatcher/doesnotfail2ban
       state: upc
@@ -130,7 +122,14 @@ params:
       license: MIT
       description: |
         fail2ban but functional, fast, and reliable, with a higher focus on statistics and data
-    - name: Auto pairs
+    - name: Spaceport
+      link: https://github.com/LunarWatcher/Spaceport
+      state: upc
+      languages: [C++]
+      license: MIT
+      description: |
+        LAN dashboard and network automation
+    - name: Auto-pairs
       languages: [Vimscript]
       state: ma
       license: MIT
