@@ -12,4 +12,10 @@ So note to future me, here's how you overkill ensure new systems work properly:
 git config --global core.autocrlf=input
 ```
 
-`false` is evil and `true` does excessive normalisation.
+`false` is evil, and pollutes CRLF everywhere. `true` does excessive normalisation.
+
+```
+git config --global core.eol=LF
+```
+
+is the nuclear option.
