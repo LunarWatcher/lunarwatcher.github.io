@@ -77,7 +77,7 @@ The main method is identical to that of the previous article, with the file call
 
 ## Creating and populating a table
 
-Creating a table in Lua is trivial; you just `x = {"a": "value", "b": "othervalue", "c": [1, 2, 3, "four"]}`, and you're done. In the API, it isn't that easy. 
+Creating a table in Lua is trivial; you just `x = {a = "value", b = "othervalue", c = {1, 2, 3, "four"}}`, and you're done. In the API, it isn't that easy. 
 
 Creating an empty table is pretty easy:
 ```cpp
