@@ -181,7 +181,9 @@ print(arr[1])
 print(arr[2])
 ```
 > table
+>
 > 69420
+>
 > 123456
 
 That said, due to arrays secretly being tables, it's perfectly possible to create zero-indexed arrays if you'd prefer. I don't recommend it for consistency, but it's possible. You can even create arrays with negative indices by just changing the indices you pass to `seti`. However, at that point, you no longer have an array. You can also have non-continuous indices if you'd prefer.
@@ -351,6 +353,7 @@ print(lib.arrread({1, 4, 3, 4}))
 print(lib.arrread({7}))
 ```
 > 5
+> 
 > Failed to load lua/tabledemo.lua: lua/tabledemo.lua:36: Need at least two elements
 
 ## Example: converting an nlohmann/json object to its equivalent Lua representation
