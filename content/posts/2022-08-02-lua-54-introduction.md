@@ -3,6 +3,7 @@ title: "Lua 5.4: introduction to the C API"
 date: 2022-08-02T22:00:38+02:00
 series: ["lua 5.4"]
 tags: ["lua5.4"]
+summary: "Lua constantly makes breaking changes to its own API, rapidly making most of the available Lua documentation obsolete. This is an update for Lua 5.4 aimed at beginners to the Lua API."
 toc: yes
 ---
 

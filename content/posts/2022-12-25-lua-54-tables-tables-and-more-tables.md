@@ -3,6 +3,7 @@ title: "Lua 5.4: Tables and arrays in  the C API"
 date: 2022-12-25T23:30:59+01:00
 series: ["lua 5.4"]
 tags: ["lua5.4"]
+summary: "Tables lay the foundation for the more powerful aspects of the Lua language. This article covers the basics of tables, and by extension arrays, as well as some real-world use."
 toc: yes
 ---
 
