@@ -8,6 +8,10 @@ tags: ["pihole", "linux"]
 
 ## Introduction
 
+> **PSA:** it has come to my attention that this article is partly out of date. I'll be revisiting it in January (which will be accompanied by the removal of this note), but until then, note that this may not work.
+> 
+> The comments do contain some fixes, but I haven't verified them yet because I've been busy. I have to run through the entire process again myself anyway (because of some hardware changes), at which point I'll be fixing this post whereever necessary.
+
 This post aims to present an alternative way to generate SSL certificates for your pihole web interface. This is specifically targeted at people without a FQDN (Fully Qualified Domain Name), regardless of whether pihole is hosted locally or on a VPS. Note that this has only tested on a locally hosted pihole instance, running on a Raspberry Pi 3B+. As usual, apply common sense before running commands from strangers on the internet - just because it worked on my system, doesn't necessarily mean it'll work in general. While we're at it, if this is properly configured, it shouldn't cause any problems. Even an invalid SSL certificate would just affect your connection, and not something like SSH or pihole in general.
 
 There's many reasons to set up HTTPS. Setting it up on a local network has arguably fewer. Personally, my main reason for setting up HTTPS on a local network is that I don't feel comfortable sending a password to something rather personal over an unencrypted connection when I can't be check if there's a reason to worry.
