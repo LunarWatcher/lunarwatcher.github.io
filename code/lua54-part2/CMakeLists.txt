@@ -24,6 +24,7 @@ include(${CMAKE_BINARY_DIR}/conan.cmake)
 
 conan_cmake_configure (REQUIRES
                         lua/5.4.4
+                        nlohmann_json/3.11.2
                         GENERATORS cmake)
 conan_cmake_autodetect (settings)
 conan_cmake_install (PATH_OR_REFERENCE . BUILD missing SETTINGS ${settings})
