@@ -2,7 +2,6 @@
 title: "Shady development ordering"
 date: 2021-08-19T22:50:13+02:00
 tags: ["genesis", "code design"]
-series: ["devlog"]
 summary: Tiny devlog on how I some times end up doing stuff in a really bad order when I have no idea what I'm doing.
 ---
 
