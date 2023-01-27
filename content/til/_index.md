@@ -14,7 +14,7 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til), this is a long list
 ## C++
 
 * [C++ time sucks: incomplete time parsing]({{<ref path="/til/cpp/incomplete-time-parsing.md">}})
-* [Install CrowCpp without using the Conan package, but using Conan for the dependecies]({{<ref path="/til/cpp/install-crow-with-submodules.md">}}) (catchy title, eh?)
+* [Install CrowCpp without using the Conan package, but using Conan for the dependecies]({{<ref path="/til/cpp/installing-crow-with-submodules.md">}}) (catchy title, eh?)
 
 ## CMake
 
