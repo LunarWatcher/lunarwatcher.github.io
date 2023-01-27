@@ -24,6 +24,14 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til), this is a long list
 
 * [The modern way to limit Conan's CPU use]({{<ref path="/til/conan/cpu-core-limiting.md">}})
 
+## Git
+
+* [Correctly committing LF rather than CRLF]({{<ref path="/til/git/crlf.md">}})
+
 ## Linux
 
 * [Disabling SSH password auth on Ubuntu Server]({{<ref path="/til/linux/disable-password-auth-ubuntu-server.md">}})
+
+## Lua
+
+* [Multiple returns from the `__index` meta method]({{<ref path="/til/lua/multiple-return-index.md">}})
