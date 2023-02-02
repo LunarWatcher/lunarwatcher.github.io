@@ -8,10 +8,6 @@ tags: ["pihole", "linux"]
 
 ## Introduction
 
-> **PSA:** it has come to my attention that this article is partly out of date. I'll be revisiting it in January (which will be accompanied by the removal of this note), but until then, note that this may not work.
-> 
-> The comments do contain some fixes, but I haven't verified them yet because I've been busy. I have to run through the entire process again myself anyway (because of some hardware changes), at which point I'll be fixing this post whereever necessary.
-
 This post aims to present an alternative way to generate SSL certificates for your pihole web interface. This is specifically targeted at people without a FQDN (Fully Qualified Domain Name), regardless of whether pihole is hosted locally or on a VPS. Note that this has only tested on a locally hosted pihole instance, running on a Raspberry Pi 3B+. As usual, apply common sense before running commands from strangers on the internet - just because it worked on my system, doesn't necessarily mean it'll work in general. While we're at it, if this is properly configured, it shouldn't cause any problems. Even an invalid SSL certificate would just affect your connection, and not something like SSH or pihole in general.
 
 There's many reasons to set up HTTPS. Setting it up on a local network has arguably fewer. Personally, my main reason for setting up HTTPS on a local network is that I don't feel comfortable sending a password to something rather personal over an unencrypted connection when I can't be check if there's a reason to worry.
@@ -90,18 +86,27 @@ When it's done, you'll be left with a folder containing various keys. The only o
 
 ## Setting up lighttpd
 
+### Packages
+
+Due to changes to lighttpd, the SSL module has (stupidly, in my opinion) been completely separated from the lighttpd core. You'll therefore have to install the module separately:
+```
+sudo apt install lighttpd-mod-openssl
+```
+
+### Linking the certs
+
 Now that you have your certs, you'll need to link it to lighttpd. Note that syntax errors in the `/etc/lighttpd/external.conf` file will prevent lighttpd from starting, and it doesn't have sensible error messages in its output. (Tested when I accidentally misplaced a single quote where there shouldn't have been a single quote)
 
-Anyway, this code is heavily based on the code in [the official forum](https://discourse.pi-hole.net/t/enabling-https-for-your-pi-hole-web-interface/5771), but with two differences. For good measure (avoiding copyright issues), I'm not including the entire block of code. `sudo nano /etc/lighttpd/external.conf` lets you edit it. Feel free to replace nano with your favorite editor - it really doesn't matter.
+Anyway, this code is heavily based on the code in [the official forum](https://discourse.pi-hole.net/t/enabling-https-for-your-pi-hole-web-interface/5771), but a few differences. `sudo nano /etc/lighttpd/external.conf` lets you edit it. Feel free to replace nano with your favorite editor - it really doesn't matter.
 
-First of all, make sure `pihole.example.com` is replaced with the URL you picked. If you don't, or this URL is wrong, lighttpd won't serve you an https certificate. Now, for the two changes: these apply to `ssl.pemfile` and `ssl.ca-file`. `pemfile` is, as you might expect, the combined certificate (`combined.pem`). The `ca-file` on the other hand, is the ca certificate. This is needed to help with certificate verification, which again, I'll get back to later.
+> NOTE: go to the forum and grab the code before continuing. It's kept consistently up-to-date by the author, and applies here as well. If your HTTPS config breaks, go back to the forum and check if there have been changes since you last edited the config.
 
-Here's how you might change the two lines:
+At the time of writing, you only need to change `ssl.pemfile` to point to the generated combined file:
+
 ```php
 ssl.pemfile = "/etc/sslcerts/combined.pem"
-ssl.ca-file =  "/etc/sslcerts/ca.crt.pem"
 ```
-These paths assume you stored the SSL certificates in `/etc/sslcerts`, and that the names are unchanged. If you've changed either the path or file names, make the appropriate changes in the paths.
+... assuming that's the path you've stored it at.
 
 Now, when you've gotten `external.conf` set up, all you need to do is restart lighttpd.
 
@@ -111,15 +116,17 @@ sudo systemctl restart lighttpd.service
 
 Assuming it successfully restarts, you can connect to your dashboard's HTTPS enabled URL, and you should connect over HTTPS. If your browser complains that the connection isn't secure because of an invalid issuer, that's fine. It's an artifact of self-signing a certificate that can't be bypassed in any other way than trusting the CA.
 
-### Fixing verification issues: trusting your own CA root certificate
+### Fixing 403: unauthorised from navigating straight to `your-fqdn.example.com/`
 
-With Firefox, it'll warn you that your connection may not be secure, because it doesn't recognize the CA. In fact, if you go into Firefox' settings and search for "authori" and click "view certificates", you get a list of trusted CA root certificates. Since you made your own with this specific approach, it means it wasn't signed with any of the supported ones, and Firefox warns you.
+I'm not entirely clear on why this appears, much less when this happens, but if you're getting a 403 out of your FQDN's root domain, a trivial fix is to simply redirect to the dashboard.
 
-With Firefox, you can in the same menu, add your own certificates to trust. Regardless of how you decide to trust the CA, the point is that you need to grab `ca.crt.pem` over on your device, and add it to a list of trusted root certificates. There's many ways to do this, an depending on your OS, and where you want to trust it (browser or OS), there's different solutions. Note that you need `ca.crt.pem` for this, regardless of which approach you pick. You can also chose to suppress the warning if you're using a browser, if you prefer that.
-
-And if everything has been set up properly, pihole's dashboard should work with https:
-
-![image showing the pihole dashboard running on an HTTPS url](/img/ssl-successful.png)
+Back in `etc/lighttpd/external.conf`, add:
+```
+url.redirect = (
+    "^/?$" => "/admin/"
+)
+```
+And restart lighttpd again for the changes to take effect.
 
 ## Renewing the CA and certificate
 
