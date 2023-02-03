@@ -122,13 +122,6 @@ params:
       license: MIT
       description: |
         fail2ban but functional, fast, and reliable, with a higher focus on statistics and data
-    - name: Spaceport
-      link: https://github.com/LunarWatcher/Spaceport
-      state: upc
-      languages: [C++]
-      license: MIT
-      description: |
-        LAN dashboard and network automation
     - name: Auto-pairs
       languages: [Vimscript]
       state: ma
