@@ -14,8 +14,11 @@ markup:
     extensions:
       linkify: true
       typographer: false
+      footnote: true
     renderer:
       unsafe: true
+      footnoteAnchorPrefix: ""
+      footnoteReturnLinkContents: "^"
   highlight:
     style: emacs
   tableOfContents:

@@ -28,6 +28,10 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til), this is a long list
 
 * [Correctly committing LF rather than CRLF]({{<ref path="/til/git/crlf.md">}})
 
+## Hugo
+
+* [Enabling footnotes in Hugo]({{<ref path="/til/hugo/footnotes.md">}})
+
 ## Linux
 
 * [Disabling SSH password auth on Ubuntu Server]({{<ref path="/til/linux/disable-password-auth-ubuntu-server.md">}})
