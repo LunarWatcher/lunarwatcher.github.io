@@ -9,17 +9,15 @@ description:
 {{< render >}}
 # About me
 
-Hiya! I'm Olivia (AKA Zoe, LunarWatcher, and a few other nick- and usernames). I'm a full-stack developer and artist. 
+Hiya! I'm Olivia (AKA Zoe, LunarWatcher, and a few other nick- and usernames). I'm a full-stack developer, and occasionally pretend to know to draw. On my free time, aside programming various projects for fun, I play games, enjoy one of my other hobbies, or do stuff in various places around the internet. Sometimes, I even write something here!
 
-Nowadays I mostly work with C++ (when I'm not drawing or [growing the factory](https://factorio.com)), but I also know and use a bunch of other languages, some times just because I can. In case the URL of this website didn't give it away already, I keep all my projects [on GitHub](//github.com/LunarWatcher), though there's also [an overview here on the website](#projects).
-
-I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles).
+I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles), and regularly tinker with my config files.
 
 {{</ render >}}
     </div>
     <div class="flex-item flex-right">
         <div class="plain-table-container">
-            <h1>Various info</h1>
+            <h2>Various info</h2>
             <table>
                 <tbody>
                     <tr>
@@ -32,7 +30,7 @@ I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles).
                     </tr>
                     <tr>
                         <th>Primary programming languages</th>
-                        <td>C++ (Conan, CMake), Vimscript, shell (bash/zsh-flavoured), Python</td>
+                        <td>C++ (Conan, CMake), Vim(9)script, shell (bash/zsh-flavoured), Python</td>
                     </tr>
                     <tr>
                         <th>Timezone</th>
@@ -44,12 +42,13 @@ I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles).
     </div>
 </div>
 
-# Projects
-
-{{< mdpartial "projects.html" >}}
-
-# Social media
+## Social media
 
 ([Contact etiquette](/contact.html))
 
 {{< mdpartial "socialmedia.html" >}}
+
+## Projects
+
+{{< mdpartial "projects.html" >}}
+

@@ -66,9 +66,9 @@ menu:
 
 params:
   discord: y3vd2vAYru
-  discord_user: @oliviawolfie
+  discord_user: oliviawolfie
   github: LunarWatcher
-  deviantart: oliviazoe0
+  email_proxy: "https://en.wikipedia.org/wiki/Special:EmailUser/OliviaZoe0"
   tags:
     c++: Posts and notes about the C++ language. This description pretty much only exists so I can test whether or not my config.yaml-based system for descriptions work :)
     hacktoberfest: Posts about [Hacktoberfest](https://hacktoberfest.digitalocean.com/), a yearly event centered around contributing to open-source.
@@ -109,6 +109,13 @@ params:
       description: |
         upm is a package manager meant to keep stuff up to date. Particularly useful on distros (*cough cough Debian and derivatives*) where the repos are
         severely out of date, and minimum version dependencies have passed the unnecessarily old version in the repos.
+    - name: Spaceport
+      languages: [C++, CMake, Lua]
+      state: ad
+      link: https://github.com/LunarWatcher/Spaceport
+      license: MIT
+      description: |
+        Spaceport is a homelab dashboard, primarily aimed at monitoring and navigation.
     - name: Skye
       languages: [Vimscript, Vim9script, C++]
       state: sp
@@ -135,17 +142,6 @@ params:
 
         With several huge feature updates, the project aims to keep auto-pairs alive, even if its original author disappeared without arranging
         future maintenance.
-    - name: Amber
-      languages: [Vimscript]
-      state: ma
-      license: MIT
-      link: https://github.com/LunarWatcher/Amber
-      description: |
-        Heavily inspired by a Neovim plugin, Amber tries to make the colorscheme design process less painful
-        by letting you edit and preview live.
-
-        While there's certain restrictions on vimscript (because Vim _really_ doesn't like reloading that),
-        all standard `highlight`s are supported, as well as with support for variables.
     - name: Dawn
       languages: [Vimscript]
       state: ma
@@ -168,15 +164,6 @@ params:
         Self-hosted, bot-less option to various RSS bots. (Built because one of said bots were
         far too flaky, prompting me to make one instead of hoping it works and doesn't have another
         multi-day streak of downtime)
-    - name: doctor.vim
-      state: de
-      license: MIT
-      languages: [Vimscript, Vim9Script]
-      link: https://github.com/LunarWatcher/doctor.vim
-      description: |
-        doctor.el, but in Vim.
-
-        Primarily intended to be a debug companion.
     - name: Taskranger
       state: de
       license: MIT
