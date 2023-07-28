@@ -10,7 +10,7 @@ At the time of writing, there are currently 17000 flags pending on Stack Overflo
 
 This has a severe impact on the community. Spam sticks around longer, if it gets detected at all, rude comments are left in limbo, and urgent problems are left to have the consequences -- that could've been avoided if moderation took place -- play out. 
 
-Some of the keywords for the strike goals are transparency and communication[^1], ensuring the API and data dumps remain freely available, and the reversal of the GPT unban, among other things.
+Some of the keywords for the strike goals are transparency and communication[^1], ensuring the API and data dumps remain freely available, and the reversal of the GPT unban, among other things. 
 
 A second change, still mostly private at the time of writing, also served as the foundation for the strike. At the time the strike started, these were the main points that were focused on. However, during the strike, the company decided to do more idiotic stuff:
 
@@ -24,7 +24,7 @@ A second change, still mostly private at the time of writing, also served as the
 
 As a shock to likely no one, this is a problem. Why is more interesting. 
 
-As [Jon Ericson](https://jlericson.com/2023/07/26/not_understanding.html) so elegantly put it, Stack Overflow's CEO doesn't understand Stack Overflow. They fail to understand the real pain points with the site.[^3]
+As [Jon Ericson](https://jlericson.com/2023/07/26/not_understanding.html) so elegantly put it, Stack Overflow's CEO doesn't understand Stack Overflow. They fail to understand the real pain points with the site, and by extension, where users struggle, and what users need.[^3]
 
 ![A meme of the current situation as a modified version of the "Phoebe teaching Joey" meme. Phoebe (left columns) spells out "Address our outstanding feature requests", and "Joey" (where Joey is replaced by a picture of the CEO, Prashanth Chandrasekar) repeats all but "feature requests", instead saying "add AI to Stack Overflow!"](https://cdn.discordapp.com/attachments/676029765987336192/1134197511670734939/7ty0r1.jpg)
 
@@ -46,7 +46,8 @@ Adding question and answer generation isn't going to help users feeling lost on 
 
 This isn't speculation. Thanks to MDN, [we've already seen a variant of exactly this](https://github.com/mdn/yari/issues/9208#issuecomment-1615200919), and why it was problematic. From a quick conversation I had with one of Stack Overflow, Inc.'s developers, it's pretty clear that they're not prepared for the many ways their tool can work against the best interest of its users.
 
-Unfortunately, trying to convey ideas like these to the company are currently pointless. With the CEO only prioritising AI, and effectively ignoring all other problems, the company is busy digging its own hole even deeper[^5], a fact that's exacerbated by its [increasing financial losses](https://jlericson.com/2023/05/17/so_business.html). Unless the company is able to turn around and focus on the _real_ needs of the millions of users, that hole is only going to get deeper. Especially while they actively lie and gaslight to put their mistakes in a better light. I don't want to hypothesise what that might mean for the public Q&A, but I don't see it going anywhere increasingly positive if nothing happens. And I suspect that to get there, new leadership is required.
+Unfortunately, trying to convey ideas like these to the company are currently pointless. With the CEO only prioritising AI, and effectively ignoring all other problems, the company is [busy digging its own hole even deeper](https://en.wiktionary.org/wiki/enshittification)[^5], a fact that's exacerbated by its [increasing financial losses](https://jlericson.com/2023/05/17/so_business.html). Unless the company is able to turn around and focus on the _real_ needs of the millions of users, that hole is only going to get deeper. Especially while they actively lie and gaslight to put their mistakes in a better light. I don't want to hypothesise what that might mean for the public Q&A, but I don't see it going anywhere increasingly positive if nothing happens. And I suspect that to get there, new leadership is required.
+
 
 ## Footnotes
 
