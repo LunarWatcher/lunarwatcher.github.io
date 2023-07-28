@@ -48,6 +48,11 @@ This isn't speculation. Thanks to MDN, [we've already seen a variant of exactly 
 
 Unfortunately, trying to convey ideas like these to the company are currently pointless. With the CEO only prioritising AI, and effectively ignoring all other problems, the company is [busy digging its own hole even deeper](https://en.wiktionary.org/wiki/enshittification)[^5], a fact that's exacerbated by its [increasing financial losses](https://jlericson.com/2023/05/17/so_business.html). Unless the company is able to turn around and focus on the _real_ needs of the millions of users, that hole is only going to get deeper. Especially while they actively lie and gaslight to put their mistakes in a better light. I don't want to hypothesise what that might mean for the public Q&A, but I don't see it going anywhere increasingly positive if nothing happens. And I suspect that to get there, new leadership is required.
 
+---
+
+I'm one of the moderators on strike, and the complete disregard SE has shown for the community has resulted in me planning to take an extended break after the strike too. I don't have the energy to contribute when the company keeps actively sabotaging and negatively affecting the community, and it'll take a while before I feel comfortable trying to care again. It's not often you see a company spend week after week trying to actively throw a knowledge base consisting of tens of millions of questions and answers for a wide array of topics, and it sure as hell doesn't inspire contributions.
+
+On the bright side, I've freed up plenty of time to spend on other stuff, and on sites that actually care about their communities.
 
 ## Footnotes
 
