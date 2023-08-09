@@ -1,0 +1,12 @@
+User-Agent: *
+# Prevent indexing the meme directory (all pages under here redirect to a random rickroll)
+Disallow: /stories/
+Allow: /
+
+# Fuck off GPT
+User-Agent: GPTBot
+Disallow: /
+User-agent: ChatGPT-User
+Disallow: /
+
+Sitemap: https://lunarwatcher.github.io/sitemap.xml
