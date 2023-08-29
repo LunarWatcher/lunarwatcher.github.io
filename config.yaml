@@ -27,7 +27,6 @@ markup:
 
 outputs:
   taxonomy: ["HTML"]
-  taxonomyTerm: ["HTML"]
   page: ["HTML"]
   home: ["HTML"]
 

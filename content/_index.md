@@ -9,7 +9,6 @@ description:
 {{< render >}}
 
 # About me
-This line is a test to see if the new deployment system works. This is deployment attempt #1.
 
 Hiya! I'm Olivia (AKA Zoe, LunarWatcher, and a few other nick- and usernames). I'm a full-stack developer, and occasionally pretend to know to draw. On my free time, aside programming various projects for fun, I play games, enjoy one of my other hobbies, or do stuff in various places around the internet. Sometimes, I even write something here!
 

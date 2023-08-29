@@ -4,6 +4,8 @@ date: 2021-07-18T14:44:30+02:00
 tags: ["hugo", "github", "github pages"]
 ---
 
+> **Note:** There's a better option available thanks to improvements to GitHub Actions. See [this article]({{<ref path="/posts/2023-08-29-hugo-on-github-pages-revised.md">}}) for  the details. The option outlined here still works, but the alternative is much cleaner.
+
 I used to base this site on a blog entry on another blog. The gist of it was, there's a source branch while the master branch contains the deployed page. 
 
 A part of the reason I did this in the first place was because I had to. I _had_ to deploy on a branch and I had no choice but to use the root directory. This seems to have changed since, meaning the `docs/` folder on any (including the primary) branch can be used.
