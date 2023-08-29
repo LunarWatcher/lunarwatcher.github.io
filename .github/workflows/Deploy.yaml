@@ -4,6 +4,11 @@ on:
     branches: [ master ]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   hugo:
     runs-on: ubuntu-latest
@@ -17,20 +22,15 @@ jobs:
         with:
           hugo-version: 'latest'
           extended: true
-      - name: Run hugo and commit
+      - name: Run hugo
         shell: bash
         run: |
           mkdir public 
           hugo --minify
-          cd public && git config --global init.defaultBranch deployment && git init && git add -A
-          git config --global user.name github-actions[bot]
-          git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git remote add origin https://github.com/LunarWatcher/lunarwatcher.github.io/
-          git commit -m "Deploy changes for ${GITHUB_SHA}"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: deployment
-          force: true
-          directory: public
+          path: 'public/'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
