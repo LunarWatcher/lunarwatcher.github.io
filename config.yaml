@@ -26,6 +26,8 @@ markup:
     startLevel: 2
 
 outputs:
+  taxonomy: ["HTML"]
+  term: ["HTML"]
   page: ["HTML"]
   home: ["HTML"]
 
@@ -78,11 +80,18 @@ params:
       description: |
         My website (you're here!), where I add whatever I feel like adding, and periodically torture myself with aligning divs in flexboxes (including the flexbox you're reading this in right now).
     - name: Dotfiles
-      languages: [Vimscript, "vim9script (soon:tm:)", makefiles, vim snippets]
+      languages: [Vimscript, "vim9script (soon:tm:)", makefiles]
       state: ad
       link: https://github.com/LunarWatcher/dotfiles
       license: unlicense
       description: A collection of dotfiles I use. Expands whenever I see a need to.
+    - name: Vim snippets
+      languages: [Vim snippets]
+      state: ad
+      link: https://github.com/LunarWatcher/lunarwatcher-vim-snippets
+      license: MIT
+      description: |
+        A collection of Vim snippets that were formerly part of my dotfiles, but were separated into their own repo for reusability.
     - name: Genesis
       languages: [C++, GLSL, CMake]
       state: ad
@@ -90,14 +99,6 @@ params:
       license: MIT
       description: |
         WIP game with currently no gameplay, because I wanted to do something with shaders.
-    - name: Dragon
-      languages: [Python]
-      state: ad
-      link: https://github.com/LunarWatcher/Dragon
-      license: MIT
-      description: |
-        Dragon is a bot to handle the "grunt work" of edits on Stack Overflow. This primarily means stuff that can be done with little effort,
-        but that's time-consuming due to the quantity.
     - name: upm
       languages: [C++, CMake, Shell, Lua]
       state: ad
@@ -150,25 +151,14 @@ params:
         There's built-in structures for (my) C++ CMake structure, and a standard Vimscript structure.
         The repo is open for additional templates, however, and users can additionally customize existing templates,
         or add completely new ones.
-    - name: DiscordWebhooks.cpp
-      link: https://github.com/LunarWatcher/DiscordWebhooks.cpp
-      state: po
-      languages: [C++]
-      license: MIT
-      description: |
-        Reads RSS feeds and sends updates to channels through webhooks.
-
-        Self-hosted, bot-less option to various RSS bots. (Built because one of said bots were
-        far too flaky, prompting me to make one instead of hoping it works and doesn't have another
-        multi-day streak of downtime)
-    - name: Taskranger
+    - name: Dragon
+      languages: [Python]
       state: de
+      link: https://github.com/LunarWatcher/Dragon
       license: MIT
-      link: https://github.com/LunarWatcher/Taskranger
       description: |
-        An attempt at making an alternative to Taskwarrior, but that eventually died because my needs changed, along with my managing needs.
-      languages:
-        - C++
+        Dragon is a bot to handle the "grunt work" of edits on Stack Overflow. This primarily means stuff that can be done with little effort,
+        but that's time-consuming due to the quantity.
   projectstate:
     # vvvv commitment right here
     ad:
