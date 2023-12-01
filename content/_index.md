@@ -49,7 +49,3 @@ I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles), and reg
 
 {{< mdpartial "socialmedia.html" >}}
 
-## Projects
-
-{{< mdpartial "projects.html" >}}
-
