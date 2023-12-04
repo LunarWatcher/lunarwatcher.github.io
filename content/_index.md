@@ -39,7 +39,7 @@ I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles), and reg
                     </tr>
                     <tr>
                         <th>GPG key</th>
-                        <td><a href="https://github.com/lunarwatcher.gpg"><code>2CE6 6B15 2ED5 6C24 C6A9 C71E 76C0 735B CD18 3F71</code></a></td>
+                        <td><a href="https://github.com/lunarwatcher.gpg"><code>{{<site-param gpg-signature>}}</code></a> (<a href="gpg.html">GPG note</a>)</td>
                     </tr>
                 </tbody>
             </table>
@@ -47,7 +47,7 @@ I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles), and reg
     </div>
 </div>
 
-## Social media
+## Contact me
 
 ([Contact etiquette](/contact.html))
 

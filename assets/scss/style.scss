@@ -169,7 +169,7 @@ h1, h2 {
 
 // Navigation
 
-.page-footer, .nav-container, .primary-theme {
+footer, .nav-container, .primary-theme {
     line-height: 64px;
     background-color: $grey-primary;
     color: $white-primary;
@@ -184,7 +184,7 @@ h1, h2 {
     }
 }
 
-.page-footer {
+footer {
     line-height: 1.5;
     display: inline-block;
     padding: 20px;
@@ -575,5 +575,13 @@ tbody tr th {
 .page-groups {
     display: flex;
 }
+// }}}
+// Flexbox shit v2 {{{
+.flex-col-2 {
+    display: flex;
+    flex-direction: row;
+    row-gap: 3px;
+}
+
 // }}}
 // vim:sw=4

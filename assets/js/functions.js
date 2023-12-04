@@ -54,7 +54,8 @@ window.onload=function() {
         "Press Alt-F4 to continue.",
         "Roses are red,\nViolets are blue,\nThere's nothing to see here,\nExcept my shitty \"poetry\"",
         "Self-destruct initiated",
-        "Don't h4xx0r me @ 127.0.0.1, thanks in advance"
+        "Don't h4xx0r me @ 127.0.0.1, thanks in advance",
+        "Secret free file storage using youtube, remove message before committing: https://www.youtube.com/watch?v=yRKh34Ofg50"
     ];
     console.log(rand(greetings));
 };

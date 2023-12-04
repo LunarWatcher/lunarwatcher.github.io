@@ -40,6 +40,7 @@ taxonomies:
   tag: tags
   series: series
 
+# There has to be a better way to do this
 menu:
   main:
   - identifier: Home
@@ -58,16 +59,21 @@ menu:
     name: TIL
     url: "/til/"
     weight: 4
+  - identifier: Contact me
+    name: Contact me
+    url: "/contact.html"
+    weight: 5
   - identifier: Pages
     name: Other pages
     url: "/pages.html"
-    weight: 5
+    weight: 6
 
 
 params:
   discord: y3vd2vAYru
   discord_user: oliviawolfie
   github: LunarWatcher
+  gpg-signature: "2CE6 6B15 2ED5 6C24 C6A9 C71E 76C0 735B CD18 3F71"
   email_proxy: "https://en.wikipedia.org/wiki/Special:EmailUser/OliviaWolfie"
   tags:
     c++: Posts and notes about the C++ language. This description pretty much only exists so I can test whether or not my config.yaml-based system for descriptions work :)

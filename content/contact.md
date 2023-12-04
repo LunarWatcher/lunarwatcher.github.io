@@ -11,10 +11,6 @@ I have a lot of contact methods:
 
 And I do have some standards:
 
-## Job offers
-
-I'm not interested in out of the blue job offers. If I'm looking for a job, I'll make that abundantly clear and reach out rather than sit around and wait for a recruiter.
-
 ## Stack Overflow
 
 If you have a problem with something I did on Stack Overflow or elsewhere in the SE network, feel free to contact me. However, I'll [report attempts](https://meta.stackoverflow.com/a/380083/6296561) at being rude to SO, as well as to whatever company runs the site where the message was sent (if applicable).
@@ -31,11 +27,16 @@ I generally don't answer random programming questions I get in DMs. I do answer 
 
 ## Support related to &lt;insert the name of one of my repos here&gt;
 
-Please consider opening an issue rather than contacting me directly. This is exclusively for information sharing if it's a problem that others might have. [We're not well-served](https://xkcd.com/979/) with discussions ending in "DM me" when it's a type of problem others might have. (Security vulnerabilities are an exception for obvious reasons).
+Please consider opening an issue rather than contacting me directly. This is exclusively for information sharing, as it may allow others with the same problem to find information about it more easily. [We're not served](https://xkcd.com/979/) with discussions ending in "DM me" when it's a type of problem others might have.
+
+## Job offers
+
+I'm not interested in unsolicited job offers. I'm perfectly fine with looking for jobs on my own.
+
 
 ## Everything else
 
 If not otherwise listed here, there's no particular restrictions aside the obvious one: _don't be an asshole_.
 
-I'm also completely fine with being DMed for purely social reasons. I don't bite (unless bitten first).
+I'm also completely fine with being contacted for purely social reasons. I don't bite (unless bitten first).
 
