@@ -37,6 +37,10 @@ I'm also [mildly fond of Vim](https://github.com/lunarwatcher/dotfiles), and reg
                         <th>Timezone</th>
                         <td>UTC+1 (UTC+2 during summer <a href="https://www.bloomberg.com/news/articles/2021-03-11/will-daylight-saving-time-ever-end">by force</a>; fuck DST)</td>
                     </tr>
+                    <tr>
+                        <th>GPG key</th>
+                        <td><a href="https://github.com/lunarwatcher.gpg"><code>2CE6 6B15 2ED5 6C24 C6A9 C71E 76C0 735B CD18 3F71</code></a></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
