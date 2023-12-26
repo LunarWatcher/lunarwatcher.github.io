@@ -44,7 +44,9 @@ On top of these, there's stuff like Docker, which is fully emulated by design. A
 
 There are many packages that, simply, aren't in package managers. This includes [libcpr](https://github.com/libcpr/cpr), a fancy C++ wrapper around curl. This is [partly addressed by the Gentoo wiki page](https://wiki.gentoo.org/wiki/Why_not_bundle_dependencies#Easing_up_adoption_despite_odd_dependencies), but not with any solutions. The current answer is "just bundle it and then fix your software", but that's difficult to do, especially for people without a background in distributing to package managers. Getting the maintainer onboard is the common strategy, but this also comes with its challenges.
 
-Especially in a commercial context, it's incredibly difficult to justify it. Imagine saying "I need 1-2 weeks to get one dependency into apt before we can continue with this project" to your boss when the simple solution is spending 5 minutes on setting up FetchContent in CMake. Yes, there are caveats, and yes, there could be an option to disable it if/when it's available in the package manager, but if it works with FetchContent, and the downsides are fairly small, and it's  deployed commercially with commercial maintenance, the downsides are offset quite quickly.
+Especially in a commercial context, it's incredibly difficult to justify it. Imagine saying "I need 1-2 weeks to get one dependency into apt before we can continue with this project" to your boss when the simple solution is spending 5 minutes on setting up FetchContent in CMake. Yes, there are caveats, and yes, there could be an option to disable it if/when it's available in the package manager, but if it works with FetchContent, and the downsides are fairly small, and it's deployed commercially with commercial maintenance, the downsides are offset quite quickly.
+
+This is particularly true for people like me, with no prior experience getting anything included in debian proper. The most I've done is create a .deb with self-bundled dependencies, and .debs are not remotely portable.
 
 ## Versioning
 
