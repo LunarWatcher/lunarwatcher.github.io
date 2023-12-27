@@ -63,6 +63,7 @@ menu:
     name: Contact me
     url: "/contact.html"
     weight: 5
+    # In retrospect, this feels fucking moronic
   - identifier: Pages
     name: Other pages
     url: "/pages.html"
