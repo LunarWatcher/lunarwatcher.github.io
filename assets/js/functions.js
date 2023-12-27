@@ -11,7 +11,7 @@ function rand(arr) {
 }
 
 function uwu() {
-    document.getElementById("uwu").text = "OWO!!";
+    document.getElementById("uwu").text = "This was not the best use of time. Now you get to suffer with me :p";
     let emojis = [
         "owo", "OwO",
         "uwu", "UwU",
