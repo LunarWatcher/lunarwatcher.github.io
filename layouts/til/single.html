@@ -1,12 +1,10 @@
 {{ define "main" }}
 
 <h1>{{ .Title }}</h1>
-<span class="post-meta">Posted on {{ partial "dformat.html" . }}</span>
-<br>
-{{ if isset .Params "tags" }}
-    {{ partial "tags.html" .}}
-{{ end  }}
-<p class="post-meta">This post is a part of <a href="/til/">TIL</a>; a series containing short posts of lessons I've learned the hard way.</p>
+
+{{ partial "usercard.html" .}}
+
+<!--<p class="post-meta">This post is a part of <a href="/til/">TIL</a>; a series containing short posts of lessons I've learned the hard way.</p>-->
 {{ .Content }}
 
 {{ if not .Params.nocomments }}

@@ -5,9 +5,9 @@
     {{ $baseurl := .Site.BaseURL }}
 
     {{ if and (eq .Data.Singular "tag") (not (eq .Title "Tags")) }}
-        <h2>#{{ .Title | lower }}</h2>
+        <h1>#{{ .Title | lower }}</h1>
     {{ else }}
-        <h2>{{ .Title }}</h2>
+        <h1>{{ .Title }}</h1>
     {{ end }}
     {{ .Content }}
 
@@ -16,18 +16,18 @@
     <div class="posts">
         {{ range .Pages }}
         <div class="article">
-            <h1><a href="{{ .Permalink }}">{{ if .Draft }}{{ T "draft" }}: {{ end }}{{ .Title | markdownify }}</a></h1>
+            <h2><a href="{{ .Permalink }}">{{ if .Draft }}{{ T "draft" }}: {{ end }}{{ .Title | markdownify }}</a></h2>
             <div class="meta-container">
-                <time class="post-meta">{{ partial "dformat.html" . }}</time><br>
                 {{ if .Params.Category }}
                     <br><span class="post-meta">Post type: {{ .Params.Category }}</span>
                 {{ end }}
-                {{ if .Params.Tags }}
-                    {{ partial "tags.html" . }}
-                {{ end }}
-                {{ if .Params.series }}
-                    {{ partial "series.html" . }}
-                {{ end }}
+                Posted <time>{{ partial "dformat.html" . }}</time>
+            {{ if isset .Params "tags" }}
+                / {{ partial "tags.html" . }}
+            {{ end }}
+            {{ if isset .Params "series" }}
+                / Posted in {{ partial "series.html" . }}
+            {{ end }}
             </div>
             <p>{{ .Summary }}</p>
             <div>

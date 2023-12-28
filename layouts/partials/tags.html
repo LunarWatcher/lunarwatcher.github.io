@@ -1,6 +1,6 @@
 {{ $taxonomy := "tags" }}
 {{ with .Param $taxonomy }}
-    <span class="post-meta">Tags:
+    <span class="post-meta">
     {{ range $index, $tag := . }}
         {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy ($tag | urlize)) -}}
             <a class="post-tag" href="{{ .Permalink }}">{{ $tag }}</a>

@@ -1,0 +1,14 @@
+<div class="flex-horizontal" style="margin-bottom: 25px">
+    <img src="https://avatars.githubusercontent.com/u/29489988" class="circle accent-border text-small nocenter" />
+    <span style="margin: auto 0">
+        <a href="/contact.html" style="margin: auto 0">Olivia</a>
+        / {{ partial "dformat.html" . }}
+        {{ if isset .Params "tags" }}
+            / {{ partial "tags.html" . }}
+        {{ end }}
+        {{ if isset .Params "series" }}
+            / Posted in {{ partial "series.html" . }}
+        {{ end }}
+    </span>
+</div>
+

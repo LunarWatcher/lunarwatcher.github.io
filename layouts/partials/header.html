@@ -1,10 +1,12 @@
 <header>
-    <nav class="nav-container">
+    <nav>
         <div class="container flex-horizontal">
             <h1 class="logo flex-grow"><a href="/">Olivia</a></h1>
-            <div id="sidenav" class="sidenav">
-                <a href="javascript:void(0)" class="close" onclick="closeSidenav()">&times;</a>
-                {{ partial "nav.html" . }}
+            <div id="sidenav" class="sidenav flex-vertical">
+                <div class="sidenav-scroll">
+                    <a href="javascript:void(0)" class="close" onclick="closeSidenav()">&times;</a>
+                    {{ partial "nav.html" . }}
+                </div>
             </div>
             <div class="topnav flex-right flex-shrink">
                 {{ partial "nav.html" . }}

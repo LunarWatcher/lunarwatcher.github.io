@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, ol, ul {
 }
 
 
-img {
+img:not(.nocenter) {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -130,12 +130,13 @@ ol {
 h1, h2, h3, h4, h5, h6 {
     color: $grey-primary;
     font-weight: 400;
+
 }
 h1, h2 {
     border-bottom: 1px solid #d1d1d1;
 }
 
-.nav-container {
+nav {
     h1, h2 {
         border-bottom: 0px !important;
         padding: 0px;
@@ -146,7 +147,7 @@ h1, h2 {
 
 // Navigation
 
-footer, .nav-container, .primary-theme {
+footer, header, .primary-theme {
     line-height: 64px;
     background-color: $grey-primary;
     color: $white-primary;
@@ -175,17 +176,19 @@ footer {
     display: block;
 }
 
-header nav {
+header {
+    nav {
 
-    line-height: 64px;
-    height: 64px;
-    a {
-        text-decoration: none;
-    }
-
-    ul li, .nav-header {
-        float: left;
         line-height: 64px;
+        height: 64px;
+        a {
+            text-decoration: none;
+        }
+
+        ul>li, .nav-header {
+            float: left;
+            line-height: 64px;
+        }
     }
 }
 // Why do you do this to me?
@@ -193,10 +196,11 @@ header nav {
     @extend .primary-theme;
     float: none;
     display: block;
-    height: 100% !important;
     width: 0;
-    position: fixed;
-    z-index: 1;
+    height: 100vh;
+    height: 0;
+    position: absolute;
+    z-index: 6;
     top: 0;
     left: 0;
     overflow-x: hidden;
@@ -216,6 +220,10 @@ header nav {
         background-color: lighten($color: $grey-primary, $amount: 15%);
     }
 
+    a:not(.close) {
+        width: 100%;
+    }
+
     .close {
         position: absolute;
         top: 0;
@@ -225,8 +233,15 @@ header nav {
     }
 }
 
+.sidenav-scroll {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
 .sidenav-trigger {
-    //@extend .right;
     display: none;
     cursor: pointer;
     font-size: 30px;
@@ -246,7 +261,13 @@ header nav {
 @media screen and (max-width: 777px) {
     .topnav { display: none; }
     .sidenav-trigger { display: inline-block !important; }
-    .sidenav { padding-top: 60px; }
+    .sidenav {
+        padding-top: 60px; 
+        height: 100vh;
+    }
+    body.sidenav-open {
+        overflow: hidden;
+    }
 }
 
 
@@ -505,8 +526,18 @@ tbody tr th {
     padding: 10px;
 }
 // }}}
-// Generic shit {{{
-.pad2px { padding: 2px; }
+// Hugo-generated stuff {{{
+.footnote-ref {
+    padding: 1px;
+    &::before {
+        content: '[';
+    }
+    &::after {
+        content: ']'
+    }
+}
+
+
 // }}}
 // Post listing {{{
 .meta-container {
@@ -519,6 +550,19 @@ tbody tr th {
 // Page list; I assume I can extend this to support other styles anyway {{{
 .page-groups {
     display: flex;
+}
+// }}}
+// Shapes {{{
+.circle {
+    border-radius: 100%;
+}
+
+.text-small {
+    font-size: 0.9rem;
+}
+img.text-small {
+    width: 32px;
+    height: 32px;
 }
 // }}}
 // Flexbox shit v2 {{{
@@ -563,6 +607,10 @@ tbody tr th {
     flex: 1 1 auto;
 }
 
+.flex-center {
+    justify-content: center;
+}
+
 .flex-full {
     width: 100%;
 }
@@ -577,5 +625,10 @@ div.small-paragraphs {
     p {
         margin: 0;
     }
+}
+
+.accent-border {
+    //border: 1px solid $pink-primary;
+    border: ridge 2px $pink-primary;
 }
 // vim:sw=4
