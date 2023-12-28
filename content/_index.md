@@ -4,7 +4,7 @@ title: Home
 description: 
 ---
 
-<div class="flex-container">
+<div class="flex-horizontal">
     <div class="flex-item" style="flex: 2 1 300px;">
 {{< render >}}
 

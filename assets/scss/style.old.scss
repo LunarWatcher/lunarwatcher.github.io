@@ -39,6 +39,17 @@ code {
     white-space: pre;
 }
 
+.footer {
+    * {
+        margin-top: 15px;
+    }
+}
+
+.center-header {
+    text-align: center;
+    border-bottom: none !important;
+}
+
 body {
     font: 400 16px/1.5 -apple-system,BlinkMacSystemFont,
         "Segoe UI",Roboto,Helvetica,Arial,sans-serif,
@@ -68,7 +79,7 @@ ul.pagination li {
 }
 
 // Elements
-blockquote {
+blockquote{
     padding: 11px 0px 9px 10px !important;
     * {
         margin: 0px;
@@ -79,20 +90,25 @@ blockquote {
     border-radius: 4px;
 }
 
-a {
+a, a:visited {
     color: $pink-light !important;
-
-    &:visited {
-        color: adjust-color($pink-light, $hue: -25deg, $lightness: -15%) !important;
-    }
-    &:hover {
-        color: adjust-color($pink-light, $hue: -25deg, $lightness: 5%) !important;
-    }
-    code {
-        color: lighten($color: $pink-light, $amount: 15%);
-    }
+}
+a:hover {
+    color: $pink-secondary !important;
 }
 
+// Bullet what?
+.bullet {
+    list-style: disc;
+}
+
+// The fuck kind of name is this?
+.null-list {
+    list-style: none;
+    li:before {
+        content: "" !important;
+    }
+}
 
 // WHY?!
 ul {
@@ -110,13 +126,6 @@ ul {
     }
 }
 
-ul.list-blank {
-    li:before {
-        content: "";
-        padding-right: 0;
-    }
-}
-
 ol {
     margin-left: 30px;
 }
@@ -124,6 +133,16 @@ ol {
 
 .center {
     text-align: center;
+}
+
+// Fantastic job.
+// TODO: What the fuck is thsi for?
+.pad20px-topbot {
+    padding: 20px 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 // Dupes?
@@ -175,13 +194,21 @@ footer {
     display: block;
 }
 
+// Just use flexbox, dipshit. This isn't the dark ages.
+.right {
+    display: block;
+    float: right !important;
+}
+
+.left {
+    display: block;
+    float: left !important;
+}
+
 header nav {
 
     line-height: 64px;
     height: 64px;
-    a {
-        text-decoration: none;
-    }
 
     ul li, .nav-header {
         float: left;
@@ -205,15 +232,10 @@ header nav {
     padding-top: 60px;
 
     a {
-        text-decoration: none;
         padding: 0 24px;
         transition: 0.5s;
         display: block;
         line-height: 64px;
-    }
-
-    a:hover {
-        background-color: lighten($color: $grey-primary, $amount: 15%);
     }
 
     .close {
@@ -226,7 +248,7 @@ header nav {
 }
 
 .sidenav-trigger {
-    //@extend .right;
+    @extend .right;
     display: none;
     cursor: pointer;
     font-size: 30px;
@@ -243,7 +265,7 @@ header nav {
     }
 }
 
-@media screen and (max-width: 777px) {
+@media screen and (max-width: 670px) {
     .topnav { display: none; }
     .sidenav-trigger { display: inline-block !important; }
     .sidenav { padding-top: 60px; }
@@ -323,11 +345,42 @@ blockquote.spoiler {
 }
 // }}}
 
+// Link stuff {{{
+a.btn {
+    background-color: $pink-primary;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    color: #000 !important;
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: .5s ease-in;
+}
+
+a.btn:hover {
+    background-color: $pink-light;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: $white-primary !important;
+    background-color: $grey-primary;
+}
+// }}}
+
 h3, h4, h5, h6 {
     font-weight: bold;
 }
 
 // Blogging
+
+.meta {
+    font-size: 12px;
+}
 
 .grey-text {
     color: #666666;
@@ -436,8 +489,14 @@ table {
 // }}}
 // Flexbox {{{
 // TODO: merge the tag flexbox and the home page flexbox
-
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 .flex-col {
+    @extend .flex-container;
     flex-direction: column;
 }
 .flex-nowrap {
@@ -528,54 +587,5 @@ tbody tr th {
     row-gap: 3px;
 }
 
-.flex-space {
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.flex-horizontal {
-    @extend .flex-space;
-
-    display: flex;
-    flex-direction: row;
-}
-.flex-vertical {
-    @extend .flex-space;
-
-    display: flex;
-    flex-direction: column;
-
-}
-
-.flex-right {
-    justify-self: flex-end;
-}
-
-.flex-grow {
-    flex: 1 0 auto;
-}
-
-.flex-shrink {
-    flex: 0 1 auto;
-}
-
-.flex-auto {
-    flex: 1 1 auto;
-}
-
-.flex-full {
-    width: 100%;
-}
-
-.text-right {
-    text-align: right;
-}
-
 // }}}
-
-div.small-paragraphs {
-    p {
-        margin: 0;
-    }
-}
 // vim:sw=4

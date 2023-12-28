@@ -1,22 +1,51 @@
-<footer class="page-footer">
-    <div class="footer-copyright">
-        <div class="container flex-container" style="overflow: auto;">
-            <div class="flex-item">
-                &copy; Olivia, 2019-2023
-                (<a href="https://github.com/LunarWatcher/LunarWatcher.github.io/tree/master">Website source</a>,
-                <a href="https://github.com/LunarWatcher/LunarWatcher.github.io/blob/master/LICENSE">license</a>,
-                <a href="/privacy.html">privacy policy</a>)
+<footer>
+    <!--<div class="container flex-vertical">-->
+        <!--<div class="footer-copyright flex-auto flex-horizontal">-->
+            <!--<div class="flex-item">-->
+                <!--<p>&copy; Olivia, 2019-2024</p>-->
+                <!--<a href="https://github.com/LunarWatcher/LunarWatcher.github.io/tree/master">Website source</a>,-->
+                <!--<a href="https://github.com/LunarWatcher/LunarWatcher.github.io/blob/master/LICENSE">license</a>,-->
+                <!--<a href="/privacy.html">privacy policy</a>-->
 
-                <p>Content licensed under <a href="https://github.com/LunarWatcher/LunarWatcher.github.io/blob/master/LICENSE#L32">CC-By-SA 4.0</a></p>
-            </div>
+                <!--<p>Content licensed under <a href="https://github.com/LunarWatcher/LunarWatcher.github.io/blob/master/LICENSE#L32">CC-By-SA 4.0</a></p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--[> I'm not sure if this makes sense in responsive use-cases <]-->
+        <!--<div class="flex-full flex-horizontal">-->
+            <!--<div class="flex-grow"></div>-->
+            <!--<div class="flex-shrink">-->
+                <!--<p>Powered by <a href="https://gohugo.io/">Hugo</a>-->
+                    <!--[> Don't click the button. <]-->
+                    <!--(<a href="javascript:uwu()" id="uwu">UwU?</a>)</p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="container flex-horizontal">
+        <div class="flex-item">
+            <p><b>Social</b></p>
+            <ul class="list-blank">
+                <li><a href="//discord.gg/{{.Site.Params.discord}}">Discord</a></li>
+                <li><a href="//github.com/LunarWatcher">GitHub</a></li>
+            </ul>
+        </div>
+        <div class="flex-item">
+            <p><b>Useful links</b></p>
+            <ul class="list-blank">
+                <li><a href="/posts/feed.xml">Blog RSS feed</a></li>
+                <li><a href="/contact.html">Contact me</a></li>
+            </ul>
         </div>
     </div>
-    <div class="right">
-        <p>Powered by <a href="https://gohugo.io/">Hugo</a>
-            <!-- Don't click the button. -->
-            (<a href="javascript:uwu()" id="uwu">UwU?</a>)</p>
+    <div class="flex-horizontal container">
+        <div class="flex-grow"></div>
+        <div class="flex-shrink small-paragraphs">
+            <p>Powered by <a href="https://gohugo.io/">Hugo</a>
+                <!-- Don't click the button. -->
+                (<a href="javascript:uwu()" id="uwu">UwU?</a>)</p>
+            <p>&copy; Olivia, 2019-2024</p>
+        </div>
     </div>
-</footer>
+</div>
 
 {{ $js := resources.Get "js/functions.js" | resources.Minify }}
 <script type="text/javascript" src="{{ $js.Permalink | lower}}"></script>

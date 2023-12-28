@@ -8,10 +8,10 @@
 
     {{ .Content }}
 
-    <div class="flex-container">
+    <div class="flex-horizontal">
         {{ range .Pages }}
         <div class="shade-box" style="min-width: 200px; flex: 0 1 200px;">
-            <p><a href="{{ .Permalink }}">#{{ .Title | markdownify }}</a></p>
+            <p><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></p>
             {{ if .Params.description }}
                 <p>{{ .Params.description }}</p>
             {{ else if isset .Site.Params.tags .Title }}

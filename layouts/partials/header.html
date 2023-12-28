@@ -1,12 +1,12 @@
 <header>
     <nav class="nav-container">
-        <div class="container">
-            <h1 class="logo left"><a href="/">Olivia</a></h1>
+        <div class="container flex-horizontal">
+            <h1 class="logo flex-grow"><a href="/">Olivia</a></h1>
             <div id="sidenav" class="sidenav">
                 <a href="javascript:void(0)" class="close" onclick="closeSidenav()">&times;</a>
                 {{ partial "nav.html" . }}
             </div>
-            <div class="topnav right">
+            <div class="topnav flex-right flex-shrink">
                 {{ partial "nav.html" . }}
             </div>
             <span class="sidenav-trigger" onclick="openSidenav()">&#9776;</span>
