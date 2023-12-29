@@ -8,9 +8,6 @@
             <ul>
                 {{ range .Pages }}
                 <li><a href="{{ .Permalink }}">{{ .Title }}</a>
-                    {{ if isset .Params "ingress" }}
-                        {{ .ingress }}
-                    {{ end }}
                 </li>
                 {{ end }}
             </ul>

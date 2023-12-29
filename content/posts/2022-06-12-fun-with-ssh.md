@@ -1,12 +1,14 @@
 ---
 title: "Fun with SSH"
 date: 2022-06-12T23:26:21+02:00
+lastmod: 2023-12-29T17:06:15+01:00
 tags: ["ssh"]
+ingress: SSH is disgustingly flexible.
 ---
 
-Three months ago, I decided to [dig into self-hosted NAS solutions]({{< ref path="/posts/2022-03-06-network-attached-storage-on-a-pi.md" >}}), because I wanted to free up a port, and I was tired of repeatedly asking "where tf did I put my disk now?" whenever I had to move it because laptops are painful.
+Three months ago, I decided to [dig into self-hosted NAS solutions]({{< ref path="/posts/2022-03-06-network-attached-storage-on-a-pi.md" >}}), because I wanted to free up a USB port, and I was tired of repeatedly asking "where tf did I put my disk now?" whenever I had to move it because laptops are painful.
 
-I switched to a desktop after my MSI gaming laptop (don't buy MSI gaming laptops, it'll break fast and you'll regret buying it; and yes, I'm still pissed about a three year old laptop breaking. I digress), which most definitely solved the USB shoratage. I believe I have 7 "normal" USB slots, as well as a USB C slot on the front, and plenty of IO options overall. Genuinely don't understand how I survived, but it was a problem at the time.
+I switched to a desktop after my MSI gaming laptop died[^1], which most definitely solved the USB shoratage. I believe I have 7 "normal" USB slots, as well as a USB C slot on the front, and plenty of IO options overall. Genuinely don't understand how I survived, but it was a problem at the time.
 
 Additionally, during breaks long enough for me to go home, I was getting tired of carrying around an HDD (and once again asking where the hell I put it this time).
 
@@ -22,17 +24,17 @@ Now, unfortunately, I need a Windows laptop because my uni is annoying and hasn'
 
 I have absolutely no need for a VPN for most use-cases, but I'm easily nerd-sniped. When I randomly asked myself "is VPN over SSH a thing", I had to try. The answer is [yes](https://wiki.archlinux.org/title/VPN_over_SSH), and the command is tiny:
 
-```
+```bash
 ssh -TND 4711 pi@<ip>
 ```
 
-After that, it's just a matter of setting up a proxy connection to use `localhost:4711`. The arch wiki has an entire section on that, but I use Linux Mint where I don't need to do that. I have a handy dandy GUI where it's trivial to set. 
+After that, it's just a matter of setting up a proxy connection to use `localhost:4711`. The arch wiki has an entire section on that, but I use Linux Mint where I don't need to do that. I have a handy dandy GUI where it's trivial to set. Granted, it is a bit tedious to do. Would be a lot more convenient if there was a light-weight VPN adapter that sets up a VPN connection for the proxy, so it's a single click to connect like proper VPNs, but I'm not aware of any such programs.
 
 Admittedly, I haven't tested whether or not that command results in a part accessible to the rest of the network, but my use-case is so limited it's likely irrelevant. 
 
 ## How Windows deals with an SSH-centric system
 
-Windows wasn't my main focus when setting up an SSH NAS, because I wasn't expecting to use it as a driver OS, well, ever. Personally, anyway; I'm sure I'll have jobs in the future where I get stuck on Windows, but my NAS ain't for work, so that's absolutely irrelevant. It's no secret that Windows is a pain to work with at times, and support for ssh came shockingly late.
+Windows wasn't my main focus when setting up an SSH NAS, because I wasn't expecting to use it as a driver OS, well, ever. Personally, anyway; I'm sure I'll have jobs in the future where I get stuck on Windows, but my NAS ain't for work, so that's absolutely irrelevant. It's no secret that Windows is a pain to work with at times, and official support for ssh came shockingly late.
 
 As a result, it probably doesn't come as a shock that sshfs on Windows is... not great.
 
@@ -62,16 +64,55 @@ Password-protecting might be the reason it's a bit annoying on Linux as well, ad
 
 How extensively Windows can be used in an SSH-centric system is unclear at the moment. It barely supports the basics at the time of writing. Consequently, I wouldn't recommend going full SSH if you plan on having any Windows computers actively using it.
 
+## Forwarding/tunnelling to other devices
+
+Because my self-hosting ideology heavily prefers reducing the number of exposed ports to a bare minimum, I only want one server exposed to the internet. This allows me to specialise its security measures to make sure a malicious actor can't just move onto the next port and have a different device to play with, where security measures haven't kicked in.
+
+However, I still have a need to access both. I have two options for this:
+
+1. Connect the VPN, then manually configure the OS to use the SOCKS proxy, and then connect to it as normal
+2. Somehow forward the ssh request via the exposed server to the internal server, without just running the ssh command on the server. Running the command on the server requires the certificate to be on the server, which is insecure[^2].
+
+As it just so happens, option 2 is in fact possible, and more convenient. 
+
+The `~/.ssh/config` file is ridiculously powerful if you know roughly what you're doing. Aside standard declarations, you can use the `ProxyCommand` property with `nc` to forward an ssh command to an internal server.
+
+```sshconfig
+# The Host line can become an alias as well. As long as Hostname is set to the public IP,
+# it'll work identically to a DNS lookup. The hostname can also be an address, if you
+# have a DDNS service set up.
+# I strongly recommend dedyn.io for it, but there are many alternatives and many preferences
+Host nova.remote
+    Hostname <public IP>
+    Port <exposed port>
+    IdentityFile ~/.ssh/homelab
+
+Host sinon.remote
+    # NOTE: unlike the Hostname for the externally exposed service, this has to be the _internal_ IP for the
+    # server. The connection to the network is handled as part of the ProxyCommand call, which is run from
+    # within the target network.
+    Hostname 192.168.0.179
+    IdentityFile ~/.ssh/homelab
+    ProxyCommand ssh olivia@nova.remote nc %h %p
+```
+
+Through mechanics I'm not going to pretend to understand, the IdentityFile on the source system is proxied to the destination system when `ProxyCommand` is used. The IdentityFile for accessing servers does not exist on the server, so if it was attempted sourced from there, the `ProxyCommand` would be denied access.
+
+This means a single exposed server can grant forwarding SSH access to other SSH-enabled servers on the network without exposing more than a single SSH port. 
+
+
+**Note:** I'm not sure what happens if the exposed server and internal server has different IdentityFiles. It may or may not fail, though I'm pretty sure it should be fine. Take this with a grain of salt.
+
 ## Closing words
 
-SSH is a shockingly flexible system; and the three use-cases mentioned here are only the tip of the iceberg. Additionally, I'm aware that X11 supports forwarding over SSH. I have not tried this, because the devices I ssh into are headless, but it's enabled out of the box.
+SSH is a shockingly flexible system; and the use-cases mentioned here are only the tip of the iceberg. Additionally, I'm aware that X11 supports forwarding over SSH. I have not tried this, because the devices I ssh into are headless, but it's enabled out of the box.
 
 There's also stuff like `scp`, which is `cp` but across devices using ssh, but these are built-in commands leveraging ssh. rsync also support ssh, potentially providing options for remote data backups.
 
 I have absolutely no idea how deep this rabbit hole goes, but a remote shell, filesystem, a VPN, and a remote desktop with nearly no server-sided config continues to amaze me. All of it being hosted through a single service also comes with the benefits of less stuff to defend.
 
-And on top of that, there's also tunneling. This is something I'm gonna get more into when I get a second pi (my 3B+ is about to hit its capacity for hosting), and while I'm not yet sure how far I can get, it would be really cool to hook it up in a way where `pi@host` connects to the internet-facing device, while `otheruser@host`, still requiring authentication first, forwards the connection to the second host. My hope is that this is possible in a way that does two-stage authentication; first once to connect to the internet-facing pi, and then one to connect to the second pi.
-
-This may be an application for the VPN, but this is all a problem for future me when I actually have two devices to experiment on. I'll likely publish a blog post with what I find when I cross that bridge.
-
 Finally, I get all these fancy things, and all I need to do is harden ssh. Which I have, but that's also a story for later. This also means that my pi only needs to monitor traffic on a single port, for a single service. Nothing else is hosted, putting all the pressure on sshd to not have problems, instead of opening for multiple points of failure.
+
+[^1]: The specs might be impressive, but MSI laptops have awful build quality, and design flaws that have been known for years.
+[^2]: Running the SSH command directly on the exposed server is a massive security problem. Regardless of whether or not the servers are configured to accept the same SSH key, if a server is breached, they only get the public key. The public key is, well, public, and can be shared. However, to connect to an SSH server with an SSH key, you need the _private_ key. If you put a private key on the server, and that server is breached, any servers accepting that key are also compromised. It doesn't matter if you use one key or many keys; if you store them on a server that's breached, all of them are compromised. This is a horrible, horrible idea. You can admittedly password-protect the keys to prevent the servers from falling immediately, but passwords can be cracked with enough time and computational resources. The better option is not storing keys on a publicly exposed server.
+

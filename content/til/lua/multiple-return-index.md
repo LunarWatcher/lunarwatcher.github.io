@@ -1,8 +1,9 @@
 ---
-title: Multiple return values from the \_\_index meta method
+title: Multiple return values from the __index meta method
 tags: ["lua"]
-date: 29-12-2022T02:32:23+01:00
+date: 2022-12-29T02:32:23+01:00
 ---
+<!-- fucking highlighting__ -->
 
 You don't.
 

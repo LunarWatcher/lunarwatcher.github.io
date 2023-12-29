@@ -2,6 +2,7 @@
 title: "SSH hardening: an observation on the efficiency of changing ports"
 date: 2022-12-23T16:21:01+01:00
 tags: ["ssh"]
+ingress: Bots mostly scanning common ports can be used to your advantage to hide services.
 ---
 
 I often open an SSH port to the internet, largely when I need to access my devices remotely. I've taken numerous measures to harden my servers, but  the biggest problem has always been DDOS protection. 

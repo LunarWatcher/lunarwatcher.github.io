@@ -2,6 +2,7 @@
 title: "Hugo on GitHub Pages"
 date: 2021-07-18T14:44:30+02:00
 tags: ["hugo", "github", "github pages"]
+ingress: Deploying Hugo isn't nearly as trivial as Jekyll, but it's absolutely doable.
 ---
 
 > **Note:** There's a better option available thanks to improvements to GitHub Actions. See [this article]({{<ref path="/posts/2023-08-29-hugo-on-github-pages-revised.md">}}) for  the details. The option outlined here still works, but the alternative is much cleaner.

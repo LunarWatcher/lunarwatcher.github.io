@@ -1,16 +1,18 @@
 ---
-title: "C++ time sucks: incomplete time parsing"
+title: "C++ time sucks: parsing incomplete timestamps"
+ingress: "There's not that many ways to parse incomplete dates and infer any missing time attributes. `std::chrono` is verbose on a good day"
 tags: ["c++"]
 date: 2022-08-19T19:50:19+02:00
+lastmod: 2023-12-29T16:36:03+01:00
 ---
 
 C++ time parsing is trash. HowardHinnant/date is equally bad, but it also adds timezone parsing. C++20's time additions is just HowardHinnant/date without the name.
 
-Using the old `std::get_time`, because the vast majority of distros and compilers haven't implemented the new garbage (HowardHinnant/date), and it doesn't fix the core problem anyway.
+It's easier to do this using the old `std::get_time`, because the vast majority of distros and compilers haven't implemented the new garbage (HowardHinnant/date), and it doesn't fix the core problem anyway.
 
 Say you have a date similar to what journald logs contain: `Aug 17 22:17:44`. Guess what happens if you try parsing it.
 
-That's right, the time representation, as well as the year is completely fucked, because it doesn't include the year. Fortunately, this is possible to work around with `std::get_time`. HowardHinnant/date does not seem to offer this, making it still trash and definitely worth avoiding at all cost.
+That's right, the time representation, as well as the year is completely fucked, because it doesn't include the year. Fortunately, this is possible to work around with `std::get_time`. HowardHinnant/date does not seem to offer this, at least not without doing a fuckton of casts and other Not Fun Stuff.
 
 The `tm` struct passed around to various methods:tm: isn't cleared, _and_ it uses the contextual data you've provided to yield a usable date. This means that shoving in `2022 - 1900` actually provides a correct date for the journald strings. Unfortunately, it seems to still misbehave, so I took it one step further:
 
@@ -36,4 +38,5 @@ The idea here is to let the parser override the time in all undefined fields. Th
 Though honestly, std::chrono having such abysmal support presents challenges. To print it, it has to be converted back to a `struct tm`, and shoved through `put_time`, or alternatively `strftime` if you happen to understand the parameters of it.
 It might be worth just leaving it as an `std::tm` instead to avoid unnecessary conversions.
 
-Note that there may be manual cleanup of the `strct tm*`. The man page for `std::localtime` wasn't clear on that.
+Note that there may be manual cleanup of the `struct tm*`. The man page for `std::localtime` wasn't clear on that.
+
