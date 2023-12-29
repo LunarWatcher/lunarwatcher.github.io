@@ -333,6 +333,13 @@ main, .toc-container {
 
 }
 
+figure {
+    figcaption {
+        padding: 2%;
+        box-sizing: border-box;
+    }
+}
+
 // Spoilers {{{
 
 .spoiler {
@@ -510,7 +517,7 @@ tbody tr th {
 // }}}
 // Post listing {{{
 .meta-container {
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 // }}}
 // Page list; I assume I can extend this to support other styles anyway {{{

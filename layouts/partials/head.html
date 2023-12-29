@@ -8,7 +8,11 @@
 <link rel="canonical" href="{{ .Permalink }}">
 
 <!-- Visible metadata -->
+{{ if and (eq .Data.Singular "tag") (not (eq .Title "Tags")) }}
+<title>Posts tagged {{ .Title }} | {{ .Site.Title }}</title>
+{{ else }}
 <title>{{ .Title }} | {{ .Site.Title }}</title>
+{{ end }}
 <!-- Scripts and stylesheets -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {{ if .Params.mermaid }}
