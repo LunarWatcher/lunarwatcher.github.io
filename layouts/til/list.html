@@ -1,0 +1,21 @@
+{{ define "main" }}
+    {{ .Content }}
+
+    {{ if (eq .Section "til") }}
+        {{ range (sort .Sections ".Title" "asc") }}
+        <div>
+            <h2 id="{{ .Name | anchorize }}">{{ .Name }}</h2>
+            <ul>
+                {{ range .Pages }}
+                <li><a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{ if isset .Params "ingress" }}
+                        {{ .ingress }}
+                    {{ end }}
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+    {{ else }}
+    {{ end }}
+{{ end }}

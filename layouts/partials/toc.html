@@ -1,8 +1,17 @@
-
 <div class="toc">
-    
     <h2>Table of contents</h2>
-    
-    <div>{{ .Page.TableOfContents }}</div>
-</div>
+    {{ if (in .Page.TableOfContents "<ul>") }}
+            
+            
+        <div>{{ .Page.TableOfContents }}</div>
 
+    {{ else }}
+        <div>
+            <ul>
+                {{ range (sort .Sections ".Title" "asc") }}
+                <li><a href="#{{ .Name | anchorize }}">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+        </div>
+    {{ end }}
+</div>
