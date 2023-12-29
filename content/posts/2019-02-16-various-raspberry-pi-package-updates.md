@@ -2,7 +2,7 @@
 date: "2019-02-16T00:00:00Z"
 title: "Specific package updates on Raspberry Pi/Raspbian"
 slug: specific-package-updates-on-raspberry-pi-raspbian
-tags: ["raspberry pi", "raspbian"]
+tags: ["raspberry-pi", "raspbian"]
 ---
 
 The Raspbian package repos are, in my experience, extremely slow with updates. Ninja pre-dates version one, Python3 is still stuck on 3.5.2, and a lot of other packages are outdated. Installing from source isn't always easy, because they get new dependencies, and suddenly you have accidentally missing packages and compiling fails. So here's a list of some install guides for various tools.

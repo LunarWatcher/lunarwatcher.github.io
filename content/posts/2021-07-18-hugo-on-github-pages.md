@@ -1,7 +1,7 @@
 ---
 title: "Hugo on GitHub Pages"
 date: 2021-07-18T14:44:30+02:00
-tags: ["hugo", "github", "github pages"]
+tags: ["hugo", "github", "github-pages"]
 ingress: Deploying Hugo isn't nearly as trivial as Jekyll, but it's absolutely doable.
 ---
 

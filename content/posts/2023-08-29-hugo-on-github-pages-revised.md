@@ -2,7 +2,7 @@
 title: "Hugo on GitHub Pages with GitHub Actions"
 ingress: "The modern alternative for deploying non-jekyll pages to GitHub Pages"
 date: 2023-08-29T20:25:37+02:00
-tags: ["hugo", "github", "github pages"]
+tags: ["hugo", "github", "github-pages"]
 slug: "hugo-on-github-pages-the-modern-alternative-for-deploying-non-jekyll-pages-to-github-pages"
 ---
 
