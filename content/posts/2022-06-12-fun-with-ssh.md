@@ -16,9 +16,9 @@ In conclusion, I needed a NAS, and I did get one.
 
 That NAS is powered by SSH. I did not know SSH could do that before I hooked it up. 
 
-The main advantage with SSH for me is that it's the only service I actually have exposed to the internet. The more it can do, the fewer services I need to expose, and the harder I can fortify my network when I need to connect to it remotely.
+The main advantage with SSH for me is that it's the only service I actually have exposed to the internet. The more it can do, the fewer services I need to expose, and the harder I can fortify my network when I need to connect to it remotely. Aside slightly bad Windows support, the upsides are many.
 
-Now, unfortunately, I need a Windows laptop because my uni is annoying and hasn't fully built out computers for exam use. The only way I have a chance of maintaining a functional Windows partition is if this laptop is Windows-only; a concern I didn't think about when I sat there enjoying my Linux-main environment back in March. Y'know, before the great ~~reset~~ laptop death.
+So, what else can it be used for?
 
 ## VPN?
 
