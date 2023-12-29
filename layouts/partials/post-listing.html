@@ -1,0 +1,26 @@
+<article>
+    <h2><a href="{{ .Permalink }}">{{ if .Draft }}{{ T "draft" }}: {{ end }}{{ .Title | markdownify }}</a></h2>
+    <p>
+    {{ if isset .Params "ingress" }}
+        {{ .Params.ingress }}
+    {{ else }}
+        {{ .Summary }}
+    {{ end }}
+
+    </p>
+    <div>
+        <a href="{{ .RelPermalink }}">Read More...</a>
+    </div>
+    <div class="meta-container grey-text">
+        {{ if .Params.Category }}
+        <br><span class="post-meta">Post type: {{ .Params.Category }}</span>
+        {{ end }}
+        Posted <time>{{ partial "dformat.html" . }}</time>
+        {{ if isset .Params "tags" }}
+        / {{ partial "tags.html" . }}
+        {{ end }}
+        {{ if isset .Params "series" }}
+        / Posted in {{ partial "series.html" . }}
+        {{ end }}
+    </div>
+</article>

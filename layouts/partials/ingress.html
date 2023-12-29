@@ -1,0 +1,6 @@
+<div class="ingress small-paragraphs">
+    {{ if isset .Params "ingress" }}
+        <p>{{ .Params.ingress }}</p>
+    {{ end }}
+    <span class="grey-text text-small">Posted on {{ partial "dformat.html" . }}</span>
+</div>

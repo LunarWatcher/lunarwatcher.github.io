@@ -1,7 +1,8 @@
 ---
 title: "The case for bundling dependencies*"
 date: 2023-12-26T15:33:12+01:00
-tags: ["c++"]
+tags: ["c++", "c", "linux", "dependencies"]
+ingress: "Let's talk about dependency bundling on Linux, and why it isn't always a bad thing. ... With some asterisks."
 ---
 
 I recently stumbled into [a page on the Gentoo wiki](https://wiki.gentoo.org/wiki/Why_not_bundle_dependencies) making a case against bundling dependencies while trying to fight a CMake install script, as I tried to bundle some dependencies and had a bad search term that led me to that page.

@@ -1,7 +1,9 @@
 ---
-title: "Hugo on GitHub Pages: The modern alternative for deploying non-jekyll pages to GitHub Pages"
+title: "Hugo on GitHub Pages with GitHub Actions"
+ingress: "The modern alternative for deploying non-jekyll pages to GitHub Pages"
 date: 2023-08-29T20:25:37+02:00
 tags: ["hugo", "github", "github pages"]
+slug: "hugo-on-github-pages-the-modern-alternative-for-deploying-non-jekyll-pages-to-github-pages"
 ---
 
 This is a revision of [an old article of mine]({{<ref path="/posts/2021-07-18-hugo-on-github-pages.md">}}), which relied on using a separate branch, and a GitHub action that pushed the deployable page to it. This is still an option, and it still works. However, there's now a significantly cleaner option that doesn't involve using a branch that's cleaned and force-pushed to.

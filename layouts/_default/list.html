@@ -15,25 +15,7 @@
 
     <div class="posts">
         {{ range .Pages }}
-        <div class="article">
-            <h2><a href="{{ .Permalink }}">{{ if .Draft }}{{ T "draft" }}: {{ end }}{{ .Title | markdownify }}</a></h2>
-            <div class="meta-container">
-                {{ if .Params.Category }}
-                    <br><span class="post-meta">Post type: {{ .Params.Category }}</span>
-                {{ end }}
-                Posted <time>{{ partial "dformat.html" . }}</time>
-            {{ if isset .Params "tags" }}
-                / {{ partial "tags.html" . }}
-            {{ end }}
-            {{ if isset .Params "series" }}
-                / Posted in {{ partial "series.html" . }}
-            {{ end }}
-            </div>
-            <p>{{ .Summary }}</p>
-            <div>
-                <a href="{{ .RelPermalink }}">Read More...</a>
-            </div>
-        </div>
+            {{ partial "post-listing.html" . }}
         {{ end }}
     </div>
     

@@ -1,0 +1,26 @@
+<div class="author-highlight container flex-center small-paragraphs">
+    <div class="flex-horizontal">
+        <p class="flex-shrink" style="align-self: flex-end;">Tags:
+        <span>
+            {{ if isset .Params "tags" }}
+                {{ partial "tags.html" . }}
+            {{ end }}
+            {{ if isset .Params "series" }}
+                / Posted in {{ partial "series.html" . }}
+            {{ end }}
+        </span>
+        </p>
+        <div class="flex-grow"></div>
+
+        <div class="flex-vertical flex-shrink flex-smallgap">
+            <span class="grey-text text-small">Posted on {{ partial "dformat.html" . }} by</span>
+            <div class="flex-horizontal flex-smallgap" id="author-wrapper">
+                <img src="https://avatars.githubusercontent.com/u/29489988" class="circle accent-border text-small nocenter" />
+                <span style="margin: auto 0">
+                <a href="/contact.html" style="margin: auto 0">Olivia</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
