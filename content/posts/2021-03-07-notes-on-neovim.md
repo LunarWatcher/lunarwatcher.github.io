@@ -2,6 +2,7 @@
 title: "My notes on Neovim"
 date: 2021-03-07T17:30:46+01:00
 tags: ["editor", "vim", "neovim"]
+slug: "my-notes-on-neovim.html"
 ---
 
 So I decided to give Neovim another try (and specifically nvim-qt). Here's what happened. <sub>Note that I'm not looking for a "solution to my problem" or any crap like that. This is purely based on my observations and experience with Neovim.</sub>

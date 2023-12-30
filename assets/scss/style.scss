@@ -619,6 +619,13 @@ img.text-small {
     width: 100%;
 }
 
+.flex-align-end {
+    align-items: flex-end;
+}
+.flex-align-center {
+    align-items: center;
+}
+
 .text-right {
     text-align: right;
 }

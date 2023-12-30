@@ -4,7 +4,7 @@
         <p>{{ .Params.ingress | .RenderString }}</p>
     {{ end }}
     <span class="grey-text text-small">Posted on {{ partial "dformat.html" (dict "Date" .Date) }}</span>
-    {{ if isset .Params "lastmod" }}
+    {{ if and (isset .Params "lastmod") (ne .Date .Params.lastmod) }}
         <span class="grey-text text-small">- Last modified on {{partial "dformat.html" (dict "Date" .Params.lastmod )}}</span>
     {{ end }}
 </div>
