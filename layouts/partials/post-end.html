@@ -14,6 +14,9 @@
 
         <div class="flex-vertical flex-shrink flex-smallgap">
             <span class="grey-text text-small">Posted on {{ partial "dformat.html" . }} by</span>
+            {{ if isset .Params "lastmod" }}
+                <span class="grey-text text-small">Last updated {{partial "dformat.html" (dict "Date" .Params.lastmod )}}</span>
+            {{ end }}
             <div class="flex-horizontal flex-smallgap" id="author-wrapper">
                 <img src="https://avatars.githubusercontent.com/u/29489988" class="circle accent-border text-small nocenter" />
                 <span style="margin: auto 0">

@@ -5,7 +5,7 @@
     {{ $baseurl := .Site.BaseURL }}
 
     {{ if and (eq .Data.Singular "tag") (not (eq .Title "Tags")) }}
-        <h1>#{{ .Title | lower }}</h1>
+        <h1>Posts tagged {{ .Title | lower }}</h1>
     {{ else }}
         <h1>{{ .Title }}</h1>
     {{ end }}

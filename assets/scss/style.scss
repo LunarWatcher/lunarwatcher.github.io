@@ -108,13 +108,13 @@ blockquote {
 }
 
 a {
-    color: $pink-light !important;
+    color: $pink-light;
 
     &:visited {
-        color: adjust-color($pink-light, $hue: -25deg, $lightness: -15%) !important;
+        color: adjust-color($pink-light, $hue: -25deg, $lightness: -15%);
     }
     &:hover {
-        color: adjust-color($pink-light, $hue: -25deg, $lightness: 5%) !important;
+        color: adjust-color($pink-light, $hue: -25deg, $lightness: 5%);
     }
     code {
         color: lighten($color: $pink-light, $amount: 15%);
@@ -156,7 +156,8 @@ ol {
 
 
 nav {
-    h1, h2 {
+    h1.logo {
+        text-decoration: none;
         border-bottom: 0px !important;
         padding: 0px;
         margin: 0px;
@@ -173,11 +174,11 @@ footer, header, .primary-theme {
     overflow: auto;
 
     a, a:visited {
-        color: $pink-primary !important;
+        color: $pink-primary;
     }
 
     a:hover {
-        color: $pink-secondary !important;
+        color: $pink-secondary;
     }
 }
 
@@ -195,7 +196,7 @@ header {
 
         line-height: 64px;
         height: 64px;
-        a {
+        .topnav > a, .sidenav > a, .logo > a {
             text-decoration: none;
         }
 
@@ -230,7 +231,7 @@ header {
     }
 
     a:hover {
-        background-color: lighten($color: $grey-primary, $amount: 15%);
+        background-color: lighten($color: $grey-primary, $amount: 15%) ! important;
     }
 
     a:not(.close) {
@@ -294,7 +295,7 @@ header {
     }
 
     a:hover {
-        background-color: $grey-selected;
+        background-color: $grey-selected !important;
     }
 }
 
@@ -488,15 +489,27 @@ tbody tr th {
 }
 // }}}
 // Fancy link shit {{{
-.button, .button:visited, button:active {
+button, .button, .button:visited, button:active {
+
     @extend .shade-box;
-    background-color: $pink-secondary;
-    color: white !important;
+    background-color: $pink-secondary !important; 
+    border: 1px solid #eeeeee;
+    border-radius: 8px !important;
+    color: #000;
     padding: 4px;
-    margin: 10px !important;
+    margin: 10px;
     border-radius: 2px;
     font-size: 1.5em;
+    transition: 0.3s ease-in;
+    box-sizing: border-box;
 }
+
+button, .button:hover {
+    box-shadow: 0 7px 14px rgba(0,0,0,0.29), 0 3px 3px rgba(0,0,0,0.33);
+    background-color: adjust-color($pink-secondary, $lightness: -15%) !important;
+    color: black;
+}
+
 .shade-box {
     box-shadow: 0 7px 14px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
     padding: 10px;
@@ -539,6 +552,15 @@ img.text-small {
 }
 // }}}
 // Flexbox shit v2 {{{
+
+.flex-twocol > * {
+    width: 48%;
+    gap: 1px;
+    flex: 1 1 48%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
 .flex-item {
     flex: 1 1 300px;
     min-width: 300px;
