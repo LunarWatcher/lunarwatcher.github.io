@@ -1,4 +1,5 @@
-    <div class="flex-horizontal small-paragraphs container author-highlight flex-align-end">
+<div class="flex-vertical small-paragraphs container author-highlight">
+    <div class="flex-horizontal flex-align-end">
         <div class="flex-vertical flex-shrink flex-smallgap">
             <span class="grey-text text-small">Posted on {{ partial "dformat.html" . }}</span>
             {{ if and (isset .Params "lastmod") (ne .Date .Params.lastmod) }}
@@ -29,6 +30,10 @@
             </div>
         </div>
     </div>
+    <div>
+        <p>Share this article: <a href="#" onclick="javascript:copyLink(event, {{ .Permalink }})">Link</a></p>
+    </div>
+</div>
 
 
 {{ if not .Params.nocomments }}

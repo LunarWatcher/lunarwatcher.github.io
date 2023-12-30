@@ -21,7 +21,8 @@ function uwu() {
         "rawr x3",
         "howls uwu",
         "growl (╬ Ò ‸ Ó)",
-        "(* ^ ω ^)"
+        "(* ^ ω ^)",
+        "I like trains"
     ];
 
     let body = document.body.getElementsByTagName("main")[0];
@@ -47,6 +48,18 @@ function uwu() {
     }
     console.log(body);
 
+}
+
+function copyLink(ev, link) {
+    ev.preventDefault();
+    navigator.clipboard.writeText(link);
+
+    ev.target.innerHTML = "Copied link!";
+    setTimeout(() => {
+        ev.target.innerHTML = "Share";
+    }, 3000);
+
+    return false;
 }
 
 window.onload=function() {
