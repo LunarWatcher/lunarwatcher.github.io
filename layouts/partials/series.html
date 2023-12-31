@@ -1,11 +1,12 @@
 {{ $taxonomy := "series" }}
 {{ with .Param $taxonomy }}
-    <br><span class="post-meta">This post is a part of these series:
+    <span class="post-meta">This post is a part of the
     {{ range $index, $_series := . }}
         {{- if gt $index 0 }}, {{ end -}}
         {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy ($_series | urlize)) -}}
-            <a class="post-series" href="{{ .Permalink }}">@{{ $_series }}</a>
+            <a class="post-series" href="{{ .Permalink }}">{{ $_series }}</a>
         {{- end -}}
     {{- end -}}
+    &nbsp;series
     </span>
 {{ end }}

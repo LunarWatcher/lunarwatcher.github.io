@@ -11,9 +11,6 @@
                     {{ if isset .Params "tags" }}
                         {{ partial "tags.html" . }}
                     {{ end }}
-                    {{ if isset .Params "series" }}
-                        / Posted in {{ partial "series.html" . }}
-                    {{ end }}
                 </span>
                 </p>
             </div>
@@ -34,7 +31,6 @@
         <p>Share this post: <a href="#" onclick="javascript:copyLink(event, {{ .Permalink }})">Link</a></p>
     </div>
 </div>
-
 
 {{ if not .Params.nocomments }}
     <div class="comments">

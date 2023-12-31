@@ -37,7 +37,9 @@ In a comparable amount of time after opening :22, this is an insanely low amount
 {{< figure 
     src="/img/ssh bans.png"
     alt="Image showing a ban graph generated from f2b, with a peak of over 8000 bans" 
-    caption="An exposed port in the low ranges gets a lot of attention from generic botnets looking for new members. Note that the dip in the graph is due to an unexpected fail2ban failure." >}}
+    caption="An exposed port in the low ranges gets a lot of attention from generic botnets looking for new members. Note that the dip in the graph is due to an unexpected fail2ban failure caused by a non-apt Python update that went sideways without notifying me." 
+    id="ban-stats"
+>}}
 
 Each interval is 1 million seconds, or around 12 days. This graph has some curiosities that are entirely my fault;
 

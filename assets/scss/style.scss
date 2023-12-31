@@ -386,7 +386,7 @@ blockquote.spoiler {
 article {
     //@extend .shade-box;
 
-    border-bottom: 1px dashed black;
+    border-bottom: 1px solid $pink-primary;
     padding-bottom: 3px;
     margin-bottom: 15px;
     h2 {
@@ -396,6 +396,10 @@ article {
         border-bottom: none !important;
         margin-bottom: 0px !important;
         padding-bottom: 0px !important;
+    }
+
+    div.meta-container {
+        margin-bottom: 5px;
     }
 }
 
@@ -630,6 +634,60 @@ img.text-small {
     text-align: right;
 }
 
+// }}}
+// Link lists {{{
+.link-list {
+    border: 2px solid #e1e1e1;
+    border-radius: 10px;
+    box-sizing: border-box;
+    .header h2 {
+        border: none;
+        padding: 12px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .series-list {
+        gap: 0;
+
+        a {
+            // This is corrected later with the underline span
+            // Otherwise, there's an underline for the space
+            // between the part index and the title, which is
+            // stupid
+            text-decoration: none;
+            border-top: 2px solid #e1e1e1;
+            font-size: 1.15rem;
+            padding: 12px;
+            margin: 0;
+            box-sizing: border-box;
+
+            .part-number {
+                display: inline-block;
+                width: calc(2 * 1.15rem);
+                height: calc(2 * 1.15rem);
+                line-height: calc(2 * 1.15rem);
+                border: 2px solid $pink-primary;
+                border-radius: 100%;
+                text-align: center;
+                margin-right: 3px;
+            }
+
+            &.active {
+                font-weight: 650;
+                .part-number {
+                    background: lighten($pink-primary, 10%);
+                    color: black;
+                }
+
+            }
+        }
+    }
+}
+
+.underline {
+    text-decoration: underline;
+}
 // }}}
 
 div.small-paragraphs {
