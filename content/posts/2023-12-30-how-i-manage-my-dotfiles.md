@@ -9,7 +9,9 @@ toc: true
 
 When I started using Vim back at the end of 2018/the start of 2019, I set up my first proper config file. Prior to this, at most, I had a single `.bashrc` that was mostly standard, with a few system-dependent `PATH` changes. On January 25th 2019, [I uploaded the first revision](https://github.com/LunarWatcher/dotfiles/commit/53a4d7d1c461f12d2b759d33c7f1fde212d24d4d) of my `.vimrc` to GitHub. At the time, disregarding the readme, there was a tiny `.bashrc` with Cygwin-compatible maps. Today, there's 19 files, and I have plans in the very near future to add more.
 
-Back when I published the first versions of my dotfiles, there was no automation of any kind. It was just file backup, and I had to manually copy stuff when I made changes, or needed to deploy to a new system. It was far from optimal, to put it mildly. 
+Back when I published the first versions of my dotfiles, there was no automation of any kind. It was just file backup, and I had to manually copy stuff when I made changes, or needed to deploy to a new system. It was far from optimal, to put it mildly.
+
+Over the years, I've been working on automating the process, and expanding into automating other parts of OS installation and management, resulting in a Makefile that does a whole lot of stuff, with immediate plans to expand it with more functionality. 
 
 ## Dotfile managers, and why I don't use them
 
