@@ -4,6 +4,7 @@ tags: ["dotfiles"]
 date: 2023-12-30T17:52:22+01:00
 ingress: "There's many different ways to manage dotfiles. Here's how I manage mine, and piggyback off that system to automate other aspects of system setup"
 series: ["Dotfile management"]
+toc: true
 ---
 
 When I started using Vim back at the end of 2018/the start of 2019, I set up my first proper config file. Prior to this, at most, I had a single `.bashrc` that was mostly standard, with a few system-dependent `PATH` changes. On January 25th 2019, [I uploaded the first revision](https://github.com/LunarWatcher/dotfiles/commit/53a4d7d1c461f12d2b759d33c7f1fde212d24d4d) of my `.vimrc` to GitHub. At the time, disregarding the readme, there was a tiny `.bashrc` with Cygwin-compatible maps. Today, there's 19 files, and I have plans in the very near future to add more.
