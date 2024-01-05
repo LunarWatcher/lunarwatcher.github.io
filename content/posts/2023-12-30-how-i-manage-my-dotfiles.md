@@ -68,7 +68,18 @@ To be short and to the point, makefiles have one major advantage over plain shel
 
 However, with shell files, you also need to do argument processing to invoke the right targets. When using makefiles, this is automatically handled by make, with no further code required. Make is simply a better out-of-the-box tool for the job than plain shell files, especially when makefiles are just as readily available as shell files. 
 
+Additionally, makefiles are very useful for processing dependency graphs. If you ever accidentally end up with a target that depends on two or more targets, that in turn depend on the same targets, you don't accidentally run the target twice. Make figures it out and makes sure stuff is executed in the correct order, and that shared dependencies aren't built multiple times.
+
 However, some parts of the install systems are still shell scripts. Currently, this applies to service installation wrappers for my homelab.
+
+### Target updatability
+
+One of the very useful features of make is that it can determine whether or not a target needs to rerun. While this can be used for some applications here as well, it's more difficult to do so. Many software update targets simply need to rerun to check if there's anything new. The dotfile targets are run once and then don't need to be run again, unless there's a new file.
+
+I haven't written my makefiles to account for this, but it can absolutely be done to reduce build overhead. Most of the installed software is going to be managed by some or another package manager anyway, or require a full update by the same system, which leaves a separate update system of little use. I do admittedly have a few use-cases for some self-hosted stuff, but different projects handle the update process itself in very different ways. There are ways to help make with the update process, but this is not something I have touched. I might revisit this in the future.
+
+A part of the reason I don't try handling it is that my update process primarily uses symlinks, meaning a `git pull` is sufficient to update. Additionally, most of the remaining targets don't need an 
+
 
 ## What about OS and distro management?
 

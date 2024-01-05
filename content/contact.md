@@ -33,7 +33,6 @@ Please consider opening an issue rather than contacting me directly. This is exc
 
 I'm not interested in unsolicited job offers. I'm perfectly fine with looking for jobs on my own.
 
-
 ## Everything else
 
 If not otherwise listed here, there's no particular restrictions aside the obvious one: _don't be an asshole_.
