@@ -8,5 +8,16 @@ User-Agent: GPTBot
 Disallow: /
 User-agent: ChatGPT-User
 Disallow: /
+User-agent: 008
+Disallow: /
+User-agent: voltron
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: Amazonbot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: Googlebot-Image
 
 Sitemap: https://lunarwatcher.github.io/sitemap.xml
