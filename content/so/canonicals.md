@@ -53,6 +53,7 @@ Note that certain exceptions are instead listed as [a part of Java](#java)
 
 #### Android Q-related shit 
 * EACCES: https://stackoverflow.com/q/8854359/6296561
+* External storage: https://stackoverflow.com/q/57475704/6296561
 
 ### Off-topic hammer targets
 * Can I use Python: https://stackoverflow.com/q/49955489/6296561
