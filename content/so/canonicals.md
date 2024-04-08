@@ -51,6 +51,9 @@ Note that certain exceptions are instead listed as [a part of Java](#java)
 ### Data
 * Saving: https://stackoverflow.com/q/10962344/6296561
 
+#### Android Q-related shit 
+* EACCES: https://stackoverflow.com/q/8854359/6296561
+
 ### Off-topic hammer targets
 * Can I use Python: https://stackoverflow.com/q/49955489/6296561
 
