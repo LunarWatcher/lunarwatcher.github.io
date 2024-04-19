@@ -65,12 +65,10 @@ For the record, when I say it flags badly, I mean it flags _really_ badly. Here'
 
 Again, as a reminder, the unfriendly robot flagged these comments as rude. Under Stack Overflow's commenting rules, they are noise and would be deleted, but they're by no stretch of the imagination rude.
 
-Personally, I've ended up calling the unfriendly robot decline target practice. 
+Personally, I've ended up calling the unfriendly robot decline target practice. The three examples above are far from the only bad flags the bot has raised - again, I estimate around 95% of the flags that reach mods are invalid. 
+This is a shame, though, as the idea itself is good. A lot of users don't know when to flag, so too many rude comments go under the radar. The unfriendly robot was meant to bridge this gap. It's possible it did at some point, but it was introduced years before I was elected. Since then, it has aged like a fine bottle of open milk in direct sunlight, and no longer achieves this goal. All it does is add unnecessary work for moderators, without catching much other users don't catch anyway. There are several user-created bots that monitor comments, including unfriendly comments, and do so better than the company's attempt at such a bot.
 
-The idea is great for a number of reasons. Particularly, a lot of users don't know when to flag, so a lot of rude comments go under the radar. The unfriendly robot was meant to bridge this gap. However, it has aged like a fine bottle of open milk in direct sunlight, and no longer achieves this goal. 
-
-Combined with the initiative receiving no further attention, the initiative died, and the problem was never fixed. 
-
+Combined with the initiative receiving no further attention, the initiative died, and nothing else was done to address the problem. Many of the problems identified in the process remain to this day as a result.
 
 ### My theory on the cause of perceived hostility
 
