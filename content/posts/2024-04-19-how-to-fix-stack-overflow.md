@@ -24,7 +24,7 @@ The welcome wagon was intended as a way to change this perception. It's been aro
 
 ### The initiative cycle
 
-Before we can understand why the welcoming wagon failed, we need to look at how development has been done at the company for the past few years. I have a longer version of this expanation [here](https://meta.stackexchange.com/a/396939/332043), but here's a summary:
+Before we can understand why the welcoming wagon failed, we need to look at how development has been done at the company for the past few years. I have a longer version of this explanation [here](https://meta.stackexchange.com/a/396939/332043), but here's a summary:
 
 It starts when the company announces some initiative - this can be anything, ranging from the welcoming wagon to the more recent staging ground and outdated answer projects. They make a _huge_ deal out of it, announcing it to everyone able, possibly unwillingly, to listen. 
 
@@ -63,7 +63,7 @@ For the record, when I say it flags badly, I mean it flags _really_ badly. Here'
 
 > you deserve a hug !
 
-Again, as a reminder, the unfriendly robot flagged these comments as rude. Under Stack Overflow's commenting rules, they are noise and would be deleted, but they're by no stretch of the imagination rude.
+Again, as a reminder, the unfriendly robot flagged these comments as rude. Under Stack Overflow's commenting rules, they are noise and would be deleted, but they're by no stretch of the imagination rude. To be clear, the unfriendly robot's flags are not binding. All three flags were correctly declined by mods.
 
 Personally, I've ended up calling the unfriendly robot decline target practice. The three examples above are far from the only bad flags the bot has raised - again, I estimate around 95% of the flags that reach mods are invalid. 
 This is a shame, though, as the idea itself is good. A lot of users don't know when to flag, so too many rude comments go under the radar. The unfriendly robot was meant to bridge this gap. It's possible it did at some point, but it was introduced years before I was elected. Since then, it has aged like a fine bottle of open milk in direct sunlight, and no longer achieves this goal. All it does is add unnecessary work for moderators, without catching much other users don't catch anyway. There are several user-created bots that monitor comments, including unfriendly comments, and do so better than the company's attempt at such a bot.
