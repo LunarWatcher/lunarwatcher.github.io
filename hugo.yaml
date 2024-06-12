@@ -10,10 +10,6 @@ uglyurls: true
 pygmentsUseClasses: true
 enableEmoji: true
 
-author:
-  name: Olivia
-  email: zoe.i2k1@gmail.com
-
 #frontmatter:
   #lastmod: ["lastmod"]
 
@@ -50,6 +46,9 @@ taxonomies:
   series: series
 
 params:
+  author:
+    name: Olivia
+    email: zoe.i2k1@gmail.com
   discord: y3vd2vAYru
   discord_user: oliviawolfie
   github: LunarWatcher

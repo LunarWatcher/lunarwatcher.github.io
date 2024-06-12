@@ -1,18 +1,17 @@
-{{ $taxonomy := "series" }}
 {{ $currLink := .Permalink }}
-{{ if isset .Params $taxonomy }}
+{{ if isset .Params "series" }}
 <div class="link-list container">
     <!--
     Pick the first series. There will only ever be one
     if the series is set
     -->
-    {{ $series := (index (.Param $taxonomy) 0) }}
+    {{ $series := (index (.Params.series) 0) }}
 
     <div class="header">
-        <h2>{{ $series }} ({{ .Site.Taxonomies.series.Count ($series | urlize) }} part series)</h2>
+        <h2>{{ $series }} ({{ .Site.Taxonomies.series.Count ($series | lower) }} part series)</h2>
     </div>
     <div class="series-list flex-vertical">
-        {{ range $idx, $page := (sort (index .Site.Taxonomies.series ($series | urlize)) ".Date" "asc") }}
+        {{ range $idx, $page := (sort (index .Site.Taxonomies.series ($series | lower)) ".Date" "asc") }}
         <a href="{{ $page.Permalink }}"
             {{ if eq $page.Permalink $currLink }}
             class = "active"
