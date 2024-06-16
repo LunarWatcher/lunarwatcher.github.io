@@ -4,35 +4,43 @@ summary: Short guide on using multiple GitHub accounts on one computer in a way 
   doesn't require manual account changing
 tags: ["git"]
 title: Multiple GitHub accounts on one computer
+modified: 2024-06-17T00:14:53+02:00
 ---
 
-This method uses SSH keys, and builds around Bash. It works on Windows, but requires a Bash command line (type `bash` into CMD if installed, or use something like Git Bash or Cygwin)
+I have two GitHub accounts; one for personal use, and one for work use. Occasionally, I want to use these on the same computer, but most SSH systems don't like this. There are a few ways to get it to work; one of the obvious is to manually switch out the keys every time an account switch is made. However, this is clunky and annoying to do, so I needed an alternative. This method uses SSH keys and SSH config, and should work on all modern systems with access to ssh.
 
-`cd` into `~/.ssh`. Create the directory if it doesn't exist. 
+---
 
-Generate keys:
+## Setting up  SSH keys
 
+If you already have SSH keys for all your accounts, you can skip this step.
+
+To start off, `cd ~/.ssh`. Create the directory if it doesn't exist. 
+
+Then generate the keys:
 ```bash
-$ ssh-keygen -t rsa -b 4096 -f ~/.ssh/github_main -C "main.email@example.com"
-$ ssh-keygen -t rsa -b 4096 -f ~/.ssh/github_secondary -C "secondary.email@example.com"
+$ ssh-keygen -t ed25519 -f ~/.ssh/github_main -C "main.email@example.com"
+$ ssh-keygen -t ed25519 -f ~/.ssh/github_secondary -C "secondary.email@example.com"
 # Repeat for more
 ```
 
-Still in `~/.ssh/`:
+Note that the exact type of key isn't really important; if you have a different type of key already, that doesn't affect teh rest of this approach.
 
-Create `config` if it doesn't exist:
+Once you've done this, add the right key to the right account. On GitHub, you do this under settings -> keys ([direct link to github.com/settings/keys](https://github.com/settings/keys)). If you're following this article on a different Git Provider, go to the appropriate place to add keys there instead instead. Repeat for other accounts and other keys. Make sure you copy the right key, and make sure you copy the public version (`.pub`). 
+
+## Setting up multi-account support
+
+Once you've added all the keys to your accounts, the next step is config. Still in `~/.ssh`, create a file called `config`, if you don't have one already:
 
 ```bash
 touch config
 ```
 
-Edit it:
+And open it in your favourite editor.
 
-```bash
-start config
-```
+Adding support for multiple accounts is done with SSH config magic in the config file. The idea is, simply, to use different Hosts for different accounts. If you're familiar with how the config file works, this probably sounds off; if you change the Host, then surely, that breaks SSH?
 
-Add this. Add additional ones for more accounts:
+You'd be correct; however, you're not required to use real hosts in SSH config files. You can name a host whatever you want, but if the Host doesn't correspond to a real URL or IP, you need to define a HostName to point somewhere that does exist. This has many applications, including letting you specify names to wrap IP addresses for, for example, local servers. In this case, we take advantage of this to specify multiple sub-domains of GitHub, all pointing back to the real GitHub:
 
 ```
 Host github.com
@@ -45,50 +53,30 @@ Host secondary.github.com
   IdentityFile ~/.ssh/github_secondary
 ```
 
-Copy the SSH key:
+This allows specific URLs to be used to identify different GitHub accounts. You'll need one Host entry per account. Once this is done, you can access one account by using `github.com` URLs, and the other with `secondary.github.com`. 
+
+## This approach in practice, and verifying the config
 
 
-Option 1: `cat github_main.pub`. Copy what it prints into the console
-
-Option 2: Copy straight to the clipboard
-
-1. OS X: `cat github_main.pub | pbcopy`
-2. Linux: `cat github_main.pub | xclip`
-3. Windows: `cat github_main.pub | clip`
-
-Add the key to your GitHub account ([direct link to github.com/settings/keys](https://github.com/settings/keys)). Repeat for other accounts and other keys. Make sure you copy the right key, and make sure you copy the public version (`.pub`).
-
-Finally, change remotes where necessary. If you have three accounts and the config looks like this:
-
+Since the hostname now identifies the URL, picking which account to use is reflected in the URL. For verifying if you can connect to GitHub with SSH keys, you can use this command: `ssh git@github.com`. This will give you a message like this:
 ```
-Host github.com
-  User git
-  IdentityFile ~/.ssh/github_main
-
-Host secondary.github.com
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/github_secondary
-Host tertiary.github.com
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/github_tertiary 
+PTY allocation request failed on channel 0
+Hi LunarWatcher! You've successfully authenticated, but GitHub does not provide shell access.
+Connection to github.com closed.
 ```
 
-That means:
+Repeat this command for each of your accounts, If you have a `secondary.github.com`, use `ssh git@secondary.github.com`. If everything is set up correctly, you'll see the same message with a different username for each account you've set up.
 
-* The main account uses SSH URLs like `git@github.com:LunarWatcher/lunarwatcher.github.io.git`
-* The second account uses SSH URLs like `git@secondary.github.com:LunarWatcher/lunarwatcher.github.io.git`
-* The third account uses SSH URLs like `git@tertiary.github.com:LunarWatcher/lunarwatcher.github.io.git`
+As a practical example, let's say you want to clone the repo [for this website](https://github.com/LunarWatcher/lunarwatcher.github.io). If you want to use your:
 
-Notice that the second and third don't use `github.com` as the URL, they use `secondary.github.com` and `tertiary.github.com` respectively. The reason this works is because of the config file; The host name makes sure the traffic is actually directed to `github.com` for `secondary.github.com`, but it uses a different SSH key (see the `IdentityFile` value). Same applies for the third one, just with a separate file. 
+* Main account: `git clone git@github.com:LunarWatcher/lunarwatcher.github.io`
+* Secondary account: `git clone git@secondary.github.com:LunarWatcher/lunarwatcher.github.io`
 
-Therefore, some remotes need changing.
+Note how the domain itself changes from `github.com` to `secondary.github.com` for the secondary account. This works with any number of accounts as well, as long as you remember to switch the domains when using a different account, and add config for each account. This also means that when you copy the link to clone a repo from GitHub, you may have to modify the URL to clone with the right credentials.
 
-You should only use SSH to keep track of this. If you use HTTPS somewhere, change it to the appropriate version of the remote. The example one used earlier (`git@github.com:LunarWatcher/lunarwatcher.github.io.git`) is the URL to this repo. If you have two accounts, and pull using that exact one, assuming `Host github.com` is defined, that account will be used to pull. If you change to `secondary.github.com` (make sure the rest of the remote stays the same), the second account will be used to pull. Obviously, if you don't change the username and email, the commits will be done in whatever config the global value is set to. Change the local config where necessary using `git config user.email "your.email@example.com"` and the same for the username. Without `--global`, it's set for the repo. 
+## Other notes
 
-Anyways, for the remotes. There's no need to remove and recreate them. You can call `git config remote.remotename.url git@github.com:username/reponame.git` to change the URL of the remote. Change `github.com` to the appropriate version if you're using the non-main account.
+There's, strictly speaking, nothing requiring you to even use `github.com` in any part of the hostname. This is my personal preference though, as I prefer hostnames at least partly identifying where the connection goes. It also ensures that if I suddenly don't have my config (or my config, for some reason, breaks, I'm not sending SSH requests to random servers unrelated to GitHub).
 
-And for new repos, always use SSH. And, as already mentioned a few times, change the `github.com` part of it if you're using a separate account.
+You can, technically, use something that isn't a domain either, such as `personal_github` and `work_github` as the hostnames if you prefer - or something completely different. 
 
-And you should be good to go! You can now use SSH keys to access multiple GitHub accounts on one computer without removing logins.

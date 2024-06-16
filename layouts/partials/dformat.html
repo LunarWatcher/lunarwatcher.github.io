@@ -1,4 +1,7 @@
+<time datetime="{{.Date.Format "2006-01-02T15:04:05Z07:00"}}" title="{{.Date.Format "2006-01-02T15:04:05Z07:00"}}">
+
 {{ .Date.Format "January 2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }}, {{ .Date.Format "2006" }}
+</time>
 <!--
 vim:ft=liquid
 -->
