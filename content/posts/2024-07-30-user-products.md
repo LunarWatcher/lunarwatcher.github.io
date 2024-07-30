@@ -9,9 +9,11 @@ A few days ago, I caved and got myself a [Kagi](https://kagi.com) subscription. 
 
 Kagi, admittedly, does have an AI push as well. But unlike both Microsoft and Google, it isn't shoved down the users' throats. It exists, and some of the automatic functionality can be outright disabled, but it doesn't influence normal search results.
 
-However, the point of mentioning Kagi is that I saw something I haven't seen in a while. Especially in a search engine. Kagi is a search engine made by people who understand what users want from a search engine. The results feel like Google results before Google managed to get worse than Bing (and before Bing declined just has hard and managed to get worse than itself, which is impressive, but not in a good way), but better. There's so many QOL features. I'm only 4 days in, so I haven't had the chance to explore everything, but lenses, first-class keyboard shortcuts, URL rewriting, and changing the ranking of sites by preference are a few of the things I've already come to love. 
+However, the point of mentioning Kagi is that I saw something I haven't seen in a while. Especially in a search engine. Kagi is a search engine made by people who understand what users want from a search engine. The results feel like Google results before Google managed to get worse than Bing (and before Bing declined just has hard and managed to get worse than itself, which is impressive, but not in a good way), but better. There's so many QOL features. I'm only 4 days in, so I haven't had the chance to explore everything, but lenses, first-class keyboard shortcuts, URL rewriting, and changing the ranking of sites by preference are a few of the things I've already come to love. This is not meant to be an ad for Kagi, though.
 
-These are quality of life features you get when you have a product made by a company that understands the product, the target audience, and isn't limited by shareholders who don't understand the domain. This used to be a higher priority for many companies. Maybe not as specific features as this, but value for end-users was on the list. Now, particularly in the post-genAI era, this has been thrown out the window by most major companies.
+The point is that these are quality of life features you get when you have a product made by a company that understands the product, the target audience, and isn't limited by shareholders who don't understand the domain. This used to be a higher priority for many companies - granted, this was also before many of these companies got investors. Maybe not as specific features as the ones in Kagi, but value for end-users was high on the list. Now, particularly in the post-genAI era, this has been thrown out the window by most major companies.
+
+Part of the problem is enshittification - a process where companies first take control of the supply and demand, and only then do they try to squeeze out a profit. Things meant to replace something else (such as Uber) can even get worse than the thing the were trying to fix in the first place. Enshittification as a process is a whole other topic though, and covered extensively by other people already.
 
 ## Chatbots - chatbots everywhere
 
@@ -19,7 +21,7 @@ Following the release of ChatGPT, and it subsequently exploding in popularity, d
 
 Everyone wanted their own chatbot. Search engines got chatbots. Websites got chatbots. Social media platforms got chatbots. Documentation sites got chatbots. This has kept going in the nearly two years since OpenAI released GPT onto the internet, in one of the single most irresponsible and dumb actions they've done to date. 
 
-Most of this, however, is an annoyance. But there are exceptions. One of the more recent examples is a non-profit hotline that fired its staff and replaced them with a chatbot, and got a surprised pikachu moment when [it started giving out bad advice](https://www.forbes.com/sites/chriswestfall/2023/05/31/non-profit-helpline-fires-staff-shifts-to-chatbot-solution/).
+Most of this, however, is an annoyance. But there are exceptions. One of the more recent examples is a non-profit hotline that fired its staff and replaced them with a chatbot, and got a surprised pikachu moment when [it started giving out bad (dangerous) advice](https://www.forbes.com/sites/chriswestfall/2023/05/31/non-profit-helpline-fires-staff-shifts-to-chatbot-solution/).
 
 There's so many ways AI contributes to a net negative, and I cannot cover them all. But it isn't without reason that:
 
