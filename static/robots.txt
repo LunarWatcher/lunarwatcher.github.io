@@ -19,5 +19,8 @@ Disallow: /
 User-agent: Google-Extended
 Disallow: /
 User-agent: Googlebot-Image
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
 
 Sitemap: https://lunarwatcher.github.io/sitemap.xml
