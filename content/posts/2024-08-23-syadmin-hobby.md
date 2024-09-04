@@ -91,6 +91,8 @@ By far one of the more practically usable things I host, Baikal is how I do cale
 
 Baikal is an implementation around CalDAV, one of the major standards for digital calendars. The advantage to this is that it's incredibly versatile. While I did have to install a dedicated app on my phone (DAVx5) for the syncing bit, I can use _any bit of software_ as long as it supports CalDAV, or syncs with a system calendar set by whatever does the actual syncing.
 
+It also has support for tasks, which I've started finding useful. I've  yet to find a good desktop client at the time of writing, but it's incredibly powerful to sync it alongside my calendars.
+
 ### Misc. support services
 
 In addition to the services mentioned so far, there are a few supporting services I use:

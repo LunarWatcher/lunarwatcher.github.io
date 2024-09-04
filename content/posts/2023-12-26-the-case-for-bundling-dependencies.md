@@ -1,6 +1,7 @@
 ---
 title: "The case for bundling dependencies*"
 date: 2023-12-26T15:33:12+01:00
+modified: 2024-09-05T01:31:51+02:00
 tags: ["c++", "c", "linux", "dependencies"]
 ingress: "Let's talk about dependency bundling on Linux, and why it isn't always a bad thing. ... With some asterisks."
 toc: true
@@ -40,7 +41,7 @@ All these three represent the polar opposite of apt, pacman, rpm, and other majo
 1. Convenience, particularly when the instructions don't include copy-pasta install commands[^4]
 2. Hardware has gotten better, cheaper, and more widely available. Storage and RAM use isn't as much of a concern when even low-end devices ship with 8-16 gigs of RAM.
 
-On top of these, there's stuff like Docker, which is fully emulated by design. Admittedly, Docker isn't intended for installing every piece of software, but again, "runs everywhere" is one of its selling points for the stuff it's meant to run. Got a web service with some dependencies? Have a copy-pastable docker-compose file that sources the image for the service, run it, and you're done. Is it as light-weight as running natively? Hell no. Docker is arguably worse for storage and RAM use. Not only do you risk copies of the libraries used, but you need a copy of the C/C++ stdlib, and a copy of the entire kernel.
+On top of these, there's stuff like Docker, which is fully emulated by design. Admittedly, Docker isn't intended for installing every piece of software, but again, "runs everywhere" is one of its selling points for the stuff it's meant to run. Got a web service with some dependencies? Have a copy-pastable docker-compose file that sources the image for the service, run it, and you're done. Is it as light-weight as running natively? Hell no. Docker is arguably worse for storage and RAM use, because everything that could be common isn't common.
 
 ## Package availability
 
