@@ -22,7 +22,7 @@ Note that all timestamps and dates are in UTC+2.
 * 2024-09-11: SE responds, and was given ray IDs and debugging details directly, after the debugging details had been mentioned internally in a few places already, ending a nearly three-week streak of my posts being ignored by employees.
 * 2024-09-11: Further investigation showed the bot detection is far more aggressive on 404 pages. Some initial reproduction steps stop working.
 
-SE has labelled this as a bug - however, at the time, it looked like something else. This line and other parts of this article will be edited when those details can be discussed publicly. This assumption resulted in me trying to chase down several causes that turned out to be irrelevant.
+SE has partly labelled this as a bug in the discussions on 2024-09-11 - however, at the time Boson went down, it looked like something else. This line and other parts of this article will be edited when those details can be discussed publicly. This assumption resulted in me trying to chase down several causes that turned out to be irrelevant.
 
 ## Starting event: Boson goes down 
 
