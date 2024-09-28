@@ -279,9 +279,9 @@ tbody tr th {
 @import "features/nav.scss";
 
 @media (max-width: $mid-sizing) {
-    @import "sizes/mobile.scss";
+    @import "sizes/mid.scss";
 }
 @media (max-width: $mobile-sizing) {
-    @import "sizes/mid.scss";
+    @import "sizes/mobile.scss";
 }
 // }}}
