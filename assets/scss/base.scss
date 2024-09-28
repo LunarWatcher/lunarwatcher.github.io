@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
         opacity: 0;
         visibility: hidden;
     }
-    &:hover > .header-link, &:active > .header-link {
+    &:hover > .header-link, &:focus > .header-link, &:active > .header-link {
         opacity: 1;
         visibility: visible;
     }
@@ -164,7 +164,7 @@ blockquote.spoiler {
     border-left: 4px solid $pink-primary;
     padding: 10px 15px 10px 15px;
 
-    &:hover, &:active {
+    &:hover, &:focus, &:active {
         > * {
             opacity: 1;
         }
