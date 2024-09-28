@@ -19,7 +19,7 @@
 <script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script>
 {{ end }}
 
-{{ $base := resources.Get "scss/style.scss" }}
+{{ $base := resources.Get "scss/base.scss" }}
 {{ $style := $base | resources.ToCSS | resources.Minify }}
 <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
 

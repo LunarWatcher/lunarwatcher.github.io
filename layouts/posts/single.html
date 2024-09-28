@@ -4,6 +4,10 @@
 {{ partial "ingress.html" . }}
 {{ partial "series-list.html" . }}
 
+{{ if .Params.toc }}
+    {{ partial "toc.html" . }}
+{{ end }}
+
 {{ .Content }}
 
 <hr>

@@ -1,10 +1,21 @@
 {{ $taxonomy := "categories" }}
-<div class="ingress small-paragraphs">
+<div class="ingress">
     {{ if isset .Params "ingress" }}
         <p>{{ .Params.ingress | .RenderString }}</p>
     {{ end }}
-    <span class="grey-text text-small">Posted on {{ partial "dformat.html" (dict "Date" .Date) }}</span>
-    {{ if and (isset .Params "lastmod") (ne .Date .Params.lastmod) }}
-        <span class="grey-text text-small">- Last modified on {{partial "dformat.html" (dict "Date" .Params.lastmod )}}</span>
-    {{ end }}
+
+</div>
+
+
+<div class="flex-horizontal flex-smallgap" id="author-wrapper" style="align-items: center;">
+    <img src="https://avatars.githubusercontent.com/u/29489988" alt="Author's profile picture" class="circle accent-border text-small nocenter" />
+    <span class="flex-vertical flex-smallgap">
+        <a href="/contact.html" style="margin: auto 0"><b>Olivia</b></a>
+        <span class="grey-text text-small">Posted on {{ partial "dformat.html" . }}
+        {{ if and (isset .Params "lastmod") (ne .Date .Params.lastmod) }}
+            &middot; Last updated {{partial "dformat.html" (dict "Date" .Params.lastmod )}}
+        {{ end }}
+        </span>
+    </span>
+
 </div>

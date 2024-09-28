@@ -9,6 +9,10 @@
     {{ else }}
         <h2>{{ .Title }}</h2>
     {{ end }}
+
+    {{ if .Params.toc }}
+        {{ partial "toc.html" . }}
+    {{ end }}
     {{ .Content }}
 
     {{ range (.Paginate (.Data.Pages.GroupByDate "2006") 20).PageGroups  }}

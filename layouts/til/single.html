@@ -3,6 +3,10 @@
 <h1>{{ .Title }}</h1>
 {{ partial "ingress.html" . }}
 
+{{ if .Params.toc }}
+    {{ partial "toc.html" . }}
+{{ end }}
+
 <!--<p class="post-meta">This post is a part of <a href="/til/">TIL</a>; a series containing short posts of lessons I've learned the hard way.</p>-->
 {{ .Content }}
 

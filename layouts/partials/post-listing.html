@@ -6,7 +6,7 @@
         {{ end }}
         Posted <time>{{ partial "dformat.html" . }}</time>
         {{ if isset .Params "tags" }}
-        &#124; {{ partial "tags.html" . }}
+        &middot; {{ partial "tags.html" . }}
         {{ end }}
         {{ if isset .Params "series" }}
         {{ partial "series.html" . }}

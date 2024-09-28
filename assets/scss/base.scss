@@ -1,0 +1,287 @@
+@import "syntax.scss";
+@import "colours.scss";
+
+@import "features/layout.scss";
+@import "features/contents.scss";
+@import "features/blog.scss";
+
+.target-highlight:target {
+    background-color: $highlight-colour;
+    transition-duration: 2s;
+    &::after {
+        content: " (URL redirected here)";
+        font-size: 0.6rem;
+        float: right;
+        padding-top: 0.8rem;
+    }
+}
+// Base layout {{{
+body {
+    font: 400 1rem Ubuntu,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,
+        "Segoe UI Emoji","Segoe UI Symbol";
+    font-kerning: normal;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    margin: 0;
+}
+
+main, #toc {
+    display: block;
+    flex: 1 0 auto;
+
+    .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+}
+
+footer, header {
+    line-height: 64px;
+    overflow: auto;
+
+    a, a:visited {
+        color: $pink-primary;
+    }
+
+    a:hover {
+        color: $pink-secondary;
+    }
+}
+
+footer {
+    line-height: 1.5;
+    display: inline-block;
+    padding: 20px;
+    > * {
+        padding: 0px;
+    }
+}
+
+header {
+    nav {
+
+        line-height: 64px;
+        height: 64px;
+        .topnav > a, .sidenav > a, .logo > a {
+            text-decoration: none;
+        }
+
+        ul>li {
+            float: left;
+            line-height: 64px;
+        }
+    }
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+@media only screen and (min-width: 600px) {
+    .container, .toc-container {
+        width: 85%;
+    }
+}
+@media only screen and (min-width: 990px) {
+    .container, .toc-container {
+        width: 70%;
+    }
+}
+// }}}
+// Text styling {{{
+h1 { font-size: 2.50rem; }
+h2 { font-size: 2.00rem; }
+h3 { font-size: 1.50rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.15rem; }
+h6 { font-size: 1.05rem; }
+
+h1, h2 {
+    border-bottom: 1px solid #d1d1d1;
+}
+
+h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $header-colour;
+
+    &:target { @extend .target-highlight; }
+    .header-link {
+        transition: visibility 200ms ease-in-out, opacity 200ms ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+    }
+    &:hover > .header-link, &:active > .header-link {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+code {
+    white-space: pre;
+}
+// }}}
+// Background variants {{{
+.dark-background {
+    background-color: $grey-primary;
+    color: $white-primary;
+}
+// }}}
+// Images {{{
+img:not(.nocenter) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+// }}}
+// Base elements  {{{
+ul.list-blank {
+    list-style-type: none;
+    padding: 0;
+}
+
+figure {
+    figcaption {
+        padding: 2%;
+        box-sizing: border-box;
+    }
+}
+
+blockquote.spoiler {
+    background-color: $pink-secondary;
+    transition: .5s ease-in;
+
+    > * {
+        opacity: 0;
+        transition: opacity .5s ease-in;
+    }
+    border-left: 4px solid $pink-primary;
+    padding: 10px 15px 10px 15px;
+
+    &:hover, &:active {
+        > * {
+            opacity: 1;
+        }
+        background-color: $white-primary;
+        color: #1f1f1f;
+
+    }
+}
+// }}}
+// Quotes {{{
+blockquote {
+    padding: 11px 0px 9px 10px !important;
+    * {
+        margin: 0px;
+    }
+    border-left: 4px solid $pink-primary;
+
+    background-color: #ffe8f6;
+    border-radius: 4px;
+}
+// }}}
+// Links {{{
+a {
+    color: $pink-light;
+
+    &:visited {
+        color: adjust-color($pink-light, $hue: -25deg, $lightness: -15%);
+    }
+    &:hover {
+        color: adjust-color($pink-light, $hue: -25deg, $lightness: 5%);
+    }
+    code {
+        color: lighten($color: $pink-light, $amount: 15%);
+    }
+}
+// }}}
+// Typography (I guess) {{{
+.circle {
+    border-radius: 100%;
+}
+.text-small {
+    font-size: .8rem;
+}
+img.text-small {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+// }}}
+// Hugo builtins {{{
+ul.pagination {
+
+    display: flex;
+    justify-content: center;
+    margin: 1em 0 0;
+    padding: 0.5em 0;
+    list-style: none;
+
+    li:before {
+        content: "";
+    }
+
+}
+
+ul.pagination li {
+    padding: 0 1em;
+}
+
+.footnote-ref {
+    padding: 1px;
+    &::before {
+        content: '[';
+    }
+    &::after {
+        content: ']'
+    }
+}
+
+// }}}
+
+.shade-box {
+    box-shadow: 0 7px 14px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+    padding: 10px;
+}
+// tables {{{
+// TODO: is this even used anywhere?
+table, th, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 3px;
+}
+table {
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
+.plain-table-container > table {
+    border-style: none;
+    * {
+        border-style: none;
+    }
+    th {
+        padding-right: 2cm;
+    }
+
+}
+tbody tr th {
+    text-align: left;
+}
+// }}}
+
+// Size changes {{{
+@import "features/nav.scss";
+
+@media (max-width: $mid-sizing) {
+    @import "sizes/mobile.scss";
+}
+@media (max-width: $mobile-sizing) {
+    @import "sizes/mid.scss";
+}
+// }}}

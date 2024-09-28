@@ -1,35 +1,12 @@
-<div class="flex-vertical small-paragraphs container author-highlight">
-    <div class="flex-horizontal flex-align-end">
-        <div class="flex-vertical flex-shrink flex-smallgap">
-            <span class="grey-text text-small">Posted on {{ partial "dformat.html" . }}</span>
-            {{ if and (isset .Params "lastmod") (ne .Date .Params.lastmod) }}
-                <span class="grey-text text-small">Last updated {{partial "dformat.html" (dict "Date" .Params.lastmod )}}</span>
-            {{ end }}
-            <div style="min-height: 36px" class="flex-horizontal flex-smallgap flex-align-center">
-                <p class="flex-shrink">Tags:
-                <span>
-                    {{ if isset .Params "tags" }}
-                        {{ partial "tags.html" . }}
-                    {{ end }}
-                </span>
-                </p>
-            </div>
-        </div>
-        <div class="flex-grow"></div>
-
-        <div class="flex-vertical flex-shrink flex-smallgap">
-            <span class="grey-text text-small">Author:</span>
-            <div class="flex-horizontal flex-smallgap" id="author-wrapper">
-                <span class="flex-horizontal flex-smallgap" style="align-items: center">
-                <img src="https://avatars.githubusercontent.com/u/29489988" class="circle accent-border text-small nocenter" />
-                <a href="/contact.html" style="margin: auto 0">Olivia</a>
-                </span>
-            </div>
-        </div>
-    </div>
-    <div>
-        <p>Share this post: <a href="#" onclick="javascript:copyLink(event, {{ .Permalink }})">Copy link</a></p>
-    </div>
+<div class="flex-vertical flex-shrink flex-smallgap small-paragraphs">
+    <p class="flex-shrink"><b>Tags:</b>
+    <span>
+        {{ if isset .Params "tags" }}
+            {{ partial "tags.html" . }}
+        {{ end }}
+    </span>
+    </p>
+    <p>Share this post: <a href="#" onclick="javascript:copyLink(event, {{ .Permalink }})">Copy link</a></p>
 </div>
 
 {{ if not .Params.nocomments }}
@@ -37,14 +14,21 @@
         <h2 style="padding-top: 20px !important;">Comments</h2>
         <i><p>Note that all comments are required to follow the <a href="https://github.com/LunarWatcher/lunarwatcher.github.io/blob/master/.github/CODE_OF_CONDUCT.md">code of conduct</a></p></i>
 
-        <script src="https://utteranc.es/client.js"
-                repo="LunarWatcher/lunarwatcher.github.io"
-                issue-term="pathname"
-                label="comments"
-                theme="github-light"
+        <script src="https://giscus.app/client.js"
+                data-repo="lunarwatcher/lunarwatcher.github.io"
+                data-repo-id="MDEwOlJlcG9zaXRvcnkxMjc0NTg5OTU="
+                data-category="GitHub comments"
+                data-category-id="DIC_kwDOB5jes84Ci3cu"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="light"
+                data-lang="en"
                 crossorigin="anonymous"
                 async>
         </script>
-        <noscript>You've disabled JavaScript, which the comment system makes use of to load them on the site. The comment threads can be found <a href="https://github.com/LunarWatcher/lunarwatcher.github.io/issues">in the issues for this repo</a>, if you don't trust this site and/or utterances. Note that unless someone has already commented, there isn't an issue made for this page yet.</noscript>
+        <noscript>You've disabled JavaScript, which the comment system makes use of to load them on the site. The comment threads can be found <a href="https://github.com/LunarWatcher/lunarwatcher.github.io/discussions/categories/github-comments">in the issues for this repo</a>, if you don't trust this site and/or utterances. Note that unless someone has already commented, there isn't an issue made for this page yet.</noscript>
     </div>
 {{ end }}

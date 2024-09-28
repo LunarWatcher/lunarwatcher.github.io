@@ -1,6 +1,7 @@
 ---
 title: "Self-hosting is fun: everything in my homelab"
 tags: ["homelab"]
+toc: true
 date: 2024-08-23T00:51:29+02:00
 ingress: "My homelab started out _really_ small, and then escalated to sysadmin as a hobby. Here's how far down the rabbit hole I currently am"
 ---
@@ -126,7 +127,7 @@ Starting with general networking, one of the major downsides with Docker is that
 
 I'm sure it's better if the firewall is running on separate hardware, but when doing a combined setup, it's not particularly easy to have a functioning firewall setup. 
 
-But again, it is useful for other very specific things. I have a seedbox setup on the very same server I've been writing about today, and it runs QBitTorrent (seeding Linux ISOs and the [Stack Exchange data dump](https://meta.stackexchange.com/a/224922/332043)) in a docker container, with gluetun to route all that traffic via a VPN. Doing this on bare metal would either require routing all the server traffic via a VPN, which isn't desirable in this case, or doing cursed configuration stuff to keep my local apps from  routing via the VPN.
+But for certain very specific networking things, it is useful. I have a seedbox setup on the very same server I've been writing about today, and it runs QBitTorrent (seeding Linux ISOs and the [Stack Exchange data dump](https://meta.stackexchange.com/a/224922/332043)) in a docker container, with gluetun to route all that traffic via a VPN. Doing this on bare metal would either require routing all the server traffic via a VPN, which isn't desirable in this case, or doing cursed configuration stuff to keep my local apps from  routing via the VPN. The former isn't an option, the latter sounds horrible and I don't hate myself that much.
 
 The separate networking here saved me a lot of time (and may even have made this use-case possible in the first place), but when hosting services accessed locally, and with an on-device firewall, trying to get Docker to respect the inbound firewall is challenging on a good day.[^1]
 

@@ -8,17 +8,20 @@
         {{ partial "header.html" . }}
    
         <main>
-            {{ if .Params.toc }}
-            <div class="toc-container">
-                {{ partial "toc.html" . }}
-
-            </div>
-            {{ end }}
         
-            <div class="container" id="content">
+            {{ if .Params.date }}
+            <article
+            {{ else }}
+            <div
+            {{ end }}
+                class="container" id="content">
                 {{ block "main" . }}
                 {{ end }}
-            </div> 
+            {{ if .Params.date }}
+            </article>
+            {{ else }}
+            </div>
+            {{ end }}
         </main>
         
         {{ partial "footer.html" . }}

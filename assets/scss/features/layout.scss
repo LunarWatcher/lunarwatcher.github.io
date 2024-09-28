@@ -1,0 +1,64 @@
+@import "../colours.scss";
+
+.flex-horizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.flex-vertical {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.flex-itemalign-end {
+    align-items: flex-end;
+}
+
+// Alignment  {{{
+.flex-right {
+    align-self: flex-end;
+}
+// }}}
+// Size changes {{{
+.flex-shrink {
+    flex: 0 1 auto;
+}
+.flex-grow {
+    flex: 1 0 auto;
+}
+.flex-auto {
+    flex: 1 1 auto;
+}
+// }}}
+// Gaps {{{
+.flex-nogap {
+    gap: 0px;
+}
+.flex-smallgap {
+    gap: 4px;
+}
+// }}}
+
+.flex-2-cols {
+    .flex-item {
+        flex: 1 1 49%;
+    }
+}
+
+.flex-3-cols {
+    .flex-item {
+        flex: 1 0 32%;
+    }
+}
+
+@media (max-width: $mobile-sizing) {
+    .flex-3-cols > .flex-item,
+    .flex-2-cols > .flex-item {
+        flex: 1 1 100%;
+    }
+}

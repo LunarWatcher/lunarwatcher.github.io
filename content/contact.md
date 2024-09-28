@@ -1,9 +1,10 @@
 ---
 title: Contact etiquette
 toc: yes
+layout: single
+showtitle: yes
 ---
 
-# Contact etiquette
 
 I have a lot of contact methods:
 
