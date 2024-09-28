@@ -1,6 +1,7 @@
 ---
 title: How Stack Exchange, Inc. killed the comment archive on SE chat - a post-mortem
 date: 2024-09-12T22:21:22+02:00
+modified: 2024-09-28T04:44:48+02:00
 tags: ["stackoverflow", "post-mortem"]
 ingress: "The comment archive is one of the recent victims of Stack Exchange, Inc.'s short-sighted decisions that disregard community tooling. Here's what happened."
 ---
@@ -20,9 +21,10 @@ Note that all timestamps and dates are in UTC+2.
 * 2024-09-07 [00:00-03:00]: Debugging shows no workarounds exist, and the comment archive was moved to the [unofficial meta Discord](https://discord.gg/pcBMbMqA79) following a two-hour rewrite of Boson's source code. Boson has remained more stable there than it ever was on SE chat since that rewrite.
 * 2024-09-07 15:40: SE is informed.
 * 2024-09-11: SE responds, and was given ray IDs and debugging details directly, after the debugging details had been mentioned internally in a few places already, ending a nearly three-week streak of my posts being ignored by employees.
-* 2024-09-11: Further investigation showed the bot detection is far more aggressive on 404 pages. Some initial reproduction steps stop working.
+* 2024-09-11: Further investigation showed the bot detection is far more aggressive on 404 pages. Some initial reproduction steps stop working. 
+* 2024-09-12: Many more pages the bot detection is aggressive on were identified as part of writing this very blog post
 
-SE has partly labelled this as a bug in the discussions on 2024-09-11 - however, at the time Boson went down, it looked like something else. This line and other parts of this article will be edited when those details can be discussed publicly. This assumption resulted in me trying to chase down several causes that turned out to be irrelevant.
+SE has partly labelled this as a bug in the discussions on 2024-09-11 - however, at the time Boson went down, it looked like something else. Specifically, it looked like [a change to the bot rate limiting system](https://meta.stackexchange.com/a/403004/332043), and following debugging not finding a rate limit, it looked like a partial rollout of the rate limit. At the time, this was only announced internally, and the real culprit just happened to become a problem in the time range the rate limiting was expected to be rolled out. The rate limit was quietly delayed, which wasn't mentioned until several days had passed. This assumption resulted in me trying to chase down several causes that turned out to be irrelevant - including attempts to trigger the rate limit, and trying to loadshed to see if that helped. These were dead ends because, as I later found out, it hadn't been rolled out yet. Instead, the real cause turned out to be an unannounced bot prevention change, likely in the form of CloudFlare rule changes. However, because I obviously don't have access to Stack Exchange, Inc.'s CloudFlare config, I cannot identify the exact cause.
 
 ## Starting event: Boson goes down 
 
@@ -30,7 +32,9 @@ on 2024-09-06, Boson went down, and was blocked from logging in for 30 minutes. 
 
 Also interesting, unlike other forms of blocks, this does not affect anything but automated environments making requests to the site itself - the API remained operational even after being blocked, which is arguably a very strange block, but that's a tangent.
 
-Following more debugging, this was narrowed down to CloudFlare JavaScript detections, which is aimed at blocking bots. The exact mechanic of how this works is dark magic hidden in CloudFlare. Aside being dark CloudFlare magic, JS detections are [only a component](https://developers.cloudflare.com/bots/reference/javascript-detections/#enforcing-execution-of-javascript-detections) that can be used in other rules. This means that the exact triggering rules depend on Stack Overflow 
+Following more debugging, this was narrowed down to CloudFlare JavaScript detections, which is aimed at blocking bots. The exact mechanic of how this works is dark magic hidden in CloudFlare. Aside being dark CloudFlare magic, JS detections are [only a component](https://developers.cloudflare.com/bots/reference/javascript-detections/#enforcing-execution-of-javascript-detections) that can be used in other rules. This means that the exact triggering rules depend on Stack Exchange, Inc.'s own configuration - a configuration that has been observed to be wildly problematic.
+
+The number of reports on MSO and MSE about CloudFlare problems has gone up as of late, with normal end-users being blocked. This is likely due to unnecessarily aggressive configuration on Stack Exchange, Inc.'s side, and not (exclusively) due to CloudFlare itself. Personally, I use many other services that (unfortunately) use CloudFlare, but they don't have nearly as aggressive blocking as Stack Exchange, Inc. has introduced.
 
 ### Digging down the CloudFlare rabbithole
 
@@ -41,9 +45,9 @@ Anywhere from 3 to 15-20 requests triggered the block during the initial debuggi
 It seems like a sufficient number of requests, though it's unclear what that means, to the site results in a block. For reasons I don't understand, however, 404 pages are more prone to triggering this block. For implementation reasons, Boson's underlying chat library [relies on a 404 page](https://github.com/LunarWatcher/stackchat.cpp/blob/master/src/stackchat/StackChat.cpp#L115) to extract the user ID for chat without having to dig into more breakage-prone regexes. This is because the user ID may differ from the main site user ID, because chat has been in beta for, what, 12 years or so, so everything is jank. This was identified on 2024-09-11, well after migrating away from Stack Exchange chat. 
 
 on 2024-09-12, a few more pages were identified. `curl https://stackoverflow.com/search?q=%5BREPLACE_WITH_TAG%5D+closed%3Ano`, for example, is insta-blocked. `https://stackoverflow.com/questions`, like 404 pages, also triggers after 3 requests, resulting in the fourth request being blocked.
-Like `/questions`, you can currently access one single question in an automated way more or less an unlimited number of times, but if you access three different questions, that results in the fourth unique question being blocked. This block is identical to the 404 and `/questions` pages. 
+Like `/questions`, you can currently access one single question in an automated way more or less an unlimited number of times, but if you access three different questions, that results in the fourth unique question being blocked. This block is identical to the 404 and `/questions` pages - all subsequent requests are blocked.
 
-Interestingly, the block from searching does not spread anywhere else. `curl https://stackoverflow.com` immediately after `curl`ing the search page and being blocked does not result in a 429. `curl`ing `/questions` or a 404 page does result in a global CloudFlare block, however.
+Interestingly, the block from searching does not spread anywhere else. `curl https://stackoverflow.com` immediately after `curl`ing the search page and being blocked from search does not result in a 429. `curl`ing `/questions` or a 404 page does result in a global CloudFlare block, however.
 
 ### Workaround attempts
 
@@ -89,6 +93,12 @@ Also, as a weak example, when I ran into a CloudFlare IP block a while back, I c
 
 TL;DR: blocking scrapers good, doing so in a way that kills community tooling bad. 
 
-But ultimately, this is how Stack Exchange, Inc. killed the on-site comment archive - by making the path to connecting to chat significantly less stable than it used to be, all in pursuit of a goal that completely ignores the community they [claim to care about](https://meta.stackexchange.com/q/401499/332043), with all their actions increasingly indicating otherwise. This round of bot prevention killed several tools and at least one bot. Many bots and tools survived, but they might not survive the next round. Or the round after that. Or the round after that. At some point, something more critical for community tooling than 404, search, and question pages are likely going to be affected. Nothing like this has been announced, but if you take a look at all current bot blocking systems and how they affect community tooling, it's clear that it will come eventually.
+But ultimately, this is how Stack Exchange, Inc. killed the on-site comment archive - by making the path to connecting to chat significantly less stable than it used to be, all in pursuit of a goal that completely ignores the community they [claim to care about](https://meta.stackexchange.com/q/401499/332043), with all their actions increasingly indicating otherwise. This round of bot prevention killed several tools and at least one bot. Many bots and tools survived, but they might not survive the next round. Or the round after that. Or the round after that. At some point, something more critical for community tooling than 404, search, and question pages are likely going to be affected. Nothing like this has been announced at the time of writing, but if you take a look at all current bot blocking systems and how they affect community tooling, it's clear that it will come eventually.
+
+Also unfortunate, Stack Exchange, Inc.'s approach to dealing with unnecessarily aggressive blocking is [push first and debug later](https://meta.stackexchange.com/questions/403002/preventing-unauthorized-automated-access-to-the-network/403004?noredirect=1#comment1344248_403004) - when the potentially significant[^1] damage has already been done. This might be a viable approach for an understaffed startup with extremely limited resources, but not for a billion-dollar (?) company with tens of millions of users.
 
 On the bright side, as long as that breakage doesn't involve killing the API, Boson will continue to operate with higher stability and reliability by using Discord than it ever experienced running on SE chat. Long live the comment archive.
+
+[^1]: The more of these changes are rolled out, the higher the damage potential. When you block real users, they may not know they can report it as a bug. Personally, when I run into a CloudFlare block, I assume I did something dumb - not that the service fucked around with its configuration and expect end-users to report when they're blocked. I find it hilarious that we live in a world where websites optimise for milliseconds to prevent users from leaving before the page loads, but Stack Exchange, Inc. expects users to stop whatever they're doing and take (realistically) several minutes to submit a bug report through a site they may not be able to access at all. 
+
+    It's a fantastic way to get users to leave and never come back, which is a net negative for the community for reasons that I cannot explain briefly enough to fit in a footnote.
