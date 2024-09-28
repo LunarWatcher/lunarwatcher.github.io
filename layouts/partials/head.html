@@ -20,7 +20,7 @@
 {{ end }}
 
 {{ $base := resources.Get "scss/base.scss" }}
-{{ $style := $base | resources.ToCSS | resources.Minify }}
+{{ $style := $base | css.Sass | resources.Minify }}
 <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
 
 <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "/posts/feed.xml" | absURL }}" />
