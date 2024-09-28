@@ -16,7 +16,7 @@ Tech stuff gets a lot of my attention, but I also enjoy playing games in my spar
 
 ## About this site
 
-This is primarily intended as a blog, as well as a hub to link (most of) my various accounts in various corners of the internet together. The blog and TIL section contain most of the technical and other blog content. There's no schedule; I post whenever I have something worth posting. Aside that, there isn't a whole lot of content here (yet). There isn't much of a goal
+This is primarily intended as a blog, as well as a hub to link (most of) my various accounts in various corners of the internet together. The blog and TIL section contain most of the technical and other blog content. There's no schedule; I post whenever I have something worth posting. Aside that, there isn't a whole lot of content here (yet). There isn't much of a goal in churning out as much content as possible.
 
 The site itself is written with [Hugo](https://gohugo.io/) from scratch and is naturally [open-source](https://github.com/LunarWatcher/lunarwatcher.github.io) (the site's underlying code under MIT, content under CC-By-SA 4.0; see the LICENSE file for more information).
 
