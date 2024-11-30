@@ -16,7 +16,6 @@ Index of misc. pages on the site, grouped by category.
     <div class="page-group flex-item">
         <h4>Misc</h4>
         <ul>
-            <li><a href="/misc/emojis.html">Emoji reference</a></li>
             <li><a href="/newsletter.html">Newsletter</a></li>
         </ul>
     </div>
