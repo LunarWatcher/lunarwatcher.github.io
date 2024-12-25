@@ -32,13 +32,17 @@
 <!-- OpenGraph ((( -->
 <meta property="og:title" content="{{ .Title }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
+{{ $desc := "" }}
 {{ if .Params.description }}
-    <meta property="description" content="{{ .Params.description }}" />
-    <meta property="og:description" content="{{ .Params.description }}" />
+    {{ $desc = .Params.description }}
+{{ else if .Params.ingress }}
+    {{ $desc = .Params.ingress }}
 {{ else }}
-    <meta property="description" content="{{ .Summary }}" />
-    <meta property="og:description" content="{{ .Summary }}" />
+    {{ $desc = .Summary }}
 {{ end }}
+<meta property="description" content="{{ $desc}}" />
+<meta property="og:description" content="{{ $desc }}" />
+
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 <meta property="og:locale" content="{{ .Site.LanguageCode }}" />
 {{ if (and (or (eq .Section "til") (eq .Section "posts")) (.IsPage)) }}
