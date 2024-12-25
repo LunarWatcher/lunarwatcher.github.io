@@ -49,7 +49,6 @@
     <meta property="og:type" content="article" />
     <!-- Not sure why both these need to be present? -->
     <meta property="article:author" content="{{ "/" | absURL }}" />
-    <meta property="og:article:author" content="{{ "/" | absURL }}" />
 
     {{ $taxonomy := "tags" }}
     {{ with (sort (.Param $taxonomy) ) }}
@@ -59,6 +58,7 @@
     {{ end }}
 {{ else if isset .Params "ogprofile" }}
     <!-- Required for og:author to function properly -->
+    <!-- index 1 is reserved for future use, but is currently unused -->
     {{ $fn := index (.Params.ogprofile) 0 }}
     {{ $g := index (.Params.ogprofile) 2 }}
     {{ $un := index (.Params.ogprofile) 3 }}
@@ -67,9 +67,6 @@
     <meta property="profile:first_name" content="{{ $fn }}" />
     <meta property="profile:gender" content="{{ $g }}" />
     <meta property="profile:username" content="{{ $un }}" />
-    <meta property="og:profile:first_name" content="{{ $fn }}" />
-    <meta property="og:profile:gender" content="{{ $g }}" />
-    <meta property="og:profile:username" content="{{ $un }}" />
 {{ else }}
     <meta property="og:type" content="website" />
 
