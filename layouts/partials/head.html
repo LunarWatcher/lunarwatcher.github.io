@@ -41,7 +41,9 @@
 <meta property="og:locale" content="{{ .Site.LanguageCode }}" />
 {{ if (and (or (eq .Section "til") (eq .Section "posts")) (.IsPage)) }}
     <meta property="og:type" content="article" />
+    <!-- Not sure why both these need to be present? -->
     <meta property="article:author" content="{{ "/" | absURL }}" />
+    <meta property="og:article:author" content="{{ "/" | absURL }}" />
 
     {{ $taxonomy := "tags" }}
     {{ with (sort (.Param $taxonomy) ) }}
@@ -59,6 +61,9 @@
     <meta property="profile:first_name" content="{{ $fn }}" />
     <meta property="profile:gender" content="{{ $g }}" />
     <meta property="profile:username" content="{{ $un }}" />
+    <meta property="og:profile:first_name" content="{{ $fn }}" />
+    <meta property="og:profile:gender" content="{{ $g }}" />
+    <meta property="og:profile:username" content="{{ $un }}" />
 {{ else }}
     <meta property="og:type" content="website" />
 
