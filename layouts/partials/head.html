@@ -33,8 +33,10 @@
 <meta property="og:title" content="{{ .Title }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 {{ if .Params.description }}
+    <meta property="description" content="{{ .Params.description }}" />
     <meta property="og:description" content="{{ .Params.description }}" />
 {{ else }}
+    <meta property="description" content="{{ .Summary }}" />
     <meta property="og:description" content="{{ .Summary }}" />
 {{ end }}
 <meta property="og:site_name" content="{{ .Site.Title }}" />
