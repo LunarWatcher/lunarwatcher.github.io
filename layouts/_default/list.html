@@ -6,17 +6,20 @@
 
     {{ if and (eq .Data.Singular "tag") (not (eq .Title "Tags")) }}
         <h1>Posts tagged {{ .Title | lower }}</h1>
+
+        {{ with .OutputFormats.Get "RSS" }}
+            <p><a href="{{ .RelPermalink }}">Subscribe to this tag</a></p>
+        {{ end }}
+
+        <hr />
     {{ else }}
         <h1>{{ .Title }}</h1>
+        {{ with .OutputFormats.Get "RSS" }}
+            <p>Want updates? <a href="{{ .RelPermalink }}">Subscribe to this blog</a>.</p>
+            <hr />
+        {{ end }}
     {{ end }}
     {{ .Content }}
-
-    {{ with .OutputFormats.Get "RSS" }}
-        <p><a href="{{ .RelPermalink }}">Subscribe to this tag</a></p>
-    {{ end }}
-
-
-    <hr />
 
     {{ range (.Paginate (.Data.Pages.GroupByDate "2006") 20).PageGroups  }}
 
