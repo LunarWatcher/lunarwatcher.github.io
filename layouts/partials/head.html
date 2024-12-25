@@ -1,27 +1,29 @@
 <!-- Boring metadata -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10"/>
 <meta http-equiv="Content-language" content = "en-GB"/>
 <meta name="google-site-verification" content="LcVM28dDCQR2BheUMJZ7wcfvXxSRqurrQ4u4G2g1b2s" />
 
-<link rel="canonical" href="{{ .Permalink }}">
-
 <!-- Visible metadata -->
 {{ if and (eq .Data.Singular "tag") (not (eq .Title "Tags")) }}
-<title>Posts tagged {{ .Title }} | {{ .Site.Title }}</title>
+    <title>Posts tagged {{ .Title }} | {{ .Site.Title }}</title>
 {{ else }}
-<title>{{ .Title }} | {{ .Site.Title }}</title>
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
 {{ end }}
 <!-- Scripts and stylesheets -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {{ if .Params.mermaid }}
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script>
 {{ end }}
 
 {{ $base := resources.Get "scss/base.scss" }}
 {{ $style := $base | css.Sass | resources.Minify }}
 <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
+
+<link rel="canonical" href="{{ .Permalink }}" />
+
+<link rel="author" href="https://github.com/LunarWatcher" />
 
 <link rel="alternate" type="application/rss+xml" title="Blog feed" href="{{ "/posts/feed.xml" | absURL }}" />
 <link rel="alternate" type="application/rss+xml" title="TIL feed" href="{{ "/til/feed.xml" | absURL }}" />
@@ -31,12 +33,12 @@
 <meta property="og:title" content="{{ .Title }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 {{ if .Params.description }}
-<meta property="og:description" content="{{ .Params.description }}" />
+    <meta property="og:description" content="{{ .Params.description }}" />
 {{ else }}
-<meta property="og:description" content="{{ .Summary }}" />
+    <meta property="og:description" content="{{ .Summary }}" />
 {{ end }}
-<meta property="og:site_name" content="{{ site.Title }}" />
-<meta property="og:locale" content="{{ site.LanguageCode }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:locale" content="{{ .Site.LanguageCode }}" />
 <!-- ))) -->
 <!--
 vim:fmr=(((,)))
