@@ -49,17 +49,18 @@
             <meta property="og:tag" content="{{ $tag }}" />
         {{ end }}
     {{ end }}
-{{ end }}
-
-{{ if isset .Params "ogprofile" }}
+{{ else if isset .Params "ogprofile" }}
     <!-- Required for og:author to function properly -->
     {{ $fn := index (.Params.ogprofile) 0 }}
     {{ $g := index (.Params.ogprofile) 2 }}
     {{ $un := index (.Params.ogprofile) 3 }}
 
+    <meta property="og:type" content="profile" />
     <meta property="profile:first_name" content="{{ $fn }}" />
     <meta property="profile:gender" content="{{ $g }}" />
     <meta property="profile:username" content="{{ $un }}" />
+{{ else }}
+    <meta property="og:type" content="website" />
 
 {{ end }}
 
