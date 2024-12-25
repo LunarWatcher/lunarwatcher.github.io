@@ -32,14 +32,18 @@ markup:
 
 outputs:
   taxonomy: ["HTML"]
-  term: ["HTML"]
+  term: ["HTML", "RSS"]
   page: ["HTML"]
-  home: ["HTML"]
+  home: ["HTML", "RSS"]
 
 outputFormats:
   RSS:
     mediatype: application/rss+xml
     baseName: feed
+
+services:
+  rss:
+    limit: 50
 
 taxonomies:
   tag: tags

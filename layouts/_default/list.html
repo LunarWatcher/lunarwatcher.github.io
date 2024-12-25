@@ -11,6 +11,13 @@
     {{ end }}
     {{ .Content }}
 
+    {{ with .OutputFormats.Get "RSS" }}
+        <p><a href="{{ .RelPermalink }}">Subscribe to this tag</a></p>
+    {{ end }}
+
+
+    <hr />
+
     {{ range (.Paginate (.Data.Pages.GroupByDate "2006") 20).PageGroups  }}
 
     <div class="posts">
