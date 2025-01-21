@@ -52,5 +52,6 @@ params:
   discord: y3vd2vAYru
   discord_user: oliviawolfie
   github: LunarWatcher
+  codeberg: LunarWatcher
   gpg-signature: "2CE6 6B15 2ED5 6C24 C6A9 C71E 76C0 735B CD18 3F71"
   email_proxy: "https://en.wikipedia.org/wiki/Special:EmailUser/OliviaWolfie"
