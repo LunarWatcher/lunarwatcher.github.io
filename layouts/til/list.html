@@ -6,7 +6,7 @@
         <div>
             <h2 id="{{ .Name | anchorize }}">{{ .Name }}</h2>
             <ul>
-                {{ range .Pages }}
+                {{ range (sort .Pages ".Title" "asc") }}
                 <li><a href="{{ .Permalink }}">{{ .Title }}</a>
                 </li>
                 {{ end }}

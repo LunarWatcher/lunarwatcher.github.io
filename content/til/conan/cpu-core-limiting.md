@@ -15,6 +15,6 @@ This option, at the time of writing (but this may change; the system is marked e
 
 This is particularly useful in environments with limited memory. I had to set this option to get several of my C++-based projects to build at all after upgrading Raspbian to the 64 bit version. It presumably uses more memory because sizes, but it eats through the RAM at max cores.
 
-This is also a per-profile solution; set it and forget it, and it applies to (in theory<sup>[1]</sup>) all Conan builds (including `conan install` and [conan-cmake](https://github.com/conan-io/cmake-conan)).
+This is also a per-profile solution; set it and forget it, and it applies to (in theory[^1]) all Conan builds (including `conan install` and [conan-cmake](https://github.com/conan-io/cmake-conan)).
 
-<sup>[1]: I've only tested this with `conan install` and conan-cmake. As long as the particular system you use doesn't explicitly override these config options, it should respect the global options.</sup>
+[^1]: I've only tested this with `conan install` and conan-cmake. As long as the particular system you use doesn't explicitly override these config options, it should respect the global options.
