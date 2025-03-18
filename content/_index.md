@@ -7,23 +7,12 @@ ogprofile: ["Olivia", "", "female", "LunarWatcher"]
 
 # About me
 
-Hiya! I'm Olivia. I'm a full-stack developer, and I do a lot of different stuff. My main interests currently include C++, Vim, and Linux, though I'm proficient in quite a lot more. I started messing around with Java back in 2014 for fun, and I've written a lot of software since then. 
+Hiya! I'm Olivia. Every once in a while, I write about whatever I find interesting on this here blog, occasionally just as a means to publicly document my own, private notes of problems I've run into. I'm a fullstack developer, so I have a full stack of problems to go along with it.
 
-As evidenced by my [many GitHub repositories](https://github.com/LunarWatcher?tab=repositories), I enjoy making open-source software. While they aren't fully representative of the many languages and fields I've messed around with, it's a good indicator for what I enjoy doing for fun, and when I have full choice of what tech stack to use.
+Aside that, there isn't a whole lot to this website. If you're looking for more of my stuff, there's plenty on GitHub (and [other various places]({{<ref path="contact.md" >}})).
 
-Aside programming, I have a [homelab](https://en.wikipedia.org/wiki/Home_server) that has been sending me down a sysadmin rabbit hole. It's nothing fancy yet, but I foresee a rackmounted setup in my future.
 
-Tech stuff gets a lot of my attention, but I also enjoy playing games in my spare time. The majority of my time goes to Factorio (the factory must grow!) and Dwarf Fortress. I play other games from time to time too, but it's difficult to beat the long-term playability of Factorio.
+## Contact 
 
-## About this site
-
-This is primarily intended as a blog, as well as a hub to link (most of) my various accounts in various corners of the internet together. The blog and TIL section contain most of the technical and other blog content. There's no schedule; I post whenever I have something worth posting. Aside that, there isn't a whole lot of content here (yet). There isn't much of a goal in churning out as much content as possible.
-
-The site itself is written with [Hugo](https://gohugo.io/) from scratch and is naturally [open-source](https://github.com/LunarWatcher/lunarwatcher.github.io) (the site's underlying code under MIT, content under CC-By-SA 4.0; see the LICENSE file for more information).
-
-## Contact me
-
-([Contact etiquette](/contact.html))
-
-{{< mdpartial "socialmedia.html" >}}
+I have some contact options [listed here]({{<ref path="contact.md" >}}).
 
