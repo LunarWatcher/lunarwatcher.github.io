@@ -27,7 +27,6 @@ This site is hosted by GitHub pages, meaning GitHub may collect technical inform
 
 The following CDNs are used for scripts:
 
-* jquery.com
 * unpkg.com
 
 See the privacy policies of these services to see how they process your data.
