@@ -13,7 +13,7 @@
 {{ end }}
 <!-- Scripts and stylesheets -->
 {{ if .Params.mermaid }}
-    <script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.8.0/dist/mermaid.min.js"></script>
 {{ end }}
 
 {{ $base := resources.Get "scss/base.scss" }}
