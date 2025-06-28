@@ -2,7 +2,12 @@
 title: Installing CrowCpp with submodules and Conan without using the Crow Conan package
 tags: ["c++", "crowcpp"]
 date: 2023-01-27T23:32:11+01:00
+nocomments: true
 ---
+
+> [!warning]
+>
+> This page is based on Conan 1.x, which is now deprecated and basically fully dead. Some of the things still apply here, but this page should be considered deprecated
 
 CrowCpp's conan package is, at the time of writing anyway, heavily out of date, which isn't great. There hasn't been a tagged version in ages either, so this isn't Conan's fault, but the problem is still a problem regardless of whose fault it is.
 
