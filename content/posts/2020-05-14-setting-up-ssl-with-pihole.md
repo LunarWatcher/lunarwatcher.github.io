@@ -1,10 +1,17 @@
 ---
 title: "Setting up SSL with pihole, without a FQDN"
 date: 2020-05-14T21:21:21+02:00
+modified: 2025-07-06T02:28:11+02:00
 toc: true
 slug: setting-up-ssl-with-pihole-without-a-fqdn
 tags: ["pihole", "linux"]
 ---
+
+> [!warning]
+>
+> Due to updates to pihole, this post is redundant. It is left for posterity, but it is no longer required, as pihole now automatically bundles HTTPS with basically the exact same setup. See the [official pihole docs](https://docs.pi-hole.net/api/tls/). 
+>
+> You should also be told about this if you connect to pihole over HTTP. If you don't, update pihole and try again.
 
 ## Introduction
 
