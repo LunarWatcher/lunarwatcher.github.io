@@ -29,4 +29,3 @@ I'm not interested in unsolicited job offers. I'm perfectly fine with looking fo
 If not otherwise listed here, there's no particular restrictions aside the obvious one: _don't be an asshole_.
 
 I'm also completely fine with being contacted for purely social reasons. I don't bite (unless bitten first).
-
