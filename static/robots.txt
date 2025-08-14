@@ -7,6 +7,10 @@ Allow: /
 
 # All of https://robotstxt.com/ai minus CCBot, because it has legitimate research use
 # that I don't want to block
+# Of the ones I've tested, only MS Copilot and Gemini seem to respect the robots.txt 
+# CGPT claims the robots.txt doesn't exist.
+# MS only started respecting the robots.txt after a bogus favicon was added (0 bytes, just 
+# enough for it not to 404), and the Gemini test came afterwards.
 User-Agent: GPTBot
 User-Agent: ChatGPT-User
 User-Agent: ClaudeBot
