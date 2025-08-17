@@ -4,7 +4,7 @@ tags: ["wsl"]
 date: 2025-08-18T00:05:06+02:00
 ---
 
-Since at least 2021 (earliest recorded instance), but likely since WSL was initially made, [it has had a bug with keyboard translation](https://github.com/microsoft/wslg/issues/173). 
+Since at least 2021 (earliest recorded instance), but likely since WSLg was initially made, [it has had a bug with keyboard translation](https://github.com/microsoft/wslg/issues/173). 
 
 When using GUI apps in WSL, WSL actually delegates the keyboard translation to the underlying distro rather than handling those bits itself, and then telling Linux what keys were pressed and what char that is. This is not a problem if you use a standard layout, but if you use a custom layout (for example to remove dead keys), the translation will fail, and the keyboard layout falls back to en_US, which is unusable with my muscle memory. If the translation fails, the fix is not trivial, as there's no way to configure the keyboard in WSL at the time of writing.
 
