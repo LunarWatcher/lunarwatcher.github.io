@@ -56,7 +56,7 @@ function copyLink(ev, link) {
 
     ev.target.innerHTML = "Copied link!";
     setTimeout(() => {
-        ev.target.innerHTML = "Share";
+        ev.target.innerHTML = "Copy link";
     }, 3000);
 
     return false;
