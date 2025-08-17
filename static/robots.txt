@@ -1,6 +1,8 @@
 User-Agent: *
 # Prevent indexing the meme directory (all pages under here redirect to a random rickroll)
 Disallow: /stories/
+# Newsletter is also a meme
+Disallow: /newsletter.html
 DisallowAITraining: /
 Content-Usage: ai=n
 Allow: /
@@ -61,7 +63,6 @@ User-Agent: Cotoyogi
 User-Agent: aiHitBot
 User-Agent: Factset_spyderbot
 User-Agent: FirecrawlAgent
-
 Disallow: /
 DisallowAITraining: /
 
