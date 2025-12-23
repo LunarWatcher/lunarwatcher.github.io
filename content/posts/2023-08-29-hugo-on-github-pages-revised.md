@@ -6,6 +6,12 @@ tags: ["hugo", "github", "github-pages"]
 slug: "hugo-on-github-pages-the-modern-alternative-for-deploying-non-jekyll-pages-to-github-pages"
 ---
 
+> [!caution]
+>
+> As of late 2025, Hugo has [started accepting AI slop contributions](https://github.com/LunarWatcher/dotfiles/blob/master/docs/AI%20slop%20victims.md#hugo-gohugo). I'm discontinuing my use of Hugo as soon as I can code it out of this website, and cannot in good faith recommend it. I strongly recommend finding a static site generator that doesn't build on AI slop. At the time of writing, I plan to switch to [Zola](https://github.com/getzola/zola). [Jekyll](https://github.com/jekyll/jekyll) (built directly into GitHub) is also clear at the time of writing. This may change, so double-check for AI slop before you pick one.
+
+---
+
 This is a revision of [an old article of mine]({{<ref path="/posts/2021-07-18-hugo-on-github-pages.md">}}), which relied on using a separate branch, and a GitHub action that pushed the deployable page to it. This is still an option, and it still works. However, there's now a significantly cleaner option that doesn't involve using a branch that's cleaned and force-pushed to.
 
 Thanks to changes to GitHub Actions, it's now possible to push to GitHub Pages from GitHub Actions. This makes any type of non-Jekyll page deployment significantly easier. This guide can consequently be applied to _any_ site generator, as long as it's able to output HTML. 

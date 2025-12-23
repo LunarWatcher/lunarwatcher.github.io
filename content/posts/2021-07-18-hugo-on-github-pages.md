@@ -5,6 +5,12 @@ tags: ["hugo", "github", "github-pages"]
 ingress: Deploying Hugo isn't nearly as trivial as Jekyll, but it's absolutely doable.
 ---
 
+> [!caution]
+>
+> As of late 2025, Hugo has [started accepting AI slop contributions](https://github.com/LunarWatcher/dotfiles/blob/master/docs/AI%20slop%20victims.md#hugo-gohugo). I'm discontinuing my use of Hugo as soon as I can code it out of this website, and cannot in good faith recommend it. I strongly recommend finding a static site generator that doesn't build on AI slop. At the time of writing, I plan to switch to [Zola](https://github.com/getzola/zola). [Jekyll](https://github.com/jekyll/jekyll) (built directly into GitHub) is also clear at the time of writing. This may change, so double-check for AI slop before you pick one.
+
+---
+
 > **Note:** There's a better option available thanks to improvements to GitHub Actions. See [this article]({{<ref path="/posts/2023-08-29-hugo-on-github-pages-revised.md">}}) for  the details. The option outlined here still works, but the alternative is much cleaner.
 
 I used to base this site on a blog entry on another blog. The gist of it was, there's a source branch while the master branch contains the deployed page. 
