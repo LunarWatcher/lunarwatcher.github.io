@@ -10,7 +10,7 @@ For some reason, OpenVPN has an IP leak problem when no IPv6 routes are specifie
 The native ProtonVPN app does not have this problem, to be clear. The leak only happens when using the OS-native OpenVPN client, which I massively prefer for two reasons. First, it lets me get a VPN connection straight from the network manager applet. Second, the ProtonVPN app  eats like a gig of RAM, and while I have plenty of RAM, it's just such a waste of compute for little to no benefit.[^1]
 
 <img alt="Screenshot showing the network-manager applet on Linux Mint, Cinnamon edition. The applet contains three sections; a censored block of wireless connections, an OpenVPN connection with a ProtonVPN entry, and a wireguard section with an active connection"
-    src="/img/2024-12-25-network-manager.png"
+    src="/static/img/2024-12-25-network-manager.png"
 />
 
 [^1]: I like ProtonVPN, but seriously, the desktop app is absolute fucking trash in desperate need of optimising, especially on Linux. A full fucking gig of RAM (and that's before connecting) is completely unnecessary.

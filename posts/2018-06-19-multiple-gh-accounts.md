@@ -1,9 +1,9 @@
 ---
 published_date: "2018-06-19 00:00:00 +0200"
-description: Short guide on using multiple GitHub accounts on one computer in a way that doesn't require manual account changing
 tags: ["git"]
-title: Multiple GitHub accounts on one computer
 ---
+
+# Multiple GitHub accounts on one computer
 
 I have two GitHub accounts; one for personal use, and one for work use. Occasionally, I want to use these on the same computer, but most SSH systems don't like this. There are a few ways to get it to work; one of the obvious is to manually switch out the keys every time an account switch is made. However, this is clunky and annoying to do, so I needed an alternative. This method uses SSH keys and SSH config, and should work on all modern systems with access to ssh.
 

@@ -6,6 +6,8 @@ published_date: 2024-07-30 22:50:51 +0200
 
 A few days ago, I caved and got myself a [Kagi](https://kagi.com) subscription. TL;DR: Kagi is a paid search engine, and I got a recommendation about it around 8 months ago. Yet, it took until now for me to act on it. The reason? SearchGPT, and the assumption that both Google and Microsoft are working on a competitor to shove into their respective search engines, with no regard for search quality. 
 
+> 2025 me here: the concern above aged expectedly. Google did shove in AI slop, google search quality has deteriorated, and the AI slop regurgitates outright propaganda by certain companies that managed to crack every bit of SEO.
+
 Kagi, admittedly, does have an AI push as well. But unlike both Microsoft and Google, it isn't shoved down the users' throats. It exists, and some of the automatic functionality can be outright disabled, but it doesn't influence normal search results.
 
 However, the point of mentioning Kagi is that I saw something I haven't seen in a while. Especially in a search engine. Kagi is a search engine made by people who understand what users want from a search engine. The results feel like Google results before Google managed to get worse than Bing (and before Bing declined just has hard and managed to get worse than itself, which is impressive, but not in a good way), but better. There's so many QOL features. I'm only 4 days in, so I haven't had the chance to explore everything, but lenses, first-class keyboard shortcuts, URL rewriting, and changing the ranking of sites by preference are a few of the things I've already come to love. This is not meant to be an ad for Kagi, though.

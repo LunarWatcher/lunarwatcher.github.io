@@ -1,8 +1,9 @@
 ---
-title: "Network shares are weird"
 published_date: 2022-03-06 22:40:36 +0100
 tags: ["raspberry-pi", "nfs", "nas"]
 ---
+
+# Network shares are weird
 
 I've been messing around with NAS solutions for a couple weeks now, because why not?
 

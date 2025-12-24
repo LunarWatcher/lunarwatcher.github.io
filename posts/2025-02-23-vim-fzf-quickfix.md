@@ -1,8 +1,9 @@
 ---
-title: "Moving fzf matches to quickfix"
 tags: ["vim", "fzf"]
-published_date: 2025-02-23 22:47:24 +0100
+date: 2025-02-23 22:47:24 +0100
 ---
+
+# Moving fzf matches to quickfix
 
 I used to have a command that let me search my project for `TODO` and `FIXME` comments, and this was set up through fzf. This is not a particularly complex use-case of fzf, and in fact one I've replaced since. All it does is open a search prepopulated with matches for TODO or FIXME, which can then be refined further in an interactive mode. One of my main use-cases for this is to browse through TODOs in my projects. However, I haven't used it much due to one minor annoyance: every time I pick a match, fzf closes. I then have to reopen and scroll manually to the next one, and hope I remember how far up the list I got last time - and that I counted the number of `<up>`s correctly. This is by design, and most of the time, rather useful. When I go to browse for files, I don't need to retain state. If I'm just switching to another file, I probably know what it is, and need to search for it anyway. Fzf is absurdly fast on its own, and my code is usually on an NVMe with read speeds high enough that it'll still put fzf under load. Performance is functionally not a concern here, at least not at the scales I operate with.
 

@@ -1,8 +1,9 @@
 ---
-title: "Forcing WSL to cooperate with non-standard keyboard layouts"
 tags: ["wsl"]
-published_date: 2025-08-18 00:05:06 +0200
+date: 2025-08-18 00:05:06 +0200
 ---
+
+# Forcing WSL to cooperate with non-standard keyboard layouts
 
 Since at least 2021 (earliest recorded instance), but likely since WSLg was initially made, [it has had a bug with keyboard translation](https://github.com/microsoft/wslg/issues/173). 
 
