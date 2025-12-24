@@ -1,4 +1,0 @@
----
-title: Hugo
-nocomments: true
----
