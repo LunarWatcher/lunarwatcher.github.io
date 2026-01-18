@@ -14,6 +14,10 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til), this is a list of s
 
 * [Dealing with CRLF](git/crlf.md)
 
+## Java
+
+* [Native accessibility APIs in Java Swing](java/Native accessibility APIs in Java Swing.md)
+
 ## Linux
 
 * [Disable SSH password auth on ubuntu server](linux/disable-password-auth-ubuntu-server.md)
