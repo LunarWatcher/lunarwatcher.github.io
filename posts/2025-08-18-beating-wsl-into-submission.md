@@ -49,9 +49,9 @@ if [[ $? == 0 ]]; then
     fi
 fi
 ```
-This script has to run at least once per boot of the WSL container. I put it in my `.zshrc` since I always start it before I start any GUI programs, but putting it in a systemd service should work too, if you can figure out how to get it to work reliably when Microsoft schenanigans are involved in complicating what's supposed to be an easy fix. The problem I had while making this a systemd service was getting it to run after WSLg started. This may have been user error, but I do not care enough to verify when stopping at `.zshrc`-loading worked for my use-case.
+This script has to run at least once per boot of the WSL container. I put it in my `.zshrc` since I always start it before I start any GUI programs, but putting it in a systemd service should work too, if you can figure out how to get it to work reliably when Microslop schenanigans are involved in complicating what's supposed to be an easy fix. The problem I had while making this a systemd service was getting it to run after WSLg started. This may have been user error, but I do not care enough to verify when stopping at `.zshrc`-loading worked for my use-case.
 
-The rest of this article describes why the wayland bit is so unnecessarily convoluted (aside it needing to exist in the first place; this could've all been avoided if Microsoft bothered fixing a bug or two every once in a while).
+The rest of this article describes why the wayland bit is so unnecessarily convoluted (aside it needing to exist in the first place; this could've all been avoided if Microslop bothered fixing a bug or two every once in a while).
 
 ## The root of all evil: the separation of WSL and WSLg
 

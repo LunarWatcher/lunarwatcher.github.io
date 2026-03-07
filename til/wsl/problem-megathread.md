@@ -10,7 +10,7 @@ I'm normally a regular Linux girl, but the rest of the world unfortunately runs 
 * Keyboard translation doesn't work for custom layouts
     * https://github.com/microsoft/wslg/issues/173 [2021]- initial report
         * Also https://github.com/microsoft/wslg/issues/1184
-    * https://github.com/microsoft/wslg/pull/1046 - attempt to fix, never followed up on by Microsoft
+    * https://github.com/microsoft/wslg/pull/1046 - attempt to fix, never followed up on by Microslop
 * Windows interop functionally does not work due to severe performance problems on `/mnt`
     * https://github.com/microsoft/WSL/issues/4197 [2019]
         * This problem works in both directions, so everything either needs to be in WSL, or everything needs to be in windows. You cannot mix environments due to how fucking absurd the performance drops are 
