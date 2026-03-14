@@ -20,7 +20,7 @@ It also means that emacs themes can be two different kinds of atrocious at the s
 
 I do wonder just  how much of that is down to theme bundles. Doom-themes is not the worst example of this - [base16](https://github.com/tinted-theming/base16-emacs), and its 200-something themes is.
 
-![screenshot showing base16-zenbones with what it claims passes for readable](/static/img/2026-03-14-base16-zenbones.png)
+![screenshot showing base16-zenbones with what it claims passes for readable](../static/img/2026-03-14-base16-zenbones.png)
 
 Some of the text is readable, but the line numbers and any text in markdown buffers under the cursorline is completely unreadable without a fair bit of effort. Purely based on experience, it feels like the size of a theme repository is inversely related to the quality of each individual theme, because it's assumed the colours in the theme can be described universally in the framework the theme repo usually builds on.
 
