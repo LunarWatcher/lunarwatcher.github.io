@@ -46,6 +46,10 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til), this is a list of s
 
 * [Blocking user agents](nginx/blocking-user-agents.md)
 
+## SSH
+
+* [Using SSH agents, and specifying which SSH key to use with pass-cli](ssh/ssh-agent-key-specification.md)
+
 ## WSL
 
 * [Problem megathread](wsl/problem-megathread.md)
