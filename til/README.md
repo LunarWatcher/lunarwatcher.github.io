@@ -12,7 +12,7 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til), this is a list of s
 
 ## Emacs
 
-* [Ctrl-R does not work in e vil mode search](emacs/ctrl-r-evil-mode.md)
+* [Ctrl-R does not work in evil mode search](emacs/ctrl-r-evil-mode.md)
 * [Customising underline styles in an emacs theme](emacs/customising-underline-styles.md)
 * [Defining custom commands in emacs](emacs/defining-emacs-commands.md)
 * [Echo commands in emacs](emacs/echo-commands.md)
