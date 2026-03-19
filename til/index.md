@@ -10,6 +10,20 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til), this is a list of s
 
 * [Parsing incomplete timestamps](cpp/incomplete-time-parsing.md)
 
+## Emacs
+
+* [Ctrl-R does not work in e vil mode search](emacs/ctrl-r-evil-mode.md)
+* [Customising underline styles in an emacs theme](emacs/customising-underline-styles.md)
+* [Defining custom commands in emacs](emacs/defining-emacs-commands.md)
+* [Echo commands in emacs](emacs/echo-commands.md)
+* [Vim-compatible regex in evil-search](emacs/evil-search-regex.md)
+* [Listing keybinds, variables, keys, etc.](emacs/listing-variables.md)
+* [Loading emacs themes or plugins from version control](emacs/loading-plugins-from-vcs.md)
+* [Pasting images in emacs](emacs/pasting-images.md)
+* [Preview images in markdown files](emacs/preview-images-in-markdown.md)
+* [Previewing markdown files in emacs](emacs/preview-markdown.md)
+* [Vim quickfix in emacs](emacs/quickfix-analogue.md)
+
 ## Git
 
 * [Dealing with CRLF](git/crlf.md)
