@@ -3,7 +3,6 @@ title: Multiple return values from the __index meta method
 tags: ["lua"]
 published_date: 2022-12-29 02:32:23 +0100
 ---
-<!-- fucking highlighting__ -->
 
 You don't.
 
