@@ -42,6 +42,12 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til), this is a list of s
 
 * [Multiple return values from index function](lua/multiple-return-index.md)
 
+## MSSQL
+
+<sub>The single worst database in existence</sub>
+
+* [Get and set default schema](mssql/get-and-set-default-schema.md)
+
 ## Nginx
 
 * [Blocking user agents](nginx/blocking-user-agents.md)
