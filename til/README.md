@@ -32,6 +32,10 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til), this is a list of s
 
 * [Native accessibility APIs in Java Swing](java/Native accessibility APIs in Java Swing.md)
 
+## Krita
+
+* [Pseudo-infinite canvas in krita](krita/infinite-canvas.md)
+
 ## Linux
 
 * [Disable SSH password auth on ubuntu server](linux/disable-password-auth-ubuntu-server.md)
