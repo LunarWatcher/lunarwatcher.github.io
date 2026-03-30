@@ -6,6 +6,11 @@ Contains a currently website-less blog, after I had to abandon two separate stat
 
 See [88x31.png](assets/88x31.png)
 
+## Pages
+
+* https://lunarwatcher.github.io
+* https://lunarwatcher.codeberg.page
+
 ## License
 
 The content is licensed under the CC-BY 4.0 license.
