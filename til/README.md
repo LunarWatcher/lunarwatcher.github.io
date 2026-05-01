@@ -24,6 +24,10 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til), this is a list of s
 * [Previewing markdown files in emacs](emacs/preview-markdown.md)
 * [Vim quickfix in emacs](emacs/quickfix-analogue.md)
 
+## Firefox
+
+* [Prevent websites from choosing fonts](firefox/fonts.md)
+
 ## Git
 
 * [Dealing with CRLF](git/crlf.md)
