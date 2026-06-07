@@ -1,8 +1,12 @@
 ---
-tags:
-  - Linux/Networking
-  - DNS
-date: 2026-01-06T03:17:31+01:00
+{
+    "tags": [
+        "Linux/Networking",
+        "DNS"
+    ],
+    "date": "2026-01-06T03:17:31+01:00",
+    "title": "resolvectl overrides networkmanager"
+}
 ---
 
 nmcli can be a filthy fucking liar about what DNS it uses. `nmcli` self-reports using 9.9.9.9, which it's set to in the netplan as well:

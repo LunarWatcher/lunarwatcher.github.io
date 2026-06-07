@@ -1,6 +1,8 @@
 # Blag
 
-Contains a currently website-less blog, after I had to abandon two separate static site generators in short order due to AI slop within their code, and a third promising one due to migrating just being such a pain in the ass.
+Contains my blog.
+
+This README is not shown on the website itself. For the actual website index, see index.md. This website uses [Violet](https://codeberg.org/LunarWatcher/violet) for the site generation.
 
 ## 88x31 badge
 

@@ -1,7 +1,11 @@
 ---
-title: "Runtime library conflicts with CMake, and why CMake doesn't respect your options"
-tags: ["cmake"]
-published_date: 2022-06-02 19:01:26 +0200
+{
+    "title": "Runtime library conflicts with CMake, and why CMake doesn't respect your options",
+    "tags": [
+        "cmake"
+    ],
+    "published_date": "2022-06-02T19:01:26+02:00"
+}
 ---
 
 Starting with CMake 3.15, we get the fantastic [`CMAKE_MSVC_RUNTIME_LIBRARY`](https://cmake.org/cmake/help/latest/variable/CMAKE_MSVC_RUNTIME_LIBRARY.html). This makes explicit `/MD`/`/MDd` flags, or equivalent with `/MT`, unnecessary.

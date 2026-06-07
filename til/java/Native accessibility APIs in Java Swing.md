@@ -1,7 +1,12 @@
 ---
-title: "Native accessibility APIs in Java Swing"
-tags: ["java", "accessibility"]
-published_date: 2026-01-18T19:32:39+01:00
+{
+    "title": "Native accessibility APIs in Java Swing",
+    "tags": [
+        "java",
+        "accessibility"
+    ],
+    "published_date": "2026-01-18T19:32:39+01:00"
+}
 ---
 
 While not enabled by default, Java Swing has support for accessibility APIs. Unfortunately, only Windows is supported by Java itself, but other operating systems are implemented by the different OSes themselves.
@@ -15,7 +20,7 @@ The flag is `-Djavax.accessibility.assistive_technologies=<provider>`, where som
     * Requires `%JRE_HOME%\bin\jabswitch -disable`
 * **Crapple shitOS**: Not checked yet
 
-Once enabled, the app can be tested using various testing tools. I was unable to find a solution that supports AT-SPI2[^1], so for my use, I hacked one together with pywinctl[^2], pyautogui[^3], and the adapter pattern to allow for other APIs to just be dropped into the testing framework. 
+Once enabled, the app can be tested using various testing tools. I was unable to find a solution that supports AT-SPI2[^1], so for my use, I hacked one together with pywinctl[^1], pyautogui[^2], and the adapter pattern to allow for other APIs to just be dropped into the testing framework. 
 
 I may make an open-source testing framework based on this concept At Some Point:tm:, but I have no immediate use for it for my personal projects. The amount of testing frameworks using accessibility APIs is fairly high, but the amount that _also_ support AT-SPI2 on Linux is functionally non-existent[^4].
 

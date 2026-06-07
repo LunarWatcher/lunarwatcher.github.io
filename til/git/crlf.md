@@ -1,7 +1,12 @@
 ---
-title: "Windows is pain: getting rid of CRLF"
-tags: ["git", "windows"]
-published_date: 2022-12-23 17:24:56 +0100
+{
+    "title": "Windows is pain: getting rid of CRLF",
+    "tags": [
+        "git",
+        "windows"
+    ],
+    "published_date": "2022-12-23T17:24:56+01:00"
+}
 ---
 
 I can never seem to get autocrlf to work properly on Windows. It isn't a problem on Linux, but it's always a problem on Windows. I've had to revisit this several times, because Git on Windows suddenly decides to flood my repo with CRLF without me notificing. I do have a select few words to whoever thought having CRLF was a good idea, but let's save that rant for another time.

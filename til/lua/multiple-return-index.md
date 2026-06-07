@@ -1,7 +1,11 @@
 ---
-title: Multiple return values from the __index meta method
-tags: ["lua"]
-published_date: 2022-12-29 02:32:23 +0100
+{
+    "title": "Multiple return values from the __index meta method",
+    "tags": [
+        "lua"
+    ],
+    "published_date": "2022-12-29T02:32:23+01:00"
+}
 ---
 
 You don't.

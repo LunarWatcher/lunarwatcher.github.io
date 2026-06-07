@@ -1,15 +1,17 @@
 ---
-tags: ["wsl"]
-date: 2025-08-18 00:05:06 +0200
+{
+    "date": "2025-08-18T00:05:06+02:00",
+    "title": "Forcing WSL to cooperate with non-standard keyboard layouts",
+    "tags": [ "wsl" ]
+}
 ---
-
 # Forcing WSL to cooperate with non-standard keyboard layouts
 
 Since at least 2021 (earliest recorded instance), but likely since WSLg was initially made, [it has had a bug with keyboard translation](https://github.com/microsoft/wslg/issues/173). 
 
 When using GUI apps in WSL, WSL actually delegates the keyboard translation to the underlying distro rather than handling those bits itself, and then telling Linux what keys were pressed and what char that is. This is not a problem if you use a standard layout, but if you use a custom layout (for example to remove dead keys), the translation will fail, and the keyboard layout falls back to en_US, which is unusable with my muscle memory. If the translation fails, the fix is not trivial, as there's no way to configure the keyboard in WSL at the time of writing.
 
-Instead, the config has to be done manually in the underlying window system. WSL, under the hood, uses Wayland + XWayland. Getting the XWayland bit sorted is trivial, because X11 isn't an unstandardised piece of shit like Wayland is. All that takes is a `setxkbmap`, and you're set. Wayland, on the other hand, is configured on a per-window-manager-basis. Each of them have different config systems and different ways and places to set it. This is further convoluted by WSL making it hard to access the files in question, and wiping the files 
+Instead, the config has to be done manually in the underlying window system. WSL, under the hood, uses Wayland + XWayland. Getting the XWayland bit sorted is trivial, because X11 isn't an unstandardised piece of shit like Wayland is. All that takes is a `setxkbmap`, and you're set. Wayland, on the other hand, is configured on a per-window-manager-basis. Each of them have different config systems and different ways and places to set it. This is further convoluted by WSL making it hard to access the files in question, and wiping the files
 
 ## The fix
 and the TL;DR: of my pain and suffering; add this code to your `.zshrc` or `.bashrc`. Other shells may require translation before use (or you can just shove it in a `#!/usr/bin/bash` script and source it).
@@ -28,11 +30,11 @@ if [[ $? == 0 ]]; then
 
     # Wayland
     echo "Note: WSL translation failures are expected. This is just Windows being overly shit"
-    WSL=/mnt/c/Windows/System32/wsl.exe 
+    WSL=/mnt/c/Windows/System32/wsl.exe
 
     $WSL -d Ubuntu --user root --system bash -c "cat /home/wslg/.config/weston.ini" | grep '\[keyboard\]'
 
-    # Unlike the X11 fix, this should not be run more than once. 
+    # Unlike the X11 fix, this should not be run more than once.
     # Otherwise, the pkill line would result in all your GUI apps being closed every time you restart your shell,
     # which would be infuriating
     if [[ $? != 0 ]]; then
@@ -55,7 +57,7 @@ The rest of this article describes why the wayland bit is so unnecessarily convo
 
 ## The root of all evil: the separation of WSL and WSLg
 
-For whatever fucking reason, WSL and WSLg are split. When you drop into a terminal, you get access to WSL, while WSLg runs in an entirely separate environment. Not just that, WSLg's entire environment is reset every time you restart WSL, so setting your keyboard is not a one-time thing - it's a one-time per boot thing. 
+For whatever fucking reason, WSL and WSLg are split. When you drop into a terminal, you get access to WSL, while WSLg runs in an entirely separate environment. Not just that, WSLg's entire environment is reset every time you restart WSL, so setting your keyboard is not a one-time thing - it's a one-time per boot thing.
 
 Doing the changes further requires that you make the changes to a config file that's part of WSLg, and rebooting a window manager that's also part of, you guessed it, WSLg. This means that you need to break out of your WSL container in order to access the WSLg stuff you need. The only way to actually get access to it is using `wsl.exe`, which is a Windows program. This turned out ot be less of a problem than it sounded like at first.
 

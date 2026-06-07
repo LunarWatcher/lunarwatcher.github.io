@@ -1,7 +1,9 @@
 ---
-date: 2025-12-24T15:13:38+01:00
+{
+    "date": "2025-12-24T15:13:38+01:00",
+    "title": "Markdown and the illusion of portability"
+}
 ---
-
 # Markdown and the illusion of portability
 
 This is the first post I'm writing after scrapping the web component of this "web"site (now just a repo with some files no one is going to read), and not one, but two painful migration attempts to other static site generators before abandoning the push outright. 

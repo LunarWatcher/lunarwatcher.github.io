@@ -1,7 +1,12 @@
 ---
-title: "How to disable SSH password auth on Ubuntu Server (22.10)"
-tags: ["linux", "ubuntu-server"]
-published_date: 2022-10-22 16:12:31 +0200
+{
+    "title": "How to disable SSH password auth on Ubuntu Server (22.10)",
+    "tags": [
+        "linux",
+        "ubuntu-server"
+    ],
+    "published_date": "2022-10-22T16:12:31+02:00"
+}
 ---
 
 Ubuntu Server has some garbage defaults, at least for certain installation options, that prevents you from disabling password auth the standard way.

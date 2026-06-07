@@ -1,0 +1,17 @@
+{
+    "name": "Olivia's blog",
+    "description": "Contains my blog",
+    "data": {
+        "language": "en-GB",
+        "repo": {
+            "github": "https://github.com/LunarWatcher/lunarwatcher.github.io",
+            "codeberg": "https://codeberg.org/LunarWatcher/pages"
+        }
+    },
+    "exclude": [
+        "scripts",
+        "LICENSE",
+        "CONTRIBUTING.md",
+        ".ignore"
+    ]
+}

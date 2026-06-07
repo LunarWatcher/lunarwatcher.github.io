@@ -1,7 +1,11 @@
 ---
-title: "C++ time sucks: parsing incomplete timestamps"
-tags: ["c++"]
-published_date: 2022-08-19 19:50:19 +0200
+{
+    "title": "C++ time sucks: parsing incomplete timestamps",
+    "tags": [
+        "cpp"
+    ],
+    "published_date": "2022-08-19T19:50:19+02:00"
+}
 ---
 
 C++ time parsing is trash. HowardHinnant/date is equally bad, but it also adds timezone parsing. C++20's time additions is just HowardHinnant/date without the name.

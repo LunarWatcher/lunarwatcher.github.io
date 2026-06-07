@@ -1,7 +1,9 @@
 ---
-date: 2026-03-01T23:26:05+01:00
+{
+    "date": "2026-03-14T18:53:19+01:00",
+    "title": "Information curation and sharing after Stack Overflow"
+}
 ---
-
 # Information curation and sharing after Stack Overflow
 
 On 2026-02-24, Stack Overflow put the last nail in their coffin by proposing to remove a lot of curation, while trying to solve the engagement loss they've been suffering from for a good few months by killing curation rather than addressing the real systemic issues in their implementation of the Q&A model, particularly that reputation ended up keeping new curators down, and introducing a perception of toxicity that undermined quite a few of the site's activities as a Q&A site. Now it's enshittifying down to another Reddit clone, presumably to try to keep the company itself afloat, but at the expense of what Stack Overflow was meant to be.
@@ -38,3 +40,4 @@ What I do know is that laying down and accepting the end of structured informati
 
 [^1]: I use Obsidian. It's decent, but the developer experience for it is utter dogshit. If you plan to make a plugin, it would probably be easier to make your own editor first than trying to get it into obsidian's plugin repo.
 [^2]: GitHub's search, much like obsidian's developer experience, is utter dogshit, but you can find plenty of real-world usage examples of things this way. Very useful if you're stuck with something that simply doesn't have documentation, or where the documentation is fucking worthless.
+

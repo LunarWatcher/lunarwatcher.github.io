@@ -1,7 +1,12 @@
 ---
-title: "IPv6 leak with OpenVPN"
-tags: ["linux", "openvpn"]
-published_date: 2024-12-25 00:23:25 +0100
+{
+    "title": "IPv6 leak with OpenVPN",
+    "tags": [
+        "linux",
+        "openvpn"
+    ],
+    "published_date": "2024-12-25T00:23:25+01:00"
+}
 ---
 
 ## Problem

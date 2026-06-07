@@ -1,8 +1,11 @@
 ---
-title: Blocking user agents with nginx
-published_date: 2025-02-27 13:22:51 +0100
-tags:
-- nginx
+{
+    "title": "Blocking user agents with nginx",
+    "published_date": "2025-02-27T13:22:51+01:00",
+    "tags": [
+        "nginx"
+    ]
+}
 ---
 
 My server has been attacked repeatedly by censys and some company called Expanse, from enough IPs that I need to look into range banning their networks. Doing so is logistically annoying, so obviously, the sane kneejerk response until then is to ban their user agents in nginx with a custom message out of spite.

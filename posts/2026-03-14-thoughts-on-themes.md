@@ -1,7 +1,9 @@
 ---
-date: 2026-03-14T18:53:19+01:00
+{
+    "date": "2026-03-14T18:53:19+01:00",
+    "title": "Thoughts on themes"
+}
 ---
-
 # Thoughts on themes
 
 Last week, I had the fun need to ✨ switch from vim to emacs ✨, because [vim has fallen to AI slop](https://hachyderm.io/@AndrewRadev/116175986749599825) - a sentence I did not expect to need to say ever, but here we are. This forced me back out to look for themes, which has been a bit of a challenge. I may end up writing something about this in the future, at the very least in the form of TILs. My note strategy has once again changed, so I have some cannon fodder for it.
