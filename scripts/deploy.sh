@@ -4,6 +4,10 @@ VIOLET_EXE=${VIOLET_EXE:-violet}
 
 echo "Using $VIOLET_EXE"
 
+git_root=$(git rev-parse --show-toplevel)
+cd "$git_root"
+
+rm -rf pages
 time "$VIOLET_EXE" generate
 
 if [[ $? != 0 ]]; then
