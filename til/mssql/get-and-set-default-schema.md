@@ -1,3 +1,8 @@
+---
+{
+    "title": "Get and set the default schema in MSSQL"
+}
+---
 # Get and set the default schema in MSSQL
 
 > [!warning]

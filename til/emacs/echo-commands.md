@@ -1,3 +1,8 @@
+---
+{
+    "title": "Echo commands in emacs"
+}
+---
 # Echo commands in emacs
 
 There's (at least[^1]) two separate commands analogous to `:echo` in vim in emacs.

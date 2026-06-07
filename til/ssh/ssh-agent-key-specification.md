@@ -1,3 +1,8 @@
+---
+{
+    "title": "Using SSH agents, and specifying which SSH key to use with pass-cli"
+}
+---
 # Using SSH agents, and specifying which SSH key to use with pass-cli
 
 This TIL assumes Proton Pass, but I hear the same strategy works with a few other password managers

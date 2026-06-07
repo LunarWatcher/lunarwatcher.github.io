@@ -1,3 +1,8 @@
+---
+{
+    "title": "Pasting images in emacs"
+}
+---
 # Pasting images in emacs
 
 `M-x yank-media`

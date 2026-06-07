@@ -1,3 +1,8 @@
+---
+{
+    "title": "Vim quickfix in emacs"
+}
+---
 # Vim quickfix in emacs
 
 Emacs doesn't directly have an equivalent of Vim's quickfix window, but it does have `M-x grep-find`, which is pretty close.

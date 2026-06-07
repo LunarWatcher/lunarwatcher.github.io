@@ -1,4 +1,9 @@
-# Forcing specific fonts in firefox
+---
+{
+    "title": "Forcing specific fonts in Firefox"
+}
+---
+# Forcing specific fonts in Firefox
 
 As of some version of Firefox I cannot be bothered to look up, Firefox supports forcing specific fonts. 
 

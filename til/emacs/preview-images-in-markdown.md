@@ -1,3 +1,8 @@
+---
+{
+    "title": "Previewing images in markdown files"
+}
+---
 # Previewing images in markdown files
 
 `M-x markdown-toggle-images-inline` (`C-c C-x TAB` by default)

@@ -1,3 +1,8 @@
+---
+{
+    "title": "Previewing markdown files in emacs"
+}
+---
 # Previewing markdown files in emacs
 
 `C-c C-c l`, shorthand for `markdown-live-preview-mode` can be used to preview the markdown file. It also opens it in the emacs web browser, so the preview can be fully inline.
