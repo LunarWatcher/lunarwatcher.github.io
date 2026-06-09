@@ -15,4 +15,4 @@ See [88x31.png](assets/88x31.png)
 
 ## License
 
-The content is licensed under the CC-BY 4.0 license.
+The content is licensed under the CC-BY-SA 4.0 license. The code is licensed under the MIT license.

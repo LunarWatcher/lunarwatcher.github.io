@@ -1,0 +1,16 @@
+<footer class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <div id="contact">
+            <h2>Contact</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a></p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/code.LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>

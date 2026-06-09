@@ -3,7 +3,6 @@
     "title": "Pseudo-infinite canvas in Krita"
 }
 ---
-# Pseudo-infinite canvas in Krita
 
 When panning sufficiently far in any direction, a button appears on the corresponding border. Pressing this button extends the canvas in that direction. The button seems to appear when you cannot scroll further in that direction. This makes it much easier to expand canvases to fit whatever I'm working on, which is largely important to be able to use krita for notes.
 

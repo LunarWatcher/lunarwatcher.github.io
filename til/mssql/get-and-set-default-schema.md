@@ -3,7 +3,6 @@
     "title": "Get and set the default schema in MSSQL"
 }
 ---
-# Get and set the default schema in MSSQL
 
 > [!warning]
 > When running interactively through a database explorer or similar, make sure the right database is used. If you're in doubt, it doesn't hurt to `USE database;` for good measure.

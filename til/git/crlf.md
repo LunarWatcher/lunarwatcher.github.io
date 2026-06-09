@@ -1,10 +1,12 @@
 ---
 {
     "title": "Windows is pain: getting rid of CRLF",
-    "tags": [
-        "git",
-        "windows"
-    ],
+    "taxonomies": {
+        "tags": [
+            "git",
+            "windows"
+        ]
+    },
     "published_date": "2022-12-23T17:24:56+01:00"
 }
 ---

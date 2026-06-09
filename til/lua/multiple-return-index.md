@@ -1,9 +1,11 @@
 ---
 {
     "title": "Multiple return values from the __index meta method",
-    "tags": [
-        "lua"
-    ],
+    "taxonomies": {
+        "tags": [
+            "lua"
+        ]
+    },
     "published_date": "2022-12-29T02:32:23+01:00"
 }
 ---

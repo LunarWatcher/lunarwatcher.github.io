@@ -3,7 +3,6 @@
     "title": "Defining custom commands in emacs"
 }
 ---
-# Defining custom commands in emacs
 
 Emacs commands are `(interactive)` functions:
 ```

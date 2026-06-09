@@ -1,0 +1,15 @@
+<header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="{{ site.site_prefix }}/">{{ site.name }}</a></span>
+
+        <button onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px; ">Menu</button>
+    </div>
+
+</header>
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="{{ site.site_prefix }}/posts/index.html">Blog</a></li>
+        <li><a href="{{ site.site_prefix }}/til/index.html">TIL</a></li>
+    </ul>
+</nav>

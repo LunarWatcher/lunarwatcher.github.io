@@ -1,0 +1,20 @@
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+{% if existsIn(site.data, "language") %}
+    <meta http-equiv="Content-language" content = "{{ site.data.language }}" />
+{% endif %}
+{% if existsIn(page, "summary") %}
+    <meta name="description" content="{{ htmlEscape(page.summary) }}" />
+{% endif %}
+
+<link rel="stylesheet" href="{{ site.site_prefix }}/assets/css/variables.css" />
+<link rel="stylesheet" href="{{ site.site_prefix }}/assets/css/syntax.css" />
+<link rel="stylesheet" href="{{ site.site_prefix }}/assets/css/page.css" />
+
+<title>{{ page.title }}</title>
+
+<script src="{{ site.site_prefix }}/assets/js/page.js"></script>
+<script src="{{ site.site_prefix }}/assets/vendor/highlightjs.js"></script>

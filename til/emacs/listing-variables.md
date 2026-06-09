@@ -3,7 +3,6 @@
     "title": "Listing keybinds, variables, keys, etc."
 }
 ---
-# Listing keybinds, variables, keys, etc.
 
 Emacs has a disgusting (/pos) amount of facilities for infodumping the value of things, and the current state of things. Just a few include:
 

@@ -1,0 +1,31 @@
+{% extends "base.inja" %}
+{% block content %}
+    {% include "content" %}
+
+    {% if exists("listing") %}
+        {% for page in listing.pages %}
+            <article class="flex-vertical">
+                <h2><a href="{{ site.site_prefix}}/{{ page.url }}">{{ page.title }}</a></h2>
+
+                {% if existsIn(page, "taxonomies") and existsIn(page.taxonomies, "tags") %}
+                    <div class="tag-container">
+                        Tags:
+                        {% for tag in page.taxonomies.tags %}
+                            <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% if existsIn(page, "date") %}
+                    <span>
+                        Published on {{ formatDate(page.date, "%FT%H:%M:%OS%z", "Europe/Oslo") }}
+                        {% if existsIn(page, "last_modified") %}
+                            · Last modified {{ formatDate(page.last_modified, "%FT%H:%M:%OS%z", "Europe/Oslo") }}
+                        {% endif %}
+                    </span>
+                {% endif %}
+            </article>
+        {% endfor %}
+
+        {% include "partials/paginator.inja" %}
+    {% endif %}
+{% endblock %}

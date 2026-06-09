@@ -1,9 +1,11 @@
 ---
 {
-    "tags": [
-        "Linux/Networking",
-        "DNS"
-    ],
+    "taxonomies": {
+        "tags": [
+            "Linux/Networking",
+            "DNS"
+        ]
+    },
     "date": "2026-01-06T03:17:31+01:00",
     "title": "resolvectl overrides networkmanager"
 }

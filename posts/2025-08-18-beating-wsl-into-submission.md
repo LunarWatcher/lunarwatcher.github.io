@@ -2,10 +2,11 @@
 {
     "date": "2025-08-18T00:05:06+02:00",
     "title": "Forcing WSL to cooperate with non-standard keyboard layouts",
-    "tags": [ "wsl" ]
+    "taxonomies": {
+        "tags": [ "wsl" ]
+    }
 }
 ---
-# Forcing WSL to cooperate with non-standard keyboard layouts
 
 Since at least 2021 (earliest recorded instance), but likely since WSLg was initially made, [it has had a bug with keyboard translation](https://github.com/microsoft/wslg/issues/173). 
 

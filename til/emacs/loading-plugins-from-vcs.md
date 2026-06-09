@@ -3,7 +3,6 @@
     "title": "Loading emacs themes or plugins from version control"
 }
 ---
-# Loading emacs themes or plugins from version control
 
 With emacs 30, `use-package` got an extension that allows for the use of version control:
 ```lisp

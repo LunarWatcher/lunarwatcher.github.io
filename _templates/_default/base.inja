@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html
+    {% if existsIn(site.data, "language") %}lang="{{site.data.language}}"{% endif %}
+>
+    <head>
+        {% include "partials/head.inja" %}
+    </head>
+    <body>
+        {% include "partials/header.inja" %}
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        {% include "partials/footer.inja" %}
+    </body>
+</html>
