@@ -16,5 +16,5 @@
 
 <title>{{ page.title }}</title>
 
-<script src="{{ site.site_prefix }}/assets/js/page.js"></script>
 <script src="{{ site.site_prefix }}/assets/vendor/highlightjs.js"></script>
+<script src="{{ site.site_prefix }}/assets/js/page.js" defer></script>

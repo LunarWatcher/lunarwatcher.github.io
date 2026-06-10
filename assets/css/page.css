@@ -159,6 +159,7 @@ pre, code {
     background-color: #eeeeee;
     padding: 4px;
 }
+
 pre > code {
     padding: 0px;
 }
@@ -244,5 +245,28 @@ ul.pad > li > *:hover {
 
 .paginator {
     width: 100%;
+}
+
+*:target {
+    background-color: var(--pink-100);
+}
+
+/* TODO: Keep? */
+/* *:target::before { */
+/*     content: "Link redirects here"; */
+/*     color: #666666; */
+/* } */
+
+a:target {
+    font-weight: bold;
+}
+
+.header-backlink, .header-backlink:visited {
+    color: var(--pink-500);
+    margin-right: 8px;
+}
+
+.header-backlink:hover {
+    color: var(--pink-800);
 }
 

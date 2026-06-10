@@ -110,3 +110,29 @@
 .hljs-strong {
     font-weight: bold;
 }
+
+.hljs {
+    counter-reset: line 0;
+}
+.hljs-line-shim::before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    min-width: 3ch;
+
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-right: 1ch;
+    border-right: 2px solid var(--pink-900);
+    color: var(--pink-900);
+}
+
+/* TODO: not super happy with this, might remove in favour of a full JS solution */
+code[data-language]::before {
+    content: "Code type: " attr(data-language) '\A';
+    background: unset;
+    padding: 4px;
+    display: block;
+    color: #666666;
+}
+
