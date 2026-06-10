@@ -112,6 +112,7 @@ header > #site-title {
 .flex-horizontal {
     display: flex;
     flex-direction: row;
+    gap: 2ch;
 }
 
 .flex-center {
