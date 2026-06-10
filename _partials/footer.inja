@@ -2,6 +2,22 @@
     <div class="flex-horizontal">
         <div id="contact">
             <h2>Contact</h2>
+            <ul>
+                <li>Discord: @oliviawolfie</li>
+                <li>Discord server: <a href="https://discord.gg/EZyt8FAYHe">[invite]</a></li>
+                <li>Codeberg: <a href="https://codeberg.org/LunarWatcher">LunarWatcher</a> (email can be found here)</li>
+                <li>GitHub: <a href="https://github.com/LunarWatcher">LunarWatcher</a></li>
+            </ul>
+
+            {# TODO: the 88x31 has a pink background, so the badge is a pink background on a pink background
+            It should either be put somewhere else, or the footer should be changed, or the footer can get a separate
+            section with a different background colour? #}
+            <a href="{{ site.site_prefix }}/assets/88x31.png">
+                <img
+                    src="{{ site.site_prefix }}/assets/88x31.png"
+                    alt="88x31 badge for this site"
+                />
+            </a>
         </div>
     </div>
     <hr>
