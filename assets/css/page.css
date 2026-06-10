@@ -107,16 +107,34 @@ header > #site-title {
 .flex-vertical {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .flex-horizontal {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 2ch;
 }
 
 .flex-center {
     align-items: center;
+}
+
+.flex-horizontal > * {
+    flex: 1 0 300px;
+}
+
+td {
+    padding: 8px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table tr:nth-child(odd) {
+    background-color: var(--pink-200);
 }
 
 .flex-shrink {
@@ -129,10 +147,6 @@ article {
 
 .flex-grow {
     flex: 1 1 auto;
-}
-
-.flex-horizontal > * {
-    flex-basis: 300px;
 }
 
 hr {

@@ -2,7 +2,9 @@
     <div class="flex-horizontal">
         <span id="site-title" class="flex-grow"><a href="{{ site.site_prefix }}/">{{ site.name }}</a></span>
 
-        <button onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px; ">Menu</button>
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
     </div>
 
 </header>
