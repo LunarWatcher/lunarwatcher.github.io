@@ -6,11 +6,6 @@ hljs.addPlugin({
     "after:highlightElement": ({ el, result, _ }) =>  {
         // This is used to display the language, but it might be a better idea to add a proper element.
         el.setAttribute("data-language", result.language)
-        el.innerHTML = el.innerHTML
-            .replace(
-                /^(.*)$/gm,
-                '<span class="hljs-line-shim">$1</span>'
-            );
     },
 });
 
@@ -43,4 +38,14 @@ document.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(el => {
     }
     el.prepend(anchor);
 });
+
+document.querySelectorAll(
+    "pre > code"
+).forEach(el => {
+    el.innerHTML = el.innerHTML
+        .replace(
+            /^(.*)$/gm,
+            '<span class="hljs-line-shim">$1</span>'
+        );
+})
 

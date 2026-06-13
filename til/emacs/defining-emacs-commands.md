@@ -5,7 +5,7 @@
 ---
 
 Emacs commands are `(interactive)` functions:
-```
+```lisp
 (defun some-command()
   (interactive)
 )
