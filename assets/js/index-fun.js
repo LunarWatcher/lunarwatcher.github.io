@@ -1,4 +1,6 @@
 document.getElementById("profile-pic")
     .addEventListener("click", (ev) => {
-        document.getElementById("profile-pic-popover").togglePopover();
+        if (ev.offsetY < 150) {
+            document.getElementById("profile-pic-popover").togglePopover();
+        }
     });
