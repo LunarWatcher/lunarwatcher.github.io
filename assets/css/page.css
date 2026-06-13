@@ -330,3 +330,13 @@ details > div {
 /* details[open] summary { */
 /*     border-bottom: 2px solid var(--pink-800); */
 /* } */
+
+
+[popover] {
+    border: 2px solid var(--pink-800);
+}
+
+[popover].inline {
+    overlay: none;
+    inset: unset;
+}
