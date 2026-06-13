@@ -1,0 +1,5 @@
+<ul>
+    {% for p in listPages(page, scope) %}
+        <li><a href="{{ site.site_prefix }}/{{ p.url }}">{{ p.title }}</a></li>
+    {% endfor %}
+</ul>
