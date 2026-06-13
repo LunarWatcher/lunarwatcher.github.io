@@ -8,10 +8,13 @@
     </div>
 
 </header>
+{# TODO: float above content so the page doesn't shift on expansion #}
 <nav id="navigation" class="flex-vertical airgapped">
     <h2>Navigation</h2>
     <ul class="pad">
         <li><a href="{{ site.site_prefix }}/posts/index.html">Blog</a></li>
         <li><a href="{{ site.site_prefix }}/til/index.html">TIL</a></li>
+        <li><a href="{{ site.site_prefix }}/projcets.html">Some of my projects</a></li>
+        <li><a href="{{ site.site_prefix }}/uses.html">Things I use</a></li>
     </ul>
 </nav>

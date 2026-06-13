@@ -5,7 +5,7 @@
         <div class="author-block flex-shrink flex-horizontal">
             <img src="{{ site.site_prefix }}/assets/profile.png"
                  class="flex-shrink"
-                 style="height: 32px; aspect-ratio: 1/1; border-radius: 32px"
+                 style="height: 32px; aspect-ratio: 1/1; border-radius: 32px;"
                  alt="Profile picture"
             />
 

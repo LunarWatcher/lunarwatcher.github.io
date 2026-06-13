@@ -145,7 +145,13 @@ table {
     box-sizing: border-box;
 }
 
-table tr:nth-child(odd) {
+table thead tr {
+    border-bottom: 4px solid var(--pink-400);
+    background-color: var(--pink-800);
+    color: white;
+}
+
+table tbody tr:nth-child(even) {
     background-color: var(--pink-200);
 }
 
@@ -306,3 +312,17 @@ a:target {
     color: var(--pink-800);
 }
 
+summary {
+    background-color: var(--pink-200);
+    padding: 8px;
+}
+
+details > div {
+    padding: 16px;
+    border: 2px solid var(--pink-800);
+    border-radius: 4px;
+}
+
+/* details[open] summary { */
+/*     border-bottom: 2px solid var(--pink-800); */
+/* } */

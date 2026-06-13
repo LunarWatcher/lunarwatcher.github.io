@@ -1,16 +1,11 @@
 <footer class="flex-vertical airgapped">
     <div class="flex-horizontal">
-        <div id="contact">
-
-            {# TODO: the 88x31 has a pink background, so the badge is a pink background on a pink background
-            It should either be put somewhere else, or the footer should be changed, or the footer can get a separate
-            section with a different background colour? #}
-            <a href="{{ site.site_prefix }}/assets/88x31.png">
-                <img
-                    src="{{ site.site_prefix }}/assets/88x31.png"
-                    alt="88x31 badge for this site"
-                />
-            </a>
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="{{ site.site_prefix }}/index.html#contact">Contact me</a></li>
+                <li><a href="{{ site.site_prefix }}/index.html#link-to-me">Link to me</a></li>
+            </ul>
         </div>
     </div>
     <hr>
