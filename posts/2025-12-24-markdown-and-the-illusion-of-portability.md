@@ -2,7 +2,8 @@
 {
     "date": "2025-12-24T15:13:38+01:00",
     "type": "blog",
-    "title": "Markdown and the illusion of portability"
+    "title": "Markdown and the illusion of portability",
+    "summary": "Small rant on how markdown isn't as flexible as many of the tools using it claim it is, and how that became painfully obvious when trying to migrate between static site generators"
 }
 ---
 

@@ -2,7 +2,8 @@
 {
     "date": "2026-03-14T18:53:19+01:00",
     "type": "blog",
-    "title": "Thoughts on themes"
+    "title": "Thoughts on themes",
+    "summary": "Smol unstructured post on themes, theme bundles, and the pain of finding good light mode themes"
 }
 ---
 
@@ -10,7 +11,7 @@ Last week, I had the fun need to ✨ switch from vim to emacs ✨, because [vim 
 
 Anyway, at the time of writing this page, I'm using [catppuccin latte](https://github.com/catppuccin/emacs), while writing my own theme in another instance of emacs. I mostly like catppuccin, but it's also very bad for contrast, particularly in markdown code blocks not being distinguishable from the background. Having to look through themes again reminded me how much of a pain in the ass this process is.
 
-I'm a light mode user, which means there's significantly fewer themes I can use available - and _much_ fewer well-implemented themes. One thing I have noticed is that there's lots of repos for themes that are actually bundles for themes in vaguely the same style. Before switching to catppuccin, I used [doom-themes](https://github.com/doomemacs/themes/tree/master), and tried two variants, both of which were either low in contrast or appared poorly implemented[^1].
+I'm a light mode user, which means there's significantly fewer themes I can use available - and *much* fewer well-implemented themes. One thing I have noticed is that there's lots of repos for themes that are actually bundles for themes in vaguely the same style. Before switching to catppuccin, I used [doom-themes](https://github.com/doomemacs/themes/tree/master), and tried two variants, both of which were either low in contrast or appared poorly implemented[^1].
 
 Back when I used Vim, I eventually found [papercolor-theme](https://github.com/NLKNguyen/papercolor-theme), and stuck with it. I eventually forked it when the maintainer disappeared, because maintaining it with the new plugins I was using was easier than finding another, more maintained theme. Papercolor is, and still remains, one of the best-designed light mode themes I have seen.
 

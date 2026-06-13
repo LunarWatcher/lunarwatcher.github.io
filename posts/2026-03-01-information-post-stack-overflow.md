@@ -2,7 +2,8 @@
 {
     "date": "2026-03-01T23:26:05+01:00",
     "type": "blog",
-    "title": "Information curation and sharing after Stack Overflow"
+    "title": "Information curation and sharing after Stack Overflow",
+    "summary": "Over the last 7+ years, the company behind Stack Overflow has systematically been working against the Q&A model, the site's community, and users. This post describes how I've had to change my own approach to notes when the biggest software Q&A may not be around or have as high quality content anymore."
 }
 ---
 
