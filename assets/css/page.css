@@ -323,6 +323,10 @@ details > div {
     border-radius: 4px;
 }
 
+#profile-pic:hover {
+    cursor: grab;
+}
+
 /* details[open] summary { */
 /*     border-bottom: 2px solid var(--pink-800); */
 /* } */
