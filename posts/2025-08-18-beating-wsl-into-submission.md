@@ -2,6 +2,8 @@
 {
     "date": "2025-08-18T00:05:06+02:00",
     "title": "Forcing WSL to cooperate with non-standard keyboard layouts",
+    "type": "blog",
+    "summary": "WSL has a long-standing bug that prevents custom keyboards on Windows from porting well to Linux. This post describes how I worked around the problem while still keeping my custom layout.",
     "taxonomies": {
         "tags": [ "wsl" ]
     }

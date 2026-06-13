@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Echo commands in emacs"
+    "title": "Echo commands in emacs",
+    "type": "blog"
 }
 ---
 

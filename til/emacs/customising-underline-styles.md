@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Customising underline styles in an emacs theme"
+    "title": "Customising underline styles in an emacs theme",
+    "type": "blog"
 }
 ---
 The underline property can also be a list that takes a `:style`:

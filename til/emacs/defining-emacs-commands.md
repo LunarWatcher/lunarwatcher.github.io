@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Defining custom commands in emacs"
+    "title": "Defining custom commands in emacs",
+    "type": "blog"
 }
 ---
 

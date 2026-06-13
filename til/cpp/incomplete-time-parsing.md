@@ -1,9 +1,12 @@
 ---
 {
     "title": "C++ time sucks: parsing incomplete timestamps",
-    "tags": [
-        "cpp"
-    ],
+    "type": "blog",
+    "taxonomies": {
+        "tags": [
+            "cpp"
+        ]
+    },
     "published_date": "2022-08-19T19:50:19+02:00"
 }
 ---

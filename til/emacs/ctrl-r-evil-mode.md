@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Ctrl-R does not work in evil-mode search"
+    "title": "Ctrl-R does not work in evil-mode search",
+    "type": "blog"
 }
 ---
 

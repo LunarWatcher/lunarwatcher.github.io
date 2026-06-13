@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Forcing specific fonts in Firefox"
+    "title": "Forcing specific fonts in Firefox",
+    "type": "blog"
 }
 ---
 

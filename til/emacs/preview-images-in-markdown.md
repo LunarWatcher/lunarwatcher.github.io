@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Previewing images in markdown files"
+    "title": "Previewing images in markdown files",
+    "type": "blog"
 }
 ---
 

@@ -1,5 +1,6 @@
 ---
 {
+    "type": "blog",
     "taxonomies": {
         "tags": [
             "Linux/Networking",

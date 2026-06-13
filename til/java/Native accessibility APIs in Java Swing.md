@@ -1,10 +1,13 @@
 ---
 {
     "title": "Native accessibility APIs in Java Swing",
-    "tags": [
-        "java",
-        "accessibility"
-    ],
+    "type": "blog",
+    "taxonomies": {
+        "tags": [
+            "java",
+            "accessibility"
+        ]
+    },
     "published_date": "2026-01-18T19:32:39+01:00"
 }
 ---

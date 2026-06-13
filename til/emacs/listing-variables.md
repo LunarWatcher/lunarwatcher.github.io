@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Listing keybinds, variables, keys, etc."
+    "title": "Listing keybinds, variables, keys, etc.",
+    "type": "blog"
 }
 ---
 

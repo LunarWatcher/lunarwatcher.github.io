@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Vim-compatible regex in evil-search"
+    "title": "Vim-compatible regex in evil-search",
+    "type": "blog"
 }
 ---
 

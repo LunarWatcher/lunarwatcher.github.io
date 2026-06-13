@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Get and set the default schema in MSSQL"
+    "title": "Get and set the default schema in MSSQL",
+    "type": "blog"
 }
 ---
 

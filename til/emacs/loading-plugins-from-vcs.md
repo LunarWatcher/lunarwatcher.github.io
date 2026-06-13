@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Loading emacs themes or plugins from version control"
+    "title": "Loading emacs themes or plugins from version control",
+    "type": "blog"
 }
 ---
 

@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Pseudo-infinite canvas in Krita"
+    "title": "Pseudo-infinite canvas in Krita",
+    "type": "blog"
 }
 ---
 

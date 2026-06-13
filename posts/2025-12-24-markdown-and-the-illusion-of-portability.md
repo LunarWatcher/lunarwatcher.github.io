@@ -1,6 +1,7 @@
 ---
 {
     "date": "2025-12-24T15:13:38+01:00",
+    "type": "blog",
     "title": "Markdown and the illusion of portability"
 }
 ---

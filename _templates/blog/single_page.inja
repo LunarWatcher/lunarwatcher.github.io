@@ -1,0 +1,36 @@
+{% extends "../_default/base.inja" %}
+{% block content %}
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta flex-vertical">
+        <div class="author-block flex-shrink flex-horizontal">
+            <img src="{{ site.site_prefix }}/assets/profile.png"
+                 class="flex-shrink"
+                 style="height: 32px; aspect-ratio: 1/1; border-radius: 32px"
+                 alt="Profile picture"
+            />
+
+            <div class="author-links flex-vertical flex-shrink">
+                <span class="author"><a href="https://lunarwatcher.codeberg.page">Olivia</a></span>
+                <span class="small grey">
+                    Published on
+                {% if existsIn(page, "date") %}
+                    {{ formatDate(page.date, "%F at %H:%M:%OS%z", "Europe/Oslo") }}
+                    {% if existsIn(page, "last_modified") %}
+                        · Last modified {{ formatDate(page.last_modified, "%F at %H:%M:%OS%z", "Europe/Oslo") }}
+                    {% endif %}
+                {% else %}
+                    an unknown date
+                {% endif %}
+                </span>
+            </div>
+        </div>
+        {% if existsIn(page, "taxonomies") and existsIn(page.taxonomies, "tags") %}
+            <div class="tag-container flex-shrink flex-horizontal">
+                {% for tag in page.taxonomies.tags %}
+                    <span class="tag flex-shrink">#{{ tag }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    {% include "content" %}
+{% endblock %}

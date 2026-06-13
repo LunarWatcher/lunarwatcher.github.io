@@ -2,6 +2,7 @@
 {
     "title": "Long-standing WSL bug megathread",
     "published_date": "2025-06-28T23:26:27+02:00",
+    "type": "blog",
     "taxonomies": {
         "tags": [
             "wsl"

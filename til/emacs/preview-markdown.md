@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Previewing markdown files in emacs"
+    "title": "Previewing markdown files in emacs",
+    "type": "blog"
 }
 ---
 

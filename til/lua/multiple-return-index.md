@@ -1,6 +1,7 @@
 ---
 {
     "title": "Multiple return values from the __index meta method",
+    "type": "blog",
     "taxonomies": {
         "tags": [
             "lua"

@@ -133,8 +133,28 @@ table {
     border-collapse: collapse;
 }
 
+.post-meta {
+    margin: 16px;
+}
+
+.tag {
+    padding: 4px;
+    background-color: var(--pink-200);
+    border: 2px solid var(--pink-800);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
 table tr:nth-child(odd) {
     background-color: var(--pink-200);
+}
+
+.small {
+    font-size: 0.7rem;
+}
+
+.grey {
+    color: #555555;
 }
 
 .flex-shrink {
@@ -143,6 +163,7 @@ table tr:nth-child(odd) {
 
 article {
     border-bottom: 2px solid var(--pink-800);
+    padding: 8px;
 }
 
 .flex-grow {

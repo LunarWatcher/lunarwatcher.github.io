@@ -1,6 +1,7 @@
 ---
 {
     "date": "2026-03-14T18:53:19+01:00",
+    "type": "blog",
     "title": "Thoughts on themes"
 }
 ---

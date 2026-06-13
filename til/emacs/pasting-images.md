@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Pasting images in emacs"
+    "title": "Pasting images in emacs",
+    "type": "blog"
 }
 ---
 

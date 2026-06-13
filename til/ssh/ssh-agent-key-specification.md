@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Using SSH agents, and specifying which SSH key to use with pass-cli"
+    "title": "Using SSH agents, and specifying which SSH key to use with pass-cli",
+    "type": "blog"
 }
 ---
 # Using SSH agents, and specifying which SSH key to use with pass-cli

@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Vim quickfix in emacs"
+    "title": "Vim quickfix in emacs",
+    "type": "blog"
 }
 ---
 

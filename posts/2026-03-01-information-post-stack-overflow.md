@@ -1,6 +1,7 @@
 ---
 {
     "date": "2026-03-01T23:26:05+01:00",
+    "type": "blog",
     "title": "Information curation and sharing after Stack Overflow"
 }
 ---
