@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html
+    lang="en-GB"
+>
+    <head>
+        <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+
+    <meta http-equiv="Content-language" content = "en-GB" />
+
+
+
+<link rel="stylesheet" href="/assets/css/variables.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css" />
+<link rel="stylesheet" href="/assets/css/page.css" />
+
+<title>Using SSH agents, and specifying which SSH key to use with pass-cli</title>
+
+<script src="/assets/vendor/highlightjs.js"></script>
+<script src="/assets/js/page.js" defer></script>
+
+    </head>
+    <body>
+        <header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="/">Olivia's silly blog</a></span>
+
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
+    </div>
+
+</header>
+
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="/posts/index.html">Blog</a></li>
+        <li><a href="/til/index.html">TIL</a></li>
+        <li><a href="/projcets.html">Some of my projects</a></li>
+        <li><a href="/uses.html">Things I use</a></li>
+    </ul>
+</nav>
+
+
+        <main>
+            
+    <h1>Using SSH agents, and specifying which SSH key to use with pass-cli</h1>
+    <div class="post-meta flex-vertical">
+        <div class="author-block flex-shrink flex-horizontal">
+            <img src="/assets/profile.png"
+                 class="flex-shrink"
+                 style="height: 32px; aspect-ratio: 1/1; border-radius: 32px;"
+                 alt="Profile picture"
+            />
+
+            <div class="author-links flex-vertical flex-shrink">
+                <span class="author"><a href="https://lunarwatcher.codeberg.page">Olivia</a></span>
+                <span class="small grey">
+                    Published on
+                
+                    an unknown date
+                
+                </span>
+            </div>
+        </div>
+        
+    </div>
+    <h1 id="using-ssh-agents-and-specifying-which-ssh-key-to-use-with-pass-cli">Using SSH agents, and specifying which SSH key to use with pass-cli</h1><p>This TIL assumes Proton Pass, but I hear the same strategy works with a few other password managers</p><p>Starting the agent (vault-scoped):</p><pre><code class="language-bash">pass-cli ssh-agent start --vault-name Work</code></pre><p>However, the neater part imo is how you configure it to work. This is what part of my <code>.ssh/config</code> looked like before SSH agents:</p><pre><code class="language-ssh-config">Host github.com
+  User git
+  IdentityFile ~/.ssh/github</code></pre><p>This cannot be used directly with SSH agents, because for obvious reasons, SSH agents make the IdentityFile not a file anymore. However, as far as I can tell anyway, the <code>IdentityFile</code> still needs to be a file. The <code>pass://</code> URL scheme <code>pass-cli</code> uses does not work either.</p><p>The fix is to use the public key instead:</p><pre><code class="language-ssh-config">Host github.com
+  User git
+  IdentityFile ~/.ssh/github.pub</code></pre><p>This relays the public key to the SSH agent, and it's tied to the corresponding private key within the agent. That forces the specific SSH key to be used, which is what allows multi-account SSH setups to continue to work with an SSH agent.</p><p>Using the public key as the <code>IdentityFile</code> seems to be the SSH agent way to specify which IdentityFile to use rather than trying all of them.</p>
+
+        </main>
+        <footer class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="/index.html#contact">Contact me</a></li>
+                <li><a href="/index.html#link-to-me">Link to me</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/code.LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

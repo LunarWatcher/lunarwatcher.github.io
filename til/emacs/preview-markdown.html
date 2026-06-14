@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html
+    lang="en-GB"
+>
+    <head>
+        <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+
+    <meta http-equiv="Content-language" content = "en-GB" />
+
+
+
+<link rel="stylesheet" href="/assets/css/variables.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css" />
+<link rel="stylesheet" href="/assets/css/page.css" />
+
+<title>Previewing markdown files in emacs</title>
+
+<script src="/assets/vendor/highlightjs.js"></script>
+<script src="/assets/js/page.js" defer></script>
+
+    </head>
+    <body>
+        <header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="/">Olivia's silly blog</a></span>
+
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
+    </div>
+
+</header>
+
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="/posts/index.html">Blog</a></li>
+        <li><a href="/til/index.html">TIL</a></li>
+        <li><a href="/projcets.html">Some of my projects</a></li>
+        <li><a href="/uses.html">Things I use</a></li>
+    </ul>
+</nav>
+
+
+        <main>
+            
+    <h1>Previewing markdown files in emacs</h1>
+    <div class="post-meta flex-vertical">
+        <div class="author-block flex-shrink flex-horizontal">
+            <img src="/assets/profile.png"
+                 class="flex-shrink"
+                 style="height: 32px; aspect-ratio: 1/1; border-radius: 32px;"
+                 alt="Profile picture"
+            />
+
+            <div class="author-links flex-vertical flex-shrink">
+                <span class="author"><a href="https://lunarwatcher.codeberg.page">Olivia</a></span>
+                <span class="small grey">
+                    Published on
+                
+                    an unknown date
+                
+                </span>
+            </div>
+        </div>
+        
+    </div>
+    <p><code>C-c C-c l</code>, shorthand for <code>markdown-live-preview-mode</code> can be used to preview the markdown file. It also opens it in the emacs web browser, so the preview can be fully inline.</p><p>Unfortunately, it doesn't appear to support callouts.</p><p>There's also a variant that renders a single HTML page (<code>C-c C-c p</code>).</p><blockquote class="callout-tip"><p class="callout-title">Tip</p><p><code>C-c C-c</code> shows a list of the next possible characters and what they do, though it doesn't include the full list. Would recommend looking at <a href="/emacs/til/listing-variables.html"><code>describe-mode</code> as well</a></p></blockquote>
+
+        </main>
+        <footer class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="/index.html#contact">Contact me</a></li>
+                <li><a href="/index.html#link-to-me">Link to me</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/code.LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

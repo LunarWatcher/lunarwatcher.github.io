@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html
+    lang="en-GB"
+>
+    <head>
+        <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+
+    <meta http-equiv="Content-language" content = "en-GB" />
+
+
+
+<link rel="stylesheet" href="/assets/css/variables.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css" />
+<link rel="stylesheet" href="/assets/css/page.css" />
+
+<title>Markup/CSS test</title>
+
+<script src="/assets/vendor/highlightjs.js"></script>
+<script src="/assets/js/page.js" defer></script>
+
+    </head>
+    <body>
+        <header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="/">Olivia's silly blog</a></span>
+
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
+    </div>
+
+</header>
+
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="/posts/index.html">Blog</a></li>
+        <li><a href="/til/index.html">TIL</a></li>
+        <li><a href="/projcets.html">Some of my projects</a></li>
+        <li><a href="/uses.html">Things I use</a></li>
+    </ul>
+</nav>
+
+
+        <main>
+            
+    <h1>Markup/CSS test</h1>
+    <p>Nothing special to see here; this page contains most of the markup elements to test the CSS theme</p>
+<div id="violet-toc"><ol><li><a href="#quotes">Quotes</a></li><li><a href="#code">Code</a></li><li><a href="#misc">Misc.</a></li><li><a href="#links">Links</a></li></ol></div>
+<h2 id="quotes">Quotes</h2><blockquote><p>Quote</p><blockquote><p>Nested quote</p></blockquote></blockquote><h2 id="code">Code</h2><pre><code class="language-cpp">&#35;include &lt;iostream&gt;
+
+int main() &#123;
+    std::cout &lt;&lt; "(syntax-highlighted) code block";
+&#125;</code></pre><h2 id="misc">Misc.</h2><p>Text, <strong>bold</strong>, <em>italic</em>, <strong>bold and <em>italic</em> text</strong></p><h2 id="links">Links</h2><p><a href="https://example.com">Link</a>, footnotes<sup><a href="#fn-1" id="fn-1-r1">[1]</a></sup></p><div id="violet-footnotes"><h2>Footnotes</h2><ol><li id="fn-1"><p>owo</p><span class="footnote-backref">Usages: <a href="#fn-1-r1">[1]</a></span></li></ol></div>
+
+        </main>
+        <footer class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="/index.html#contact">Contact me</a></li>
+                <li><a href="/index.html#link-to-me">Link to me</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/code.LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

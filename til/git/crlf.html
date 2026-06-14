@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html
+    lang="en-GB"
+>
+    <head>
+        <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+
+    <meta http-equiv="Content-language" content = "en-GB" />
+
+
+
+<link rel="stylesheet" href="/assets/css/variables.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css" />
+<link rel="stylesheet" href="/assets/css/page.css" />
+
+<title>Windows is pain: getting rid of CRLF</title>
+
+<script src="/assets/vendor/highlightjs.js"></script>
+<script src="/assets/js/page.js" defer></script>
+
+    </head>
+    <body>
+        <header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="/">Olivia's silly blog</a></span>
+
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
+    </div>
+
+</header>
+
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="/posts/index.html">Blog</a></li>
+        <li><a href="/til/index.html">TIL</a></li>
+        <li><a href="/projcets.html">Some of my projects</a></li>
+        <li><a href="/uses.html">Things I use</a></li>
+    </ul>
+</nav>
+
+
+        <main>
+            
+    <h1>Windows is pain: getting rid of CRLF</h1>
+    <div class="post-meta flex-vertical">
+        <div class="author-block flex-shrink flex-horizontal">
+            <img src="/assets/profile.png"
+                 class="flex-shrink"
+                 style="height: 32px; aspect-ratio: 1/1; border-radius: 32px;"
+                 alt="Profile picture"
+            />
+
+            <div class="author-links flex-vertical flex-shrink">
+                <span class="author"><a href="https://lunarwatcher.codeberg.page">Olivia</a></span>
+                <span class="small grey">
+                    Published on
+                
+                    an unknown date
+                
+                </span>
+            </div>
+        </div>
+        
+            <div class="tag-container flex-shrink flex-horizontal">
+                
+                    <span class="tag flex-shrink">#windows</span>
+                
+                    <span class="tag flex-shrink">#git</span>
+                
+            </div>
+        
+    </div>
+    <p>I can never seem to get autocrlf to work properly on Windows. It isn't a problem on Linux, but it's always a problem on Windows. I've had to revisit this several times, because Git on Windows suddenly decides to flood my repo with CRLF without me notificing. I do have a select few words to whoever thought having CRLF was a good idea, but let's save that rant for another time.</p><p>So note to future me, here's how you overkill ensure new systems work properly:</p><pre><code>git config --global core.autocrlf input</code></pre><p><code>false</code> is evil, and pollutes CRLF everywhere. <code>true</code> does excessive normalisation, but ensures everything is CRLF locally (which probably isn't a big deal; it's worse on Linux. C++ just reads the \n as newline, and preserves the \r, resulting in a lot of weird parsing shit), but that it still commits LF rather than the garbage CRLF line endings.</p><pre><code>git config --global core.eol lf</code></pre><p>is the nuclear option, but probably has to be combined with another autocrlf option. According to <a href="https://stackoverflow.com/a/9977954/6296561">this Stack Overflow answer</a>, that option is indeed <code>core.autocrlf input</code>, with <code>core.eol lf</code>, and forces lf line endings on checkout. Assuming your editor doesn't forcibly convert LF to CRLF, this ensures only LF is used.</p><h2 id="autocrlfinput-in-practice"><code>autocrlf=input</code> in practice</h2><p>This just contains examples of how Git acts with <code>autocrlf=input</code>. No new information is introduced here.</p><pre><code class="language-bash">[Clean checkout]
+
+Olivia@Ari MINGW64 ~/programming/test (master)
+$ file README.md
+README.md: ASCII text
+
+[opened in Vim, set ff=dos, save and quit]
+
+Olivia@Ari MINGW64 ~/programming/test (master)
+$ file README.md
+README.md: ASCII text, with CRLF line terminators
+
+Olivia@Ari MINGW64 ~/programming/test (master)
+$ git add -A
+warning: CRLF will be replaced by LF in README.md.
+The file will have its original line endings in your working directory
+g
+Olivia@Ari MINGW64 ~/programming/test (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean</code></pre><p>The files are all successfully checked out as LF, as demonstrated by the first file call. Curiously, changing the filetype does result in it appearing in the status briefly:</p><pre><code class="language-bash">[LICENSE modified from the checked-out LF to CRLF]
+
+Olivia@Ari MINGW64 ~/programming/test (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+        modified:   LICENSE
+
+no changes added to commit (use "git add" and/or "git commit -a")</code></pre><p>but <code>git add -A</code>, the warning about conversions appear, and poof, it's gone.</p><p>This does still mean warnings appear, but these can be blatantly ignored. Them being there means it's doing its job.</p><p>Do note that I'm not affected by editor pollution; Vim preserves input, so if it gets LF, it keeps LF and writes LF unless told otherwise. The Git plugin I have doesn't force any options down my throat, but I mainly use Git from the terminal. Certain Git plugins in certain editors may introduce unwanted options that ignore these options; consult the manual for your editor if you're struggling.</p>
+
+        </main>
+        <footer class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="/index.html#contact">Contact me</a></li>
+                <li><a href="/index.html#link-to-me">Link to me</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/code.LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

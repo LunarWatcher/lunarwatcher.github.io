@@ -1,0 +1,342 @@
+* {
+    box-sizing: border-box;
+}
+
+*::selection {
+    background: var(--pink-500);
+    color: white;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+main {
+    margin-bottom: auto;
+}
+
+.airgapped {
+    margin: 4px;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+#navigation {
+    display: none;
+
+    background-color: var(--pink-200);
+
+    border: 2px solid var(--pink-800);
+}
+
+#navigation.visible {
+    display: flex;
+    margin: 4px;
+}
+
+
+aside {
+    grid-area: aside;
+    overflow: scroll;
+    padding: 16px;
+}
+
+button {
+    background-color: var(--pink-300);
+    border: 2px solid var(--pink-800);
+    color: black;
+}
+
+button:hover {
+    background-color: var(--pink-600);
+    color: white;
+}
+
+main {
+    grid-area: main;
+    padding: 16px;
+}
+
+header, footer {
+    background-color: var(--pink-400);
+    color: black;
+
+    border: 2px solid var(--pink-800);
+    border-radius: 4px;
+    
+}
+
+header {
+    grid-area: head;
+    margin-bottom: 0px;
+}
+footer {
+    grid-area: foot;
+    margin-top: 0px;
+}
+
+a {
+    color: var(--pink-800);
+}
+
+a:hover {
+    color: var(--pink-600);
+}
+
+a:visited {
+    color: var(--pink-950);
+}
+
+#site-title {
+    font-size: 2rem;
+}
+
+header a, footer a {
+    color: var(--violet-theme-default-lavender);
+}
+
+header > #site-title {
+    flex: 1 0 auto;
+    padding: 16px;
+}
+
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.flex-horizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2ch;
+}
+
+.flex-center {
+    align-items: center;
+}
+
+.flex-horizontal > * {
+    flex: 1 0 300px;
+}
+
+td {
+    padding: 8px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.post-meta {
+    margin: 16px;
+}
+
+.tag {
+    padding: 4px;
+    background-color: var(--pink-200);
+    border: 2px solid var(--pink-800);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+table thead tr {
+    border-bottom: 4px solid var(--pink-400);
+    background-color: var(--pink-800);
+    color: white;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: var(--pink-200);
+}
+
+.small {
+    font-size: 0.7rem;
+}
+
+.grey {
+    color: #555555;
+}
+
+.flex-shrink {
+    flex: 0 1 auto;
+}
+
+article {
+    border-bottom: 2px solid var(--pink-800);
+    padding: 8px;
+}
+
+.flex-grow {
+    flex: 1 1 auto;
+}
+
+hr {
+    color: var(--pink-800);
+    width: 100%;
+}
+
+/* TODO: not in use. Want something like this elsewhere, but not sure where yet. */
+/* The header style doesn't lend itself to the same strategy used by violet's default theme */
+.flag {
+    background: linear-gradient(
+        90deg,
+        rgba(91, 206, 250, 1) 0%,
+        rgba(245, 169, 184, 1) 100%
+    );
+    height: 8px;
+    width: 100%;
+}
+
+pre {
+    overflow: scroll;
+}
+
+pre, code {
+    background-color: #eeeeee;
+    padding: 4px;
+}
+
+pre > code {
+    padding: 0px;
+}
+
+.footnote-backref {
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+.inline-list {
+    list-style: none;
+    padding: 0;
+}
+
+.inline-list > li {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.inline-list a, .inline-list span {
+    padding: 4px;
+}
+
+.inline-list span {
+    color: #666666;
+}
+
+.inline-list a {
+    background-color: var(--pink-400);
+    border-radius: 2px;
+}
+
+.inline-list a.current {
+    background-color: var(--pink-900);
+    color: white;
+}
+
+.inline-list a:hover {
+    background-color: var(--pink-600);
+    color: white;
+}
+
+.paginator > ul > * {
+    flex: 0 1 auto;
+}
+
+blockquote {
+    margin-left: 8px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    background-color: #fef6ff;
+    padding: 11px 0px 9px 10px !important;
+    border-left: 4px solid var(--violet-theme-default-dark-violet);
+}
+blockquote p {
+    margin: 4px;
+}
+
+ul.pad {
+    padding-left: 0;
+}
+
+ul.pad > li {
+    list-style: none;
+    border-bottom: 2px solid var(--pink-800);
+    border-top: 2px solid var(--pink-800);
+    margin-bottom: -2px; /* Lazily merge the top and bottom border (could be done better but I don't care) */
+}
+
+ul.pad > li > * {
+    margin-left: 0;
+    padding: 16px;
+    width: 100%;
+    display: inline-block;
+    color: black;
+}
+
+ul.pad > li > *:hover {
+    background-color: var(--pink-600);
+    color: white;
+}
+
+.paginator {
+    width: 100%;
+}
+
+*:target {
+    background-color: var(--pink-100);
+}
+
+/* TODO: Keep? */
+/* *:target::before { */
+/*     content: "Link redirects here"; */
+/*     color: #666666; */
+/* } */
+
+a:target {
+    font-weight: bold;
+}
+
+.header-backlink, .header-backlink:visited {
+    color: var(--pink-500);
+    margin-right: 8px;
+}
+
+.header-backlink:hover {
+    color: var(--pink-800);
+}
+
+summary {
+    background-color: var(--pink-200);
+    padding: 8px;
+}
+
+details > div {
+    padding: 16px;
+    border: 2px solid var(--pink-800);
+    border-radius: 4px;
+}
+
+#profile-pic:hover {
+    cursor: grab;
+}
+
+/* details[open] summary { */
+/*     border-bottom: 2px solid var(--pink-800); */
+/* } */
+
+
+[popover] {
+    border: 2px solid var(--pink-800);
+}
+
+[popover].inline {
+    overlay: none;
+    inset: unset;
+}

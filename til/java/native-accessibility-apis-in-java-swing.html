@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html
+    lang="en-GB"
+>
+    <head>
+        <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+
+    <meta http-equiv="Content-language" content = "en-GB" />
+
+
+
+<link rel="stylesheet" href="/assets/css/variables.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css" />
+<link rel="stylesheet" href="/assets/css/page.css" />
+
+<title>Native accessibility APIs in Java Swing</title>
+
+<script src="/assets/vendor/highlightjs.js"></script>
+<script src="/assets/js/page.js" defer></script>
+
+    </head>
+    <body>
+        <header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="/">Olivia's silly blog</a></span>
+
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
+    </div>
+
+</header>
+
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="/posts/index.html">Blog</a></li>
+        <li><a href="/til/index.html">TIL</a></li>
+        <li><a href="/projcets.html">Some of my projects</a></li>
+        <li><a href="/uses.html">Things I use</a></li>
+    </ul>
+</nav>
+
+
+        <main>
+            
+    <h1>Native accessibility APIs in Java Swing</h1>
+    <div class="post-meta flex-vertical">
+        <div class="author-block flex-shrink flex-horizontal">
+            <img src="/assets/profile.png"
+                 class="flex-shrink"
+                 style="height: 32px; aspect-ratio: 1/1; border-radius: 32px;"
+                 alt="Profile picture"
+            />
+
+            <div class="author-links flex-vertical flex-shrink">
+                <span class="author"><a href="https://lunarwatcher.codeberg.page">Olivia</a></span>
+                <span class="small grey">
+                    Published on
+                
+                    an unknown date
+                
+                </span>
+            </div>
+        </div>
+        
+            <div class="tag-container flex-shrink flex-horizontal">
+                
+                    <span class="tag flex-shrink">#accessibility</span>
+                
+                    <span class="tag flex-shrink">#java</span>
+                
+            </div>
+        
+    </div>
+    <p>While not enabled by default, Java Swing has support for accessibility APIs. Unfortunately, only Windows is supported by Java itself, but other operating systems are implemented by the different OSes themselves.</p><p>The flag is <code>-Djavax.accessibility.assistive_technologies=&lt;provider&gt;</code>, where some of the platform-specific providers are:</p><ul><li><p><strong>Linux/Gnome</strong> (AT-SPI2): <code>org.GNOME.Accessibility.AtkWrapper</code>   <em> Requires <code>java-atk-wrapper</code>: https://github.com/GNOME/java-atk-wrapper and a hack for adding the ATK library to the path: <code>sudo ln -s /usr/lib/x86_64-linux-gnu/jni/libatk-wrapper.so /usr/lib</code> - or sorting out the classpath so <code>libatk-wrapper.so</code> is in the path</em>    <em> Should work outside Gnome, for the record; I've run it headlessly in matchbox-window-manager in a bare minimum X11 CI environment with Xvfb. KDE <a href="https://github.com/KDE/selenium-webdriver-at-spi">has a webdriver built in pyatspi2</a>. It's unfortunately licensed under AGPL, but shows that KDE does work with AT-SPI2</em><em> <strong>Windows</strong> (native shit): <code>com.sun.java.accessibility.AccessBridge</code></em>    <em> Requires <code>%JRE_HOME%\bin\jabswitch -disable</code></em><em> <strong>Crapple shitOS</strong>: Not checked yet</em></p></li></ul><p>Once enabled, the app can be tested using various testing tools. I was unable to find a solution that supports AT-SPI2<sup><a href="#fn-1" id="fn-1-r1">[1]</a></sup>, so for my use, I hacked one together with pywinctl<sup><a href="#fn-1" id="fn-1-r2">[1]</a></sup>, pyautogui<sup><a href="#fn-2" id="fn-2-r1">[2]</a></sup>, and the adapter pattern to allow for other APIs to just be dropped into the testing framework. </p><p>I may make an open-source testing framework based on this concept At Some Point:tm:, but I have no immediate use for it for my personal projects. The amount of testing frameworks using accessibility APIs is fairly high, but the amount that _also_ support AT-SPI2 on Linux is functionally non-existent<sup><a href="#fn-3" id="fn-3-r1">[3]</a></sup>.</p><div id="violet-footnotes"><h2>Footnotes</h2><ol><li id="fn-1"><p>KDE's promising-looking webdriver using appium is out of the question because it uses wayland, and it's licensed under AGPL, which alone is enough to exclude it from my use.</p><span class="footnote-backref">Usages: <a href="#fn-1-r1">[1]</a>, <a href="#fn-1-r2">[2]</a></span></li><li id="fn-2"><p>Technically redundant since the windows it produces are incompatible with the windows AT-SPI2 uses, and AT-SPI2 still gives a chunk of the same functionality</p><span class="footnote-backref">Usages: <a href="#fn-2-r1">[1]</a></span></li><li id="fn-3"><p>Again exceluding KDE's webdriver, because AGPL is a cancer</p><span class="footnote-backref">Usages: <a href="#fn-3-r1">[1]</a></span></li></ol></div>
+
+        </main>
+        <footer class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="/index.html#contact">Contact me</a></li>
+                <li><a href="/index.html#link-to-me">Link to me</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/code.LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

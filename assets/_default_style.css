@@ -1,0 +1,336 @@
+/*
+This CSS file is a part of violet's _default theme, an AI slop-free static site generator under the MIT license.
+https://codeberg.org/LunarWatcher/violet/src/branch/master/LICENSE
+ */
+
+:root {
+    --violet-theme-default-dark-violet: #7F00FF;
+    --violet-theme-default-lavender: #bf8bff;
+    --violet-theme-default-grey: #1e1e1e;
+
+    --violet-colour-note: blue;
+    --violet-colour-info: var(--violet-theme-default-dark-violet);
+    --violet-colour-tip: green;
+    --violet-colour-important: var(--violet-theme-default-dark-violet);
+    --violet-colour-warning: #807918;
+    --violet-colour-caution: #EB1806;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto auto;
+    grid-template-columns: 25% 75%;
+    grid-template-areas:
+        "head head"
+        "hflag hflag"
+        "aside main"
+        "fflag fflag"
+        "foot foot";
+}
+
+@media (max-width: 750px) {
+    body {
+        grid-template-rows: auto auto auto 1fr auto auto;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "head"
+            "hflag"
+            "aside"
+            "main"
+            "fflag"
+            "foot";
+    }
+}
+
+header { grid-area: head; }
+footer { grid-area: foot; }
+.start-flag { grid-area: hflag; }
+.end-flag { grid-area: fflag; }
+
+aside {
+    grid-area: aside;
+    overflow: scroll;
+    padding: 16px;
+}
+
+main {
+    grid-area: main;
+    padding: 16px;
+}
+
+header, footer {
+    background-color: var(--violet-theme-default-grey);
+    padding: 16px;
+    color: white;
+}
+
+a {
+    color: var(--violet-theme-default-dark-violet);
+}
+
+#site-title {
+    font-size: 2rem;
+}
+
+header a, footer a {
+    color: var(--violet-theme-default-lavender);
+}
+
+header {
+    padding: 0px;
+}
+
+header > #site-title {
+    flex: 1 0 auto;
+    padding: 16px;
+}
+
+#repo-link {
+    padding: 16px;
+    border-left: 2px solid var(--violet-theme-default-dark-violet);
+    flex: 0 1 300px;
+}
+
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-shrink {
+    flex: 0 1 auto;
+}
+
+.flex-grow {
+    flex: 1 1 auto;
+}
+
+#footer-meta {
+    color: #aaaaaa;
+}
+
+.flag {
+    background: linear-gradient(
+        90deg,
+        rgba(91, 206, 250, 1) 0%,
+        rgba(245, 169, 184, 1) 100%
+    );
+    height: 8px;
+    width: 100%;
+}
+
+pre {
+    overflow: scroll;
+}
+
+pre, code {
+    background-color: #eeeeee;
+    padding: 4px;
+}
+pre > code {
+    padding: 0px;
+}
+
+.footnote-backref {
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+.inline-list {
+    list-style: none;
+    padding: 0;
+}
+
+.inline-list > li {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.inline-list a, .inline-list span {
+    padding: 4px;
+}
+
+.inline-list span {
+    color: #666666;
+}
+
+.inline-list a.current {
+    background-color: var(--violet-theme-default-dark-violet);
+    border-radius: 2px;
+    color: white;
+}
+
+blockquote {
+    margin-left: 8px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    background-color: #fef6ff;
+    padding: 11px 0px 9px 10px !important;
+    border-left: 4px solid var(--violet-theme-default-dark-violet);
+}
+blockquote p {
+    margin: 4px;
+}
+
+.callout-note > .callout-title {
+    color: var(--violet-colour-note);
+}
+.callout-info > .callout-title {
+    color: var(--violet-colour-info);
+}
+.callout-tip > .callout-title {
+    color: var(--violet-colour-tip);
+}
+.callout-important > .callout-title {
+    color: var(--violet-colour-important);
+}
+.callout-warning > .callout-title {
+    color: var(--violet-colour-warning);
+}
+.callout-caution > .callout-title {
+    color: var(--violet-colour-caution);
+}
+
+/* TODO: replace with better-designed SVGs */
+.callout-note > .callout-title::before {
+    content: "✏ ";
+}
+.callout-info > .callout-title::before {
+    content: "🛈 ";
+}
+.callout-tip > .callout-title::before {
+    content: "💡 ";
+}
+.callout-important > .callout-title::before {
+    content: "📝 ";
+}
+.callout-warning > .callout-title::before {
+    content: "⚠ ";
+}
+.callout-caution > .callout-title::before {
+    content: "⚠ ";
+}
+
+/* Highlight.js theme based on catgirl.el:*/
+/* https://codeberg.org/LunarWatcher/catgirl.el */
+/* Some alternations have been made due to hljs having a comparative potato renderer */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+  color: #d70087;
+}
+
+.hljs-subst {
+  color: #000000;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name,
+.hljs-type,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #008700;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  color: #179299;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-meta,
+.hljs-doctag {
+  color: #666666;
+}
+
+.hljs-number,
+.hljs-regexp,
+.hljs-variable {
+  color: #d75f00;
+}
+
+.hljs-template-variable,
+.hljs-template-tag {
+  color: #000000;
+}
+
+.hljs-attr,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #005faf;
+}
+
+.hljs-link {
+  color: #005faf;
+  text-decoration: underline;
+}
+
+.hljs-deletion {
+  background-color: #ffd7ff;
+  color: #000000;
+}
+
+.hljs-addition {
+  background-color: #afffaf;
+  color: #000000;
+}
+
+.hljs-change {
+  background-color: #ffd787;
+  color: #000000;
+}
+
+.hljs-meta {
+  color: #d70087;
+}
+
+.hljs-tag {
+  color: #3b2685;
+}
+
+.hljs-params {
+  color: #000000;
+}
+
+.hljs-header {
+  color: #d70087;
+  font-weight: bold;
+}
+
+.hljs-code,
+.hljs-inline-code {
+  color: #5f8700;
+}
+
+.hljs::selection, .hljs *::selection {
+  background-color: #b19cd9 !important;
+  color: #ffffff;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+.hljs-strong {
+    font-weight: bold;
+}
