@@ -14,7 +14,7 @@
     <ul class="pad">
         <li><a href="{{ site.site_prefix }}/posts/index.html">Blog</a></li>
         <li><a href="{{ site.site_prefix }}/til/index.html">TIL</a></li>
-        <li><a href="{{ site.site_prefix }}/projcets.html">Some of my projects</a></li>
+        <li><a href="{{ site.site_prefix }}/projects.html">Some of my projects</a></li>
         <li><a href="{{ site.site_prefix }}/uses.html">Things I use</a></li>
     </ul>
 </nav>
