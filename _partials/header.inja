@@ -1,6 +1,6 @@
 <header class="flex-vertical airgapped">
     <div class="flex-horizontal">
-        <span id="site-title" class="flex-grow"><a href="{{ site.site_prefix }}/">{{ site.name }}</a></span>
+        <span id="site-title" class="flex-grow"><a href="{{ site.prefix }}/">{{ site.name }}</a></span>
 
         <button
             class="flex-shrink"
@@ -12,9 +12,9 @@
 <nav id="navigation" class="flex-vertical airgapped">
     <h2>Navigation</h2>
     <ul class="pad">
-        <li><a href="{{ site.site_prefix }}/posts/index.html">Blog</a></li>
-        <li><a href="{{ site.site_prefix }}/til/index.html">TIL</a></li>
-        <li><a href="{{ site.site_prefix }}/projects.html">Some of my projects</a></li>
-        <li><a href="{{ site.site_prefix }}/uses.html">Things I use</a></li>
+        <li><a href="{{ site.prefix }}/posts/index.html">Blog</a></li>
+        <li><a href="{{ site.prefix }}/til/index.html">TIL</a></li>
+        <li><a href="{{ site.prefix }}/projects.html">Some of my projects</a></li>
+        <li><a href="{{ site.prefix }}/uses.html">Things I use</a></li>
     </ul>
 </nav>

@@ -3,8 +3,8 @@
         <div>
             <h2>Useful links</h2>
             <ul>
-                <li><a href="{{ site.site_prefix }}/index.html#contact">Contact me</a></li>
-                <li><a href="{{ site.site_prefix }}/index.html#link-to-me">Link to me</a></li>
+                <li><a href="{{ site.prefix }}/index.html#contact">Contact me</a></li>
+                <li><a href="{{ site.prefix }}/index.html#link-to-me">Link to me</a></li>
             </ul>
         </div>
     </div>

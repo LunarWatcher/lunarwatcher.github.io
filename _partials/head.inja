@@ -10,11 +10,11 @@
     <meta name="description" content="{{ htmlEscape(page.summary) }}" />
 {% endif %}
 
-<link rel="stylesheet" href="{{ site.site_prefix }}/assets/css/variables.css" />
-<link rel="stylesheet" href="{{ site.site_prefix }}/assets/css/syntax.css" />
-<link rel="stylesheet" href="{{ site.site_prefix }}/assets/css/page.css" />
+<link rel="stylesheet" href="{{ site.prefix }}/assets/css/variables.css" />
+<link rel="stylesheet" href="{{ site.prefix }}/assets/css/syntax.css" />
+<link rel="stylesheet" href="{{ site.prefix }}/assets/css/page.css" />
 
 <title>{{ page.title }}</title>
 
-<script src="{{ site.site_prefix }}/assets/vendor/highlightjs.js"></script>
-<script src="{{ site.site_prefix }}/assets/js/page.js" defer></script>
+<script src="{{ site.prefix }}/assets/vendor/highlightjs.js"></script>
+<script src="{{ site.prefix }}/assets/js/page.js" defer></script>
