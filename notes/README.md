@@ -1,7 +1,8 @@
 ---
 {
     "title": "Notes and random thoughts",
-    "type": "notes"
+    "type": "notes",
+    "layout": "page_list"
 }
 ---
 

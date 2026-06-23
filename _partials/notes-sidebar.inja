@@ -1,0 +1,17 @@
+<aside id="notes-sidebar">
+    <h2>Notes and thoughts index</h2>
+    {# For whatever reason, setting the context inline does not work and results in a syntax error #}
+    {% set subtree = treePages(site, "notes") %}
+    {% set context = {} %}
+    {% set context.page = page %}
+    {% set context.site = site %}
+
+    <p>(<a href="{{ site.prefix }}/notes/index.html">What's this?</a>)</p>
+    <ul id="recursive-list-root">
+        {% for folderName, nextTree in subtree.subfolders.notes.subfolders %}
+            {% set context.currTree = nextTree %}
+            {% set context.folderName = folderName %}
+            <li>{{ recurseInclude("partials/note-tree-builder.inja", context) }}</li>
+        {% endfor %}
+    </ul>
+</aside>

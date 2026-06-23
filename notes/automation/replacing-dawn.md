@@ -1,7 +1,11 @@
 ---
 {
     "title": "Replacing dawn: a theoretical inja-based templating system",
-    "type": "notes"
+    "type": "notes",
+    "date": "2026-06-23T03:00:00+02:00",
+    "taxonomies": {
+        "tags": [ "automation", "cpp", "templating" ]
+    }
 }
 ---
 
