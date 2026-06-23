@@ -401,6 +401,7 @@ blockquote p {
 /* TODO: all the other types */
 .callout-info {
     background-color: var(--callout-info-blue);
+    border: none;
 }
 .callout-info > .callout-title::before {
     content: "🛈 ";

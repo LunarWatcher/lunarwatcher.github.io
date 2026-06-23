@@ -1,6 +1,7 @@
 ---
 {
-    "title": "Replacing dawn: a theoretical inja-based templating system"
+    "title": "Replacing dawn: a theoretical inja-based templating system",
+    "type": "notes"
 }
 ---
 
