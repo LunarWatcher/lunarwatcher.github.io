@@ -31,5 +31,8 @@
         {% endfor %}
 
         {% include "partials/paginator.inja" %}
+    {% else %}
+        <p>error: It seems <i>someone</i> did a dumdum and page_list fell back to the _default that's meant for paginated page
+            lists. I'm sure she knows she's a bad girl</p>
     {% endif %}
 {% endblock %}

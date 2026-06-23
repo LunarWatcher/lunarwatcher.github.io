@@ -24,15 +24,15 @@
             </li>
             {% set lastIdx = i %}
         {% endfor %}
-            <li>
-                {% if listing.page + 1 <= listing.total_pages %}
-                    <a href="{{ site.prefix }}/{{ paginatedUrl(listing.base_path, listing.page + 1) }}"
-                       id="next-page"
-                       aria-label="Next page">&raquo;</a>
-                {% else %}
-                    <span>&raquo;</span>
-                {% endif %}
-            </li>
+        <li>
+            {% if listing.page + 1 <= listing.total_pages %}
+                <a href="{{ site.prefix }}/{{ paginatedUrl(listing.base_path, listing.page + 1) }}"
+                    id="next-page"
+                    aria-label="Next page">&raquo;</a>
+            {% else %}
+                <span>&raquo;</span>
+            {% endif %}
+        </li>
     </ul>
     
     <form class="" id="skip-to-page"

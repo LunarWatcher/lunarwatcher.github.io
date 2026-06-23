@@ -8,6 +8,7 @@
             "codeberg": "https://codeberg.org/LunarWatcher/pages"
         }
     },
+    "theme": null,
     "exclude": [
         "scripts",
         "LICENSE",
