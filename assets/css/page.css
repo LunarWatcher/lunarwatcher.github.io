@@ -357,43 +357,6 @@ main:has(#notes-sidebar) > .content {
     grid-area: content;
 }
 
-@media screen and (width <= 900px) {
-    
-    main:has(#notes-sidebar) {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #notes-sidebar {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100vw;
-        height: 100vh;
-
-        background-color: var(--pink-400);
-
-        z-index: 8001;
-    }
-
-    #notes-sidebar:not(.show) {
-        display: none;
-    }
-
-    main:has(#notes-sidebar) > .content {
-        grid-area: content;
-    }
-}
-
-/* ul#recursive-list-root, ul#recursive-list-root ul { */
-/*     padding-left: 0px; */
-/* } */
-/* ul#recursive-list-root li:has(details) { */
-/*     list-style: none; */
-/* } */
-/* ul#recursive-list-root li:not(:has(details)) { */
-/*     padding: 16px; */
-/* } */
 ul#recursive-list-root summary {
     padding: 0px;
     background: none;
