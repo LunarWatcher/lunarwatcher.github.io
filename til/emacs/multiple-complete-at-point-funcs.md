@@ -2,6 +2,7 @@
 {
     "title": "Multiple capfs in emacs",
     "date": "2026-06-24T03:07:41+02:00",
+    "type": "til",
     "taxonomies": {
         "tags": [ "emacs" ]
     }
