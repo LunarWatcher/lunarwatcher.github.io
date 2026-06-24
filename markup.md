@@ -14,6 +14,17 @@ Nothing special to see here; this page contains most of the markup elements to t
 >
 > > Nested quote
 
+> [!note]
+
+> [!info]
+
+> [!tip]
+
+> [!important]
+
+> [!warning]
+
+> [!caution]
 
 ## Code
 ```cpp

@@ -1,3 +1,5 @@
+---
+---
 * {
     box-sizing: border-box;
 }
@@ -398,12 +400,46 @@ blockquote p {
     border-bottom: 2px solid var(--pink-800);
 }
 
-/* TODO: all the other types */
+/* The note callout is considered the weakest, so it gets the same styling as a standard callout */
 .callout-info {
     background-color: var(--callout-info-blue);
     border: none;
 }
+.callout-tip {
+    background-color: var(--callout-tip-green);
+    border: none;
+}
+.callout-important {
+    background-color: var(--callout-important-yellow);
+    border: none;
+}
+.callout-warning {
+    background-color: var(--callout-warning-orange);
+    border: none;
+}
+.callout-caution {
+    background-color: var(--callout-caution-red);
+    border: none;
+}
+.callout-title::before {
+    margin-right: 4px;
+}
+.callout-note > .callout-title::before {
+    content: url("{{ site.prefix }}/assets/svg/callout-note.svg");
+}
 .callout-info > .callout-title::before {
-    content: "🛈 ";
+    content: url("{{ site.prefix }}/assets/svg/callout-info.svg");
+}
+.callout-tip > .callout-title::before {
+    content: url("{{ site.prefix }}/assets/svg/callout-tip.svg");
+}
+.callout-important > .callout-title::before {
+    content: url("{{ site.prefix }}/assets/svg/callout-important.svg");
+}
+.callout-warning > .callout-title::before {
+    content: url("{{ site.prefix }}/assets/svg/callout-warning.svg");
+}
+.callout-caution > .callout-title::before {
+    content: url("{{ site.prefix }}/assets/svg/callout-caution.svg");
 }
 

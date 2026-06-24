@@ -24,6 +24,10 @@
     --grey-950: #1c1c1b;
 
     --callout-info-blue: #9fe0ff;
+    --callout-tip-green: #a4ff91;
+    --callout-important-yellow: #ffe65c;
+    --callout-warning-orange: #ffc75c;
+    --callout-caution-red: #ff8383;
 
     --mobile-sizing: 700px;
     --mid-sizing: 1100px
