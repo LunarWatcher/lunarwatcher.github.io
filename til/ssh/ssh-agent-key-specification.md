@@ -1,6 +1,7 @@
 ---
 {
     "title": "Using SSH agents, and specifying which SSH key to use with pass-cli",
+    "date": "2026-06-25T06:13:28+02:00",
     "type": "blog"
 }
 ---

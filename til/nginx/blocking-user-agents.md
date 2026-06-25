@@ -1,7 +1,7 @@
 ---
 {
     "title": "Blocking user agents with nginx",
-    "published_date": "2025-02-27T13:22:51+01:00",
+    "date": "2025-02-27T13:22:51+01:00",
     "type": "blog",
     "tags": [
         "nginx"
