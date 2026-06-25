@@ -1,0 +1,8 @@
+---
+{
+    "data": {
+        "name": "blog posts",
+        "for-scope": "/posts/"
+    }
+}
+---

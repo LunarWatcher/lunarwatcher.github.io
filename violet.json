@@ -6,6 +6,11 @@
         "repo": {
             "github": "https://github.com/LunarWatcher/lunarwatcher.github.io",
             "codeberg": "https://codeberg.org/LunarWatcher/pages"
+        },
+        "domain": "https://lunarwatcher.codeberg.page",
+        "author": {
+            "name": "Olivia",
+            "email": "oliviawolfie@pm.me"
         }
     },
     "theme": null,
