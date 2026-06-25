@@ -91,12 +91,7 @@
             <li>Codeberg: <a href="https://codeberg.org/LunarWatcher">LunarWatcher</a></li>
             <li>GitHub: <a href="https://github.com/LunarWatcher">LunarWatcher</a></li>
             <li><img alt="rss logo" style="width: 1em" src="{{ site.prefix }}/assets/svg/rss.svg" aria-hidden="true" /> RSS feeds:
-              <ul>
-                <li><a href="{{ site.data.domain }}/blog/feed.atom">Blog posts</a> (<a href="{{ site.prefix }}/blog/">web source</a>)</li>
-                <li><a href="{{ site.data.domain }}/til/feed.atom">TILs</a> (<a href="{{ site.prefix }}/til/">web source</a>)</li>
-                <li><a href="{{ site.data.domain }}/notes/feed.atom">Notes and random thoughts</a> (<a href="{{ site.prefix }}/notes/">web source</a>)</li>
-                <li><a href="{{ site.data.domain }}/combined.atom">Combined</a> (all of the above)</li>
-              </ul>
+              {% include "partials/rss.inja" %}
               Raw URLs:
               <pre><code class="nohighlight">{{ site.data.domain }}/blog/feed.atom
 {{ site.data.domain}}/til/feed.atom

@@ -1,0 +1,6 @@
+<ul>
+    <li><a href="{{ site.data.domain }}/blog/feed.atom">Blog posts</a> (<a href="{{ site.prefix }}/blog/">web source</a>)</li>
+    <li><a href="{{ site.data.domain }}/til/feed.atom">TILs</a> (<a href="{{ site.prefix }}/til/">web source</a>)</li>
+    <li><a href="{{ site.data.domain }}/notes/feed.atom">Notes and random thoughts</a> (<a href="{{ site.prefix }}/notes/">web source</a>)</li>
+    <li><a href="{{ site.data.domain }}/combined.atom">Combined</a> (all of the above)</li>
+</ul>
