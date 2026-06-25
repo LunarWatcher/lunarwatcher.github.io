@@ -1,0 +1,10 @@
+---
+{
+    "layout": "feed_combined",
+    "data": {
+        "name": "combined feed (blog posts, TILs, and notes and random thoughts)",
+        "for-scope": "/",
+        "scopes": [ "blog", "til", "notes" ]
+    }
+}
+---

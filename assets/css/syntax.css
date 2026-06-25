@@ -111,7 +111,7 @@
     font-weight: bold;
 }
 
-.hljs {
+pre > code {
     counter-reset: line 0;
 }
 .hljs-line-shim::before {
