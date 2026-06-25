@@ -26,6 +26,8 @@
             {% endif %}
             {% if existsIn(entry, "summary") %}
                 <summary><![CDATA[{{ entry.summary }}]]></summary>
+            {% else %}
+                <summary>No summary available! :(</summary>
             {% endif %}
             <author>
                 <name>{{ site.data.author.name }}</name>
