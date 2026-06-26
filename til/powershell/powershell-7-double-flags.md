@@ -7,12 +7,14 @@
     "date": "2026-06-26T05:05:59+02:00"
 }
 ---
-Microslop's steaming pile of shit shell, also known as Powershell, has introduced a very fun bug where specifically flags with a value assigned to a number fails to be identified as part of the flag it's actually part of. I checked this against 7.4.2, which is the version I can currently get my paws on with docker, because I'm not installing Microslop's malware on any of my linux boxes. This means that
+Microslop's steaming pile of shit shell, also known as Powershell, has introduced a very fun bug where specifically flags with a value assigned to a number fails to be identified as part of the flag it's actually part of. I checked this against 7.4.2, which is the version I can currently get my paws on with docker, because I'm not installing Microslop's malware on any of my linux boxes. The GitHub Actions runner where this failed originally runs 7.6.2, according to [the image software list](https://github.com/actions/runner-images/blob/e3d5c1312473fcb22b11bbb4926cd976044f27bc/images/windows/Windows2025-Readme.md?plain=1#L476). 
+
+The consequence of this bug is that
 ```
 -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 ```
 
-Is actually parsed as the TWO arguments `["-DCMAKE_POLICY_VERSION_MINIMUM=3", ".5"]`, which broke my CMake build, since 3 is an illegal minimum policy version. Full repro that this is, in fact, powershell's fault:
+Is actually parsed as the TWO arguments, `["-DCMAKE_POLICY_VERSION_MINIMUM=3", ".5"]`, which broke my CMake build, since 3 is an illegal minimum policy version, and .5 is just trailing and a tiny warning at the start of a 1.1k line logfile. Full repro that this is, in fact, powershell's fault:
 
 ```powershell
 PS /> function x($arg) { Write-Host "$arg" }
