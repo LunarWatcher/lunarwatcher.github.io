@@ -10,6 +10,10 @@
 ---
 Microslop's steaming pile of shit shell, also known as Powershell, has introduced a very fun bug where specifically flags with a value assigned to a number fails to be identified as part of the flag it's actually part of. I checked this against 7.4.2, which is the version I can currently get my paws on with docker, because I'm not installing Microslop's malware on any of my linux boxes. The GitHub Actions runner where this failed originally runs 7.6.2, according to [the image software list](https://github.com/actions/runner-images/blob/e3d5c1312473fcb22b11bbb4926cd976044f27bc/images/windows/Windows2025-Readme.md?plain=1#L476). 
 
+> [!info]
+>
+> Correction: A little while after posting this I was made aware that this actually traces back allllll the way to [2018](https://github.com/PowerShell/PowerShell/issues/6291) and v6 of powershell. Thanks, Microslop
+
 The consequence of this bug is that
 ```
 -DCMAKE_POLICY_VERSION_MINIMUM=3.5
