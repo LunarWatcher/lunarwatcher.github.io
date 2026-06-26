@@ -15,6 +15,7 @@
         "lua": "Lua",
         "mssql": "MSSQL (SQL Server)",
         "nginx": "nginx",
+        "powershell": "Powershell (a pathetic excuse of a shell)"
         "ssh": "SSH",
         "wsl": "WSL"
     } %}
