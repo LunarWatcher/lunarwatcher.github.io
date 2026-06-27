@@ -21,7 +21,7 @@
             </span>
             {# TODO: Would probably be nice to give citation copypasta or something #}
             <span class="small grey">
-                License: <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-by-SA 4.0</a>
+                License: <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-by-SA 4.0 (text), MIT (code)</a>
             </span>
         </div>
     </div>
