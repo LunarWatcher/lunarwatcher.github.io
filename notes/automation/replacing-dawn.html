@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html
+    lang="en-GB"
+>
+    <head>
+        <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+
+    <meta http-equiv="Content-language" content = "en-GB" />
+
+
+
+<link rel="stylesheet" href="/assets/css/variables.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css" />
+<link rel="stylesheet" href="/assets/css/page.css" />
+
+<title>Replacing dawn: a theoretical inja-based templating system</title>
+
+<script src="/assets/vendor/highlightjs.js"></script>
+<script src="/assets/js/page.js" defer></script>
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - blog posts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/blog/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - TILs"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/til/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - notes and random thoughts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/notes/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - combined feed (blog posts, TILs, and notes and random thoughts)"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/combined.atom" />
+
+    </head>
+    <body>
+        <header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="/">Olivia's silly blog</a></span>
+
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
+    </div>
+
+</header>
+
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/til/index.html">TIL</a></li>
+        <li><a href="/notes/index.html">Notes and random thoughts</a></li>
+        <li><a href="/projects.html">Some of my projects</a></li>
+        <li><a href="/uses.html">Things I use</a></li>
+    </ul>
+</nav>
+
+
+        <main>
+            
+    <aside id="notes-sidebar">
+    <h2>Notes and thoughts index</h2>
+    
+    
+    
+    
+    
+
+    <p>(<a href="/notes/index.html">What's this?</a>)</p>
+    <ul id="recursive-list-root">
+        
+            
+            
+            <li>
+
+
+    <a href="/notes/automation/index.html">Automation</a>
+
+
+<ul>
+    
+        
+            <li><a href="/notes/automation/replacing-dawn.html">Replacing dawn: a theoretical inja-based templating system</a></li>
+        
+    
+
+    
+</ul>
+</li>
+        
+            
+            
+            <li>
+
+
+    dictionary (automatically titled section)
+
+
+<ul>
+    
+        
+            <li><a href="/notes/dictionary/emacs.html">Emacs abbreviations</a></li>
+        
+    
+
+    
+</ul>
+</li>
+        
+    </ul>
+</aside>
+
+    <div class="content">
+        <h1>Replacing dawn: a theoretical inja-based templating system</h1>
+        <div class="post-meta flex-vertical">
+    <div class="author-block flex-shrink flex-horizontal">
+        <img src="/assets/profile.png"
+                class="flex-shrink"
+                style="height: 32px; aspect-ratio: 1/1; border-radius: 32px;"
+                alt="Profile picture"
+        />
+
+        <div class="author-links flex-vertical flex-shrink">
+            <span class="author"><a href="https://lunarwatcher.codeberg.page">Olivia</a></span>
+            <span class="small grey">
+                Published on
+            
+                2026-06-23 at 03:00:00+02:00
+                
+            
+            </span>
+            
+            <span class="small grey">
+                License: <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-by-SA 4.0 (text), MIT (code)</a>
+            </span>
+        </div>
+    </div>
+    
+        <div class="tag-container flex-shrink flex-horizontal">
+            
+                <span class="tag flex-shrink">templating</span>
+            
+                <span class="tag flex-shrink">cpp</span>
+            
+                <span class="tag flex-shrink">automation</span>
+            
+        </div>
+    
+</div>
+
+<hr class="trans-rainbow" />
+
+        <blockquote class="callout-info"><p class="callout-title">Info</p><p> For context, <a href="https://codeberg.org/LunarWatcher/dawn">dawn is a vim plugin I wrote that generates project structures</a>. It got axed after Vim decided AI slop was a great idea, and I migrated away from Vim. I'm sure I'll write a rant about that later (if I haven't already)</p></blockquote><p>For a while, I've been trying to decide for or against writing a dawn replacement. TL;DR: I voted against. This still explains the general idea. I may still unabandon it in the future as well. The rest of this page is copied straight from my notes.</p><hr/><p>Dawn had a few major limitations in that its features were implemented as a tiny "templating" language that more closely resembles <code>envsubst</code> with extra steps.</p><p>The reason I struggle with this now is that the app has expanded into something more for cross-project automation, with an ability to extend existing files, and that's a whole other can of worms. That could just as easily be replaced with a snippet or a snippet reference archive hosted on CB/GH.</p><p>If instead of doing that, I use <a href="https://pantor.github.io/inja/">inja</a>, that solves a few initialization problems. Pure copypasta endeavours like setting up CI pipelines, setting up issue templates to make Codeberg the main repo, and other similar actions could be boiled down to a single command</p><h2 id="implementation-details">Implementation details</h2><h3 id="bash">Bash?</h3><p>I think I've opted against bash, on the grounds that it isn't capable enough. <code>envsubst</code> is fairly cheap to implement, but the logic required to extend the templates otherwise would be too complicated. </p><p>I also suspect at least some templates are going to have to be copied rather than directly created, notably for pipelines. At that point, it's basically a spicy copy operation.</p><h3 id="integration-location">Integration location</h3><p>I'm very undecided here. It is a candidate for inclusion in umbra, but it's also a candidate for a standalone tool, considering the size of the inja stdlib extensions required to make this work. There's also still going to be finite limits to this; a <code>CONTRIBUTING.md</code> would likely end up with a <code>&#123;% include "AI ban.md" %&#125;</code> or something to that effect, which is going to be a whole thing if multiple template repos are supported (which I think I have a case for). </p><blockquote class="callout-info"><p class="callout-title">Info</p><p> <a href="https://codeberg.org/LunarWatcher/umbra">Umbra</a> is a utility tool I wrote that has utilities (shock), some automation, and some replacements for other tools that were too much of a pain to use. It's designed to allow single commands that use environment context to reduce the amount of manual input required.</p><p>See the docs if you're interested. It only has 4 modules right now, but I use three of those modules regularly, especially at work where one umbra command replaces multiple commands and occasionally manual logins. It's one of my most frequently used self-made projects (disregarding libraries).</p></blockquote><h3 id="theoretical-interface">Theoretical interface</h3><pre><code class="language-bash">umbra [t|template] "template name"</code></pre><p>Each template can optionally contain a frontmatter:</p><pre><code class="language-json">---
+&#123;
+    "k": "v"
+&#125;
+---</code></pre><p>The frontmatter would be used for config options rather than data used in the generation. For example:</p><ul><li><p>Whether or not a template is copied or directly results in a file</p></li><li><p>Additional metadata if the file is actually a standin for a project structure. Something like</p><pre><code class="language-json">&#123;
+    "template": &#123;
+        "directory": "./cpp-cmake/",
+        ...
+    &#125;
+&#125;</code></pre></li></ul><p>In theory, we could use a template file as a redirect to a template folder, which that file being excluded from copying.</p><h3 id="filename-translation">Filename translation</h3><p>Dawn declared filename translations in its config file, because it was convenient to do it like that. I have become aware of a few other ways to do it though, largely thanks to the clusterfuck that is react routers.</p><p>Certain react routers use filesystem paths as variables, because idk, fuck you. That's one of the things I explicitly avoided when designing violet, because I didn't want the filesystem paths to convey non-absolute information. It's also something I'll opt out of here.</p><p>The main question then becomes, which frontmatter does it live in? For single files, it's obviously 1:1, but in the case of project structures, should the metafile contain the translation, or should each individual file also have a frontmatter that contains that info?</p><p>I lean towards every file containing it, since each file likely has to be loaded into memory for manual copying anyway. Though there's no immediate examples of it now, projects could still have template information that's stored per-file, which means every file has to be checked for and stripped of its frontmatter before it's copied. That means manual copying, and that strengthens the case for keeping it in the frontmatter. </p><p>One complication is the parsing of it; should those strings be run through inja as well, or should a lighter version be used? It'll be hard to limit the contents of the strings if the full inja engine is used</p><h2 id="main-challenge-limited-applications">Main challenge: Limited applications</h2><p>I don't think this is worth spending time on. Though it's really convenient, it's maintenance overhead and lots of problems to solve for a very specific narrow problem that can be solved with a lot of <code>cp</code> calls (or maybe <code>unison</code>; not <code>rsync</code> though, <a href="https://github.com/RsyncProject/rsync/issues/92">rsync is AI slop now</a>) or otherwise copying files from my other repos. </p><p>Creating files is convenient, especially since I have a lot of files that are or start out fairly standard across multiple projects, but some of them would also benefit from being kept up to date. Keeping the files up-to-date is a whole other problem though, and attempting to implement it would explode the complexity of the project. It's possibly the only way this project has general use. </p><h2 id="conclusion">Conclusion</h2><p>Having a tool like this does not replace the fact that my editor (emacs at the time of writing) supports built-in snippets, which I still need to get around to configuring, and I've never made enough repos to justify the time consumption. These replace a fair bit of the file content bits of templating, which makes the need to support <code>"copy": true</code> (or something to that effect) moot. Even before implementation, one of the main use-cases evaporates. Well, kinda - IIRC, the templates in emacs are also fairly weak, but it's much easier to just set up a bunch of them.</p><p>It is an interesting application of templating though. If I didn't already have <a href="https://codeberg.org/LunarWatcher/violet">violet</a>, I probably would've jumped on it anyway just for the sake of fucking a round with templates in a real-world project.</p><p>Will probably revisit if I find additional applications, or at least something that justifies creating it as a library. At this time, I don't think I will, though. Also doesn't help that I've got better at setting up projects in general, since I kinda vaguely know what I'm doing now :3</p>
+        
+
+    </div>
+
+        </main>
+        <footer class="flex-vertical airgapped">
+    <div class="flex-horizontal" style="align-self: flex-start; width: 100%;">
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="/index.html#contact">Contact me</a></li>
+                <li><a href="/index.html#link-to-me">Link to me</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2><img alt="rss logo" style="width: 1em" src="/assets/svg/rss.svg" aria-hidden="true" /> RSS feeds</h2>
+            <ul>
+    <li><a href="https://lunarwatcher.codeberg.page/blog/feed.atom">Blog posts</a> (<a href="/blog/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/til/feed.atom">TILs</a> (<a href="/til/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/notes/feed.atom">Notes and random thoughts</a> (<a href="/notes/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/combined.atom">Combined</a> (all of the above)</li>
+</ul>
+
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

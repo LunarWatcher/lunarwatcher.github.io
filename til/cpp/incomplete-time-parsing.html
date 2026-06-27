@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html
+    lang="en-GB"
+>
+    <head>
+        <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+
+    <meta http-equiv="Content-language" content = "en-GB" />
+
+
+
+<link rel="stylesheet" href="/assets/css/variables.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css" />
+<link rel="stylesheet" href="/assets/css/page.css" />
+
+<title>C++ time sucks: parsing incomplete timestamps</title>
+
+<script src="/assets/vendor/highlightjs.js"></script>
+<script src="/assets/js/page.js" defer></script>
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - blog posts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/blog/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - TILs"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/til/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - notes and random thoughts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/notes/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - combined feed (blog posts, TILs, and notes and random thoughts)"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/combined.atom" />
+
+    </head>
+    <body>
+        <header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="/">Olivia's silly blog</a></span>
+
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
+    </div>
+
+</header>
+
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/til/index.html">TIL</a></li>
+        <li><a href="/notes/index.html">Notes and random thoughts</a></li>
+        <li><a href="/projects.html">Some of my projects</a></li>
+        <li><a href="/uses.html">Things I use</a></li>
+    </ul>
+</nav>
+
+
+        <main>
+            
+    <h1>C++ time sucks: parsing incomplete timestamps</h1>
+    <div class="post-meta flex-vertical">
+    <div class="author-block flex-shrink flex-horizontal">
+        <img src="/assets/profile.png"
+                class="flex-shrink"
+                style="height: 32px; aspect-ratio: 1/1; border-radius: 32px;"
+                alt="Profile picture"
+        />
+
+        <div class="author-links flex-vertical flex-shrink">
+            <span class="author"><a href="https://lunarwatcher.codeberg.page">Olivia</a></span>
+            <span class="small grey">
+                Published on
+            
+                2022-08-19 at 19:50:19+02:00
+                
+            
+            </span>
+            
+            <span class="small grey">
+                License: <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-by-SA 4.0 (text), MIT (code)</a>
+            </span>
+        </div>
+    </div>
+    
+        <div class="tag-container flex-shrink flex-horizontal">
+            
+                <span class="tag flex-shrink">cpp</span>
+            
+        </div>
+    
+</div>
+
+<hr class="trans-rainbow" />
+
+    <p>C++ time parsing is trash. HowardHinnant/date is equally bad, but it also adds timezone parsing. C++20's time additions is just HowardHinnant/date without the name.</p><p>It's easier to do this using the old <code>std::get_time</code>, because the vast majority of distros and compilers haven't implemented the new garbage (HowardHinnant/date), and it doesn't fix the core problem anyway.</p><p>Say you have a date similar to what journald logs contain: <code>Aug 17 22:17:44</code>. Guess what happens if you try parsing it.</p><p>That's right, the time representation, as well as the year is completely fucked, because it doesn't include the year. Fortunately, this is possible to work around with <code>std::get_time</code>. HowardHinnant/date does not seem to offer this, at least not without doing a fuckton of casts and other Not Fun Stuff.</p><p>The <code>tm</code> struct passed around to various methods:tm: isn't cleared, _and_ it uses the contextual data you've provided to yield a usable date. This means that shoving in <code>2022 - 1900</code> actually provides a correct date for the journald strings. Unfortunately, it seems to still misbehave, so I took it one step further:</p><pre><code class="language-cpp">// Get the current time
+std::time_t currTimeMillis = std::time(nullptr);
+// note that this is an std::tm*
+// You may want to use std::gmtime if you're parsing UTC dates instead of
+// localtime dates. Not really sure how this works. Just worked when I tried filling
+// in the fields, and that's good enough for me.
+auto tm = std::localtime(&amp;currTimeMillis);
+
+// parse the time as usual
+std::stringstream ss(timeString);
+ss &gt;&gt; std::get_time(tm, timePattern.c_str());
+
+// And then convert it back to a chrono timestamp
+auto res = std::chrono::system_clock::from_time_t(std::mktime(tm));</code></pre><p>The idea here is to let the parser override the time in all undefined fields. This means that everything else is compared relative to today. Did only the day, month, and time get inputted? Use the current year, infer the millis from that. Stonks!</p><p>Though honestly, std::chrono having such abysmal support presents challenges. To print it, it has to be converted back to a <code>struct tm</code>, and shoved through <code>put_time</code>, or alternatively <code>strftime</code> if you happen to understand the parameters of it. It might be worth just leaving it as an <code>std::tm</code> instead to avoid unnecessary conversions.</p><p>Note that there may be manual cleanup of the <code>struct tm*</code>. The man page for <code>std::localtime</code> wasn't clear on that.</p>
+    
+
+
+        </main>
+        <footer class="flex-vertical airgapped">
+    <div class="flex-horizontal" style="align-self: flex-start; width: 100%;">
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="/index.html#contact">Contact me</a></li>
+                <li><a href="/index.html#link-to-me">Link to me</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2><img alt="rss logo" style="width: 1em" src="/assets/svg/rss.svg" aria-hidden="true" /> RSS feeds</h2>
+            <ul>
+    <li><a href="https://lunarwatcher.codeberg.page/blog/feed.atom">Blog posts</a> (<a href="/blog/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/til/feed.atom">TILs</a> (<a href="/til/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/notes/feed.atom">Notes and random thoughts</a> (<a href="/notes/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/combined.atom">Combined</a> (all of the above)</li>
+</ul>
+
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>
