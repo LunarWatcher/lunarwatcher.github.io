@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Olivia's silly blog - TILs</title>
+    <link href="https://lunarwatcher.codeberg.page/til/feed.atom" rel="self" />
+    <link href="https://lunarwatcher.codeberg.page/til/" />
+    <id>https://lunarwatcher.codeberg.page/til/feed.atom</id>
+    <updated>2026-06-29T00:05:52+00:00</updated>
+
+    
+        <entry>
+            <title><![CDATA[use-package from a local directory with a normally vc-loaded plugin]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/use-package-with-local-dir.html" />
+            <id>https://lunarwatcher.codeberg.page/til/emacs/use-package-with-local-dir.html</id>
+
+            
+                <published>2026-06-28T22:13:57+00:00</published>
+            
+            
+                <updated>2026-06-28T22:13:57+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Powershell 7 fails to parse flags with a double-shaped value]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/powershell/powershell-7-double-flags.html" />
+            <id>https://lunarwatcher.codeberg.page/til/powershell/powershell-7-double-flags.html</id>
+
+            
+                <published>2026-06-26T03:05:59+00:00</published>
+            
+            
+                <updated>2026-06-26T03:05:59+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Using SSH agents, and specifying which SSH key to use with pass-cli]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/ssh/ssh-agent-key-specification.html" />
+            <id>https://lunarwatcher.codeberg.page/til/ssh/ssh-agent-key-specification.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Vim quickfix in emacs]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/quickfix-analogue.html" />
+            <id>https://lunarwatcher.codeberg.page/til/emacs/quickfix-analogue.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Previewing markdown files in emacs]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/preview-markdown.html" />
+            <id>https://lunarwatcher.codeberg.page/til/emacs/preview-markdown.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Previewing images in markdown files]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/preview-images-in-markdown.html" />
+            <id>https://lunarwatcher.codeberg.page/til/emacs/preview-images-in-markdown.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Pasting images in emacs]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/pasting-images.html" />
+            <id>https://lunarwatcher.codeberg.page/til/emacs/pasting-images.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Loading emacs themes or plugins from version control]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/loading-plugins-from-vcs.html" />
+            <id>https://lunarwatcher.codeberg.page/til/emacs/loading-plugins-from-vcs.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Listing keybinds, variables, keys, etc.]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/listing-variables.html" />
+            <id>https://lunarwatcher.codeberg.page/til/emacs/listing-variables.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Pseudo-infinite canvas in Krita]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/krita/infinite-canvas.html" />
+            <id>https://lunarwatcher.codeberg.page/til/krita/infinite-canvas.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Get and set the default schema in MSSQL]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/mssql/get-and-set-default-schema.html" />
+            <id>https://lunarwatcher.codeberg.page/til/mssql/get-and-set-default-schema.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Forcing specific fonts in Firefox]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/firefox/fonts.html" />
+            <id>https://lunarwatcher.codeberg.page/til/firefox/fonts.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Vim-compatible regex in evil-search]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/evil-search-regex.html" />
+            <id>https://lunarwatcher.codeberg.page/til/emacs/evil-search-regex.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Echo commands in emacs]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/echo-commands.html" />
+            <id>https://lunarwatcher.codeberg.page/til/emacs/echo-commands.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Defining custom commands in emacs]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/defining-emacs-commands.html" />
+            <id>https://lunarwatcher.codeberg.page/til/emacs/defining-emacs-commands.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Customising underline styles in an emacs theme]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/customising-underline-styles.html" />
+            <id>https://lunarwatcher.codeberg.page/til/emacs/customising-underline-styles.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Ctrl-R does not work in evil-mode search]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/ctrl-r-evil-mode.html" />
+            <id>https://lunarwatcher.codeberg.page/til/emacs/ctrl-r-evil-mode.html</id>
+
+            
+                <published>2026-06-25T04:13:28+00:00</published>
+            
+            
+                <updated>2026-06-25T04:13:28+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Multiple capfs in emacs]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/multiple-complete-at-point-funcs.html" />
+            <id>https://lunarwatcher.codeberg.page/til/emacs/multiple-complete-at-point-funcs.html</id>
+
+            
+                <published>2026-06-24T01:07:41+00:00</published>
+            
+            
+                <updated>2026-06-24T01:07:41+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Native accessibility APIs in Java Swing]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/java/native-accessibility-apis-in-java-swing.html" />
+            <id>https://lunarwatcher.codeberg.page/til/java/native-accessibility-apis-in-java-swing.html</id>
+
+            
+                <published>2026-01-18T18:32:39+00:00</published>
+            
+            
+                <updated>2026-01-18T18:32:39+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[resolvectl overrides networkmanager]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/linux/resolvectl-overrides-networkmanager.html" />
+            <id>https://lunarwatcher.codeberg.page/til/linux/resolvectl-overrides-networkmanager.html</id>
+
+            
+                <published>2026-01-06T02:17:31+00:00</published>
+            
+            
+                <updated>2026-01-06T02:17:31+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Long-standing WSL bug megathread]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/wsl/problem-megathread.html" />
+            <id>https://lunarwatcher.codeberg.page/til/wsl/problem-megathread.html</id>
+
+            
+                <published>2025-06-28T21:26:27+00:00</published>
+            
+            
+                <updated>2025-06-28T21:26:27+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Blocking user agents with nginx]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/nginx/blocking-user-agents.html" />
+            <id>https://lunarwatcher.codeberg.page/til/nginx/blocking-user-agents.html</id>
+
+            
+                <published>2025-02-27T12:22:51+00:00</published>
+            
+            
+                <updated>2025-02-27T12:22:51+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[IPv6 leak with OpenVPN]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/linux/openvpn-ip-leak.html" />
+            <id>https://lunarwatcher.codeberg.page/til/linux/openvpn-ip-leak.html</id>
+
+            
+                <published>2024-12-24T23:23:25+00:00</published>
+            
+            
+                <updated>2024-12-24T23:23:25+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Multiple return values from the __index meta method]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/lua/multiple-return-index.html" />
+            <id>https://lunarwatcher.codeberg.page/til/lua/multiple-return-index.html</id>
+
+            
+                <published>2022-12-29T01:32:23+00:00</published>
+            
+            
+                <updated>2022-12-29T01:32:23+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Windows is pain: getting rid of CRLF]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/git/crlf.html" />
+            <id>https://lunarwatcher.codeberg.page/til/git/crlf.html</id>
+
+            
+                <published>2022-12-23T16:24:56+00:00</published>
+            
+            
+                <updated>2022-12-23T16:24:56+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[How to disable SSH password auth on Ubuntu Server (22.10)]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/linux/disable-password-auth-ubuntu-server.html" />
+            <id>https://lunarwatcher.codeberg.page/til/linux/disable-password-auth-ubuntu-server.html</id>
+
+            
+                <published>2022-10-22T14:12:31+00:00</published>
+            
+            
+                <updated>2022-10-22T14:12:31+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[C++ time sucks: parsing incomplete timestamps]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/cpp/incomplete-time-parsing.html" />
+            <id>https://lunarwatcher.codeberg.page/til/cpp/incomplete-time-parsing.html</id>
+
+            
+                <published>2022-08-19T17:50:19+00:00</published>
+            
+            
+                <updated>2022-08-19T17:50:19+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Runtime library conflicts with CMake, and why CMake doesn't respect your options]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/cmake/runtime-library-options-ignored.html" />
+            <id>https://lunarwatcher.codeberg.page/til/cmake/runtime-library-options-ignored.html</id>
+
+            
+                <published>2022-06-02T17:01:26+00:00</published>
+            
+            
+                <updated>2022-06-02T17:01:26+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+</feed>

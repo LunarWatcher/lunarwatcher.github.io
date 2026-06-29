@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Olivia's silly blog - notes and random thoughts</title>
+    <link href="https://lunarwatcher.codeberg.page/notes/feed.atom" rel="self" />
+    <link href="https://lunarwatcher.codeberg.page/notes/" />
+    <id>https://lunarwatcher.codeberg.page/notes/feed.atom</id>
+    <updated>2026-06-29T00:05:52+00:00</updated>
+
+    
+        <entry>
+            <title><![CDATA[Emacs abbreviations]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/notes/dictionary/emacs.html" />
+            <id>https://lunarwatcher.codeberg.page/notes/dictionary/emacs.html</id>
+
+            
+                <published>2026-06-23T22:17:10+00:00</published>
+            
+            
+                <updated>2026-06-23T22:17:10+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Replacing dawn: a theoretical inja-based templating system]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/notes/automation/replacing-dawn.html" />
+            <id>https://lunarwatcher.codeberg.page/notes/automation/replacing-dawn.html</id>
+
+            
+                <published>2026-06-23T01:00:00+00:00</published>
+            
+            
+                <updated>2026-06-23T01:00:00+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+</feed>

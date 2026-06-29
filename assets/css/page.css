@@ -1,0 +1,467 @@
+* {
+    box-sizing: border-box;
+}
+
+*::selection {
+    background: var(--pink-500);
+    color: white;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.airgapped {
+    margin: 4px;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+#navigation {
+    display: none;
+
+    background-color: var(--pink-200);
+
+    border: 2px solid var(--pink-800);
+}
+
+#navigation.visible {
+    display: flex;
+    margin: 4px;
+}
+
+
+aside {
+    overflow: scroll;
+    padding: 16px;
+}
+
+button {
+    background-color: var(--pink-300);
+    border: 2px solid var(--pink-800);
+    color: black;
+}
+
+button:hover {
+    background-color: var(--pink-600);
+    color: white;
+}
+
+main {
+    padding: 16px;
+    margin-bottom: auto;
+}
+
+header, footer {
+    background-color: var(--pink-400);
+    color: black;
+
+    border: 2px solid var(--pink-800);
+    border-radius: 4px;
+    
+}
+
+header {
+    margin-bottom: 0px;
+}
+footer {
+    margin-top: 0px;
+}
+
+a {
+    color: var(--pink-800);
+}
+
+a:hover {
+    color: var(--pink-600);
+}
+
+a:visited {
+    color: var(--pink-950);
+}
+
+#site-title {
+    font-size: 2rem;
+}
+
+header a, footer a {
+    color: var(--violet-theme-default-lavender);
+}
+
+header > #site-title {
+    flex: 1 0 auto;
+    padding: 16px;
+}
+
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.flex-horizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2ch;
+}
+
+.flex-center {
+    align-items: center;
+}
+
+.flex-horizontal > * {
+    flex: 1 0 300px;
+}
+
+td {
+    padding: 8px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.post-meta {
+    margin: 16px;
+}
+
+.tag {
+    padding: 4px;
+    background-color: var(--pink-200);
+    border: 2px solid var(--pink-800);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.tag::before {
+    content: "#";
+}
+
+table thead tr {
+    border-bottom: 4px solid var(--pink-400);
+    background-color: var(--pink-800);
+    color: white;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: var(--pink-200);
+}
+
+.small {
+    font-size: 0.7rem;
+}
+
+.grey {
+    color: #555555;
+}
+
+.flex-shrink {
+    flex: 0 1 auto;
+}
+
+article {
+    border-bottom: 2px solid var(--pink-800);
+    padding: 8px;
+}
+
+.flex-grow {
+    flex: 1 1 auto;
+}
+
+hr {
+    color: var(--pink-800);
+    width: 100%;
+}
+
+hr.rainbow, hr.trans-flag-ish, hr.trans-rainbow {
+    color: none;
+    border: none;
+    height: 4px;
+}
+
+.trans-flag-ish {
+    background: linear-gradient(
+        90deg,
+        rgba(91, 206, 250, 1) 0%,
+        rgba(245, 169, 184, 1) 100%
+    );
+}
+
+.trans-rainbow {
+    /* Once again not elegant, but it work shaped */
+    background: linear-gradient(
+        90deg,
+        rgba(91, 206, 250, 1) 0%,
+        rgba(245, 169, 184, 1) 16%,
+        rgba(255, 0, 0, 1) 16%,
+        rgba(255, 154, 0, 1) 24%,
+        rgba(208, 222, 33, 1) 32%,
+        rgba(79, 220, 74, 1) 40%,
+        rgba(63, 218, 216, 1) 48%,
+        rgba(47, 201, 226, 1) 56%,
+        rgba(28, 127, 238, 1) 64%,
+        rgba(95, 21, 242, 1) 72%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 87%,
+        rgba(255, 0, 0, 1) 100%
+    );
+}
+
+.rainbow {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+}
+
+pre {
+    overflow: scroll;
+}
+
+pre, code {
+    background-color: #eeeeee;
+    padding: 4px;
+}
+
+pre > code {
+    padding: 0px;
+}
+
+.footnote-backref {
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+.inline-list {
+    list-style: none;
+    padding: 0;
+}
+
+.inline-list > li {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.inline-list a, .inline-list span {
+    padding: 4px;
+}
+
+.inline-list span {
+    color: #666666;
+}
+
+.inline-list a {
+    background-color: var(--pink-400);
+    border-radius: 2px;
+}
+
+.inline-list a.current {
+    background-color: var(--pink-900);
+    color: white;
+}
+
+.inline-list a:hover {
+    background-color: var(--pink-600);
+    color: white;
+}
+
+.paginator > ul > * {
+    flex: 0 1 auto;
+}
+
+ul.pad {
+    padding-left: 0;
+}
+
+ul.pad > li {
+    list-style: none;
+    border-bottom: 2px solid var(--pink-800);
+    border-top: 2px solid var(--pink-800);
+    margin-bottom: -2px; /* Lazily merge the top and bottom border (could be done better but I don't care) */
+}
+
+ul.pad > li > * {
+    margin-left: 0;
+    padding: 16px;
+    width: 100%;
+    display: inline-block;
+    color: black;
+}
+
+ul.pad > li > *:hover {
+    background-color: var(--pink-600);
+    color: white;
+}
+
+.paginator {
+    width: 100%;
+}
+
+*:target {
+    background-color: var(--pink-100);
+}
+
+/* TODO: Keep? */
+/* *:target::before { */
+/*     content: "Link redirects here"; */
+/*     color: #666666; */
+/* } */
+
+a:target {
+    font-weight: bold;
+}
+
+.header-backlink, .header-backlink:visited {
+    color: var(--pink-500);
+    margin-right: 8px;
+}
+
+.header-backlink:hover {
+    color: var(--pink-800);
+}
+
+summary {
+    background-color: var(--pink-200);
+    padding: 8px;
+}
+
+details > div {
+    padding: 16px;
+    border: 2px solid var(--pink-800);
+    border-radius: 4px;
+}
+
+#profile-pic:hover {
+    cursor: grab;
+}
+
+/* details[open] summary { */
+/*     border-bottom: 2px solid var(--pink-800); */
+/* } */
+
+
+[popover] {
+    border: 2px solid var(--pink-800);
+}
+
+[popover].inline {
+    overlay: none;
+    inset: unset;
+}
+
+main:has(#notes-sidebar) {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas:
+        "sidebar content";
+    gap: 8px;
+}
+
+#notes-sidebar {
+    grid-area: sidebar;
+    padding: 0px;
+}
+
+main:has(#notes-sidebar) > .content {
+    grid-area: content;
+}
+
+ul#recursive-list-root summary {
+    padding: 0px;
+    background: none;
+}
+ul#recursive-list-root ul {
+    border: none;
+    border-left: 4px solid;
+    border-image: linear-gradient(
+        0deg,
+        rgba(91, 206, 250, 1) 0%,
+        rgba(245, 169, 184, 1) 100%
+    ) 1 100%;
+}
+
+ul#recursive-list-root ul, ul#recursive-list-root {
+    padding-left: 24px;
+}
+
+/* callouts and quotes */
+
+blockquote {
+    margin-left: 8px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    background-color: var(--pink-200);
+    padding: 11px 0px 9px 10px !important;
+    border: 2px solid var(--pink-800);
+    border-left: 8px solid var(--pink-800);
+    border-radius: 4px;
+}
+blockquote p {
+    margin: 4px;
+}
+
+
+.callout-title {
+    padding: 8px;
+    border-bottom: 2px solid var(--pink-800);
+}
+
+/* The note callout is considered the weakest, so it gets the same styling as a standard callout */
+.callout-info {
+    background-color: var(--callout-info-blue);
+    border: none;
+}
+.callout-tip {
+    background-color: var(--callout-tip-green);
+    border: none;
+}
+.callout-important {
+    background-color: var(--callout-important-yellow);
+    border: none;
+}
+.callout-warning {
+    background-color: var(--callout-warning-orange);
+    border: none;
+}
+.callout-caution {
+    background-color: var(--callout-caution-red);
+    border: none;
+}
+.callout-title::before {
+    margin-right: 4px;
+}
+.callout-note > .callout-title::before {
+    content: url("/assets/svg/callout-note.svg");
+}
+.callout-info > .callout-title::before {
+    content: url("/assets/svg/callout-info.svg");
+}
+.callout-tip > .callout-title::before {
+    content: url("/assets/svg/callout-tip.svg");
+}
+.callout-important > .callout-title::before {
+    content: url("/assets/svg/callout-important.svg");
+}
+.callout-warning > .callout-title::before {
+    content: url("/assets/svg/callout-warning.svg");
+}
+.callout-caution > .callout-title::before {
+    content: url("/assets/svg/callout-caution.svg");
+}
+
