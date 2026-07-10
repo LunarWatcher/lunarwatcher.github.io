@@ -23,7 +23,7 @@
                 {% if existsIn(page, "taxonomies") and existsIn(page.taxonomies, "tags") %}
                     <div class="tag-container flex-horizontal" style="margin-top: 4px">
                         {% for tag in page.taxonomies.tags %}
-                            <span class="tag flex-shrink">#{{ tag }}</span>
+                            <span class="tag flex-shrink">{{ tag }}</span>
                         {% endfor %}
                     </div>
                 {% endif %}
