@@ -8,7 +8,7 @@
                 <h2><a href="{{ site.prefix}}/{{ page.url }}">{{ page.title }}</a></h2>
                 {% if existsIn(page, "date") %}
                     <span class="grey">
-                        Published on {{ formatDate(page.date, "%F at %H:%M:%OS%z", "Europe/Oslo") }}
+                        Published on {{ formatDate(page.date, "%F at %H:%M:%OS%Oz", "Europe/Oslo") }}
                         {% if existsIn(page, "last_modified") %}
                             · Last modified {{ formatDate(page.last_modified, "%F at %H:%M:%OS%z", "Europe/Oslo") }}
                         {% endif %}
