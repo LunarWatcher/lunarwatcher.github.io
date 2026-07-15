@@ -4,7 +4,7 @@
 }
 ---
 
-This page lists some of my projects. For the complete list, see [my codeberg profile](https://codeberg.org/LunarWatcher). This list prioritises projects that are still active. Dead projects only get listed if they had some special value. 
+This page lists some of my projects. For the complete list, see [my codeberg profile](https://codeberg.org/LunarWatcher) (the extended archive including older and mostly abandoned repos is [on GitHub](https://github.com/LunarWatcher)). This list prioritises projects that are still active. Dead projects only get listed if they had some special value. 
 
 {{ page.table_of_contents }}
 
@@ -13,8 +13,6 @@ This page lists some of my projects. For the complete list, see [my codeberg pro
 ### umbra - a set of ✨ magic ✨ CLI tools
 
 [umbra](https://codeberg.org/LunarWatcher/umbra) initially came about because I wanted to automate away some of the actions I kept repeating, and eventually expanded further into other CLI utilities, largely to replace tools that have turned into AI slop. This is in all likelihood the single non-library project I rely the most on to work more efficiently.
-
-
 
 ## Libraries
 
@@ -35,7 +33,7 @@ Magpie was initially based on asio, a shit socket library that caused memory lea
 
 ### alui.cpp - an (unfinished) GUI library for allegro
 
-[alui](https://codeberg.org/LunarWatcher/alui.cpp) is a UI library for [allegro](https://github.com/liballeg), a fantastic graphics library. It hasn't received all the development it  deserves, and is far from finished (it's only barely usable as-is, and only has a small subset of features). I plan to do a large refactor at some point.
+[alui](https://codeberg.org/LunarWatcher/alui.cpp) is a UI library for [allegro](https://github.com/liballeg), a fantastic graphics library. It hasn't received all the development it deserves, and is far from finished (it's only barely usable as-is, and only has a small subset of features). I plan to do a large refactor at some point.
 
 
 ## Frameworks
@@ -78,7 +76,7 @@ Hazel was initially based on Crow, but later moved to magpie, my own HTTP server
 
 ### violet - a C++-based static site generator
 
-[violet](https://codeberg.org/LunarWatcher/violet) came about because of the AI-sloppification of most other static site generators that used to be worth using.
+[violet](https://codeberg.org/LunarWatcher/violet) came about because of the AI-sloppification of most other static site generators that used to be worth using. It's also used to generate this site, as well as a few doc sites for a few of my projects (though those just use the default theme rather than the theme I use here).
 
 
 ## Misc
