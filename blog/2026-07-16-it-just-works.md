@@ -2,10 +2,10 @@
 {
     "title": "It just works",
     "date": "2026-07-16T00:56:46+02:00",
-    "summary": "Don't you just love it when things just work?",
+    "summary": "Don't you just love it when things just work? A semi-unstructured thing™️ on having lots of fun with stuff I've never done before",
     "type": "blog",
     "taxonomies": {
-        "tags": ["cpp"]
+        "tags": ["personal"]
     }
 }
 ---
