@@ -4,7 +4,7 @@
     "date": "2026-07-23T20:34:21+02:00",
     "type": "blog",
     "taxonomies": {
-        "tags": ["codeberg"]
+        "tags": ["codeberg-pages"]
     }
 }
 ---
