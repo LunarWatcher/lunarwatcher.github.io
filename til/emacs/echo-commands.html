@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html
+    lang="en-GB"
+>
+    <head>
+        <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+
+    <meta http-equiv="Content-language" content = "en-GB" />
+
+
+
+<link rel="stylesheet" href="/assets/css/variables.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css" />
+<link rel="stylesheet" href="/assets/css/page.css" />
+
+<title>Echo commands in emacs</title>
+
+<script src="/assets/vendor/highlightjs.js"></script>
+<script src="/assets/js/page.js" defer></script>
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - blog posts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/blog/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - TILs"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/til/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - notes and random thoughts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/notes/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - combined feed (blog posts, TILs, and notes and random thoughts)"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/combined.atom" />
+
+    </head>
+    <body>
+        <header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="/">Olivia's silly blog</a></span>
+
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
+    </div>
+
+</header>
+
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/til/index.html">TIL</a></li>
+        <li><a href="/notes/index.html">Notes and random thoughts</a></li>
+        <li><a href="/projects.html">Some of my projects</a></li>
+        <li><a href="/uses.html">Things I use</a></li>
+    </ul>
+</nav>
+
+
+        <main>
+            
+    <h1>Echo commands in emacs</h1>
+    <div class="post-meta flex-vertical">
+    <div class="author-block flex-shrink flex-horizontal">
+        <img src="/assets/profile.png"
+                class="flex-shrink"
+                style="height: 32px; aspect-ratio: 1/1; border-radius: 32px;"
+                alt="Profile picture"
+        />
+
+        <div class="author-links flex-vertical flex-shrink">
+            <span class="author"><a href="https://lunarwatcher.codeberg.page">Olivia</a></span>
+            <span class="small grey">
+                Published on
+            
+                2026-06-25 at 06:13:28+02:00
+                
+            
+            </span>
+            
+            <span class="small grey">
+                License: <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-by-SA 4.0 (text), MIT (code)</a>
+            </span>
+        </div>
+    </div>
+    
+</div>
+
+<hr class="trans-rainbow" />
+
+    <p>There's (at least<sup><a href="#fn-1" id="fn-1-r1">[1]</a></sup>) two separate commands analogous to <code>:echo</code> in vim in emacs.</p><h2 id="built-in">Built-in</h2><p>The built-in option is <code>(message)</code>:</p><pre><code class="language-lisp">(message "some message")</code></pre><p>For arguments or string formatting, use <code>format</code></p><pre><code class="language-lisp">(message (format "%s" "arg"))</code></pre><blockquote class="callout-note"><p class="callout-title">Note</p><p>This also appends to the <code>*Messages*</code> buffer, which may or may not be desirable. Might be better if you want to copy out the command afterwards.</p></blockquote><h2 id="evil-mode">Evil mode</h2><p>Evil mode has <code>evil-echo</code> that acts as <code>(message (format))</code>:</p><pre><code class="language-lisp">(evil-echo "%s" "arg")</code></pre><div id="violet-footnotes"><h2>Footnotes</h2><ol><li id="fn-1"><p>There's probably more. <code>evil-echo</code> prints to the echo area but not to the <code>*Messages*</code> buffer, but at least for my use, these two are good enough.</p><span class="footnote-backref">Usages: <a href="#fn-1-r1">[1]</a></span></li></ol></div>
+    
+
+
+        </main>
+        <footer class="flex-vertical airgapped">
+    <div class="flex-horizontal" style="align-self: flex-start; width: 100%;">
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="/index.html#contact">Contact me</a></li>
+                <li><a href="/index.html#link-to-me">Link to me</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2><img alt="rss logo" style="width: 1em" src="/assets/svg/rss.svg" aria-hidden="true" /> RSS feeds</h2>
+            <ul>
+    <li><a href="https://lunarwatcher.codeberg.page/blog/feed.atom">Blog posts</a> (<a href="/blog/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/til/feed.atom">TILs</a> (<a href="/til/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/notes/feed.atom">Notes and random thoughts</a> (<a href="/notes/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/combined.atom">Combined</a> (all of the above)</li>
+</ul>
+
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

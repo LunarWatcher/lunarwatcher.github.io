@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Olivia's silly blog - blog posts</title>
+    <link href="https://lunarwatcher.codeberg.page/blog/feed.atom" rel="self" />
+    <link href="https://lunarwatcher.codeberg.page/blog/" />
+    <id>https://lunarwatcher.codeberg.page/blog/feed.atom</id>
+    <updated>2026-07-23T18:46:52+00:00</updated>
+
+    
+        <entry>
+            <title><![CDATA[It just works]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/blog/2026-07-16-it-just-works.html" />
+            <id>https://lunarwatcher.codeberg.page/blog/2026-07-16-it-just-works.html</id>
+
+            
+                <published>2026-07-15T22:56:46+00:00</published>
+            
+            
+                <updated>2026-07-15T22:56:46+00:00</updated>
+            
+            
+                <summary><![CDATA[Don't you just love it when things just work? A semi-unstructured thing™️ on having lots of fun with stuff I've never done before]]></summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Thoughts on themes]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/blog/2026-03-14-thoughts-on-themes.html" />
+            <id>https://lunarwatcher.codeberg.page/blog/2026-03-14-thoughts-on-themes.html</id>
+
+            
+                <published>2026-03-14T17:53:19+00:00</published>
+            
+            
+                <updated>2026-03-14T17:53:19+00:00</updated>
+            
+            
+                <summary><![CDATA[Smol unstructured post on themes, theme bundles, and the pain of finding good light mode themes]]></summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Information curation and sharing after Stack Overflow]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/blog/2026-03-01-information-post-stack-overflow.html" />
+            <id>https://lunarwatcher.codeberg.page/blog/2026-03-01-information-post-stack-overflow.html</id>
+
+            
+                <published>2026-03-01T22:26:05+00:00</published>
+            
+            
+                <updated>2026-03-01T22:26:05+00:00</updated>
+            
+            
+                <summary><![CDATA[Over the last 7+ years, the company behind Stack Overflow has systematically been working against the Q&A model, the site's community, and users. This post describes how I've had to change my own approach to notes when the biggest software Q&A may not be around or have as high quality content anymore.]]></summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Markdown and the illusion of portability]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/blog/2025-12-24-markdown-and-the-illusion-of-portability.html" />
+            <id>https://lunarwatcher.codeberg.page/blog/2025-12-24-markdown-and-the-illusion-of-portability.html</id>
+
+            
+                <published>2025-12-24T14:13:38+00:00</published>
+            
+            
+                <updated>2025-12-24T14:13:38+00:00</updated>
+            
+            
+                <summary><![CDATA[Small rant on how markdown isn't as flexible as many of the tools using it claim it is, and how that became painfully obvious when trying to migrate between static site generators]]></summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Forcing WSL to cooperate with non-standard keyboard layouts]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/blog/2025-08-18-beating-wsl-into-submission.html" />
+            <id>https://lunarwatcher.codeberg.page/blog/2025-08-18-beating-wsl-into-submission.html</id>
+
+            
+                <published>2025-08-17T22:05:06+00:00</published>
+            
+            
+                <updated>2025-08-17T22:05:06+00:00</updated>
+            
+            
+                <summary><![CDATA[WSL has a long-standing bug that prevents custom keyboards on Windows from porting well to Linux. This post describes how I worked around the problem while still keeping my custom layout.]]></summary>
+            
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+</feed>

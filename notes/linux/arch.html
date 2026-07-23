@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html
+    lang="en-GB"
+>
+    <head>
+        <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+
+    <meta http-equiv="Content-language" content = "en-GB" />
+
+
+
+<link rel="stylesheet" href="/assets/css/variables.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css" />
+<link rel="stylesheet" href="/assets/css/page.css" />
+
+<title>Untitled arch commentary</title>
+
+<script src="/assets/vendor/highlightjs.js"></script>
+<script src="/assets/js/page.js" defer></script>
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - blog posts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/blog/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - TILs"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/til/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - notes and random thoughts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/notes/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - combined feed (blog posts, TILs, and notes and random thoughts)"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/combined.atom" />
+
+    </head>
+    <body>
+        <header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="/">Olivia's silly blog</a></span>
+
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
+    </div>
+
+</header>
+
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/til/index.html">TIL</a></li>
+        <li><a href="/notes/index.html">Notes and random thoughts</a></li>
+        <li><a href="/projects.html">Some of my projects</a></li>
+        <li><a href="/uses.html">Things I use</a></li>
+    </ul>
+</nav>
+
+
+        <main>
+            
+    <aside id="notes-sidebar">
+    <h2>Notes and thoughts index</h2>
+    
+    
+    
+    
+    
+
+    <p>(<a href="/notes/index.html">What's this?</a>)</p>
+    <ul id="recursive-list-root">
+        
+            
+            
+            <li>
+
+
+    <a href="/notes/automation/index.html">Automation</a>
+
+
+<ul>
+    
+        
+            <li><a href="/notes/automation/replacing-dawn.html">Replacing dawn: a theoretical inja-based templating system</a></li>
+        
+    
+
+    
+</ul>
+</li>
+        
+            
+            
+            <li>
+
+
+    dictionary (automatically titled section)
+
+
+<ul>
+    
+        
+            <li><a href="/notes/dictionary/emacs.html">Emacs abbreviations</a></li>
+        
+    
+
+    
+</ul>
+</li>
+        
+            
+            
+            <li>
+
+
+    html (automatically titled section)
+
+
+<ul>
+    
+        
+            <li><a href="/notes/html/fonts.html">The great font rant</a></li>
+        
+    
+
+    
+</ul>
+</li>
+        
+            
+            
+            <li>
+
+
+    linux (automatically titled section)
+
+
+<ul>
+    
+        
+            <li><a href="/notes/linux/arch.html">Untitled arch commentary</a></li>
+        
+    
+
+    
+</ul>
+</li>
+        
+    </ul>
+</aside>
+
+    <div class="content">
+        <h1>Untitled arch commentary</h1>
+        <div class="post-meta flex-vertical">
+    <div class="author-block flex-shrink flex-horizontal">
+        <img src="/assets/profile.png"
+                class="flex-shrink"
+                style="height: 32px; aspect-ratio: 1/1; border-radius: 32px;"
+                alt="Profile picture"
+        />
+
+        <div class="author-links flex-vertical flex-shrink">
+            <span class="author"><a href="https://lunarwatcher.codeberg.page">Olivia</a></span>
+            <span class="small grey">
+                Published on
+            
+                2026-07-16 at 22:45:43+02:00
+                
+            
+            </span>
+            
+            <span class="small grey">
+                License: <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-by-SA 4.0 (text), MIT (code)</a>
+            </span>
+        </div>
+    </div>
+    
+        <div class="tag-container flex-shrink flex-horizontal">
+            
+                <span class="tag flex-shrink">arch</span>
+            
+                <span class="tag flex-shrink">linux</span>
+            
+        </div>
+    
+</div>
+
+<hr class="trans-rainbow" />
+
+        <p>I am <em>checks calendar</em> 2.5 months into arch. I'm really pleasantly surprised by it.</p><h2 id="installation">Installation</h2><p>The installation experience isn't much to brag about. arch-install definitely makes the experience acceptable, but the lack of a default graphical installer does make the initial setup mildly annoying.</p><p>I wouldn't have had a chance a good few years ago, since there definitely is an extra learning curve to arch. Getting past that though, holy fuck, arch-install! It lets me export JSON files with the entire configuration, so I can get the core packages I need set up automagically. Parts of my dotfile setup are still dedicated to post-arch setup steps, largely because I still have non-core setup for various types of machines. </p><p>I theoretically have a server-compatible setup already prepared, and while I really want to migrate my server to arch, migrating an LVM cluster is a bit hard. Not impossibly so, but there's pre-uninstall and pre-reinstall steps, and because it's all on the same hardware, I don't have anything to go back to if I fuck up the pre-uninstall. In retrospect, lvm was a bit of a mistake. I do not have enough disks to justify it. It does have two disks in it, so I could in theory shrink out the 2TB SSD and move the data to it (and possibly to the 1TB OS SSD, not sure how much data I have on it now), then wipe the 16TB disk and move everything back to it, but shrinking volumes takes aaaaaaaaaaaages, and there's just no good time to do it.</p><p>Anyway, server migration tangent aside, automation as a core feature of one of the top recommended ways to install arch? Fucking brilliant, I love it :3</p><h2 id="migration-problems">Migration problems</h2><p>... or rather, mostly lack thereof.</p><p>Prior to migrating to arch, I had switched to KDE on Mint, largely because I had to do that on my work laptop<sup><a href="#fn-1" id="fn-1-r1">[1]</a></sup>, and I really enjoyed it. Plus, I had fewer bugs with it<sup><a href="#fn-1" id="fn-1-r2">[1]</a></sup>.</p><p>The migration included a bump from KDE 5 to 6, which broke some of the stored config I had. Not a big deal, I just migrated it manually and re-exported for KDE 6, and now my config will follow KDE head (with one version behind for potential future Linux work laptops on Ubuntu et. al, where KDE will be older than arch).</p><h2 id="post-migration-problems">Post-migration problems</h2><p>Around the great AI slop machine-driven security patches (also known as anthropic increasing their stock value through fear), bluetooth broke. I tried and failed to roll back the kernel, which was annoying. Arch isn't really meant for rollbacks - I _could_ roll the kernel back, but everything is pinned to the latest versions of things, so rolling back is still spicy.</p><p>The patch came like a day later, and I got everything connected again.</p><h3 id="non-arch-post-migration-problems">Non-arch post-migration problems</h3><p>Also driven by AI slop machines, I had to axe my backup software. I have used <a href="https://github.com/linuxmint/timeshift/">timeshift</a> for years, and timeshift is still fantastic - unfortunately, it's rsync-based, and rsync <a href="https://github.com/linuxmint/timeshift/issues/548">turned to AI slop and took down everything that used it</a>. Great fucking job.</p><p>Fortunately (?), I had misconfigured timeshift by mistake. It was set to make scheduled backups, but it was never set to start :facepaw: The good news with that mistake is that rsync never had the chance to fuck anything up. I had to uninstall rsync and timeshift, since rsync cannot be trusted anymore. RIP rsync though - it used to be so good that no one really bothered making anything comparable to it. It became an industry standard, and the maintainers decided to completely fuck over everyone by using AI slop machines.</p><p><a href="https://github.com/bcpierce00/unison">unison</a> looks like a solid replacement, and <a href="https://github.com/bcpierce00/unison/commit/91421d0617b0fb543c0eee51bcb4d4791d8b0631">just three weeks ago, it got an anti-AI CONTRIBUTING.md</a> - love to see it. Not sure if it overlaps enough with rsync's use-cases for me to be able to add it to scripts for example. I have not read its docs or anything yet, I just know it exists, and I have a plan to look at it Later&trade;.</p><h2 id="initial-impressions">Initial impressions</h2><p>Aside fangirling over automation for longer than I'd like to admit, it really is a solid experience. Pacman is ass, and installing from the AUR is harder than I thought. I ended up avoiding it entirely, and haven't really missed it. Aside for nightly firefox, but I just downloaded the zip and stored it somewhere. It self-updates, so I don't really need to go through a package manager.</p><p>Discord being bundled in the package manager is great. Discord on Ubuntu didn't auto-update - that changed literally like within a couple days of me switching to arch though, so really bad timing on my part :p</p><p>One of the projects I wrote at one point to meet my needs is a package manager. I wrote it because I needed newer packages than Ubuntu could provide. I haven't even installed it :p Everything being up-to-date is fantastic, since I enjoy getting regular updates to the software I use. That does mean more risk (re: the kernel problem in the post-migration problems section), but honestly, aside system components, there's not really much risk in solid software that isn't developed with AI slop machines.</p><p>KDE in an actual KDE-dedicated system is also great. I do miss notification badges - notification badges were something I missed from Windows on Cinnamon for ages, but it was added I believe some time in the last year. I lose track of when it came. Then I of course switch DEs to one where notification badges aren't a thing. Will need to look into if there's like a replacement widget for the standard dock. I really like having notification badges.</p><p>KDE under Mint was a bit jank, because it coexisted with another DE that had its preferred default software. Not having that definitely makes KDE feel better. KDE also has a lot of really good software in general, though I only actively fangirl over Krita. Admittedly got that on steam rather than directly on my system.</p><p>Going back to AUR for a minute, it seems to be a fair bit more involved than I had hoped to get it to work. I assumed it would just be an equivalent to PPAs where you just add a package repo and it's done, but it's a whole other ecosystem that requires an additional package manager. And of course, <a href="https://codeberg.org/ethical-foss/open-slopware#aur-helpers">the biggest of the AUR helpers is AI slop now</a>. I'll get around to experimenting with paru (currently untainted) at some point, but it'll be at least a little while.</p><p>Even without AUR, the official repos contain _so much more stuff_. Both Obsidian and Discord just being available is great. </p><p>I will definitely be staying on arch on my daily-driver. For the record though, I do still like mint. Bugs aside, the Mint project has done a lot of great work reversing a lot of the dumb shit Canonical has been doing. Blacklisting snap by default and bringing back apt packages that are just thin wrappers around snap commands on Ubuntu proper is a solid move. I can't really recommend Mint enough, especially as a beginner distro. It pulled me through a solid ~8 years of Linux use, and I have no regrets</p><div id="violet-footnotes"><h2>Footnotes</h2><ol><li id="fn-1"><p>Technically work laptop VM, because it's Windows-as-a-shitty-BIOS. Cinnamon's compositor (? - the thing in cinnamon called muffin, I don't remember what it was classified as) has a bug that inexplicably breaks rofi in hyper-v. I've also had a number of other bugs with it on my main machine with screensharing, where I've been unable to share a monitor on Discord without screentearing. I initially blamed the driver, then Discord (because discord is ass), but looks like it was the DE. Not where I expected that to go.</p><span class="footnote-backref">Usages: <a href="#fn-1-r1">[1]</a>, <a href="#fn-1-r2">[2]</a></span></li></ol></div>
+        
+
+    </div>
+
+        </main>
+        <footer class="flex-vertical airgapped">
+    <div class="flex-horizontal" style="align-self: flex-start; width: 100%;">
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="/index.html#contact">Contact me</a></li>
+                <li><a href="/index.html#link-to-me">Link to me</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2><img alt="rss logo" style="width: 1em" src="/assets/svg/rss.svg" aria-hidden="true" /> RSS feeds</h2>
+            <ul>
+    <li><a href="https://lunarwatcher.codeberg.page/blog/feed.atom">Blog posts</a> (<a href="/blog/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/til/feed.atom">TILs</a> (<a href="/til/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/notes/feed.atom">Notes and random thoughts</a> (<a href="/notes/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/combined.atom">Combined</a> (all of the above)</li>
+</ul>
+
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html
+    lang="en-GB"
+>
+    <head>
+        <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+
+    <meta http-equiv="Content-language" content = "en-GB" />
+
+
+
+<link rel="stylesheet" href="/assets/css/variables.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css" />
+<link rel="stylesheet" href="/assets/css/page.css" />
+
+<title>Projects</title>
+
+<script src="/assets/vendor/highlightjs.js"></script>
+<script src="/assets/js/page.js" defer></script>
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - blog posts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/blog/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - TILs"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/til/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - notes and random thoughts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/notes/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - combined feed (blog posts, TILs, and notes and random thoughts)"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/combined.atom" />
+
+    </head>
+    <body>
+        <header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="/">Olivia's silly blog</a></span>
+
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
+    </div>
+
+</header>
+
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/til/index.html">TIL</a></li>
+        <li><a href="/notes/index.html">Notes and random thoughts</a></li>
+        <li><a href="/projects.html">Some of my projects</a></li>
+        <li><a href="/uses.html">Things I use</a></li>
+    </ul>
+</nav>
+
+
+        <main>
+            
+    <h1>Projects</h1>
+    <p>This page lists some of my projects. For the complete list, see <a href="https://codeberg.org/LunarWatcher">my codeberg profile</a> (the extended archive including older and mostly abandoned repos is <a href="https://github.com/LunarWatcher">on GitHub</a>). This list prioritises projects that are still active. Dead projects only get listed if they had some special value. </p>
+<div id="violet-toc"><ol><li><a href="#cli-utils">CLI utils</a><ol><li><a href="#umbra---a-set-of--magic--cli-tools">umbra - a set of ✨ magic ✨ CLI tools</a></li></ol></li><li><a href="#libraries">Libraries</a><ol><li><a href="#stc---a-c-utility-library">stc - a C++ utility library</a></li><li><a href="#moonbeam---a-linux-only-lua-utility-library">moonbeam - a Linux-only Lua utility library</a></li><li><a href="#magpie-and-raven---a-c-based-server-library-and-socket-library">magpie and raven - a C++-based server library and socket library</a></li><li><a href="#aluicpp---an-unfinished-gui-library-for-allegro">alui.cpp - an (unfinished) GUI library for allegro</a></li></ol></li><li><a href="#frameworks">Frameworks</a><ol><li><a href="#amethyst---a-small-zsh-config-distribution">amethyst - a small zsh config distribution</a></li></ol></li><li><a href="#games">Games</a><ol><li><a href="#nyaa">nyaa</a></li></ol></li><li><a href="#personal-projects">Personal projects</a><ol><li><a href="#hazel">hazel</a></li></ol></li><li><a href="#obsidian-plugins">Obsidian plugins</a><ol><li><a href="#webdav-sync">WebDAV sync</a></li><li><a href="#liviutils">LiviUtils</a></li></ol></li><li><a href="#utilities">Utilities</a><ol><li><a href="#lspinstaller">lspinstaller</a></li></ol></li><li><a href="#web">Web</a><ol><li><a href="#violet---a-c-based-static-site-generator">violet - a C++-based static site generator</a></li></ol></li><li><a href="#misc">Misc</a><ol><li><a href="#dotfiles">dotfiles</a></li></ol></li></ol></div>
+<h2 id="cli-utils">CLI utils</h2><h3 id="umbra---a-set-of--magic--cli-tools">umbra - a set of ✨ magic ✨ CLI tools</h3><p><a href="https://codeberg.org/LunarWatcher/umbra">umbra</a> initially came about because I wanted to automate away some of the actions I kept repeating, and eventually expanded further into other CLI utilities, largely to replace tools that have turned into AI slop. This is in all likelihood the single non-library project I rely the most on to work more efficiently.</p><h2 id="libraries">Libraries</h2><h3 id="stc---a-c-utility-library">stc - a C++ utility library</h3><p><a href="https://codeberg.org/LunarWatcher/stc">stc</a> is a small utility/compat library that adds some things C++ does not have, but that isn't worth a whole dedicated library. It mostly consists of standalone headers, though some headers depend on each other. Very much inspired by <a href="https://github.com/nothings/stb">stb</a> in terms of structure.</p><h3 id="moonbeam---a-linux-only-lua-utility-library">moonbeam - a Linux-only Lua utility library</h3><p><a href="https://codeberg.org/LunarWatcher/moonbeam">moonbeam</a> is a utility library for accessing system resources, JSON, and eventually other stuff. This library exists because I needed to do some advanced scripting to get a non-browser integration with my password manager without leaving my terminal, and didn't want to do all that in bash.</p><h3 id="magpie-and-raven---a-c-based-server-library-and-socket-library">magpie and raven - a C++-based server library and socket library</h3><p><a href="https://codeberg.org/LunarWatcher/magpie">magpie</a> is a C++-based server library, inspired in name by <a href="https://github.com/CrowCpp/Crow">Crow</a>. It powers some of my projects that require HTTP servers.</p><p>Magpie was initially based on asio, a shit socket library that caused memory leaks. After lots of time fighting asio, I made <a href="https://codeberg.org/LunarWatcher/raven">raven</a>, an HTTP-specific socket library. Magpie uses raven for network connectivity, and in spite of being made to be a bare minimum library, has worked better and more reliably than asio. </p><h3 id="aluicpp---an-unfinished-gui-library-for-allegro">alui.cpp - an (unfinished) GUI library for allegro</h3><p><a href="https://codeberg.org/LunarWatcher/alui.cpp">alui</a> is a UI library for <a href="https://github.com/liballeg">allegro</a>, a fantastic graphics library. It hasn't received all the development it deserves, and is far from finished (it's only barely usable as-is, and only has a small subset of features). I plan to do a large refactor at some point.</p><h2 id="frameworks">Frameworks</h2><h3 id="amethyst---a-small-zsh-config-distribution">amethyst - a small zsh config distribution</h3><p><a href="https://codeberg.org/LunarWatcher/amethyst">amethyst</a> is a small config distribution that came about because ohmyzsh decided AI slop machines were a good idea, which forced me to refactor my config. Rather than bundling it all in my zshrc, I separated it out into a new project. It includes some sane standards, and a bare minimum package installer<sup><a href="#fn-1" id="fn-1-r1">[1]</a></sup></p><h2 id="games">Games</h2><h3 id="nyaa">nyaa</h3><p><a href="https://codeberg.org/LunarWatcher/nyaa">nyaa</a> is an undefined, currently unplayable 2% of a plan for what will eventually be a game that'll involve dungeon crawling and some undefined open world elements. I wanted to make a game, but games are fucking hard, okay? :p</p><h2 id="personal-projects">Personal projects</h2><h3 id="hazel">hazel</h3><p><a href="https://codeberg.org/LunarWatcher/hazel">Hazel</a> is a small C++-based server that I use for various stuff I'd like to have, and that requires a server, but doesn't warrant its own standalone server. Currently only serves as a way to port RSS notifications from <a href="https://github.com/miniflux/v2">Miniflux</a> to discord.</p><p>Hazel was initially based on Crow, but later moved to magpie, my own HTTP server library.</p><h2 id="obsidian-plugins">Obsidian plugins</h2><h3 id="webdav-sync">WebDAV sync</h3><p><a href="https://codeberg.org/LunarWatcher/obsidian-webdav-sync">WebDAV sync</a> is a small obsidian plugin for syncing vaults to WebDAV.</p><h3 id="liviutils">LiviUtils</h3><p><a href="https://codeberg.org/LunarWatcher/obsidian-utils">LiviUtils</a> is a bundle plugin with utilities. This structure was largely picked because of Obsidian's absurdly slow review time, but it was kept after the move away from always requiring manual review because it's convenient to bundle utilities.</p><h2 id="utilities">Utilities</h2><h3 id="lspinstaller">lspinstaller</h3><p><a href="https://codeberg.org/LunarWatcher/lspinstaller">lspinstaller</a> is a utility script for installing various LSPs. It largely exists because different distros support different LSPs, and require the rest to be downloaded in other exotic ways. That's also before accounting for the LSPs that are installed via pip or npm. Also largely came about because clangd in ubuntu's repos was out of date, and I needed a newer version.</p><h2 id="web">Web</h2><h3 id="violet---a-c-based-static-site-generator">violet - a C++-based static site generator</h3><p><a href="https://codeberg.org/LunarWatcher/violet">violet</a> came about because of the AI-sloppification of most other static site generators that used to be worth using. It's also used to generate this site, as well as a few doc sites for a few of my projects (though those just use the default theme rather than the theme I use here).</p><h2 id="misc">Misc</h2><h3 id="dotfiles">dotfiles</h3><p>Though normally not a project, my <a href="https://github.com/LunarWatcher/dotfiles">dotfiles</a> also include an automation suite big enough that it counts as one.</p><p>The main feature of it is the makefile setup, that allows me to just type a single make command to set up a new machine. It also includes a lot of other automation, a <code>.emacs</code> and <code>.zshrc</code> with lots of utilities, and attempts to gitops most of my core setup. Certainly has its problems, but I am happy with how it has turned out.</p><div id="violet-footnotes"><h2>Footnotes</h2><ol><li id="fn-1"><p>Its package handling features are too primitive to call it a package manager. It installs automatically, and updates to the latest version when a specific command is run. It has no other features that would technically classify the package handling features as a package manager. I believe it's still called a package manager somewhere, but that's just because it's a recognizable description</p><span class="footnote-backref">Usages: <a href="#fn-1-r1">[1]</a></span></li></ol></div>
+
+        </main>
+        <footer class="flex-vertical airgapped">
+    <div class="flex-horizontal" style="align-self: flex-start; width: 100%;">
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="/index.html#contact">Contact me</a></li>
+                <li><a href="/index.html#link-to-me">Link to me</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2><img alt="rss logo" style="width: 1em" src="/assets/svg/rss.svg" aria-hidden="true" /> RSS feeds</h2>
+            <ul>
+    <li><a href="https://lunarwatcher.codeberg.page/blog/feed.atom">Blog posts</a> (<a href="/blog/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/til/feed.atom">TILs</a> (<a href="/til/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/notes/feed.atom">Notes and random thoughts</a> (<a href="/notes/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/combined.atom">Combined</a> (all of the above)</li>
+</ul>
+
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

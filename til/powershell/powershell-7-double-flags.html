@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html
+    lang="en-GB"
+>
+    <head>
+        <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+
+    <meta http-equiv="Content-language" content = "en-GB" />
+
+
+
+<link rel="stylesheet" href="/assets/css/variables.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css" />
+<link rel="stylesheet" href="/assets/css/page.css" />
+
+<title>Powershell 7 fails to parse flags with a double-shaped value</title>
+
+<script src="/assets/vendor/highlightjs.js"></script>
+<script src="/assets/js/page.js" defer></script>
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - blog posts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/blog/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - TILs"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/til/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - notes and random thoughts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/notes/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - combined feed (blog posts, TILs, and notes and random thoughts)"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/combined.atom" />
+
+    </head>
+    <body>
+        <header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="/">Olivia's silly blog</a></span>
+
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
+    </div>
+
+</header>
+
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/til/index.html">TIL</a></li>
+        <li><a href="/notes/index.html">Notes and random thoughts</a></li>
+        <li><a href="/projects.html">Some of my projects</a></li>
+        <li><a href="/uses.html">Things I use</a></li>
+    </ul>
+</nav>
+
+
+        <main>
+            
+    <h1>Powershell 7 fails to parse flags with a double-shaped value</h1>
+    <div class="post-meta flex-vertical">
+    <div class="author-block flex-shrink flex-horizontal">
+        <img src="/assets/profile.png"
+                class="flex-shrink"
+                style="height: 32px; aspect-ratio: 1/1; border-radius: 32px;"
+                alt="Profile picture"
+        />
+
+        <div class="author-links flex-vertical flex-shrink">
+            <span class="author"><a href="https://lunarwatcher.codeberg.page">Olivia</a></span>
+            <span class="small grey">
+                Published on
+            
+                2026-06-26 at 05:05:59+02:00
+                
+            
+            </span>
+            
+            <span class="small grey">
+                License: <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-by-SA 4.0 (text), MIT (code)</a>
+            </span>
+        </div>
+    </div>
+    
+        <div class="tag-container flex-shrink flex-horizontal">
+            
+                <span class="tag flex-shrink">microslop</span>
+            
+                <span class="tag flex-shrink">powershell</span>
+            
+        </div>
+    
+</div>
+
+<hr class="trans-rainbow" />
+
+    <p>Microslop's steaming pile of shit shell, also known as Powershell, has introduced a very fun bug where specifically flags with a value assigned to a number fails to be identified as part of the flag it's actually part of. I checked this against 7.4.2, which is the version I can currently get my paws on with docker, because I'm not installing Microslop's malware on any of my linux boxes. The GitHub Actions runner where this failed originally runs 7.6.2, according to <a href="https://github.com/actions/runner-images/blob/e3d5c1312473fcb22b11bbb4926cd976044f27bc/images/windows/Windows2025-Readme.md?plain=1#L476">the image software list</a>. </p><blockquote class="callout-info"><p class="callout-title">Info</p><p> Correction: A little while after posting this I was made aware that this actually traces back allllll the way to <a href="https://github.com/PowerShell/PowerShell/issues/6291">2018</a> and v6 of powershell. Thanks, Microslop</p></blockquote><p>The consequence of this bug is that</p><pre><code>-DCMAKE_POLICY_VERSION_MINIMUM=3.5</code></pre><p>Is actually parsed as the TWO arguments, <code>["-DCMAKE_POLICY_VERSION_MINIMUM=3", ".5"]</code>, which broke my CMake build, since 3 is an illegal minimum policy version, and .5 is just trailing and a tiny warning at the start of a 1.1k line logfile. Full repro that this is, in fact, powershell's fault:</p><pre><code class="language-powershell">PS /&gt; function x($arg) &#123; Write-Host "$arg" &#125;
+PS /&gt; x -- -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+-DCMAKE_POLICY_VERSION_MINIMUM=3</code></pre><p>This goes away with quoting:</p><pre><code class="language-powershell">PS /&gt; x -- -DCMAKE_POLICY_VERSION_MINIMUM="3.5"
+-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+PS /&gt; x -- "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+-DCMAKE_POLICY_VERSION_MINIMUM=3.5</code></pre><p>In case it isn't obvious, the expected result <em>gestures broadly</em> everywhere fucking else for several fucking decades is for it to be parsed as one item; <code>["-DCMAKE_POLICY_VERSION_MINIMUM=3.5"]</code></p><p>Lesson learned:</p><ul><li><p>Avoid powershell at all cost. Cmd should still handle this use-case fine</p></li><li><p>If avoiding powershell is not an option, all non-string types must be quoted in every argument</p></li></ul><p>Microslop strikes again</p>
+    
+
+
+        </main>
+        <footer class="flex-vertical airgapped">
+    <div class="flex-horizontal" style="align-self: flex-start; width: 100%;">
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="/index.html#contact">Contact me</a></li>
+                <li><a href="/index.html#link-to-me">Link to me</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2><img alt="rss logo" style="width: 1em" src="/assets/svg/rss.svg" aria-hidden="true" /> RSS feeds</h2>
+            <ul>
+    <li><a href="https://lunarwatcher.codeberg.page/blog/feed.atom">Blog posts</a> (<a href="/blog/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/til/feed.atom">TILs</a> (<a href="/til/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/notes/feed.atom">Notes and random thoughts</a> (<a href="/notes/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/combined.atom">Combined</a> (all of the above)</li>
+</ul>
+
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

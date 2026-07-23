@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html
+    lang="en-GB"
+>
+    <head>
+        <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+
+    <meta http-equiv="Content-language" content = "en-GB" />
+
+
+    <meta name="description" content="Over the last 7+ years, the company behind Stack Overflow has systematically been working against the Q&amp;A model, the site&#39;s community, and users. This post describes how I&#39;ve had to change my own approach to notes when the biggest software Q&amp;A may not be around or have as high quality content anymore." />
+
+
+<link rel="stylesheet" href="/assets/css/variables.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css" />
+<link rel="stylesheet" href="/assets/css/page.css" />
+
+<title>Information curation and sharing after Stack Overflow</title>
+
+<script src="/assets/vendor/highlightjs.js"></script>
+<script src="/assets/js/page.js" defer></script>
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - blog posts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/blog/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - TILs"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/til/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - notes and random thoughts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/notes/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - combined feed (blog posts, TILs, and notes and random thoughts)"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/combined.atom" />
+
+    </head>
+    <body>
+        <header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="/">Olivia's silly blog</a></span>
+
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
+    </div>
+
+</header>
+
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/til/index.html">TIL</a></li>
+        <li><a href="/notes/index.html">Notes and random thoughts</a></li>
+        <li><a href="/projects.html">Some of my projects</a></li>
+        <li><a href="/uses.html">Things I use</a></li>
+    </ul>
+</nav>
+
+
+        <main>
+            
+    <h1>Information curation and sharing after Stack Overflow</h1>
+    <div class="post-meta flex-vertical">
+    <div class="author-block flex-shrink flex-horizontal">
+        <img src="/assets/profile.png"
+                class="flex-shrink"
+                style="height: 32px; aspect-ratio: 1/1; border-radius: 32px;"
+                alt="Profile picture"
+        />
+
+        <div class="author-links flex-vertical flex-shrink">
+            <span class="author"><a href="https://lunarwatcher.codeberg.page">Olivia</a></span>
+            <span class="small grey">
+                Published on
+            
+                2026-03-01 at 23:26:05+01:00
+                
+            
+            </span>
+            
+            <span class="small grey">
+                License: <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-by-SA 4.0 (text), MIT (code)</a>
+            </span>
+        </div>
+    </div>
+    
+</div>
+
+<hr class="trans-rainbow" />
+
+    <p>On 2026-02-24, Stack Overflow put the last nail in their coffin by proposing to remove a lot of curation, while trying to solve the engagement loss they've been suffering from for a good few months by killing curation rather than addressing the real systemic issues in their implementation of the Q&A model, particularly that reputation ended up keeping new curators down, and introducing a perception of toxicity that undermined quite a few of the site's activities as a Q&A site. Now it's enshittifying down to another Reddit clone, presumably to try to keep the company itself afloat, but at the expense of what Stack Overflow was meant to be.</p><p>I could write (and have written) tens of thousands of words on the avoidable collapse of SO, but that isn't the main point of this post, so I won't. SO _is_ now collapsing past the point of no return for Q&A quality - unless they turn around before it hits the main site anyway. This means the slow death of 19 years of curated information that was already under pressure from not having enough ways to maintain it, and the SO model actively discouraging such maintenance by other authors. Rather than being collaborative, SO's model forces a certain amount of competitiveness that undermines its ability to sustain itself. </p><p>At the same time, most other sources of information are seeing an influx of AI slop. In February of 2026, two major cheatsheet systems fell to AI slop (tldr-pages and cheat/cheat). These were heavily condensed sources of information that may or may not have been useful. They fell before I had the chance to try them. </p><p>There are no other sites comparable to Stack Overflow. <a href="https://codidact.com/">Codidact exists</a>, and I do have hope they have a chance to gain ground, but as of the time of writing, they have not built the critical mass required. If you're considering an alternative to SO, I strongly recommend trying Codidact. The more people try, the more useful it'll become. </p><p>Stack Overflow's chokehold on its own data dump starting in 2024 was fortunately counteracted by archivists, who provided torrents of all the new data dumps. However, sites with data dumps are becoming an outlier. Many sites simply do not offer any way to export their contents, presumably out of fear it'll be redistributed, but at the expense of data ownership and archival. Granted, there are exceptions. Reddit does not have a data dump, but archivists have created data dumps of at least comments. I haven't looked much at it beyond knowing it exists, but data dumps can be created in most places - but usually with a lot of manual effort. </p><p>Small sites that don't gather anyone interested enough will therefore quietly die, taking the information with them as they do if the death is fast enough. In a world where the behemoth we trusted no longer can be trusted, where do we curate and share information?</p><p>I'm not going to touch long on walled gardens and forums. Forums do work for helping individuals, but rarely provide enough canonical value to help many people with related situations. That's assuming the forum gets indexed at all. The major search indices in 2026 have got significantly worse to where even open sites can simply not be indexed. It's indexable, but gets cut for whatever reason. For all intents and purposes, this is semi-walled off. Chat sites, particularly Discord who made an entire channel type dedicated to forums, are not indexed at all, and cannot be indexed by design. They're entirely walled off. </p><p>This puts us back in the world before 2008 - before Stack Overflow - where the easily accessible sources of information are first-party documentation, obscure blogs, and random compilations of information.</p><p>Unfortunately, unlike in 2008, we live in the present, where we have AI slop machines that get used for documentation. Rather than having good documentation, we get plausibly nice-looking documentation where the content is garbage, because documentation is seen as a chore rather than information sharing.</p><p>Around a year ago, I started compiling this information myself. My poorly maintained TIL section on my blog is just a part of this information. Through bookmarks, markdown-based notes<sup><a href="#fn-1" id="fn-1-r1">[1]</a></sup>, learning several new techniques for finding information<sup><a href="#fn-2" id="fn-2-r1">[2]</a></sup>, and directly reading the code to try to figure out what to do based on that, I've slowly been building up an archive that I can use. This system still has several challenges that I'm trying to work out, particularly in making certain bits of information available to myself on other devices I cannot sync to, and making certain bits of information public. TIL was my attempt at the latter, but that did not work out the way I had hoped. </p><p>Codidact is much more open to more guide-like content than Stack Overflow. I have not yet tested the bounds of this, but articles as an easily accessible form of content has been discussed at some point, allegedly. I plan to redirect some of my notes there in time. However, there's still bits of information I need readily available, and I currently do not have anything to help with this. That's part of why cheat/cheat and tldr-pages were called out earlier; cheatsheet systems offer fairly easily accessible ways to acquire condensed sources of information that would meet this need, at least as long as I'm able to add my own cheatsheet pages. Unfortunately, the solutions available have been abandoned, or enshittified and sloppified. </p><p>I do fear for the future of information sharing at this point. All we have left is small communities and connections made along the way, as well as sources of information that are under heavy pressure to enshittify and sloppify as well.  </p><p>I started writing this post with a plan to segue into distributing information in more readily accessible formats that can be read by arbitrary systems, but I don't have a segue. The state of information work is depressing enough that I'm not sure what I'm planning to do is worth it. In optimal information sharing conditions, we wouldn't need to worry about finding ways to ensure information exists in compiled formats at least _somewhere_ accessible to the general public. Especially when combined with the state of search engines, this really is the darkest timeline. </p><p>Though I do believe Codidact could drag us out of the worst of the immediate problem in terms of high-quality content, anything that involves search engines is inadequate for condensed, aggregate information. Cheatsheets are useful here as long as they can be distributed, but cheatsheets aren't the only option. They are the option that has been developed for so far, with lots of distributed cheatsheets existing, but many of the systems meant to access them are failing in the search area.</p><p>I do not believe this problem can be solved in a decentralised way, at least not on discoverability of high-quality sources of information. I do still think I want to try. At the time of writing, I don't yet know what this means. I may end up giving up and just piggybacking off Vim's help files, I may end up making some shit that allows for a distributed standard of cheat sheets and semi-structured, condensed unofficial documentation. </p><p>What I do know is that laying down and accepting the end of structured information is not an option, so it's time to write more stuff that's unlikely to ever be read.</p><div id="violet-footnotes"><h2>Footnotes</h2><ol><li id="fn-1"><p>I use Obsidian. It's decent, but the developer experience for it is utter dogshit. If you plan to make a plugin, it would probably be easier to make your own editor first than trying to get it into obsidian's plugin repo.</p><span class="footnote-backref">Usages: <a href="#fn-1-r1">[1]</a></span></li><li id="fn-2"><p>GitHub's search, much like obsidian's developer experience, is utter dogshit, but you can find plenty of real-world usage examples of things this way. Very useful if you're stuck with something that simply doesn't have documentation, or where the documentation is fucking worthless.</p><span class="footnote-backref">Usages: <a href="#fn-2-r1">[1]</a></span></li></ol></div>
+    
+
+
+        </main>
+        <footer class="flex-vertical airgapped">
+    <div class="flex-horizontal" style="align-self: flex-start; width: 100%;">
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="/index.html#contact">Contact me</a></li>
+                <li><a href="/index.html#link-to-me">Link to me</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2><img alt="rss logo" style="width: 1em" src="/assets/svg/rss.svg" aria-hidden="true" /> RSS feeds</h2>
+            <ul>
+    <li><a href="https://lunarwatcher.codeberg.page/blog/feed.atom">Blog posts</a> (<a href="/blog/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/til/feed.atom">TILs</a> (<a href="/til/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/notes/feed.atom">Notes and random thoughts</a> (<a href="/notes/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/combined.atom">Combined</a> (all of the above)</li>
+</ul>
+
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

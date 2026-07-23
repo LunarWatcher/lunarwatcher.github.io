@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html
+    lang="en-GB"
+>
+    <head>
+        <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10" />
+<meta name="generator" content="LunarWatcher/violet" />
+
+
+    <meta http-equiv="Content-language" content = "en-GB" />
+
+
+    <meta name="description" content="Don&#39;t you just love it when things just work? A semi-unstructured thing™️ on having lots of fun with stuff I&#39;ve never done before" />
+
+
+<link rel="stylesheet" href="/assets/css/variables.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css" />
+<link rel="stylesheet" href="/assets/css/page.css" />
+
+<title>It just works</title>
+
+<script src="/assets/vendor/highlightjs.js"></script>
+<script src="/assets/js/page.js" defer></script>
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - blog posts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/blog/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - TILs"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/til/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - notes and random thoughts"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/notes/feed.atom" />
+
+<link rel="alternate"
+   title="Olivia's silly blog :3 - combined feed (blog posts, TILs, and notes and random thoughts)"
+   type="application/atom+xml"
+   href="https://lunarwatcher.codeberg.page/combined.atom" />
+
+    </head>
+    <body>
+        <header class="flex-vertical airgapped">
+    <div class="flex-horizontal">
+        <span id="site-title" class="flex-grow"><a href="/">Olivia's silly blog</a></span>
+
+        <button
+            class="flex-shrink"
+            onclick="toggleNav()" style="padding: 4px; flex-basis: auto; margin: 4px;">Menu</button>
+    </div>
+
+</header>
+
+<nav id="navigation" class="flex-vertical airgapped">
+    <h2>Navigation</h2>
+    <ul class="pad">
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/til/index.html">TIL</a></li>
+        <li><a href="/notes/index.html">Notes and random thoughts</a></li>
+        <li><a href="/projects.html">Some of my projects</a></li>
+        <li><a href="/uses.html">Things I use</a></li>
+    </ul>
+</nav>
+
+
+        <main>
+            
+    <h1>It just works</h1>
+    <div class="post-meta flex-vertical">
+    <div class="author-block flex-shrink flex-horizontal">
+        <img src="/assets/profile.png"
+                class="flex-shrink"
+                style="height: 32px; aspect-ratio: 1/1; border-radius: 32px;"
+                alt="Profile picture"
+        />
+
+        <div class="author-links flex-vertical flex-shrink">
+            <span class="author"><a href="https://lunarwatcher.codeberg.page">Olivia</a></span>
+            <span class="small grey">
+                Published on
+            
+                2026-07-16 at 00:56:46+02:00
+                
+            
+            </span>
+            
+            <span class="small grey">
+                License: <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-by-SA 4.0 (text), MIT (code)</a>
+            </span>
+        </div>
+    </div>
+    
+        <div class="tag-container flex-shrink flex-horizontal">
+            
+                <span class="tag flex-shrink">personal</span>
+            
+        </div>
+    
+</div>
+
+<hr class="trans-rainbow" />
+
+    <p>Over the last few months, I've picked up a couple projects that I've either started on and procrastinated for ages, or never started because I figured it would be too much effort for too little benefit. There's quite a few projects in the latter category.</p><p>I plan to write an extended anti-AI thing (manifesto?) at some point, but I've been actively shedding dependencies that use AI slop. This initially killed this site, because <a href="https://github.com/gohugoio/hugo/blob/842d8f105256c5656e7895ee61fa5b2dfe90a9e3/AGENTS.md">Hugo (the static site generator) turned to AI slop</a>, because of course they did.</p><p>After a while of leaving this website as just a text-only repo after trying and failing to migrate to another SSG that also turned out to be AI slop, I decided I would try to write my own. The hard part here was writing the markdown parser, largely because I don't like writing parsers, and I'm not particularly good at it either. In a few weeks of effective work (3 months of calendar time, because I was also doing several other things at the same time), I had a basic site generator going<sup><a href="#fn-1" id="fn-1-r1">[1]</a></sup>.</p><p>I did admittedly avoid writing the templating library, since templating libraries are basically small programming languages, and therefore require a lot more thought and good code than a bare minimum markdown parser, but both the markdown parser and the scaffolding that makes the entire thing actually generate sites was up surprisingly quickly.</p><p>In parallel with this, I started working on a socket library<sup><a href="#fn-2" id="fn-2-r1">[2]</a></sup>, so I could replace asio in my own webserver library<sup><a href="#fn-3" id="fn-3-r1">[3]</a></sup>. I have the advantage of primarily working with low-level C++ code, which gives me raw access to operating system APIs whenever I need them, so going lower-level to just rawdog networking doesn't require anything special. I just read the manual, occasionally read some more structured guides or similar instead<sup><a href="#fn-4" id="fn-4-r1">[4]</a></sup>. This led me down a tangent where I tried <code>epoll</code>, and to my surprise, it just works. Adding SSL support on top of that was trivial, and made my API much cleaner than the clusterfuck asio requires to support SSL.</p><p>Again, it just works. Same with the webserver, though that was initially not as low-level. The webserver library was actually spawned because the library I used previously (crow) struggles so much with completely breaking bugs in basic features, and I just got tired of it, and wrote my own. It was initially built on asio, because I wanted to avoid low-level socket stuff, but after it caused memory leaks and other Fun Stuff:tm:, I got rid of it. I have two projects (I believe) that use magpie and runs on my servers. They're not particularly big and the traffic is me and some automation I have set up, but they're incredibly stable servers, and require next to no resources to run. Probably won't scale massively well on account of limited async, but it doesn't really need to - at least not for v1. </p><p>Particularly due to hyperscalers and similar, a lot of standard software has become wildly complicated. To be clear, this is largely out of necessity, since actually maximising performance and stability requires a fair bit more infrastructure. I'm not sure how many lines of code raven is, but it's probably around 2000 _at most_. Something like nginx is around 250000, and that's "just" a reverse proxy.</p><p>"It just works" is really just a symptom of how making a working system for at least a few applications is a lot easier than it is - which is the main point with this mostly unplanned blog post. Making something that works and is solid enough to be built upon is pretty easy. It's also a lot of fun learning the basics that ultimately power like every single system.</p><p>In parallel with all of the above, I've also been working on and off on a UI library for a couple years (mostly off). One of the explicit goals I had was that I didn't want to do layouts myself; I want to give it approximate sizes and just let the library deal with the resizing. So I implemented the flexbox algorithm based on the actual spec used in HTML. The code is awful, and I've had to work through loads of bugs to add stuff like scrolling, but it works. I did admittedly opt out of the graphics bit - I have tried to write stuff with raw OpenGL before, and the jump from rendering triangles to rendering random text with TTF fonts is _significant_. The library is built on allegro5 to avoid having to implement all those bits too. Plus, I get to learn a fair bit about something vaguely shaped like the layout systems that power the whole internet.</p><p>My main takeaway from the past few months of doing this is that there's a lot of projects I haven't really considered that are a lot more doable in practice than in theory when not worrying too much about the large-scale applications for stuff. If I ever come to the point where I need to support more scale or whatever, I do now have the theoretical foundation to build on, but in all likelihood, it will never come up. And I'm fine with that. These are the projects I build for fun anyway, largely with the intent of being useful _to me_ - which I very much have accomplished.</p><div id="violet-footnotes"><h2>Footnotes</h2><ol><li id="fn-1"><p><a href="https://codeberg.org/LunarWatcher/violet">https://codeberg.org/LunarWatcher/violet</a></p><span class="footnote-backref">Usages: <a href="#fn-1-r1">[1]</a></span></li><li id="fn-2"><p><a href="https://codeberg.org/LunarWatcher/raven">https://codeberg.org/LunarWatcher/raven</a></p><span class="footnote-backref">Usages: <a href="#fn-2-r1">[1]</a></span></li><li id="fn-3"><p><a href="https://codeberg.org/LunarWatcher/magpie">https://codeberg.org/LunarWatcher/magpie</a></p><span class="footnote-backref">Usages: <a href="#fn-3-r1">[1]</a></span></li><li id="fn-4"><p>I wrote this footnote prepared to link to a series of blog posts I used. Unfortunately, the domain is no longer owned by the same person (currently unowned and on auction), and archive.org does not have it either. <a href="https://web.archive.org/web/20241218134045/http://cjdevman.com/">This list</a> showing its mere existence is the closest I'll get. RIP though, that series was really good and to the point.</p><span class="footnote-backref">Usages: <a href="#fn-4-r1">[1]</a></span></li></ol></div>
+    
+
+
+        </main>
+        <footer class="flex-vertical airgapped">
+    <div class="flex-horizontal" style="align-self: flex-start; width: 100%;">
+        <div>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="/index.html#contact">Contact me</a></li>
+                <li><a href="/index.html#link-to-me">Link to me</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2><img alt="rss logo" style="width: 1em" src="/assets/svg/rss.svg" aria-hidden="true" /> RSS feeds</h2>
+            <ul>
+    <li><a href="https://lunarwatcher.codeberg.page/blog/feed.atom">Blog posts</a> (<a href="/blog/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/til/feed.atom">TILs</a> (<a href="/til/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/notes/feed.atom">Notes and random thoughts</a> (<a href="/notes/">web source</a>)</li>
+    <li><a href="https://lunarwatcher.codeberg.page/combined.atom">Combined</a> (all of the above)</li>
+</ul>
+
+        </div>
+    </div>
+    <hr>
+    <div class="flex-horizontal">
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <div class="flex-vertical flex-grow">
+            <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
+            <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
+            Code licensed under the <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">MIT license</a>.</p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>
