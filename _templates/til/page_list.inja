@@ -5,6 +5,7 @@
     {# values: "folder name": "Display name in header" #}
     {% set folders = {
         "cmake": "CMake",
+        "codeberg": "Codeberg",
         "cpp": "C++",
         "emacs": "Emacs",
         "firefox": "Firefox",
