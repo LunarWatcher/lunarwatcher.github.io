@@ -131,7 +131,7 @@ table {
 
 /* TODO: These really should be generalized. (TODO (tangent): personal design system? I'm getting mildly annoyed of*/
 /* redoing the same CSS whenever I make websites) */
-#webrings {
+div#webrings {
     padding: 16px;
 }
 

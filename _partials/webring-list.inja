@@ -1,4 +1,3 @@
-<h2>Webrings and outlinks</h2>
 <div id="webrings" class="flex-horizontal">
     {# TODO: style elements #}
     <div class="webring">
