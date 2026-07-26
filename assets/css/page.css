@@ -126,6 +126,13 @@ td {
 
 table {
     border-collapse: collapse;
+    width: 100%;
+}
+
+/* TODO: These really should be generalized. (TODO (tangent): personal design system? I'm getting mildly annoyed of*/
+/* redoing the same CSS whenever I make websites) */
+#webrings {
+    padding: 16px;
 }
 
 .post-meta {
@@ -346,6 +353,7 @@ details > div {
     padding: 16px;
     border: 2px solid var(--pink-800);
     border-radius: 4px;
+    width: 100%;
 }
 
 #profile-pic:hover {

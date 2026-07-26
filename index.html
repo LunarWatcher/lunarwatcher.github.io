@@ -16,26 +16,7 @@
         </p>
         <p>I work on all kinds of different projects, including games, scripting/automation/QOL, webservers, websites,
           and whatever else I find interesting. Here's a <a href="{{ site.prefix }}/projects.html">list of some of my projects</a></p>
-    <details>
-        <summary id="link-to-me">Link to me</summary>
-        <div>
-            <p>If you want to link to this site, you can optionally do it with an 88x31:</p>
-            <a href="{{ site.prefix }}/assets/88x31.png">
-                <img
-                    src="{{ site.prefix }}/assets/88x31.png"
-                    alt="88x31 badge for this site"
-                />
-            </a>
-            <pre><code class="language-html">&lt;a href="https://lunarwatcher.codeberg.page"&gt;
-    &lt;img
-        src="[your URL to]/olivias-silly-blog-88x31.png"
-        alt="Olivia's silly blog :3"
-    /&gt;
-&lt;/a&gt;</code></pre>
-            <p>Please avoid hotlinking the image; this site is primarily hosted on Codeberg, which has limited resources.</p>
-            <p>Want me to link back? Send me an email/discord DM/open an issue on codeberg (links below) :3</p>
-        </div>
-    </details>
+        {% include "partials/link-to-me.inja" %}
     </div>
     <div class="flex-shrink flex-vertical">
       <img src="{{ site.prefix }}/assets/profile.png"
@@ -102,16 +83,6 @@
     </div>
 </div>
 
-
-<h2>Webrings</h2>
-<div id="webrings" class="flex-horizontal">
-    {# TODO: style elements #}
-    <div class="webring">
-        <a href="https://baccyflap.com/noai/?prv&s=zoe" target="_top">« prev</a> |
-        <a href="https://baccyflap.com/noai" target="_blank">no ai webring</a>
-        <a style="font-size:60%" href="https://baccyflap.com/noai/?rnd" target="_top">(random)</a> |
-        <a href="https://baccyflap.com/noai/?nxt&s=zoe" target="_top">next »</a>
-    </div>
-</div>
+{% include "partials/webring-list.inja" %}
 
 <script src="{{ site.prefix }}/assets/js/index-fun.js"></script>

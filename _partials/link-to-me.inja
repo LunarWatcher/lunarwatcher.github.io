@@ -1,0 +1,20 @@
+<details>
+    <summary id="link-to-me">Link to me</summary>
+    <div>
+        <p>If you want to link to this site, you can optionally do it with an 88x31:</p>
+        <a href="{{ site.prefix }}/assets/88x31.png">
+            <img
+                src="{{ site.prefix }}/assets/88x31.png"
+                alt="88x31 badge for this site"
+            />
+        </a>
+        <pre><code class="language-html">&lt;a href="https://lunarwatcher.codeberg.page"&gt;
+&lt;img
+    src="[your URL to]/olivias-silly-blog-88x31.png"
+    alt="Olivia's silly blog :3"
+/&gt;
+&lt;/a&gt;</code></pre>
+        <p>Please avoid hotlinking the image; this site is primarily hosted on Codeberg, which has limited resources.</p>
+        <p>Want me to link back? Send me an email/discord DM/open an issue on codeberg (links below) :3</p>
+    </div>
+</details>

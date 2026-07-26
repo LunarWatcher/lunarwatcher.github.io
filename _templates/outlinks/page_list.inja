@@ -1,0 +1,63 @@
+{# This page is (mostly) indented with two spaces to reduce linebreaks in the folders variable (at max width = 120) I
+have autowrapping by default in code files, but it's mildly annoying in data files like this functionally is. #}
+{% extends "../_default/base.inja" %}
+{% block content %}
+  <h1>{{ page.title }}</h1>
+  {% include "content" %}
+  {# values: "folder name": "Display name in header" #}
+  {% set categories = {
+    "Neighbourhood": [],
+    "Blogs": [
+      { "name": "Dhole Moments", "url": "https://soatok.blog", "comment": "Security, cryptography", "88x31": null }
+    ],
+    "Cool sites": [
+      { "name": "Freeplay", "url": "https://freeplay.floof.company/", "comment": "Foxes :3",
+        "88x31": "https://freeplay.codeberg.page/assets/buttons/free.gif" },
+      { "name": "Volpeon", "url": "https://volpeon.ink/", "comment": "Fantastic emojis", "88x31": null }
+    ]
+  } %}
+
+  {% include "partials/link-to-me.inja" %}
+
+  <hr class="rainbow" />
+
+  {% for category, pages in categories %}
+      <h2>{{ category }}</h2>
+      {% if length(pages) > 0 %}
+          <details>
+              <summary>{{ category }}</summary>
+              <div>
+                  <table>
+                      <thead>
+                          <tr>
+                              <td>88x31</td>
+                              <td>Link</td>
+                              <td>Comments</td>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          {% for page in pages %}
+                              <tr>
+                                  <td style="width: 100px;">
+                                      {% if page.88x31 != null %}
+                                          <a href="{{ page.url}}">
+                                              <img src="{{ page.88x31 }}"
+                                                   loading="lazy"
+                                                   alt="88x31 for {{ htmlEscape(page.name) }}" />
+                                          </a>
+                                      {% endif %}
+                                  </td>
+                                  <td><a href="{{ page.url }}">{{ page.name }}</a></td>
+                                  <td>{{ page.comment }}</td>
+                              </tr>
+                          {% endfor %}
+                      </tbody>
+                  </table>
+              </div>
+          </details>
+      {% else %}
+          <p>No sites in this section yet :(</p>
+      {% endif %}
+  {% endfor %}
+
+{% endblock %}
