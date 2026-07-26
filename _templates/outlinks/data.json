@@ -1,0 +1,11 @@
+{
+    "Neighbourhood": [],
+    "Blogs": [
+        { "name": "Dhole Moments", "url": "https://soatok.blog", "comment": "Security, cryptography", "88x31": null }
+    ],
+    "Cool sites": [
+        { "name": "Freeplay", "url": "https://freeplay.floof.company/", "comment": "Foxes :3",
+          "88x31": "https://freeplay.codeberg.page/assets/buttons/free.gif" },
+        { "name": "Volpeon", "url": "https://volpeon.ink/", "comment": "Fantastic emojis", "88x31": null }
+    ]
+}
