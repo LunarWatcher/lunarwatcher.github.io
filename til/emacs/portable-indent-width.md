@@ -47,14 +47,11 @@ The above function is also really nice for making a command that emulates `set s
 (evil-define-command livi-evil-shiftwidth(width)
     (interactive "<a>")
     (let (
-          (target-indent (string-to-number width))
+          (target-indent (cl-parse-integer width))
     )
-      (if target-indent
-          (livi-indent-width target-indent)
-        (error "You must provide a number")
-        )
+      (livi-indent-width target-indent)
       )
-  )
+    )
 
 (evil-ex-define-cmd "shiftwidth" #'livi-evil-shiftwidth)
 ```
