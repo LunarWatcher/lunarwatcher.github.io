@@ -18,6 +18,7 @@
         "nginx": "nginx",
         "powershell": "Powershell (a pathetic excuse of a shell)",
         "ssh": "SSH",
+        "webdev": "General web development",
         "wsl": "WSL"
     } %}
 
