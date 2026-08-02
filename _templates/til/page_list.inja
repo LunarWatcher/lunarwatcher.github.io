@@ -25,7 +25,7 @@
     <h2>Table of Contents</h2>
 
     <ul>
-        {% for scope, display in folders %} 
+        {% for scope, display in folders %}
             <li><a href="#{{scope}}">{{ display }}</a></li>
         {% endfor %}
     </ul>
