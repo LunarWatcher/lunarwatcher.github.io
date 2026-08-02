@@ -95,11 +95,6 @@ header a, footer a {
     color: var(--violet-theme-default-lavender);
 }
 
-header > #site-title {
-    flex: 1 0 auto;
-    padding: 16px;
-}
-
 .flex-vertical {
     display: flex;
     flex-direction: column;
@@ -117,12 +112,17 @@ header > #site-title {
     align-items: center;
 }
 
-.flex-horizontal:not(.flex-shrink) > * {
+.flex-horizontal > * {
     flex: 1 0 300px;
 }
 
 .flex-horizontal.flex-shrink > * {
     flex: 0 1 auto;
+}
+
+header > #site-title {
+    flex: 1 0 auto;
+    padding: 16px;
 }
 
 td {
