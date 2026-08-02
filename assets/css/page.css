@@ -51,6 +51,7 @@ button {
 button:hover {
     background-color: var(--pink-600);
     color: white;
+    cursor: pointer;
 }
 
 main {
@@ -116,8 +117,12 @@ header > #site-title {
     align-items: center;
 }
 
-.flex-horizontal > * {
+.flex-horizontal:not(.flex-shrink) > * {
     flex: 1 0 300px;
+}
+
+.flex-horizontal.flex-shrink > * {
+    flex: 0 1 auto;
 }
 
 td {
@@ -133,6 +138,13 @@ table {
 /* redoing the same CSS whenever I make websites) */
 div#webrings {
     padding: 16px;
+}
+
+.webring {
+    padding: 8px;
+    /* background-color: var(--pink-100); */
+    border: 2px solid var(--pink-800);
+    border-radius: 4px;
 }
 
 .post-meta {
@@ -475,3 +487,6 @@ blockquote p {
     content: url("{{ site.prefix }}/assets/svg/callout-caution.svg");
 }
 
+input:invalid {
+    border-color: red;
+}

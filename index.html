@@ -3,6 +3,9 @@
     "title": "Olivia's silly blog :3"
 }
 ---
+{# note to self: IndieAuth/IndieLogin/RelMeAuth requires an email with `rel="me"` and a link back to Codeberg with rel="me"
+on the front page.  If either of these disappear, the IndieAuth login breaks.
+(I'm not actually sure what the rel="me" thing is called anymore, but it's necessary for at least one webring) #}
 <div class="flex-horizontal">
     <div id="intro">
         <h2>About me</h2>
@@ -43,7 +46,7 @@
             <tr><td><strong>Main OS</strong></td><td>I use arch btw :3 (but Mint is really good too)</td></tr>
             <tr><td><strong>Games I really like</strong></td><td>Factorio, WoW, Songs of Syx</td></tr>
             <tr><td><strong>Favourite animals</strong></td><td>Foxes, wolves</td></tr>
-            <tr><td><strong>Current time</strong></td><td><time id="current-time"></time></td></tr>
+            <tr><td><strong>Current time</strong></td><td><time id="current-time">Aligning satellites...</time></td></tr>
             <tr><td><strong>Silly</strong></td><td>:3</td></tr>
         </tbody>
       </table>
@@ -59,8 +62,8 @@
         <p>I don't bite :3</p>
         <ul>
             <li>Discord: @oliviawolfie</li>
-            <li>Discord server: <a href="https://discord.gg/EZyt8FAYHe">[invite]</a></li>
-            <li><a href="mailto:oliviawolfie@pm.me">Email</a></li>
+            <li>Discord server: <a href="https://discord.gg/{{ site.data.links.discord }}">[invite]</a></li>
+            <li><a href="mailto:{{ site.data.author.email }}" rel="me">Email</a></li>
             <li><p>Issue tracker for this website: <a href="https://codeberg.org/LunarWatcher/pages/issues">codeberg:LunarWatcher/pages</a></p>
               <p>Also serves as a place for comments and feedback on this website, because interactive stuff is hard</p>
             </li>
@@ -75,9 +78,9 @@
               {% include "partials/rss.inja" %}
               Raw URLs:
               <pre><code class="nohighlight">{{ site.data.domain }}/blog/feed.atom
-{{ site.data.domain}}/til/feed.atom
-{{ site.data.domain}}/notes/feed.atom
-{{ site.data.domain}}/combined.atom</code></pre>
+{{ site.data.domain }}/til/feed.atom
+{{ site.data.domain }}/notes/feed.atom
+{{ site.data.domain }}/combined.atom</code></pre>
             </li>
         </ul>
     </div>
