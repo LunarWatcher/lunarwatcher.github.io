@@ -10,8 +10,8 @@ See [88x31.png](assets/88x31.png)
 
 ## Pages
 
-* https://lunarwatcher.github.io
-* https://lunarwatcher.codeberg.page
+* https://lunarwatcher.codeberg.page (canonical)
+* https://lunarwatcher.github.io (alternate, largely kept for backwards compat)
 
 ## License
 
