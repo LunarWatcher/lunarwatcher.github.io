@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="{{ site.prefix }}/assets/css/syntax.css" />
 <link rel="stylesheet" href="{{ site.prefix }}/assets/css/page.css" />
 
-<link rel="canonical" href="https://lunarwatcher.codeberg.page/{{ page.url }}" />
+<link rel="canonical" href="{{ site.data.domain }}/{{ page.url }}" />
 
 <title>{{ page.title }}</title>
 
