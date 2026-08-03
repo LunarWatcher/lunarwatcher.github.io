@@ -10,16 +10,21 @@ on the front page.  If either of these disappear, the IndieAuth login breaks.
     <div class="flex-horizontal">
         <div id="intro">
             <h2>About me</h2>
-            <p>Hiya :3 I'm <span class="p-name">Olivia</span> (though I go by Zoe a few places online).</p>
+            <span id="foxwolfgirl-tangent" class="bottom" popover>I occasionally abbreviate to foxgirl or wolfgirl, but I'm canonically both. I also meow :3</span>
+            <p>Hiya :3 I'm <span class="p-name">Olivia</span> (she/her), though I go by Zoe a few places online.
+              {# TODO: awkward? #}
+              {# TODO: also, this just _feels_ bad #}
+              I'm a <button class="text" popovertarget="foxwolfgirl-tangent">foxwolfgirl</button> that really likes software, open-source, and open information sharing.</p>
             <p>This is my silly little blog where I occasionally write about stuff that interests me (mostly tech-related).
-                I plan to expand this at some point&trade;, but I don't have the ideas for what that means yet.
+              I plan to expand this at some point&trade;, but I don't have the ideas for what that means yet. There's
+              also at least one easter egg.
             </p>
             <p>I mostly write C++, some Lua, a lot of shell and other config, and occasionally HTML/CSS/JS - as evidenced by
             this silly little website. I used to write a lot of vimscript before the new vim maintainers decided to turn
             Vim into slopware, so now I'm using Emacs (with evil mode to make the experience tolerable).
             </p>
             <p>I work on all kinds of different projects, including games, scripting/automation/QOL, webservers, websites,
-            and whatever else I find interesting. Here's a <a href="{{ site.prefix }}/projects.html">list of some of my projects</a></p>
+            and whatever else I find interesting. Here's a <a href="{{ site.prefix }}/projects.html">list of some of my projects</a>.</p>
             {% include "partials/link-to-me.inja" %}
         </div>
         <div class="flex-shrink flex-vertical">

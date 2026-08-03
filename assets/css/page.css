@@ -490,3 +490,31 @@ blockquote p {
 input:invalid {
     border-color: red;
 }
+
+[popover] {
+    border-radius: 4px;
+}
+[popover].bottom {
+    position-area: bottom;
+}
+
+button {
+    /* I don't understand why this is necessary. My FF settings are set to use Ubuntu and SauceCodePro in both default*/
+    /* and latin, but the render uses Noto Sans? It's default in some languages, and it's my current system default, but*/
+    /* I don't understand why the default settings are ignored here. */
+    font-family: inherit;
+}
+
+button.text {
+    background: none;
+    border: none;
+    padding: 0px;
+    text-decoration: underline dotted;
+    user-select: text;
+    font-size: 1rem;
+}
+
+button.text:hover {
+    color: black;
+    font-weight: bold;
+}
