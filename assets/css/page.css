@@ -383,6 +383,7 @@ details > div {
 
 [popover].inline {
     overlay: none;
+    position: relative;
     inset: unset;
 }
 
@@ -496,6 +497,9 @@ input:invalid {
 }
 [popover].bottom {
     position-area: bottom;
+}
+[popover].top {
+    position-area: top;
 }
 
 button {

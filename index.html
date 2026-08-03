@@ -32,10 +32,10 @@ on the front page.  If either of these disappear, the IndieAuth login breaks.
             style="max-height: 300px; aspect-ratio: 1/1; align-self: center"
             alt="Profile picture"
             id="profile-pic"
-            class="u-photo"
+             class="u-photo"
             />
         <div id="profile-pic-popover"
-            class="inline"
+            class="inline" {# Looks like this can't be top because the <img> isn't a controller? #}
             interestfor="profile-pic"
             popover
         >
