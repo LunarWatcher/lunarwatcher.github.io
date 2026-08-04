@@ -2,7 +2,7 @@
 
 Contains my blog.
 
-This README is not shown on the website itself. For the actual website index, see index.md. This website uses [Violet](https://codeberg.org/LunarWatcher/violet) for the site generation.
+This README is not shown on the website itself. For the actual website index, see index.html (though it is better viewed on the proper website). This website uses [Violet](https://codeberg.org/LunarWatcher/violet) for the site generation.
 
 ## 88x31 badge
 
