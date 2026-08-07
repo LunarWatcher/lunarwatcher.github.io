@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Olivia's silly blog - combined feed (blog posts, TILs, and notes and random thoughts)</title>
+    <subtitle>Silly girl doing silly things</subtitle>
+    <link href="https://lunarwatcher.codeberg.page/combined.atom" rel="self" />
+    <link href="https://lunarwatcher.codeberg.page/" />
+    <id>https://lunarwatcher.codeberg.page/combined.atom</id>
+    <updated>2026-08-07T19:20:00+00:00</updated>
+    <rights type="html">
+        Content licensed under CC-By-SA 4.0. Code licensed under the MIT license.
+        See &lt;a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE"&gt;the LICENSE file&lt;/a&gt;
+        in this website's source repo.
+    </rights>
+    <generator uri="https://codeberg.org/LunarWatcher/violet">Violet</generator>
+
+    
+        
+            <entry>
+                <title><![CDATA[It just works]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/blog/2026-07-16-it-just-works.html" />
+                <id>https://lunarwatcher.codeberg.page/blog/2026-07-16-it-just-works.html</id>
+
+                
+                    <published>2026-07-15T22:56:46+00:00</published>
+                
+                
+                    <updated>2026-07-15T22:56:46+00:00</updated>
+                
+                
+                    <summary><![CDATA[Don't you just love it when things just work? A semi-unstructured thing™️ on having lots of fun with stuff I've never done before]]></summary>
+                
+                <content type="html">
+                    &lt;p&gt;Over the last few months, I&#39;ve picked up a couple projects that I&#39;ve either started on and procrastinated for ages, or never started because I figured it would be too much effort for too little benefit. There&#39;s quite a few projects in the latter category.&lt;/p&gt;&lt;p&gt;I plan to write an extended anti-AI thing (manifesto?) at some point, but I&#39;ve been actively shedding dependencies that use AI slop. This initially killed this site, because &lt;a href=&#34;https://github.com/gohugoio/hugo/blob/842d8f105256c5656e7895ee61fa5b2dfe90a9e3/AGENTS.md&#34;&gt;Hugo (the static site generator) turned to AI slop&lt;/a&gt;, because of course they did.&lt;/p&gt;&lt;p&gt;After a while of leaving this website as just a text-only repo after trying and failing to migrate to another SSG that also turned out to be AI slop, I decided I would try to write my own. The hard part here was writing the markdown parser, largely because I don&#39;t like writing parsers, and I&#39;m not particularly good at it either. In a few weeks of effective work (3 months of calendar time, because I was also doing several other things at the same time), I had a basic site generator going&lt;sup&gt;&lt;a href=&#34;&#35;fn-1&#34; id=&#34;fn-1-r1&#34;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;&lt;p&gt;I did admittedly avoid writing the templating library, since templating libraries are basically small programming languages, and therefore require a lot more thought and good code than a bare minimum markdown parser, but both the markdown parser and the scaffolding that makes the entire thing actually generate sites was up surprisingly quickly.&lt;/p&gt;&lt;p&gt;In parallel with this, I started working on a socket library&lt;sup&gt;&lt;a href=&#34;&#35;fn-2&#34; id=&#34;fn-2-r1&#34;&gt;[2]&lt;/a&gt;&lt;/sup&gt;, so I could replace asio in my own webserver library&lt;sup&gt;&lt;a href=&#34;&#35;fn-3&#34; id=&#34;fn-3-r1&#34;&gt;[3]&lt;/a&gt;&lt;/sup&gt;. I have the advantage of primarily working with low-level C++ code, which gives me raw access to operating system APIs whenever I need them, so going lower-level to just rawdog networking doesn&#39;t require anything special. I just read the manual, occasionally read some more structured guides or similar instead&lt;sup&gt;&lt;a href=&#34;&#35;fn-4&#34; id=&#34;fn-4-r1&#34;&gt;[4]&lt;/a&gt;&lt;/sup&gt;. This led me down a tangent where I tried &lt;code&gt;epoll&lt;/code&gt;, and to my surprise, it just works. Adding SSL support on top of that was trivial, and made my API much cleaner than the clusterfuck asio requires to support SSL.&lt;/p&gt;&lt;p&gt;Again, it just works. Same with the webserver, though that was initially not as low-level. The webserver library was actually spawned because the library I used previously (crow) struggles so much with completely breaking bugs in basic features, and I just got tired of it, and wrote my own. It was initially built on asio, because I wanted to avoid low-level socket stuff, but after it caused memory leaks and other Fun Stuff:tm:, I got rid of it. I have two projects (I believe) that use magpie and runs on my servers. They&#39;re not particularly big and the traffic is me and some automation I have set up, but they&#39;re incredibly stable servers, and require next to no resources to run. Probably won&#39;t scale massively well on account of limited async, but it doesn&#39;t really need to - at least not for v1. &lt;/p&gt;&lt;p&gt;Particularly due to hyperscalers and similar, a lot of standard software has become wildly complicated. To be clear, this is largely out of necessity, since actually maximising performance and stability requires a fair bit more infrastructure. I&#39;m not sure how many lines of code raven is, but it&#39;s probably around 2000 _at most_. Something like nginx is around 250000, and that&#39;s &#34;just&#34; a reverse proxy.&lt;/p&gt;&lt;p&gt;&#34;It just works&#34; is really just a symptom of how making a working system for at least a few applications is a lot easier than it is - which is the main point with this mostly unplanned blog post. Making something that works and is solid enough to be built upon is pretty easy. It&#39;s also a lot of fun learning the basics that ultimately power like every single system.&lt;/p&gt;&lt;p&gt;In parallel with all of the above, I&#39;ve also been working on and off on a UI library for a couple years (mostly off). One of the explicit goals I had was that I didn&#39;t want to do layouts myself; I want to give it approximate sizes and just let the library deal with the resizing. So I implemented the flexbox algorithm based on the actual spec used in HTML. The code is awful, and I&#39;ve had to work through loads of bugs to add stuff like scrolling, but it works. I did admittedly opt out of the graphics bit - I have tried to write stuff with raw OpenGL before, and the jump from rendering triangles to rendering random text with TTF fonts is _significant_. The library is built on allegro5 to avoid having to implement all those bits too. Plus, I get to learn a fair bit about something vaguely shaped like the layout systems that power the whole internet.&lt;/p&gt;&lt;p&gt;My main takeaway from the past few months of doing this is that there&#39;s a lot of projects I haven&#39;t really considered that are a lot more doable in practice than in theory when not worrying too much about the large-scale applications for stuff. If I ever come to the point where I need to support more scale or whatever, I do now have the theoretical foundation to build on, but in all likelihood, it will never come up. And I&#39;m fine with that. These are the projects I build for fun anyway, largely with the intent of being useful _to me_ - which I very much have accomplished.&lt;/p&gt;&lt;div id=&#34;violet-footnotes&#34;&gt;&lt;h2&gt;Footnotes&lt;/h2&gt;&lt;ol&gt;&lt;li id=&#34;fn-1&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://codeberg.org/LunarWatcher/violet&#34;&gt;https://codeberg.org/LunarWatcher/violet&lt;/a&gt;&lt;/p&gt;&lt;span class=&#34;footnote-backref&#34;&gt;Usages: &lt;a href=&#34;&#35;fn-1-r1&#34;&gt;[1]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li id=&#34;fn-2&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://codeberg.org/LunarWatcher/raven&#34;&gt;https://codeberg.org/LunarWatcher/raven&lt;/a&gt;&lt;/p&gt;&lt;span class=&#34;footnote-backref&#34;&gt;Usages: &lt;a href=&#34;&#35;fn-2-r1&#34;&gt;[1]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li id=&#34;fn-3&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://codeberg.org/LunarWatcher/magpie&#34;&gt;https://codeberg.org/LunarWatcher/magpie&lt;/a&gt;&lt;/p&gt;&lt;span class=&#34;footnote-backref&#34;&gt;Usages: &lt;a href=&#34;&#35;fn-3-r1&#34;&gt;[1]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li id=&#34;fn-4&#34;&gt;&lt;p&gt;I wrote this footnote prepared to link to a series of blog posts I used. Unfortunately, the domain is no longer owned by the same person (currently unowned and on auction), and archive.org does not have it either. &lt;a href=&#34;https://web.archive.org/web/20241218134045/http://cjdevman.com/&#34;&gt;This list&lt;/a&gt; showing its mere existence is the closest I&#39;ll get. RIP though, that series was really good and to the point.&lt;/p&gt;&lt;span class=&#34;footnote-backref&#34;&gt;Usages: &lt;a href=&#34;&#35;fn-4-r1&#34;&gt;[1]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Thoughts on themes]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/blog/2026-03-14-thoughts-on-themes.html" />
+                <id>https://lunarwatcher.codeberg.page/blog/2026-03-14-thoughts-on-themes.html</id>
+
+                
+                    <published>2026-03-14T17:53:19+00:00</published>
+                
+                
+                    <updated>2026-03-14T17:53:19+00:00</updated>
+                
+                
+                    <summary><![CDATA[Smol unstructured post on themes, theme bundles, and the pain of finding good light mode themes]]></summary>
+                
+                <content type="html">
+                    &lt;p&gt;Last week, I had the fun need to ✨ switch from vim to emacs ✨, because &lt;a href=&#34;https://hachyderm.io/@AndrewRadev/116175986749599825&#34;&gt;vim has fallen to AI slop&lt;/a&gt; - a sentence I did not expect to need to say ever, but here we are. This forced me back out to look for themes, which has been a bit of a challenge. I may end up writing something about this in the future, at the very least in the form of TILs. My note strategy has once again changed, so I have some cannon fodder for it.&lt;/p&gt;&lt;p&gt;Anyway, at the time of writing this page, I&#39;m using &lt;a href=&#34;https://github.com/catppuccin/emacs&#34;&gt;catppuccin latte&lt;/a&gt;, while writing my own theme in another instance of emacs. I mostly like catppuccin, but it&#39;s also very bad for contrast, particularly in markdown code blocks not being distinguishable from the background. Having to look through themes again reminded me how much of a pain in the ass this process is.&lt;/p&gt;&lt;p&gt;I&#39;m a light mode user, which means there&#39;s significantly fewer themes I can use available - and &lt;em&gt;much&lt;/em&gt; fewer well-implemented themes. One thing I have noticed is that there&#39;s lots of repos for themes that are actually bundles for themes in vaguely the same style. Before switching to catppuccin, I used &lt;a href=&#34;https://github.com/doomemacs/themes/tree/master&#34;&gt;doom-themes&lt;/a&gt;, and tried two variants, both of which were either low in contrast or appared poorly implemented&lt;sup&gt;&lt;a href=&#34;&#35;fn-1&#34; id=&#34;fn-1-r1&#34;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;&lt;p&gt;Back when I used Vim, I eventually found &lt;a href=&#34;https://github.com/NLKNguyen/papercolor-theme&#34;&gt;papercolor-theme&lt;/a&gt;, and stuck with it. I eventually forked it when the maintainer disappeared, because maintaining it with the new plugins I was using was easier than finding another, more maintained theme. Papercolor is, and still remains, one of the best-designed light mode themes I have seen.&lt;/p&gt;&lt;p&gt;I did need to combine this with some hacks. I had my modeline theme set to a dark theme for a while, because that was the only way I could maintain contrast. I later switched to a &lt;a href=&#34;https://codeberg.org/LunarWatcher/dotfiles/src/commit/446117cd253173c22f96ab2af6708fe9450d8c52/.vimrc&#35;L603-L622&#34;&gt;tiny hack&lt;/a&gt; that forced the inactive modeline to match the active modeline&#39;s style.&lt;/p&gt;&lt;p&gt;One thing that did surprise me about emacs was just how much is theme-dependent. That&#39;s both good and bad, I guess. Themes having explicit config options is a nice feature, though it means that a lot of customising needs to be done. The neat part with vim-airline was that it had themes that were entirely separate from the colourscheme, so themes had to be explicitly made for airline. The downside with that is that an arbitrary theme can&#39;t provide an airline theme without explicitly knowing that airline exists, but this is already the case with so many plugins in both emacs and vim that it has 0 value as an argument.&lt;/p&gt;&lt;p&gt;It also means that emacs themes can be two different kinds of atrocious at the same time. One plugin that I do not remember the name of anymore had an option to increase the contrast on the modeline by using more vivid colours. It made the text completely fucking unreadable.&lt;/p&gt;&lt;p&gt;I do wonder just  how much of that is down to theme bundles. Doom-themes is not the worst example of this - &lt;a href=&#34;https://github.com/tinted-theming/base16-emacs&#34;&gt;base16&lt;/a&gt;, and its 200-something themes is.&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;../static/img/2026-03-14-base16-zenbones.png&#34; alt=&#34;screenshot showing base16-zenbones with what it claims passes for readable&#34; /&gt;&lt;/p&gt;&lt;p&gt;Some of the text is readable, but the line numbers and any text in markdown buffers under the cursorline is completely unreadable without a fair bit of effort. Purely based on experience, it feels like the size of a theme repository is inversely related to the quality of each individual theme, because it&#39;s assumed the colours in the theme can be described universally in the framework the theme repo usually builds on.&lt;/p&gt;&lt;p&gt;It seems to be harder with just 16 colours shoved into the standard terminal-like framework for colours. Again as a light-mode user, I frequently run into problems where a CLI has decided to use some colour that simply does not work with my specific theme. This has not been as bad since I switched to gnome-light, but when I had to resort to a theme repo, those themes had some problems, especially on &lt;code&gt;ls&lt;/code&gt; on an NTFS disk being completely unreadable.&lt;/p&gt;&lt;p&gt;There&#39;s not really much of a point to this post. Theming hard, really. What does surprise me is just how dependent I&#39;ve been on papercolor for the better part of ~6 years or whatever, just because of how few good light mode themes there are in code editors. I have had a few rounds of trying to create a theme, but it has historically ended up badly. I have got a little better at design in the last few years though, and emacs does have the advantage of having less Stuff:tm: that needs to be configured for the builtins, and thereby fewer ways to completely fuck up the palette. We&#39;ll see how that turns out though&lt;/p&gt;&lt;div id=&#34;violet-footnotes&#34;&gt;&lt;h2&gt;Footnotes&lt;/h2&gt;&lt;ol&gt;&lt;li id=&#34;fn-1&#34;&gt;&lt;p&gt;In their defense though, editors like emacs are really fucking hard to design themes for. A lot of customising has to be done on the theme side (as far as I can tell) for the colours to appear consistent, especially when light mode themes are involved. Even when themes do provide defaults linked to existing standard colours or whatever, it isn&#39;t necessarily given that the colour remap for light mode preserves the same contrast, assuming there are colours in the theme able to provide roughly the same contrast. Colour mappings failing happens to the vast majority of themes, and is really a consequence of simple theming mechanisms not being good enough. Redesigning this for the modern era would be a process, though, and not one any individual theme in any individual editor could just do.&lt;/p&gt;&lt;span class=&#34;footnote-backref&#34;&gt;Usages: &lt;a href=&#34;&#35;fn-1-r1&#34;&gt;[1]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Information curation and sharing after Stack Overflow]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/blog/2026-03-01-information-post-stack-overflow.html" />
+                <id>https://lunarwatcher.codeberg.page/blog/2026-03-01-information-post-stack-overflow.html</id>
+
+                
+                    <published>2026-03-01T22:26:05+00:00</published>
+                
+                
+                    <updated>2026-03-01T22:26:05+00:00</updated>
+                
+                
+                    <summary><![CDATA[Over the last 7+ years, the company behind Stack Overflow has systematically been working against the Q&A model, the site's community, and users. This post describes how I've had to change my own approach to notes when the biggest software Q&A may not be around or have as high quality content anymore.]]></summary>
+                
+                <content type="html">
+                    &lt;p&gt;On 2026-02-24, Stack Overflow put the last nail in their coffin by proposing to remove a lot of curation, while trying to solve the engagement loss they&#39;ve been suffering from for a good few months by killing curation rather than addressing the real systemic issues in their implementation of the Q&amp;A model, particularly that reputation ended up keeping new curators down, and introducing a perception of toxicity that undermined quite a few of the site&#39;s activities as a Q&amp;A site. Now it&#39;s enshittifying down to another Reddit clone, presumably to try to keep the company itself afloat, but at the expense of what Stack Overflow was meant to be.&lt;/p&gt;&lt;p&gt;I could write (and have written) tens of thousands of words on the avoidable collapse of SO, but that isn&#39;t the main point of this post, so I won&#39;t. SO _is_ now collapsing past the point of no return for Q&amp;A quality - unless they turn around before it hits the main site anyway. This means the slow death of 19 years of curated information that was already under pressure from not having enough ways to maintain it, and the SO model actively discouraging such maintenance by other authors. Rather than being collaborative, SO&#39;s model forces a certain amount of competitiveness that undermines its ability to sustain itself. &lt;/p&gt;&lt;p&gt;At the same time, most other sources of information are seeing an influx of AI slop. In February of 2026, two major cheatsheet systems fell to AI slop (tldr-pages and cheat/cheat). These were heavily condensed sources of information that may or may not have been useful. They fell before I had the chance to try them. &lt;/p&gt;&lt;p&gt;There are no other sites comparable to Stack Overflow. &lt;a href=&#34;https://codidact.com/&#34;&gt;Codidact exists&lt;/a&gt;, and I do have hope they have a chance to gain ground, but as of the time of writing, they have not built the critical mass required. If you&#39;re considering an alternative to SO, I strongly recommend trying Codidact. The more people try, the more useful it&#39;ll become. &lt;/p&gt;&lt;p&gt;Stack Overflow&#39;s chokehold on its own data dump starting in 2024 was fortunately counteracted by archivists, who provided torrents of all the new data dumps. However, sites with data dumps are becoming an outlier. Many sites simply do not offer any way to export their contents, presumably out of fear it&#39;ll be redistributed, but at the expense of data ownership and archival. Granted, there are exceptions. Reddit does not have a data dump, but archivists have created data dumps of at least comments. I haven&#39;t looked much at it beyond knowing it exists, but data dumps can be created in most places - but usually with a lot of manual effort. &lt;/p&gt;&lt;p&gt;Small sites that don&#39;t gather anyone interested enough will therefore quietly die, taking the information with them as they do if the death is fast enough. In a world where the behemoth we trusted no longer can be trusted, where do we curate and share information?&lt;/p&gt;&lt;p&gt;I&#39;m not going to touch long on walled gardens and forums. Forums do work for helping individuals, but rarely provide enough canonical value to help many people with related situations. That&#39;s assuming the forum gets indexed at all. The major search indices in 2026 have got significantly worse to where even open sites can simply not be indexed. It&#39;s indexable, but gets cut for whatever reason. For all intents and purposes, this is semi-walled off. Chat sites, particularly Discord who made an entire channel type dedicated to forums, are not indexed at all, and cannot be indexed by design. They&#39;re entirely walled off. &lt;/p&gt;&lt;p&gt;This puts us back in the world before 2008 - before Stack Overflow - where the easily accessible sources of information are first-party documentation, obscure blogs, and random compilations of information.&lt;/p&gt;&lt;p&gt;Unfortunately, unlike in 2008, we live in the present, where we have AI slop machines that get used for documentation. Rather than having good documentation, we get plausibly nice-looking documentation where the content is garbage, because documentation is seen as a chore rather than information sharing.&lt;/p&gt;&lt;p&gt;Around a year ago, I started compiling this information myself. My poorly maintained TIL section on my blog is just a part of this information. Through bookmarks, markdown-based notes&lt;sup&gt;&lt;a href=&#34;&#35;fn-1&#34; id=&#34;fn-1-r1&#34;&gt;[1]&lt;/a&gt;&lt;/sup&gt;, learning several new techniques for finding information&lt;sup&gt;&lt;a href=&#34;&#35;fn-2&#34; id=&#34;fn-2-r1&#34;&gt;[2]&lt;/a&gt;&lt;/sup&gt;, and directly reading the code to try to figure out what to do based on that, I&#39;ve slowly been building up an archive that I can use. This system still has several challenges that I&#39;m trying to work out, particularly in making certain bits of information available to myself on other devices I cannot sync to, and making certain bits of information public. TIL was my attempt at the latter, but that did not work out the way I had hoped. &lt;/p&gt;&lt;p&gt;Codidact is much more open to more guide-like content than Stack Overflow. I have not yet tested the bounds of this, but articles as an easily accessible form of content has been discussed at some point, allegedly. I plan to redirect some of my notes there in time. However, there&#39;s still bits of information I need readily available, and I currently do not have anything to help with this. That&#39;s part of why cheat/cheat and tldr-pages were called out earlier; cheatsheet systems offer fairly easily accessible ways to acquire condensed sources of information that would meet this need, at least as long as I&#39;m able to add my own cheatsheet pages. Unfortunately, the solutions available have been abandoned, or enshittified and sloppified. &lt;/p&gt;&lt;p&gt;I do fear for the future of information sharing at this point. All we have left is small communities and connections made along the way, as well as sources of information that are under heavy pressure to enshittify and sloppify as well.  &lt;/p&gt;&lt;p&gt;I started writing this post with a plan to segue into distributing information in more readily accessible formats that can be read by arbitrary systems, but I don&#39;t have a segue. The state of information work is depressing enough that I&#39;m not sure what I&#39;m planning to do is worth it. In optimal information sharing conditions, we wouldn&#39;t need to worry about finding ways to ensure information exists in compiled formats at least _somewhere_ accessible to the general public. Especially when combined with the state of search engines, this really is the darkest timeline. &lt;/p&gt;&lt;p&gt;Though I do believe Codidact could drag us out of the worst of the immediate problem in terms of high-quality content, anything that involves search engines is inadequate for condensed, aggregate information. Cheatsheets are useful here as long as they can be distributed, but cheatsheets aren&#39;t the only option. They are the option that has been developed for so far, with lots of distributed cheatsheets existing, but many of the systems meant to access them are failing in the search area.&lt;/p&gt;&lt;p&gt;I do not believe this problem can be solved in a decentralised way, at least not on discoverability of high-quality sources of information. I do still think I want to try. At the time of writing, I don&#39;t yet know what this means. I may end up giving up and just piggybacking off Vim&#39;s help files, I may end up making some shit that allows for a distributed standard of cheat sheets and semi-structured, condensed unofficial documentation. &lt;/p&gt;&lt;p&gt;What I do know is that laying down and accepting the end of structured information is not an option, so it&#39;s time to write more stuff that&#39;s unlikely to ever be read.&lt;/p&gt;&lt;div id=&#34;violet-footnotes&#34;&gt;&lt;h2&gt;Footnotes&lt;/h2&gt;&lt;ol&gt;&lt;li id=&#34;fn-1&#34;&gt;&lt;p&gt;I use Obsidian. It&#39;s decent, but the developer experience for it is utter dogshit. If you plan to make a plugin, it would probably be easier to make your own editor first than trying to get it into obsidian&#39;s plugin repo.&lt;/p&gt;&lt;span class=&#34;footnote-backref&#34;&gt;Usages: &lt;a href=&#34;&#35;fn-1-r1&#34;&gt;[1]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li id=&#34;fn-2&#34;&gt;&lt;p&gt;GitHub&#39;s search, much like obsidian&#39;s developer experience, is utter dogshit, but you can find plenty of real-world usage examples of things this way. Very useful if you&#39;re stuck with something that simply doesn&#39;t have documentation, or where the documentation is fucking worthless.&lt;/p&gt;&lt;span class=&#34;footnote-backref&#34;&gt;Usages: &lt;a href=&#34;&#35;fn-2-r1&#34;&gt;[1]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Markdown and the illusion of portability]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/blog/2025-12-24-markdown-and-the-illusion-of-portability.html" />
+                <id>https://lunarwatcher.codeberg.page/blog/2025-12-24-markdown-and-the-illusion-of-portability.html</id>
+
+                
+                    <published>2025-12-24T14:13:38+00:00</published>
+                
+                
+                    <updated>2025-12-24T14:13:38+00:00</updated>
+                
+                
+                    <summary><![CDATA[Small rant on how markdown isn't as flexible as many of the tools using it claim it is, and how that became painfully obvious when trying to migrate between static site generators]]></summary>
+                
+                <content type="html">
+                    &lt;p&gt;This is the first post I&#39;m writing after scrapping the web component of this &#34;web&#34;site (now just a repo with some files no one is going to read), and not one, but two painful migration attempts to other static site generators before abandoning the push outright. &lt;/p&gt;&lt;p&gt;After &lt;a href=&#34;https://github.com/gohugoio/hugo/&#34;&gt;hugo&lt;/a&gt; turned to AI slop, I first tried to migrate to &lt;a href=&#34;https://github.com/getzola/zola&#34;&gt;Zola&lt;/a&gt;, which is about to contain AI slop once tera v2 stabilises. I then tried &lt;a href=&#34;https://github.com/cobalt-org/cobalt.rs&#34;&gt;cobalt.rs&lt;/a&gt;. It doesn&#39;t have AI slop as far as I can tell, but it _does_ involve more breaking of my setup, and after successfully pushing through with zola only to find breaking tradeoffs and AI slop I didn&#39;t notice in my initial sweep, I could not be bothered. Cobalt.rs does look like the most promising migration target, but it&#39;s just far too much effort.&lt;/p&gt;&lt;p&gt;As you might expect when switching static site generators, all the templates were invalid, and required a rewrite. This is due to different templating engines, and is something I expected to be a pain ahead of time. This was true with both zola and cobalt. However, neither cobalt nor zola support the same kind of frontmatter that hugo did. Aside supporting fewer fields, cobalt has different names on certain things than both hugo and zola. &lt;/p&gt;&lt;p&gt;Frontmatter is, strictly speaking, not standard markdown, nor are they a proper standard. The most common convention is YAML-based frontmatter, but zola uses TOML-based frontmatter. Even if frontmatter was a proper standard, that only tells you the standard syntax, and not the standard data it supports. Over time, I&#39;ve slowly been adding more features to the templates I used, and consequently, more non-standard data stored in the frontmatter. In hugo, this was intended. In zola, a separate &lt;code&gt;[extra]&lt;/code&gt; section was used. I abandoned my attempt to migrate to cobalt before I found out what they did. &lt;/p&gt;&lt;p&gt;Hugo also supported templates directly in the markdown, which meant parts of the markdown wasn&#39;t portable either. I initially did this because I wanted a way to properly link to the markdown files, and have it translate to the real links when the site was built. Worked great until hugo turned to AI slop and I had to rip it out, and was stuck with some files with non-standard markdown. &lt;/p&gt;&lt;p&gt;Don&#39;t get me wrong, I love markdown, and I love the principle behind static site generators; but just because the content itself is easily extractable doesn&#39;t mean extracting it is effortless, much less turning it around and using it in a new static site generator. You don&#39;t have to look far to find claims of the contrary. Systems using markdown because it means it&#39;s portable is semi-regularly cited as a benefit in various first- and third party accounts regardless of the category of tool. You can find it for static site generators, text editors or note tools, and whatever else.&lt;/p&gt;&lt;p&gt;The core markdown absolutely is portable, but depending on what system you put the markdown in, you might get a lot more non-standard features than you bargained for. Obsidian, my main tool for notes at the moment, also uses markdown, but by default, its links are wikilinks, i.e. the kind of links used in &lt;a href=&#34;https://en.wikipedia.org/wiki/Help:Wikitext&#34;&gt;wikitext&lt;/a&gt;. This isn&#39;t portable markdown, and if I switch to something that doesn&#39;t support wikitext, I&#39;ll need to rewrite it. &lt;/p&gt;&lt;p&gt;Just because the core text is portable doesn&#39;t mean all markdown documents are portable. If the system it&#39;s contained in supports non-standard stuff, it isn&#39;t really fully portable and ready to plug directly into another system.&lt;/p&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Forcing WSL to cooperate with non-standard keyboard layouts]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/blog/2025-08-18-beating-wsl-into-submission.html" />
+                <id>https://lunarwatcher.codeberg.page/blog/2025-08-18-beating-wsl-into-submission.html</id>
+
+                
+                    <published>2025-08-17T22:05:06+00:00</published>
+                
+                
+                    <updated>2025-08-17T22:05:06+00:00</updated>
+                
+                
+                    <summary><![CDATA[WSL has a long-standing bug that prevents custom keyboards on Windows from porting well to Linux. This post describes how I worked around the problem while still keeping my custom layout.]]></summary>
+                
+                <content type="html">
+                    &lt;p&gt;Since at least 2021 (earliest recorded instance), but likely since WSLg was initially made, &lt;a href=&#34;https://github.com/microsoft/wslg/issues/173&#34;&gt;it has had a bug with keyboard translation&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;When using GUI apps in WSL, WSL actually delegates the keyboard translation to the underlying distro rather than handling those bits itself, and then telling Linux what keys were pressed and what char that is. This is not a problem if you use a standard layout, but if you use a custom layout (for example to remove dead keys), the translation will fail, and the keyboard layout falls back to en_US, which is unusable with my muscle memory. If the translation fails, the fix is not trivial, as there&#39;s no way to configure the keyboard in WSL at the time of writing.&lt;/p&gt;&lt;p&gt;Instead, the config has to be done manually in the underlying window system. WSL, under the hood, uses Wayland + XWayland. Getting the XWayland bit sorted is trivial, because X11 isn&#39;t an unstandardised piece of shit like Wayland is. All that takes is a &lt;code&gt;setxkbmap&lt;/code&gt;, and you&#39;re set. Wayland, on the other hand, is configured on a per-window-manager-basis. Each of them have different config systems and different ways and places to set it. This is further convoluted by WSL making it hard to access the files in question, and wiping the files&lt;/p&gt;&lt;h2 id=&#34;the-fix&#34;&gt;The fix&lt;/h2&gt;&lt;p&gt;and the TL;DR: of my pain and suffering; add this code to your &lt;code&gt;.zshrc&lt;/code&gt; or &lt;code&gt;.bashrc&lt;/code&gt;. Other shells may require translation before use (or you can just shove it in a &lt;code&gt;&amp;&#35;35;!/usr/bin/bash&lt;/code&gt; script and source it).&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;&#35;35; Note: this script assumes you&#39;re using Ubuntu, and have a
+&amp;&#35;35; container called Ubuntu. If you don&#39;t, this needs to be changed.
+
+&amp;&#35;35; Check if WSL; this is purely for use in dotfiles that aren&#39;t
+&amp;&#35;35; WSL-exclusive, and can be omitted if you plan to only use your
+&amp;&#35;35; dotfiles in WSL
+uname -r | grep -q WSL
+if [[ $? == 0 ]]; then
+    &amp;&#35;35; X11; this may be redundant but I don&#39;t feel like checking
+    &amp;&#35;35; TODO: replace no nodeadkeys with your keyboard
+    setxkbmap no nodeadkeys &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+
+    &amp;&#35;35; Wayland
+    echo &#34;Note: WSL translation failures are expected. This is just Windows being overly shit&#34;
+    WSL=/mnt/c/Windows/System32/wsl.exe
+
+    $WSL -d Ubuntu --user root --system bash -c &#34;cat /home/wslg/.config/weston.ini&#34; | grep &#39;\[keyboard\]&#39;
+
+    &amp;&#35;35; Unlike the X11 fix, this should not be run more than once.
+    &amp;&#35;35; Otherwise, the pkill line would result in all your GUI apps being closed every time you restart your shell,
+    &amp;&#35;35; which would be infuriating
+    if [[ $? != 0 ]]; then
+        $WSL -d Ubuntu --user root --system bash -c &#34;echo -e &#39;[keyboard]&#39; &amp;gt;&amp;gt; /home/wslg/.config/weston.ini&#34;
+        &amp;&#35;35; TODO: replace the layout and variant in the next two lines with your keyboard layout.
+        &amp;&#35;35; This appears to be identical to the setxkbmap call, but I&#39;m not sure if this is true for all layouts and all variants
+        $WSL -d Ubuntu --user root --system bash -c &#34;echo -e &#39;keymap_layout=no&#39; &amp;gt;&amp;gt; /home/wslg/.config/weston.ini&#34;
+        $WSL -d Ubuntu --user root --system bash -c &#34;echo -e &#39;keymap_variant=nodeadkeys&#39; &amp;gt;&amp;gt; /home/wslg/.config/weston.ini&#34;
+        &amp;&#35;35; Weston needs to be killed for it to pick up on config changes
+        $WSL -d Ubuntu --user root --system bash -c &#34;pkill -HUP weston&#34;
+        echo &#34;Keyboard shimmed and weston assassinated&#34;
+    else
+        echo &#34;Keyboard already shimmed, no action needed&#34;
+    fi
+fi&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This script has to run at least once per boot of the WSL container. I put it in my &lt;code&gt;.zshrc&lt;/code&gt; since I always start it before I start any GUI programs, but putting it in a systemd service should work too, if you can figure out how to get it to work reliably when Microslop schenanigans are involved in complicating what&#39;s supposed to be an easy fix. The problem I had while making this a systemd service was getting it to run after WSLg started. This may have been user error, but I do not care enough to verify when stopping at &lt;code&gt;.zshrc&lt;/code&gt;-loading worked for my use-case.&lt;/p&gt;&lt;p&gt;The rest of this article describes why the wayland bit is so unnecessarily convoluted (aside it needing to exist in the first place; this could&#39;ve all been avoided if Microslop bothered fixing a bug or two every once in a while).&lt;/p&gt;&lt;h2 id=&#34;the-root-of-all-evil-the-separation-of-wsl-and-wslg&#34;&gt;The root of all evil: the separation of WSL and WSLg&lt;/h2&gt;&lt;p&gt;For whatever fucking reason, WSL and WSLg are split. When you drop into a terminal, you get access to WSL, while WSLg runs in an entirely separate environment. Not just that, WSLg&#39;s entire environment is reset every time you restart WSL, so setting your keyboard is not a one-time thing - it&#39;s a one-time per boot thing.&lt;/p&gt;&lt;p&gt;Doing the changes further requires that you make the changes to a config file that&#39;s part of WSLg, and rebooting a window manager that&#39;s also part of, you guessed it, WSLg. This means that you need to break out of your WSL container in order to access the WSLg stuff you need. The only way to actually get access to it is using &lt;code&gt;wsl.exe&lt;/code&gt;, which is a Windows program. This turned out ot be less of a problem than it sounded like at first.&lt;/p&gt;&lt;p&gt;Though I&#39;m sure there&#39;s ways to automate this bit in Windows, to be blunt, it sounds horrible to do, and I did not want to it. I initially automated the X11 approach in my &lt;code&gt;.zshrc&lt;/code&gt;, and used a manually-executed &lt;code&gt;.bat&lt;/code&gt; script:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-dosbatch&#34;&gt;wsl -d Ubuntu --user root --system bash -c &#34;echo -e &#39;[keyboard]&#39; &amp;gt;&amp;gt; /home/wslg/.config/weston.ini&#34;
+wsl -d Ubuntu --user root --system bash -c &#34;echo -e &#39;keymap_layout=no&#39; &amp;gt;&amp;gt; /home/wslg/.config/weston.ini&#34;
+wsl -d Ubuntu --user root --system bash -c &#34;echo -e &#39;keymap_variant=nodeadkeys&#39; &amp;gt;&amp;gt; /home/wslg/.config/weston.ini&#34;
+wsl -d Ubuntu --user root --system bash -c &#34;pkill -HUP weston&#34;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The good news, and the news that I found out too late, is that you don&#39;t actually need to execute &lt;code&gt;wsl.exe&lt;/code&gt; from Windows. If you execute &lt;code&gt;wsl.exe&lt;/code&gt; from Linux, it&#39;ll be run from Windows instead.&lt;/p&gt;&lt;p&gt;This means that, by hard-coding the path, you can run &lt;code&gt;wsl.exe&lt;/code&gt; from Linux for the same effect as running it from Windows, which means all the Linux-based automation systems can be used instead.&lt;/p&gt;&lt;p&gt;I did initially plan to use a service, but I found it much easier to set it up the way I have here. Figuring out how to reliably start a service only after WSLg has started, when it still runs in a different container, turned out to be too much of a thing to be worth the effort. It&#39;s probably still doable to make a systemd service for it, but this is left as an exercise to readers more masochistic  than I am.&lt;/p&gt;&lt;p&gt;For my use-case, I always end up starting a terminal before I start a GUI program, which means my &lt;code&gt;.zshrc&lt;/code&gt; become a proxy for &#34;WSL startup complete&#34;. By the time I start my shell, WSL has started, and WSLg has started as well, which is just a happy coincidence of how WSL&#39;s boot system appears to work, based on some limited testing where it refuses to drop me into a terminal until WSLg also manages to boot. These tests were based on &lt;code&gt;sudo reboot now&lt;/code&gt; rather than &lt;code&gt;wsl --shutdown&lt;/code&gt; though, and it appears to have had an awful lot of unintended side-effects, and it has drastically higher reboot time than &lt;code&gt;wsl --shutdown&lt;/code&gt;. It&#39;s possible the reason a systemd service is off the table is because &lt;code&gt;reboot&lt;/code&gt; just causes WSL to misbehave harder than it normally does, and that it would&#39;ve worked normally. I could not be bothered verifying this once I had an automated solution, because I&#39;ve already spent too much time on this.&lt;/p&gt;&lt;p&gt;TL;DR: use real Linux if you can, because WSL is a massive pain in the ass to use with anything but the bare minimum, fully standard, non-GUI setup, and every other use-case is bug-riddled in one way or another.&lt;/p&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+    
+        
+            <entry>
+                <title><![CDATA[Pseudo-domains in firefox for local files]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/firefox/localhost-domains.html" />
+                <id>https://lunarwatcher.codeberg.page/til/firefox/localhost-domains.html</id>
+
+                
+                    <published>2026-08-03T23:56:14+00:00</published>
+                
+                
+                    <updated>2026-08-03T23:56:14+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;p&gt;While working on this here website, I have mostly (at the time of writing anyway) been working with a version of violet that doesn&#39;t have a &lt;code&gt;serve&lt;/code&gt; command, because I haven&#39;t made it yet. Instead, I&#39;ve used &lt;code&gt;violet generate -l&lt;/code&gt; to set &lt;code&gt;&amp;&#35;123;&amp;&#35;123; site.prefix &amp;&#35;125;&amp;&#35;125;&lt;/code&gt; to the full file path. This does _technically_ work, but it has issues.&lt;/p&gt;&lt;p&gt;For a static site, these fortunately don&#39;t matter all that much. I don&#39;t have CORS I need to worry about. However, for the &lt;a href=&#34;/meta&#34;&gt;meta page&lt;/a&gt;, I &lt;code&gt;fetch()&lt;/code&gt; a JSON file that contains stats generated by violet through the render. This does not work locally, because you can&#39;t fetch local files.&lt;/p&gt;&lt;p&gt;This is where a server would be useful, even a small one. As it turns out, Firefox actually provides one now as a feature of devtools.&lt;/p&gt;&lt;p&gt;In the devtool settings, there&#39;s a brand new section called local mode. You don&#39;t need to use the setting though, I get a popup saying that it could be opened in a (temporary) such domain.&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;/static/img/firefox-localhost-domains.png&#34; alt=&#34;Screenshot showing a local mode mapping that maps website.localhost to a local filepath&#34; /&gt;&lt;/p&gt;&lt;p&gt;(Ignore the &lt;code&gt;.github.io&lt;/code&gt; domain, I haven&#39;t got around to moving the git repo after discontinuing github as the main source)&lt;/p&gt;&lt;p&gt;Now I can just go to &lt;code&gt;website.localhost&lt;/code&gt;, and it loads the rendered version of this page like it was loaded from a real server. This also means &lt;code&gt;/meta.html&lt;/code&gt; works. Again, it functionally has a &lt;code&gt;fetch(&#34;/_violet-meta.json&#34;)&lt;/code&gt; call, which breaks when it tries loading a file, but the local mode domains act like a proper server, so the browser can load resources like normal.&lt;/p&gt;&lt;p&gt;Don&#39;t worry, violet will still be getting serve functionality at some point :p This is still really nice though, and means web development in Firefox isn&#39;t anywhere near as dependent on there actually being a backing server. It&#39;s much more friendly to various forms of raw web requests.&lt;/p&gt;&lt;p&gt;The only downside is that it requires the devtools to be open, so it&#39;s likely not as useful for like games that are just exported HTML/CSS/JS files. I don&#39;t play any such games right now, but I am aware of a couple. They obviously work around the fetch limitation of browsers by not having the type of dependency I have, but I do wonder if local mode being made less dependent on devtools would make it easier to make such games. That&#39;s far outside my domain anyway. The only major use-case I have is localhost webdev on more classic websites.&lt;/p&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Inspecting the browser shadow DOM (browser-specific HTML element internals)]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/webdev/browser-shadow-dom.html" />
+                <id>https://lunarwatcher.codeberg.page/til/webdev/browser-shadow-dom.html</id>
+
+                
+                    <published>2026-07-31T21:50:26+00:00</published>
+                
+                
+                    <updated>2026-07-31T21:50:26+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;p&gt;Under the devtool settings, click:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Chrome: &#34;Show user agent shadow DOM&#34;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Firefox: &#34;Show browser shadow DOM&#34;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt; The shadow DOM is used for the browser-native/default styles, and is for some reason hidden by default in the devtools. Enabling the setting that shows them is really useful. This can be used to derive pseudoelements, since the shadow DOM includes the definitions for the pseudoelements.&lt;/p&gt;&lt;p&gt;If you ever wonder where the &lt;code&gt;-moz-*&lt;/code&gt; and &lt;code&gt;-webkit-*&lt;/code&gt; pseudo-elements are defined, that&#39;s in the shadow DOM. These can also be used to customize at least a few built-in elements that otherwise don&#39;t appear to expose much customization in CSS. My use-case for this was styling a &lt;code&gt;&amp;lt;progress&amp;gt;&lt;/code&gt; element, since styling them is not cross-browser. &lt;abbr title=&#34;Using Kagi&#34;&gt;Googling&lt;/abbr&gt; the progress element pseudo-elements does work with a fair bit of effort, but finding it for all the browsers is a pain in the ass. Inspecting the shadow DOM manually in various browsers is a fair bit easier, at least for me.&lt;/p&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Setting indent width "portably" in emacs]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/portable-indent-width.html" />
+                <id>https://lunarwatcher.codeberg.page/til/emacs/portable-indent-width.html</id>
+
+                
+                    <published>2026-07-27T21:49:47+00:00</published>
+                
+                
+                    <updated>2026-07-27T21:49:47+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;p&gt;I have come to rather like emacs, but my single biggest frustration is setting indent widths. Every single mode does things slightly differently and has slightly different names for everything, because fuck you.&lt;/p&gt;&lt;p&gt;This means that if you want to set the indent width &#34;portably&#34; in emacs, you need to... set all of them. In my case, that means&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-elisp&#34;&gt;(defun livi-indent-width(size)
+  &#34;Utility for setting the indent width.
+This function wraps all the portable options for standard emacs and evil mode,
+and additionally sets the indent spec for every single language I use.
+This will likely waste a few bytes of RAM per buffer, but it makes
+my life a lot easier.
+
+This function could be avoided if there just was a single fucking setting for
+defining the indent width rather than like 8001&#34;
+  (setq-local tab-width size)
+  (setq-local evil-shift-width size)
+
+  (setq-local c-basic-offset size)
+  (setq-local c-indent-level size)
+  (setq-local cmake-tab-width size)
+  (setq-local js-indent-level size)
+  (setq-local lua-indent-level size)
+  (setq-local python-indent-offset size)
+  (setq-local typescript-indent-level size)
+  (setq-local yaml-indent-offset size)
+)&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Everything is set locally and hardcoded to specific buffers. I do this for one very specific reason: at the cost of hooks, my interface to indent levels is static.&lt;/p&gt;&lt;p&gt;This approach is not mutually exclusive with setting global defaults without using a hook, but this only makes sense if every size is indentical. If you, for example, default all the indents to 4, but have &lt;code&gt;(setq-default typescript-indent-level 2)&lt;/code&gt;, the tab width and evil-shift-width will differ.&lt;/p&gt;&lt;p&gt;For any buffer, there&#39;s at least 2 variables that need to be set (3 with evil mode): &lt;code&gt;tab-width&lt;/code&gt; to control what &lt;code&gt;&amp;lt;Tab&amp;gt;&lt;/code&gt; does, &lt;code&gt;evil-shift-width&lt;/code&gt; to control the &lt;code&gt;&amp;lt;&lt;/code&gt; and &lt;code&gt;&amp;gt;&lt;/code&gt; operators, and some variable for the language. This means that having differing indent sizes necessitates a hook to set all three for any languages that differ from the defaults. In my experience, though some of these should derive from the &lt;code&gt;tab-width&lt;/code&gt;, it seems like by the time the hooks run, those variables have been resolved. I may be doing something wrong here, but most of the solutions I find are &#34;use the specific variables&#34;, because everything is a fucking soup.&lt;/p&gt;&lt;p&gt;The above function is also really nice for making a command that emulates &lt;code&gt;set sw=&amp;lt;size&amp;gt;&lt;/code&gt; in vim without caring about the context.&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-elisp&#34;&gt;(evil-define-command livi-evil-shiftwidth(width)
+    (interactive &#34;&amp;lt;a&amp;gt;&#34;)
+    (let (
+          (target-indent (cl-parse-integer width))
+    )
+      (livi-indent-width target-indent)
+      )
+    )
+
+(evil-ex-define-cmd &#34;shiftwidth&#34; &amp;&#35;35;&#39;livi-evil-shiftwidth)&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I&#39;m using &lt;code&gt;evil-define-command&lt;/code&gt;, but non-evil users can replace that with &lt;code&gt;defun&lt;/code&gt; and use another &lt;code&gt;interactive&lt;/code&gt; arg for mostly the same functionality. This particular setup lets me use the shorthand &lt;code&gt;:shiftwidth 2&lt;/code&gt; and just ✨ have it happen ✨ in all the files I have set up, which is fantastic.&lt;/p&gt;&lt;p&gt;Well, relatively speaking, needing to hard-code every single mode&#39;s indent variable in a function is disgusting and I hate it, but it work shaped.&lt;/p&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Redirects on Codeberg Pages]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/codeberg/codeberg-pages-redirects.html" />
+                <id>https://lunarwatcher.codeberg.page/til/codeberg/codeberg-pages-redirects.html</id>
+
+                
+                    <published>2026-07-23T18:34:21+00:00</published>
+                
+                
+                    <updated>2026-07-23T18:34:21+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;p&gt;Codeberg pages supports a special &lt;code&gt;_redirects&lt;/code&gt; file compatible with netlify syntax that does (shock) redirects. This appears to be somewhat poorly documented, or at least I failed to find any mention of it on the corresponding doc page. It gets a &lt;a href=&#34;https://codeberg.org/git-pages/git-pages&#35;features&#34;&gt;brief mention in the README&lt;/a&gt;, but that&#39;s about it.&lt;/p&gt;&lt;p&gt;The syntax is at least fairly simple:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;/source    /target
+/source-2  https://target.example.com&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;... and &lt;code&gt;&amp;&#35;35;&lt;/code&gt; for comments.&lt;/p&gt;&lt;p&gt;Netlify&#39;s full syntax &lt;a href=&#34;https://docs.netlify.com/manage/routing/redirects/redirect-options/&#34;&gt;supports a fair bit of stuff&lt;/a&gt;, and git-pages&#39; README explicitly states that there are a few things it doesn&#39;t support. Placeholders is a bit of a loss for weirder generic redirects, but it isn&#39;t the worst loss. The rest of the unsupported features don&#39;t really appear to be that useful?&lt;/p&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Opening a commit message in an editor after writing a partial commit message with -m]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/git/editing-commit-message.html" />
+                <id>https://lunarwatcher.codeberg.page/til/git/editing-commit-message.html</id>
+
+                
+                    <published>2026-07-10T01:17:30+00:00</published>
+                
+                
+                    <updated>2026-07-10T01:17:30+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;p&gt;If you ever write &lt;code&gt;git commit -m &#34;...&#34;&lt;/code&gt; only to then realize you actually have enough to write that you should open it in an editor, but don&#39;t want to discard anything you&#39;ve already written, use &lt;code&gt;-e&lt;/code&gt;:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git commit -m &#34;some message&#34; -m &#34;Some extra message if applicable&#34; -e&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This opens the editor, but with the contents of all the &lt;code&gt;-m&lt;/code&gt;s pre-added to the temporary file the editor is opened on. &lt;/p&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[use-package from a local directory with a normally vc-loaded plugin]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/use-package-with-local-dir.html" />
+                <id>https://lunarwatcher.codeberg.page/til/emacs/use-package-with-local-dir.html</id>
+
+                
+                    <published>2026-06-28T22:13:57+00:00</published>
+                
+                
+                    <updated>2026-06-28T22:13:57+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;p&gt;Use &lt;code&gt;:load-path&lt;/code&gt; with the folder:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(use-package nyaatree
+  :vc (:url &#34;https://codeberg.org/LunarWatcher/emacs-nyaatree.git&#34;
+            :rev :newest)
+  :ensure t
+  :load-path &#34;/home/olivia/programming/emacs/emacs-nyaatree/&#34;
+  :config
+  ;; as usual
+)&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Somewhat interestingly, this takes priority over &lt;code&gt;:vc&lt;/code&gt;. &lt;code&gt;:ensure t&lt;/code&gt; seems to still load the plugin from vc, but it still compiles and runs the local variant when &lt;code&gt;load-path&lt;/code&gt; is present. This means that commenting out &lt;code&gt;:vc&lt;/code&gt; but leaving &lt;code&gt;:ensure t&lt;/code&gt; breaks in this particular case, since &lt;code&gt;nyaatree&lt;/code&gt; isn&#39;t on melpa.&lt;/p&gt;&lt;p&gt;This also takes (in this case) nyaatree out of the &lt;code&gt;package-vc-upgrade&lt;/code&gt; list. For my use, this means I&#39;ll just comment and uncomment a single &lt;code&gt;load-path&lt;/code&gt; statement when I switch a VC package to a local package for development. I used to use &lt;code&gt;load-file&lt;/code&gt; on a couple other plugins, and it worked fine with those because it didn&#39;t have any config, so I could just comment out the whole &lt;code&gt;use-package&lt;/code&gt; without issues. That&#39;s not really an option here, because I have a lot of nyaatree config. ✨ The more you know ✨&lt;/p&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Powershell 7 fails to parse flags with a double-shaped value]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/powershell/powershell-7-double-flags.html" />
+                <id>https://lunarwatcher.codeberg.page/til/powershell/powershell-7-double-flags.html</id>
+
+                
+                    <published>2026-06-26T03:05:59+00:00</published>
+                
+                
+                    <updated>2026-06-26T03:05:59+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;p&gt;Microslop&#39;s steaming pile of shit shell, also known as Powershell, has introduced a very fun bug where specifically flags with a value assigned to a number fails to be identified as part of the flag it&#39;s actually part of. I checked this against 7.4.2, which is the version I can currently get my paws on with docker, because I&#39;m not installing Microslop&#39;s malware on any of my linux boxes. The GitHub Actions runner where this failed originally runs 7.6.2, according to &lt;a href=&#34;https://github.com/actions/runner-images/blob/e3d5c1312473fcb22b11bbb4926cd976044f27bc/images/windows/Windows2025-Readme.md?plain=1&#35;L476&#34;&gt;the image software list&lt;/a&gt;. &lt;/p&gt;&lt;blockquote class=&#34;callout-info&#34;&gt;&lt;p class=&#34;callout-title&#34;&gt;Info&lt;/p&gt;&lt;p&gt; Correction: A little while after posting this I was made aware that this actually traces back allllll the way to &lt;a href=&#34;https://github.com/PowerShell/PowerShell/issues/6291&#34;&gt;2018&lt;/a&gt; and v6 of powershell. Thanks, Microslop&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;The consequence of this bug is that&lt;/p&gt;&lt;pre&gt;&lt;code&gt;-DCMAKE_POLICY_VERSION_MINIMUM=3.5&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Is actually parsed as the TWO arguments, &lt;code&gt;[&#34;-DCMAKE_POLICY_VERSION_MINIMUM=3&#34;, &#34;.5&#34;]&lt;/code&gt;, which broke my CMake build, since 3 is an illegal minimum policy version, and .5 is just trailing and a tiny warning at the start of a 1.1k line logfile. Full repro that this is, in fact, powershell&#39;s fault:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;PS /&amp;gt; function x($arg) &amp;&#35;123; Write-Host &#34;$arg&#34; &amp;&#35;125;
+PS /&amp;gt; x -- -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+-DCMAKE_POLICY_VERSION_MINIMUM=3&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This goes away with quoting:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;PS /&amp;gt; x -- -DCMAKE_POLICY_VERSION_MINIMUM=&#34;3.5&#34;
+-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+PS /&amp;gt; x -- &#34;-DCMAKE_POLICY_VERSION_MINIMUM=3.5&#34;
+-DCMAKE_POLICY_VERSION_MINIMUM=3.5&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In case it isn&#39;t obvious, the expected result &lt;em&gt;gestures broadly&lt;/em&gt; everywhere fucking else for several fucking decades is for it to be parsed as one item; &lt;code&gt;[&#34;-DCMAKE_POLICY_VERSION_MINIMUM=3.5&#34;]&lt;/code&gt;&lt;/p&gt;&lt;p&gt;Lesson learned:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Avoid powershell at all cost. Cmd should still handle this use-case fine&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;If avoiding powershell is not an option, all non-string types must be quoted in every argument&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Microslop strikes again&lt;/p&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Using SSH agents, and specifying which SSH key to use with pass-cli]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/ssh/ssh-agent-key-specification.html" />
+                <id>https://lunarwatcher.codeberg.page/til/ssh/ssh-agent-key-specification.html</id>
+
+                
+                    <published>2026-06-25T04:13:28+00:00</published>
+                
+                
+                    <updated>2026-06-25T04:13:28+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;h1 id=&#34;using-ssh-agents-and-specifying-which-ssh-key-to-use-with-pass-cli&#34;&gt;Using SSH agents, and specifying which SSH key to use with pass-cli&lt;/h1&gt;&lt;p&gt;This TIL assumes Proton Pass, but I hear the same strategy works with a few other password managers&lt;/p&gt;&lt;p&gt;Starting the agent (vault-scoped):&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pass-cli ssh-agent start --vault-name Work&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;However, the neater part imo is how you configure it to work. This is what part of my &lt;code&gt;.ssh/config&lt;/code&gt; looked like before SSH agents:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-ssh-config&#34;&gt;Host github.com
+  User git
+  IdentityFile ~/.ssh/github&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This cannot be used directly with SSH agents, because for obvious reasons, SSH agents make the IdentityFile not a file anymore. However, as far as I can tell anyway, the &lt;code&gt;IdentityFile&lt;/code&gt; still needs to be a file. The &lt;code&gt;pass://&lt;/code&gt; URL scheme &lt;code&gt;pass-cli&lt;/code&gt; uses does not work either.&lt;/p&gt;&lt;p&gt;The fix is to use the public key instead:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-ssh-config&#34;&gt;Host github.com
+  User git
+  IdentityFile ~/.ssh/github.pub&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This relays the public key to the SSH agent, and it&#39;s tied to the corresponding private key within the agent. That forces the specific SSH key to be used, which is what allows multi-account SSH setups to continue to work with an SSH agent.&lt;/p&gt;&lt;p&gt;Using the public key as the &lt;code&gt;IdentityFile&lt;/code&gt; seems to be the SSH agent way to specify which IdentityFile to use rather than trying all of them.&lt;/p&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Vim quickfix in emacs]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/quickfix-analogue.html" />
+                <id>https://lunarwatcher.codeberg.page/til/emacs/quickfix-analogue.html</id>
+
+                
+                    <published>2026-06-25T04:13:28+00:00</published>
+                
+                
+                    <updated>2026-06-25T04:13:28+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;p&gt;Emacs doesn&#39;t directly have an equivalent of Vim&#39;s quickfix window, but it does have &lt;code&gt;M-x grep-find&lt;/code&gt;, which is pretty close.&lt;/p&gt;&lt;p&gt;It opens an xref buffer that can be edited directly to modify the matches. There&#39;s several things missing though, notably &lt;code&gt;:argdo&lt;/code&gt;. Not sure if there&#39;s an analogue that gets close enough, but a few quick searches seem to indicate no, aside a plugin that was made specifically for this purpose and hasn&#39;t been touched in 8 years. There&#39;s always &lt;code&gt;rg --files-with-matches | xargs sed -i&lt;/code&gt; as a fallback&lt;/p&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Previewing markdown files in emacs]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/til/emacs/preview-markdown.html" />
+                <id>https://lunarwatcher.codeberg.page/til/emacs/preview-markdown.html</id>
+
+                
+                    <published>2026-06-25T04:13:28+00:00</published>
+                
+                
+                    <updated>2026-06-25T04:13:28+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;p&gt;&lt;code&gt;C-c C-c l&lt;/code&gt;, shorthand for &lt;code&gt;markdown-live-preview-mode&lt;/code&gt; can be used to preview the markdown file. It also opens it in the emacs web browser, so the preview can be fully inline.&lt;/p&gt;&lt;p&gt;Unfortunately, it doesn&#39;t appear to support callouts.&lt;/p&gt;&lt;p&gt;There&#39;s also a variant that renders a single HTML page (&lt;code&gt;C-c C-c p&lt;/code&gt;).&lt;/p&gt;&lt;blockquote class=&#34;callout-tip&#34;&gt;&lt;p class=&#34;callout-title&#34;&gt;Tip&lt;/p&gt;&lt;p&gt;&lt;code&gt;C-c C-c&lt;/code&gt; shows a list of the next possible characters and what they do, though it doesn&#39;t include the full list. Would recommend looking at &lt;a href=&#34;/emacs/til/listing-variables.html&#34;&gt;&lt;code&gt;describe-mode&lt;/code&gt; as well&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+    
+        
+            <entry>
+                <title><![CDATA[HTML popovers are really cool]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/notes/webdev/popovers.html" />
+                <id>https://lunarwatcher.codeberg.page/notes/webdev/popovers.html</id>
+
+                
+                    <published>2026-08-03T23:35:10+00:00</published>
+                
+                
+                    <updated>2026-08-03T23:35:10+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;p&gt;Over time, HTML and CSS has become increasingly powerful, but mostly the former. It used to be that you need all kinds of &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; nesting, but now, you can do it in precisely two lines of HTML:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;button popovertarget=&#34;use-html-popover-demo&#34;&amp;gt;Text&amp;lt;/button&amp;gt;
+&amp;lt;span id=&#34;use-html-popover-demo&#34; popover&amp;gt;boo!&amp;lt;/span&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;button popovertarget=&#34;use-html-popover-demo&#34;&gt;Click me!&lt;/button&gt;
+&lt;span id=&#34;use-html-popover-demo&#34; popover&gt;boo!&lt;/span&gt;
+&lt;/blockquote&gt;&lt;p&gt;Want to have it show up near where you clicked? One line of CSS:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;button popovertarget=&#34;use-html-popover-demo-position&#34;&amp;gt;Text&amp;lt;/button&amp;gt;
+&amp;lt;span id=&#34;use-html-popover-demo-position&#34; style=&#34;position-area: bottom&#34; popover&amp;gt;boo!&amp;lt;/span&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;button popovertarget=&#34;use-html-popover-demo-position&#34;&gt;Click me!&lt;/button&gt;
+&lt;span id=&#34;use-html-popover-demo-position&#34; style=&#34;position-area: bottom&#34; popover&gt;boo!&lt;/span&gt;
+&lt;/blockquote&gt;&lt;p&gt;... Well, technically 3 if you do proper CSS. &lt;code&gt;[popover]&lt;/code&gt; with a class, then the line to set position-area, and a bracket line, but still one line of functional CSS.&lt;/p&gt;&lt;p&gt;With a bit more code, you can do fancy things &lt;button class=&#34;text&#34; popovertarget=&#34;inline-demo&#34;&gt;inside text&lt;/button&gt; without requiring a single but of JS, nor a single redundant &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;&lt;sup&gt;&lt;a href=&#34;&#35;fn-1&#34; id=&#34;fn-1-r1&#34;&gt;[1]&lt;/a&gt;&lt;/sup&gt; with &lt;code&gt;position: absolute&lt;/code&gt; or whatever webdevs were stuck doing before the popover API.&lt;/p&gt;
+&lt;div id=&#34;inline-demo&#34; class=&#34;bottom&#34; popover&gt;
+&lt;p&gt;Most of my use for the inline variant in particular is essentially &lt;code&gt;&amp;lt;abbr&amp;gt;&lt;/code&gt; but mobile friendly. Technically, &lt;code&gt;&amp;lt;abbr&amp;gt;&lt;/code&gt; would be mildly abused the way I&#39;ve occasionally used it, so will need to go back and revisit at some point.&lt;/p&gt;&lt;p&gt;(I would normally use footnotes here, which violet generates markup for, but this is a sneaky demo, so deal with it :p)&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The minimal code required for a variant of this:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;style&amp;gt;
+button.text &amp;&#35;123;
+    background: none;
+    border: none;
+    padding: 0px;
+    text-decoration: underline dotted;
+    user-select: text;
+    font-size: 1rem;
+&amp;&#35;125;
+
+button.text:hover &amp;&#35;123;
+    color: black;
+    font-weight: bold;
+&amp;&#35;125;
+
+[popover].bottom &amp;&#35;123;
+    position-area: bottom;
+&amp;&#35;125;
+&amp;lt;/style&amp;gt;
+
+&amp;lt;p&amp;gt;Text &amp;lt;button class=&#34;text&#34; popovertarget=&#34;inline-demo&#34;&amp;gt;button inside text&amp;lt;/button&amp;gt; more text&amp;lt;/p&amp;gt;
+
+&amp;lt;p id=&#34;inline-demo&#34; class=&#34;bottom&#34; popover&amp;gt;Text omitted for brevity&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;div id=&#34;violet-footnotes&#34;&gt;&lt;h2&gt;Footnotes&lt;/h2&gt;&lt;ol&gt;&lt;li id=&#34;fn-1&#34;&gt;&lt;p&gt;There&#39;s technically one div that could be argued to be redundant in this case, since I didn&#39;t want to use &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; manually with violet to write &lt;code&gt;&amp;lt;abbr&amp;gt;&lt;/code&gt;. The div lets violet render the contents of the popover, while still being a trivial popover, so it&#39;s technically not redundant. &lt;/p&gt;&lt;span class=&#34;footnote-backref&#34;&gt;Usages: &lt;a href=&#34;&#35;fn-1-r1&#34;&gt;[1]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[The great font rant]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/notes/webdev/fonts.html" />
+                <id>https://lunarwatcher.codeberg.page/notes/webdev/fonts.html</id>
+
+                
+                    <published>2026-07-22T15:30:34+00:00</published>
+                
+                
+                    <updated>2026-07-22T15:30:34+00:00</updated>
+                
+                
+                    <summary><![CDATA[Most websites pick shit fonts and I hate it]]></summary>
+                
+                <content type="html">
+                    &lt;p&gt;Earlier this year, I made the move to &lt;a href=&#34;/til/firefox/fonts.html&#34;&gt;disallow websites from setting fonts in Firefox&lt;/a&gt; (through changing the setting in firefox, I had nothing do do with its development, for the record). This was after stumbling into the option by accident - I&#39;ve never seen it before, and I&#39;m pretty sure it&#39;s new, but can&#39;t really guarantee that. Most websites force a default font, so I never bothered setting my own fonts. It&#39;s a fantastic toggle, and I will die on this hill, because most websites choose _awful_ fonts.&lt;/p&gt;&lt;p&gt;I have never had a particularly large investment in fonts. If a font is readable, it&#39;s good enough. I do still have fonts I prefer, and over time, these have become:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Ubuntu (the font, not the OS; the OS is on the enshittification track, but that&#39;s a whole other aside)&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Source Code Pro/Sauce Code Pro (modified version of Source Code Pro with more icons for terminal use)&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;These are the fonts I set in most of my desktop operating systems. In editors, I only use the latter of the two, but still, these fonts get set as my defaults. This includes in Firefox and in my operating system settings. I landed on these fonts because they&#39;re readable to me. Ubuntu in particular also solves the problem of l and I being identical. If you struggle to tell which is the lower-case L and which is the upper-case i, your default font probably sucks.&lt;/p&gt;&lt;p&gt;The default fonts in firefox are what&#39;s used when no other fonts on a hard-coded font spec is available, if no fonts are specified, or of course if you disallow websites from specifying their own fonts. This website does not specify fonts. Most of the web does, and shouldn&#39;t be doing so.&lt;/p&gt;&lt;p&gt;I do not have a relation to a font being particularly pretty. I do have a relation to fonts being bad, and that&#39;s largely if I struggle to read them. This makes for a fun existence in a world where 99% of the web seems to have decided to fuck user choice in favour of using their particular flavour of preferred font. Fonts being used basically as another part of usually corporate identity rather than prioritising whether or not the fuck everyone can actually read your fucking font is why I made the move to flip the switch that prevents websites from using their own fonts. Far too many websites pick dogshit fonts because &#34;it looks pretty&#34; or whatever, while completely ignoring that I and l are fucking identical.&lt;/p&gt;&lt;p&gt;This, usually, is not a problem. lf I start a sentence with &#34;If&#34;, it&#39;s probably an i and not an l. In the case of the previous sentence, it was an l. If you have one of the aforementioned dogshit fonts and you guessed upper-case i, you&#39;ll almost certainly struggle with this problem from time to time. This makes for a lot of fun with names. For literally fucking years, I misread someone&#39;s username as starting with an I, when it actually was a lower-case L. Or the other way around - I don&#39;t remember which way I fucked up anymore. The site in question (Stack Overflow) used one of the aforementioned dogshit fonts where I == l. At the time, I just gave up and used a userstyle to force a sane font selection.&lt;/p&gt;&lt;p&gt;Fonts being subjective, i.e. the design value they provide to the website, is one thing; the readability of said font is another. My recurring problem with I and l in dogshit fonts will not be universal, and it will not be the biggest font-related issue in existence either. Aside having -2.25 and -2.75 correction, my eyesight is fairly good, and I do not have dyslexia or similar. I don&#39;t think there exists any single font that actually takes every possible problem into account. That&#39;s why taking away the user agency to pick their own fonts that they know they don&#39;t struggle with is an outright evil.&lt;/p&gt;&lt;p&gt;In the defense of setting fonts, there are a few cases where it can be useful, though this is largely for non-text content. In this case, I count symbols and emoji as non-text content. &lt;a href=&#34;https://github.com/ryanoasis/nerd-fonts&#34;&gt;Nerd Fonts&lt;/a&gt; adds a whole bunch of symbols as something that&#39;s &lt;em&gt;technically&lt;/em&gt; text from the perspective of the font, but for the sake of this discussion, it functionally isn&#39;t text. If you want to provide a more stable experience across operating systems for non-text content without requiring users to have specific fonts or fonts with specific capabilities (like the nerd font icon set), that&#39;s more justifiable. However, non-text content is also not read in the same way that text content is, so the legibility of the font doesn&#39;t come into as much play. Ugly or broken non-text characters shouldn&#39;t outright break readability. It might break how pretty the text looks, but that should always be secondary.&lt;/p&gt;&lt;p&gt;But even then, WebAIM has an article where &lt;a href=&#34;https://webaim.org/techniques/fonts/&#34;&gt;ambiguous fonts are discouraged&lt;/a&gt;. They also mention I, l, and 1, because some fonts make all three virtually fucking identical unless you do pixel-level analysis. This is still broadly ignored in favour of whatever the fuck the font is supposed to communicate other than being readable. As far as I can tell, WCAG 2 doesn&#39;t bring up font faces, but WCAG 3 looks like it might. It at least has a mention of &#34;font face&#34; in a currently unused definition. Fingers crossed I guess.&lt;/p&gt;&lt;p&gt;In either case, forcing specific fonts on users is an awful practice that needs to fucking die in a fire.&lt;/p&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Untitled arch commentary]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/notes/linux/arch.html" />
+                <id>https://lunarwatcher.codeberg.page/notes/linux/arch.html</id>
+
+                
+                    <published>2026-07-16T20:45:43+00:00</published>
+                
+                
+                    <updated>2026-07-16T20:45:43+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;p&gt;I am &lt;em&gt;checks calendar&lt;/em&gt; 2.5 months into arch. I&#39;m really pleasantly surprised by it.&lt;/p&gt;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&lt;p&gt;The installation experience isn&#39;t much to brag about. arch-install definitely makes the experience acceptable, but the lack of a default graphical installer does make the initial setup mildly annoying.&lt;/p&gt;&lt;p&gt;I wouldn&#39;t have had a chance a good few years ago, since there definitely is an extra learning curve to arch. Getting past that though, holy fuck, arch-install! It lets me export JSON files with the entire configuration, so I can get the core packages I need set up automagically. Parts of my dotfile setup are still dedicated to post-arch setup steps, largely because I still have non-core setup for various types of machines. &lt;/p&gt;&lt;p&gt;I theoretically have a server-compatible setup already prepared, and while I really want to migrate my server to arch, migrating an LVM cluster is a bit hard. Not impossibly so, but there&#39;s pre-uninstall and pre-reinstall steps, and because it&#39;s all on the same hardware, I don&#39;t have anything to go back to if I fuck up the pre-uninstall. In retrospect, lvm was a bit of a mistake. I do not have enough disks to justify it. It does have two disks in it, so I could in theory shrink out the 2TB SSD and move the data to it (and possibly to the 1TB OS SSD, not sure how much data I have on it now), then wipe the 16TB disk and move everything back to it, but shrinking volumes takes aaaaaaaaaaaages, and there&#39;s just no good time to do it.&lt;/p&gt;&lt;p&gt;Anyway, server migration tangent aside, automation as a core feature of one of the top recommended ways to install arch? Fucking brilliant, I love it :3&lt;/p&gt;&lt;h2 id=&#34;migration-problems&#34;&gt;Migration problems&lt;/h2&gt;&lt;p&gt;... or rather, mostly lack thereof.&lt;/p&gt;&lt;p&gt;Prior to migrating to arch, I had switched to KDE on Mint, largely because I had to do that on my work laptop&lt;sup&gt;&lt;a href=&#34;&#35;fn-1&#34; id=&#34;fn-1-r1&#34;&gt;[1]&lt;/a&gt;&lt;/sup&gt;, and I really enjoyed it. Plus, I had fewer bugs with it&lt;sup&gt;&lt;a href=&#34;&#35;fn-1&#34; id=&#34;fn-1-r2&#34;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;&lt;p&gt;The migration included a bump from KDE 5 to 6, which broke some of the stored config I had. Not a big deal, I just migrated it manually and re-exported for KDE 6, and now my config will follow KDE head (with one version behind for potential future Linux work laptops on Ubuntu et. al, where KDE will be older than arch).&lt;/p&gt;&lt;h2 id=&#34;post-migration-problems&#34;&gt;Post-migration problems&lt;/h2&gt;&lt;p&gt;Around the great AI slop machine-driven security patches (also known as anthropic increasing their stock value through fear), bluetooth broke. I tried and failed to roll back the kernel, which was annoying. Arch isn&#39;t really meant for rollbacks - I _could_ roll the kernel back, but everything is pinned to the latest versions of things, so rolling back is still spicy.&lt;/p&gt;&lt;p&gt;The patch came like a day later, and I got everything connected again.&lt;/p&gt;&lt;h3 id=&#34;non-arch-post-migration-problems&#34;&gt;Non-arch post-migration problems&lt;/h3&gt;&lt;p&gt;Also driven by AI slop machines, I had to axe my backup software. I have used &lt;a href=&#34;https://github.com/linuxmint/timeshift/&#34;&gt;timeshift&lt;/a&gt; for years, and timeshift is still fantastic - unfortunately, it&#39;s rsync-based, and rsync &lt;a href=&#34;https://github.com/linuxmint/timeshift/issues/548&#34;&gt;turned to AI slop and took down everything that used it&lt;/a&gt;. Great fucking job.&lt;/p&gt;&lt;p&gt;Fortunately (?), I had misconfigured timeshift by mistake. It was set to make scheduled backups, but it was never set to start :facepaw: The good news with that mistake is that rsync never had the chance to fuck anything up. I had to uninstall rsync and timeshift, since rsync cannot be trusted anymore. RIP rsync though - it used to be so good that no one really bothered making anything comparable to it. It became an industry standard, and the maintainers decided to completely fuck over everyone by using AI slop machines.&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/bcpierce00/unison&#34;&gt;unison&lt;/a&gt; looks like a solid replacement, and &lt;a href=&#34;https://github.com/bcpierce00/unison/commit/91421d0617b0fb543c0eee51bcb4d4791d8b0631&#34;&gt;just three weeks ago, it got an anti-AI CONTRIBUTING.md&lt;/a&gt; - love to see it. Not sure if it overlaps enough with rsync&#39;s use-cases for me to be able to add it to scripts for example. I have not read its docs or anything yet, I just know it exists, and I have a plan to look at it Later&amp;trade;.&lt;/p&gt;&lt;h2 id=&#34;initial-impressions&#34;&gt;Initial impressions&lt;/h2&gt;&lt;p&gt;Aside fangirling over automation for longer than I&#39;d like to admit, it really is a solid experience. Pacman is ass, and installing from the AUR is harder than I thought. I ended up avoiding it entirely, and haven&#39;t really missed it. Aside for nightly firefox, but I just downloaded the zip and stored it somewhere. It self-updates, so I don&#39;t really need to go through a package manager.&lt;/p&gt;&lt;p&gt;Discord being bundled in the package manager is great. Discord on Ubuntu didn&#39;t auto-update - that changed literally like within a couple days of me switching to arch though, so really bad timing on my part :p&lt;/p&gt;&lt;p&gt;One of the projects I wrote at one point to meet my needs is a package manager. I wrote it because I needed newer packages than Ubuntu could provide. I haven&#39;t even installed it :p Everything being up-to-date is fantastic, since I enjoy getting regular updates to the software I use. That does mean more risk (re: the kernel problem in the post-migration problems section), but honestly, aside system components, there&#39;s not really much risk in solid software that isn&#39;t developed with AI slop machines.&lt;/p&gt;&lt;p&gt;KDE in an actual KDE-dedicated system is also great. I do miss notification badges - notification badges were something I missed from Windows on Cinnamon for ages, but it was added I believe some time in the last year. I lose track of when it came. Then I of course switch DEs to one where notification badges aren&#39;t a thing. Will need to look into if there&#39;s like a replacement widget for the standard dock. I really like having notification badges.&lt;/p&gt;&lt;p&gt;KDE under Mint was a bit jank, because it coexisted with another DE that had its preferred default software. Not having that definitely makes KDE feel better. KDE also has a lot of really good software in general, though I only actively fangirl over Krita. Admittedly got that on steam rather than directly on my system.&lt;/p&gt;&lt;p&gt;Going back to AUR for a minute, it seems to be a fair bit more involved than I had hoped to get it to work. I assumed it would just be an equivalent to PPAs where you just add a package repo and it&#39;s done, but it&#39;s a whole other ecosystem that requires an additional package manager. And of course, &lt;a href=&#34;https://codeberg.org/ethical-foss/open-slopware&#35;aur-helpers&#34;&gt;the biggest of the AUR helpers is AI slop now&lt;/a&gt;. I&#39;ll get around to experimenting with paru (currently untainted) at some point, but it&#39;ll be at least a little while.&lt;/p&gt;&lt;p&gt;Even without AUR, the official repos contain _so much more stuff_. Both Obsidian and Discord just being available is great. &lt;/p&gt;&lt;p&gt;I will definitely be staying on arch on my daily-driver. For the record though, I do still like mint. Bugs aside, the Mint project has done a lot of great work reversing a lot of the dumb shit Canonical has been doing. Blacklisting snap by default and bringing back apt packages that are just thin wrappers around snap commands on Ubuntu proper is a solid move. I can&#39;t really recommend Mint enough, especially as a beginner distro. It pulled me through a solid ~8 years of Linux use, and I have no regrets&lt;/p&gt;&lt;div id=&#34;violet-footnotes&#34;&gt;&lt;h2&gt;Footnotes&lt;/h2&gt;&lt;ol&gt;&lt;li id=&#34;fn-1&#34;&gt;&lt;p&gt;Technically work laptop VM, because it&#39;s Windows-as-a-shitty-BIOS. Cinnamon&#39;s compositor (? - the thing in cinnamon called muffin, I don&#39;t remember what it was classified as) has a bug that inexplicably breaks rofi in hyper-v. I&#39;ve also had a number of other bugs with it on my main machine with screensharing, where I&#39;ve been unable to share a monitor on Discord without screentearing. I initially blamed the driver, then Discord (because discord is ass), but looks like it was the DE. Not where I expected that to go.&lt;/p&gt;&lt;span class=&#34;footnote-backref&#34;&gt;Usages: &lt;a href=&#34;&#35;fn-1-r1&#34;&gt;[1]&lt;/a&gt;, &lt;a href=&#34;&#35;fn-1-r2&#34;&gt;[2]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Emacs abbreviations]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/notes/dictionary/emacs.html" />
+                <id>https://lunarwatcher.codeberg.page/notes/dictionary/emacs.html</id>
+
+                
+                    <published>2026-06-23T22:17:10+00:00</published>
+                
+                
+                    <updated>2026-06-23T22:17:10+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;ul&gt;&lt;li&gt;&lt;p&gt;capf: Short for &lt;code&gt;completion-at-point-functions&lt;/code&gt; (or the non-plural &lt;code&gt;completion-at-point-function&lt;/code&gt; depending on context), i.e. a function that provides autocomplete at a given point in the buffer. See &lt;a href=&#34;https://www.gnu.org/software/emacs/manual/html_node/elisp/Completion-in-Buffers.html&#34;&gt;the emacs docs&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+            <entry>
+                <title><![CDATA[Replacing dawn: a theoretical inja-based templating system]]></title>
+                <link rel="alternate" href="https://lunarwatcher.codeberg.page/notes/automation/replacing-dawn.html" />
+                <id>https://lunarwatcher.codeberg.page/notes/automation/replacing-dawn.html</id>
+
+                
+                    <published>2026-06-23T01:00:00+00:00</published>
+                
+                
+                    <updated>2026-06-23T01:00:00+00:00</updated>
+                
+                
+                    <summary>No summary available! :(</summary>
+                
+                <content type="html">
+                    &lt;blockquote class=&#34;callout-info&#34;&gt;&lt;p class=&#34;callout-title&#34;&gt;Info&lt;/p&gt;&lt;p&gt; For context, &lt;a href=&#34;https://codeberg.org/LunarWatcher/dawn&#34;&gt;dawn is a vim plugin I wrote that generates project structures&lt;/a&gt;. It got axed after Vim decided AI slop was a great idea, and I migrated away from Vim. I&#39;m sure I&#39;ll write a rant about that later (if I haven&#39;t already)&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;For a while, I&#39;ve been trying to decide for or against writing a dawn replacement. TL;DR: I voted against. This still explains the general idea. I may still unabandon it in the future as well. The rest of this page is copied straight from my notes.&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;Dawn had a few major limitations in that its features were implemented as a tiny &#34;templating&#34; language that more closely resembles &lt;code&gt;envsubst&lt;/code&gt; with extra steps.&lt;/p&gt;&lt;p&gt;The reason I struggle with this now is that the app has expanded into something more for cross-project automation, with an ability to extend existing files, and that&#39;s a whole other can of worms. That could just as easily be replaced with a snippet or a snippet reference archive hosted on CB/GH.&lt;/p&gt;&lt;p&gt;If instead of doing that, I use &lt;a href=&#34;https://pantor.github.io/inja/&#34;&gt;inja&lt;/a&gt;, that solves a few initialization problems. Pure copypasta endeavours like setting up CI pipelines, setting up issue templates to make Codeberg the main repo, and other similar actions could be boiled down to a single command&lt;/p&gt;&lt;h2 id=&#34;implementation-details&#34;&gt;Implementation details&lt;/h2&gt;&lt;h3 id=&#34;bash&#34;&gt;Bash?&lt;/h3&gt;&lt;p&gt;I think I&#39;ve opted against bash, on the grounds that it isn&#39;t capable enough. &lt;code&gt;envsubst&lt;/code&gt; is fairly cheap to implement, but the logic required to extend the templates otherwise would be too complicated. &lt;/p&gt;&lt;p&gt;I also suspect at least some templates are going to have to be copied rather than directly created, notably for pipelines. At that point, it&#39;s basically a spicy copy operation.&lt;/p&gt;&lt;h3 id=&#34;integration-location&#34;&gt;Integration location&lt;/h3&gt;&lt;p&gt;I&#39;m very undecided here. It is a candidate for inclusion in umbra, but it&#39;s also a candidate for a standalone tool, considering the size of the inja stdlib extensions required to make this work. There&#39;s also still going to be finite limits to this; a &lt;code&gt;CONTRIBUTING.md&lt;/code&gt; would likely end up with a &lt;code&gt;&amp;&#35;123;% include &#34;AI ban.md&#34; %&amp;&#35;125;&lt;/code&gt; or something to that effect, which is going to be a whole thing if multiple template repos are supported (which I think I have a case for). &lt;/p&gt;&lt;blockquote class=&#34;callout-info&#34;&gt;&lt;p class=&#34;callout-title&#34;&gt;Info&lt;/p&gt;&lt;p&gt; &lt;a href=&#34;https://codeberg.org/LunarWatcher/umbra&#34;&gt;Umbra&lt;/a&gt; is a utility tool I wrote that has utilities (shock), some automation, and some replacements for other tools that were too much of a pain to use. It&#39;s designed to allow single commands that use environment context to reduce the amount of manual input required.&lt;/p&gt;&lt;p&gt;See the docs if you&#39;re interested. It only has 4 modules right now, but I use three of those modules regularly, especially at work where one umbra command replaces multiple commands and occasionally manual logins. It&#39;s one of my most frequently used self-made projects (disregarding libraries).&lt;/p&gt;&lt;/blockquote&gt;&lt;h3 id=&#34;theoretical-interface&#34;&gt;Theoretical interface&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;umbra [t|template] &#34;template name&#34;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Each template can optionally contain a frontmatter:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;---
+&amp;&#35;123;
+    &#34;k&#34;: &#34;v&#34;
+&amp;&#35;125;
+---&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The frontmatter would be used for config options rather than data used in the generation. For example:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Whether or not a template is copied or directly results in a file&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Additional metadata if the file is actually a standin for a project structure. Something like&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;&#35;123;
+    &#34;template&#34;: &amp;&#35;123;
+        &#34;directory&#34;: &#34;./cpp-cmake/&#34;,
+        ...
+    &amp;&#35;125;
+&amp;&#35;125;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;In theory, we could use a template file as a redirect to a template folder, which that file being excluded from copying.&lt;/p&gt;&lt;h3 id=&#34;filename-translation&#34;&gt;Filename translation&lt;/h3&gt;&lt;p&gt;Dawn declared filename translations in its config file, because it was convenient to do it like that. I have become aware of a few other ways to do it though, largely thanks to the clusterfuck that is react routers.&lt;/p&gt;&lt;p&gt;Certain react routers use filesystem paths as variables, because idk, fuck you. That&#39;s one of the things I explicitly avoided when designing violet, because I didn&#39;t want the filesystem paths to convey non-absolute information. It&#39;s also something I&#39;ll opt out of here.&lt;/p&gt;&lt;p&gt;The main question then becomes, which frontmatter does it live in? For single files, it&#39;s obviously 1:1, but in the case of project structures, should the metafile contain the translation, or should each individual file also have a frontmatter that contains that info?&lt;/p&gt;&lt;p&gt;I lean towards every file containing it, since each file likely has to be loaded into memory for manual copying anyway. Though there&#39;s no immediate examples of it now, projects could still have template information that&#39;s stored per-file, which means every file has to be checked for and stripped of its frontmatter before it&#39;s copied. That means manual copying, and that strengthens the case for keeping it in the frontmatter. &lt;/p&gt;&lt;p&gt;One complication is the parsing of it; should those strings be run through inja as well, or should a lighter version be used? It&#39;ll be hard to limit the contents of the strings if the full inja engine is used&lt;/p&gt;&lt;h2 id=&#34;main-challenge-limited-applications&#34;&gt;Main challenge: Limited applications&lt;/h2&gt;&lt;p&gt;I don&#39;t think this is worth spending time on. Though it&#39;s really convenient, it&#39;s maintenance overhead and lots of problems to solve for a very specific narrow problem that can be solved with a lot of &lt;code&gt;cp&lt;/code&gt; calls (or maybe &lt;code&gt;unison&lt;/code&gt;; not &lt;code&gt;rsync&lt;/code&gt; though, &lt;a href=&#34;https://github.com/RsyncProject/rsync/issues/92&#34;&gt;rsync is AI slop now&lt;/a&gt;) or otherwise copying files from my other repos. &lt;/p&gt;&lt;p&gt;Creating files is convenient, especially since I have a lot of files that are or start out fairly standard across multiple projects, but some of them would also benefit from being kept up to date. Keeping the files up-to-date is a whole other problem though, and attempting to implement it would explode the complexity of the project. It&#39;s possibly the only way this project has general use. &lt;/p&gt;&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;&lt;p&gt;Having a tool like this does not replace the fact that my editor (emacs at the time of writing) supports built-in snippets, which I still need to get around to configuring, and I&#39;ve never made enough repos to justify the time consumption. These replace a fair bit of the file content bits of templating, which makes the need to support &lt;code&gt;&#34;copy&#34;: true&lt;/code&gt; (or something to that effect) moot. Even before implementation, one of the main use-cases evaporates. Well, kinda - IIRC, the templates in emacs are also fairly weak, but it&#39;s much easier to just set up a bunch of them.&lt;/p&gt;&lt;p&gt;It is an interesting application of templating though. If I didn&#39;t already have &lt;a href=&#34;https://codeberg.org/LunarWatcher/violet&#34;&gt;violet&lt;/a&gt;, I probably would&#39;ve jumped on it anyway just for the sake of fucking a round with templates in a real-world project.&lt;/p&gt;&lt;p&gt;Will probably revisit if I find additional applications, or at least something that justifies creating it as a library. At this time, I don&#39;t think I will, though. Also doesn&#39;t help that I&#39;ve got better at setting up projects in general, since I kinda vaguely know what I&#39;m doing now :3&lt;/p&gt;
+                </content>
+                <author>
+                    <name>Olivia</name>
+                    <email>oliviawolfie@pm.me</email>
+                </author>
+            </entry>
+        
+    
+</feed>

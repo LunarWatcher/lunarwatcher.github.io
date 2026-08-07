@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Olivia's silly blog - notes and random thoughts</title>
+    <subtitle>Silly girl doing silly things</subtitle>
+    <link href="https://lunarwatcher.codeberg.page/notes/feed.atom" rel="self" />
+    <link href="https://lunarwatcher.codeberg.page/notes/" />
+    <id>https://lunarwatcher.codeberg.page/notes/feed.atom</id>
+    <updated>2026-08-07T19:20:00+00:00</updated>
+    <rights type="html">
+        Content licensed under CC-By-SA 4.0. Code licensed under the MIT license.
+        See &lt;a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE"&gt;the LICENSE file&lt;/a&gt;
+        in this website's source repo.
+    </rights>
+    <generator uri="https://codeberg.org/LunarWatcher/violet">Violet</generator>
+
+    
+        <entry>
+            <title><![CDATA[HTML popovers are really cool]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/notes/webdev/popovers.html" />
+            <id>https://lunarwatcher.codeberg.page/notes/webdev/popovers.html</id>
+
+            
+                <published>2026-08-03T23:35:10+00:00</published>
+            
+            
+                <updated>2026-08-03T23:35:10+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <content type="html">
+                &lt;p&gt;Over time, HTML and CSS has become increasingly powerful, but mostly the former. It used to be that you need all kinds of &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; nesting, but now, you can do it in precisely two lines of HTML:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;button popovertarget=&#34;use-html-popover-demo&#34;&amp;gt;Text&amp;lt;/button&amp;gt;
+&amp;lt;span id=&#34;use-html-popover-demo&#34; popover&amp;gt;boo!&amp;lt;/span&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;button popovertarget=&#34;use-html-popover-demo&#34;&gt;Click me!&lt;/button&gt;
+&lt;span id=&#34;use-html-popover-demo&#34; popover&gt;boo!&lt;/span&gt;
+&lt;/blockquote&gt;&lt;p&gt;Want to have it show up near where you clicked? One line of CSS:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;button popovertarget=&#34;use-html-popover-demo-position&#34;&amp;gt;Text&amp;lt;/button&amp;gt;
+&amp;lt;span id=&#34;use-html-popover-demo-position&#34; style=&#34;position-area: bottom&#34; popover&amp;gt;boo!&amp;lt;/span&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;button popovertarget=&#34;use-html-popover-demo-position&#34;&gt;Click me!&lt;/button&gt;
+&lt;span id=&#34;use-html-popover-demo-position&#34; style=&#34;position-area: bottom&#34; popover&gt;boo!&lt;/span&gt;
+&lt;/blockquote&gt;&lt;p&gt;... Well, technically 3 if you do proper CSS. &lt;code&gt;[popover]&lt;/code&gt; with a class, then the line to set position-area, and a bracket line, but still one line of functional CSS.&lt;/p&gt;&lt;p&gt;With a bit more code, you can do fancy things &lt;button class=&#34;text&#34; popovertarget=&#34;inline-demo&#34;&gt;inside text&lt;/button&gt; without requiring a single but of JS, nor a single redundant &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;&lt;sup&gt;&lt;a href=&#34;&#35;fn-1&#34; id=&#34;fn-1-r1&#34;&gt;[1]&lt;/a&gt;&lt;/sup&gt; with &lt;code&gt;position: absolute&lt;/code&gt; or whatever webdevs were stuck doing before the popover API.&lt;/p&gt;
+&lt;div id=&#34;inline-demo&#34; class=&#34;bottom&#34; popover&gt;
+&lt;p&gt;Most of my use for the inline variant in particular is essentially &lt;code&gt;&amp;lt;abbr&amp;gt;&lt;/code&gt; but mobile friendly. Technically, &lt;code&gt;&amp;lt;abbr&amp;gt;&lt;/code&gt; would be mildly abused the way I&#39;ve occasionally used it, so will need to go back and revisit at some point.&lt;/p&gt;&lt;p&gt;(I would normally use footnotes here, which violet generates markup for, but this is a sneaky demo, so deal with it :p)&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The minimal code required for a variant of this:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;style&amp;gt;
+button.text &amp;&#35;123;
+    background: none;
+    border: none;
+    padding: 0px;
+    text-decoration: underline dotted;
+    user-select: text;
+    font-size: 1rem;
+&amp;&#35;125;
+
+button.text:hover &amp;&#35;123;
+    color: black;
+    font-weight: bold;
+&amp;&#35;125;
+
+[popover].bottom &amp;&#35;123;
+    position-area: bottom;
+&amp;&#35;125;
+&amp;lt;/style&amp;gt;
+
+&amp;lt;p&amp;gt;Text &amp;lt;button class=&#34;text&#34; popovertarget=&#34;inline-demo&#34;&amp;gt;button inside text&amp;lt;/button&amp;gt; more text&amp;lt;/p&amp;gt;
+
+&amp;lt;p id=&#34;inline-demo&#34; class=&#34;bottom&#34; popover&amp;gt;Text omitted for brevity&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;div id=&#34;violet-footnotes&#34;&gt;&lt;h2&gt;Footnotes&lt;/h2&gt;&lt;ol&gt;&lt;li id=&#34;fn-1&#34;&gt;&lt;p&gt;There&#39;s technically one div that could be argued to be redundant in this case, since I didn&#39;t want to use &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; manually with violet to write &lt;code&gt;&amp;lt;abbr&amp;gt;&lt;/code&gt;. The div lets violet render the contents of the popover, while still being a trivial popover, so it&#39;s technically not redundant. &lt;/p&gt;&lt;span class=&#34;footnote-backref&#34;&gt;Usages: &lt;a href=&#34;&#35;fn-1-r1&#34;&gt;[1]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+            </content>
+
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[The great font rant]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/notes/webdev/fonts.html" />
+            <id>https://lunarwatcher.codeberg.page/notes/webdev/fonts.html</id>
+
+            
+                <published>2026-07-22T15:30:34+00:00</published>
+            
+            
+                <updated>2026-07-22T15:30:34+00:00</updated>
+            
+            
+                <summary><![CDATA[Most websites pick shit fonts and I hate it]]></summary>
+            
+            <content type="html">
+                &lt;p&gt;Earlier this year, I made the move to &lt;a href=&#34;/til/firefox/fonts.html&#34;&gt;disallow websites from setting fonts in Firefox&lt;/a&gt; (through changing the setting in firefox, I had nothing do do with its development, for the record). This was after stumbling into the option by accident - I&#39;ve never seen it before, and I&#39;m pretty sure it&#39;s new, but can&#39;t really guarantee that. Most websites force a default font, so I never bothered setting my own fonts. It&#39;s a fantastic toggle, and I will die on this hill, because most websites choose _awful_ fonts.&lt;/p&gt;&lt;p&gt;I have never had a particularly large investment in fonts. If a font is readable, it&#39;s good enough. I do still have fonts I prefer, and over time, these have become:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Ubuntu (the font, not the OS; the OS is on the enshittification track, but that&#39;s a whole other aside)&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Source Code Pro/Sauce Code Pro (modified version of Source Code Pro with more icons for terminal use)&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;These are the fonts I set in most of my desktop operating systems. In editors, I only use the latter of the two, but still, these fonts get set as my defaults. This includes in Firefox and in my operating system settings. I landed on these fonts because they&#39;re readable to me. Ubuntu in particular also solves the problem of l and I being identical. If you struggle to tell which is the lower-case L and which is the upper-case i, your default font probably sucks.&lt;/p&gt;&lt;p&gt;The default fonts in firefox are what&#39;s used when no other fonts on a hard-coded font spec is available, if no fonts are specified, or of course if you disallow websites from specifying their own fonts. This website does not specify fonts. Most of the web does, and shouldn&#39;t be doing so.&lt;/p&gt;&lt;p&gt;I do not have a relation to a font being particularly pretty. I do have a relation to fonts being bad, and that&#39;s largely if I struggle to read them. This makes for a fun existence in a world where 99% of the web seems to have decided to fuck user choice in favour of using their particular flavour of preferred font. Fonts being used basically as another part of usually corporate identity rather than prioritising whether or not the fuck everyone can actually read your fucking font is why I made the move to flip the switch that prevents websites from using their own fonts. Far too many websites pick dogshit fonts because &#34;it looks pretty&#34; or whatever, while completely ignoring that I and l are fucking identical.&lt;/p&gt;&lt;p&gt;This, usually, is not a problem. lf I start a sentence with &#34;If&#34;, it&#39;s probably an i and not an l. In the case of the previous sentence, it was an l. If you have one of the aforementioned dogshit fonts and you guessed upper-case i, you&#39;ll almost certainly struggle with this problem from time to time. This makes for a lot of fun with names. For literally fucking years, I misread someone&#39;s username as starting with an I, when it actually was a lower-case L. Or the other way around - I don&#39;t remember which way I fucked up anymore. The site in question (Stack Overflow) used one of the aforementioned dogshit fonts where I == l. At the time, I just gave up and used a userstyle to force a sane font selection.&lt;/p&gt;&lt;p&gt;Fonts being subjective, i.e. the design value they provide to the website, is one thing; the readability of said font is another. My recurring problem with I and l in dogshit fonts will not be universal, and it will not be the biggest font-related issue in existence either. Aside having -2.25 and -2.75 correction, my eyesight is fairly good, and I do not have dyslexia or similar. I don&#39;t think there exists any single font that actually takes every possible problem into account. That&#39;s why taking away the user agency to pick their own fonts that they know they don&#39;t struggle with is an outright evil.&lt;/p&gt;&lt;p&gt;In the defense of setting fonts, there are a few cases where it can be useful, though this is largely for non-text content. In this case, I count symbols and emoji as non-text content. &lt;a href=&#34;https://github.com/ryanoasis/nerd-fonts&#34;&gt;Nerd Fonts&lt;/a&gt; adds a whole bunch of symbols as something that&#39;s &lt;em&gt;technically&lt;/em&gt; text from the perspective of the font, but for the sake of this discussion, it functionally isn&#39;t text. If you want to provide a more stable experience across operating systems for non-text content without requiring users to have specific fonts or fonts with specific capabilities (like the nerd font icon set), that&#39;s more justifiable. However, non-text content is also not read in the same way that text content is, so the legibility of the font doesn&#39;t come into as much play. Ugly or broken non-text characters shouldn&#39;t outright break readability. It might break how pretty the text looks, but that should always be secondary.&lt;/p&gt;&lt;p&gt;But even then, WebAIM has an article where &lt;a href=&#34;https://webaim.org/techniques/fonts/&#34;&gt;ambiguous fonts are discouraged&lt;/a&gt;. They also mention I, l, and 1, because some fonts make all three virtually fucking identical unless you do pixel-level analysis. This is still broadly ignored in favour of whatever the fuck the font is supposed to communicate other than being readable. As far as I can tell, WCAG 2 doesn&#39;t bring up font faces, but WCAG 3 looks like it might. It at least has a mention of &#34;font face&#34; in a currently unused definition. Fingers crossed I guess.&lt;/p&gt;&lt;p&gt;In either case, forcing specific fonts on users is an awful practice that needs to fucking die in a fire.&lt;/p&gt;
+            </content>
+
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Untitled arch commentary]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/notes/linux/arch.html" />
+            <id>https://lunarwatcher.codeberg.page/notes/linux/arch.html</id>
+
+            
+                <published>2026-07-16T20:45:43+00:00</published>
+            
+            
+                <updated>2026-07-16T20:45:43+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <content type="html">
+                &lt;p&gt;I am &lt;em&gt;checks calendar&lt;/em&gt; 2.5 months into arch. I&#39;m really pleasantly surprised by it.&lt;/p&gt;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&lt;p&gt;The installation experience isn&#39;t much to brag about. arch-install definitely makes the experience acceptable, but the lack of a default graphical installer does make the initial setup mildly annoying.&lt;/p&gt;&lt;p&gt;I wouldn&#39;t have had a chance a good few years ago, since there definitely is an extra learning curve to arch. Getting past that though, holy fuck, arch-install! It lets me export JSON files with the entire configuration, so I can get the core packages I need set up automagically. Parts of my dotfile setup are still dedicated to post-arch setup steps, largely because I still have non-core setup for various types of machines. &lt;/p&gt;&lt;p&gt;I theoretically have a server-compatible setup already prepared, and while I really want to migrate my server to arch, migrating an LVM cluster is a bit hard. Not impossibly so, but there&#39;s pre-uninstall and pre-reinstall steps, and because it&#39;s all on the same hardware, I don&#39;t have anything to go back to if I fuck up the pre-uninstall. In retrospect, lvm was a bit of a mistake. I do not have enough disks to justify it. It does have two disks in it, so I could in theory shrink out the 2TB SSD and move the data to it (and possibly to the 1TB OS SSD, not sure how much data I have on it now), then wipe the 16TB disk and move everything back to it, but shrinking volumes takes aaaaaaaaaaaages, and there&#39;s just no good time to do it.&lt;/p&gt;&lt;p&gt;Anyway, server migration tangent aside, automation as a core feature of one of the top recommended ways to install arch? Fucking brilliant, I love it :3&lt;/p&gt;&lt;h2 id=&#34;migration-problems&#34;&gt;Migration problems&lt;/h2&gt;&lt;p&gt;... or rather, mostly lack thereof.&lt;/p&gt;&lt;p&gt;Prior to migrating to arch, I had switched to KDE on Mint, largely because I had to do that on my work laptop&lt;sup&gt;&lt;a href=&#34;&#35;fn-1&#34; id=&#34;fn-1-r1&#34;&gt;[1]&lt;/a&gt;&lt;/sup&gt;, and I really enjoyed it. Plus, I had fewer bugs with it&lt;sup&gt;&lt;a href=&#34;&#35;fn-1&#34; id=&#34;fn-1-r2&#34;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;&lt;p&gt;The migration included a bump from KDE 5 to 6, which broke some of the stored config I had. Not a big deal, I just migrated it manually and re-exported for KDE 6, and now my config will follow KDE head (with one version behind for potential future Linux work laptops on Ubuntu et. al, where KDE will be older than arch).&lt;/p&gt;&lt;h2 id=&#34;post-migration-problems&#34;&gt;Post-migration problems&lt;/h2&gt;&lt;p&gt;Around the great AI slop machine-driven security patches (also known as anthropic increasing their stock value through fear), bluetooth broke. I tried and failed to roll back the kernel, which was annoying. Arch isn&#39;t really meant for rollbacks - I _could_ roll the kernel back, but everything is pinned to the latest versions of things, so rolling back is still spicy.&lt;/p&gt;&lt;p&gt;The patch came like a day later, and I got everything connected again.&lt;/p&gt;&lt;h3 id=&#34;non-arch-post-migration-problems&#34;&gt;Non-arch post-migration problems&lt;/h3&gt;&lt;p&gt;Also driven by AI slop machines, I had to axe my backup software. I have used &lt;a href=&#34;https://github.com/linuxmint/timeshift/&#34;&gt;timeshift&lt;/a&gt; for years, and timeshift is still fantastic - unfortunately, it&#39;s rsync-based, and rsync &lt;a href=&#34;https://github.com/linuxmint/timeshift/issues/548&#34;&gt;turned to AI slop and took down everything that used it&lt;/a&gt;. Great fucking job.&lt;/p&gt;&lt;p&gt;Fortunately (?), I had misconfigured timeshift by mistake. It was set to make scheduled backups, but it was never set to start :facepaw: The good news with that mistake is that rsync never had the chance to fuck anything up. I had to uninstall rsync and timeshift, since rsync cannot be trusted anymore. RIP rsync though - it used to be so good that no one really bothered making anything comparable to it. It became an industry standard, and the maintainers decided to completely fuck over everyone by using AI slop machines.&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/bcpierce00/unison&#34;&gt;unison&lt;/a&gt; looks like a solid replacement, and &lt;a href=&#34;https://github.com/bcpierce00/unison/commit/91421d0617b0fb543c0eee51bcb4d4791d8b0631&#34;&gt;just three weeks ago, it got an anti-AI CONTRIBUTING.md&lt;/a&gt; - love to see it. Not sure if it overlaps enough with rsync&#39;s use-cases for me to be able to add it to scripts for example. I have not read its docs or anything yet, I just know it exists, and I have a plan to look at it Later&amp;trade;.&lt;/p&gt;&lt;h2 id=&#34;initial-impressions&#34;&gt;Initial impressions&lt;/h2&gt;&lt;p&gt;Aside fangirling over automation for longer than I&#39;d like to admit, it really is a solid experience. Pacman is ass, and installing from the AUR is harder than I thought. I ended up avoiding it entirely, and haven&#39;t really missed it. Aside for nightly firefox, but I just downloaded the zip and stored it somewhere. It self-updates, so I don&#39;t really need to go through a package manager.&lt;/p&gt;&lt;p&gt;Discord being bundled in the package manager is great. Discord on Ubuntu didn&#39;t auto-update - that changed literally like within a couple days of me switching to arch though, so really bad timing on my part :p&lt;/p&gt;&lt;p&gt;One of the projects I wrote at one point to meet my needs is a package manager. I wrote it because I needed newer packages than Ubuntu could provide. I haven&#39;t even installed it :p Everything being up-to-date is fantastic, since I enjoy getting regular updates to the software I use. That does mean more risk (re: the kernel problem in the post-migration problems section), but honestly, aside system components, there&#39;s not really much risk in solid software that isn&#39;t developed with AI slop machines.&lt;/p&gt;&lt;p&gt;KDE in an actual KDE-dedicated system is also great. I do miss notification badges - notification badges were something I missed from Windows on Cinnamon for ages, but it was added I believe some time in the last year. I lose track of when it came. Then I of course switch DEs to one where notification badges aren&#39;t a thing. Will need to look into if there&#39;s like a replacement widget for the standard dock. I really like having notification badges.&lt;/p&gt;&lt;p&gt;KDE under Mint was a bit jank, because it coexisted with another DE that had its preferred default software. Not having that definitely makes KDE feel better. KDE also has a lot of really good software in general, though I only actively fangirl over Krita. Admittedly got that on steam rather than directly on my system.&lt;/p&gt;&lt;p&gt;Going back to AUR for a minute, it seems to be a fair bit more involved than I had hoped to get it to work. I assumed it would just be an equivalent to PPAs where you just add a package repo and it&#39;s done, but it&#39;s a whole other ecosystem that requires an additional package manager. And of course, &lt;a href=&#34;https://codeberg.org/ethical-foss/open-slopware&#35;aur-helpers&#34;&gt;the biggest of the AUR helpers is AI slop now&lt;/a&gt;. I&#39;ll get around to experimenting with paru (currently untainted) at some point, but it&#39;ll be at least a little while.&lt;/p&gt;&lt;p&gt;Even without AUR, the official repos contain _so much more stuff_. Both Obsidian and Discord just being available is great. &lt;/p&gt;&lt;p&gt;I will definitely be staying on arch on my daily-driver. For the record though, I do still like mint. Bugs aside, the Mint project has done a lot of great work reversing a lot of the dumb shit Canonical has been doing. Blacklisting snap by default and bringing back apt packages that are just thin wrappers around snap commands on Ubuntu proper is a solid move. I can&#39;t really recommend Mint enough, especially as a beginner distro. It pulled me through a solid ~8 years of Linux use, and I have no regrets&lt;/p&gt;&lt;div id=&#34;violet-footnotes&#34;&gt;&lt;h2&gt;Footnotes&lt;/h2&gt;&lt;ol&gt;&lt;li id=&#34;fn-1&#34;&gt;&lt;p&gt;Technically work laptop VM, because it&#39;s Windows-as-a-shitty-BIOS. Cinnamon&#39;s compositor (? - the thing in cinnamon called muffin, I don&#39;t remember what it was classified as) has a bug that inexplicably breaks rofi in hyper-v. I&#39;ve also had a number of other bugs with it on my main machine with screensharing, where I&#39;ve been unable to share a monitor on Discord without screentearing. I initially blamed the driver, then Discord (because discord is ass), but looks like it was the DE. Not where I expected that to go.&lt;/p&gt;&lt;span class=&#34;footnote-backref&#34;&gt;Usages: &lt;a href=&#34;&#35;fn-1-r1&#34;&gt;[1]&lt;/a&gt;, &lt;a href=&#34;&#35;fn-1-r2&#34;&gt;[2]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+            </content>
+
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Emacs abbreviations]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/notes/dictionary/emacs.html" />
+            <id>https://lunarwatcher.codeberg.page/notes/dictionary/emacs.html</id>
+
+            
+                <published>2026-06-23T22:17:10+00:00</published>
+            
+            
+                <updated>2026-06-23T22:17:10+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <content type="html">
+                &lt;ul&gt;&lt;li&gt;&lt;p&gt;capf: Short for &lt;code&gt;completion-at-point-functions&lt;/code&gt; (or the non-plural &lt;code&gt;completion-at-point-function&lt;/code&gt; depending on context), i.e. a function that provides autocomplete at a given point in the buffer. See &lt;a href=&#34;https://www.gnu.org/software/emacs/manual/html_node/elisp/Completion-in-Buffers.html&#34;&gt;the emacs docs&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
+            </content>
+
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+        <entry>
+            <title><![CDATA[Replacing dawn: a theoretical inja-based templating system]]></title>
+            <link rel="alternate" href="https://lunarwatcher.codeberg.page/notes/automation/replacing-dawn.html" />
+            <id>https://lunarwatcher.codeberg.page/notes/automation/replacing-dawn.html</id>
+
+            
+                <published>2026-06-23T01:00:00+00:00</published>
+            
+            
+                <updated>2026-06-23T01:00:00+00:00</updated>
+            
+            
+                <summary>No summary available! :(</summary>
+            
+            <content type="html">
+                &lt;blockquote class=&#34;callout-info&#34;&gt;&lt;p class=&#34;callout-title&#34;&gt;Info&lt;/p&gt;&lt;p&gt; For context, &lt;a href=&#34;https://codeberg.org/LunarWatcher/dawn&#34;&gt;dawn is a vim plugin I wrote that generates project structures&lt;/a&gt;. It got axed after Vim decided AI slop was a great idea, and I migrated away from Vim. I&#39;m sure I&#39;ll write a rant about that later (if I haven&#39;t already)&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;For a while, I&#39;ve been trying to decide for or against writing a dawn replacement. TL;DR: I voted against. This still explains the general idea. I may still unabandon it in the future as well. The rest of this page is copied straight from my notes.&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;Dawn had a few major limitations in that its features were implemented as a tiny &#34;templating&#34; language that more closely resembles &lt;code&gt;envsubst&lt;/code&gt; with extra steps.&lt;/p&gt;&lt;p&gt;The reason I struggle with this now is that the app has expanded into something more for cross-project automation, with an ability to extend existing files, and that&#39;s a whole other can of worms. That could just as easily be replaced with a snippet or a snippet reference archive hosted on CB/GH.&lt;/p&gt;&lt;p&gt;If instead of doing that, I use &lt;a href=&#34;https://pantor.github.io/inja/&#34;&gt;inja&lt;/a&gt;, that solves a few initialization problems. Pure copypasta endeavours like setting up CI pipelines, setting up issue templates to make Codeberg the main repo, and other similar actions could be boiled down to a single command&lt;/p&gt;&lt;h2 id=&#34;implementation-details&#34;&gt;Implementation details&lt;/h2&gt;&lt;h3 id=&#34;bash&#34;&gt;Bash?&lt;/h3&gt;&lt;p&gt;I think I&#39;ve opted against bash, on the grounds that it isn&#39;t capable enough. &lt;code&gt;envsubst&lt;/code&gt; is fairly cheap to implement, but the logic required to extend the templates otherwise would be too complicated. &lt;/p&gt;&lt;p&gt;I also suspect at least some templates are going to have to be copied rather than directly created, notably for pipelines. At that point, it&#39;s basically a spicy copy operation.&lt;/p&gt;&lt;h3 id=&#34;integration-location&#34;&gt;Integration location&lt;/h3&gt;&lt;p&gt;I&#39;m very undecided here. It is a candidate for inclusion in umbra, but it&#39;s also a candidate for a standalone tool, considering the size of the inja stdlib extensions required to make this work. There&#39;s also still going to be finite limits to this; a &lt;code&gt;CONTRIBUTING.md&lt;/code&gt; would likely end up with a &lt;code&gt;&amp;&#35;123;% include &#34;AI ban.md&#34; %&amp;&#35;125;&lt;/code&gt; or something to that effect, which is going to be a whole thing if multiple template repos are supported (which I think I have a case for). &lt;/p&gt;&lt;blockquote class=&#34;callout-info&#34;&gt;&lt;p class=&#34;callout-title&#34;&gt;Info&lt;/p&gt;&lt;p&gt; &lt;a href=&#34;https://codeberg.org/LunarWatcher/umbra&#34;&gt;Umbra&lt;/a&gt; is a utility tool I wrote that has utilities (shock), some automation, and some replacements for other tools that were too much of a pain to use. It&#39;s designed to allow single commands that use environment context to reduce the amount of manual input required.&lt;/p&gt;&lt;p&gt;See the docs if you&#39;re interested. It only has 4 modules right now, but I use three of those modules regularly, especially at work where one umbra command replaces multiple commands and occasionally manual logins. It&#39;s one of my most frequently used self-made projects (disregarding libraries).&lt;/p&gt;&lt;/blockquote&gt;&lt;h3 id=&#34;theoretical-interface&#34;&gt;Theoretical interface&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;umbra [t|template] &#34;template name&#34;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Each template can optionally contain a frontmatter:&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;---
+&amp;&#35;123;
+    &#34;k&#34;: &#34;v&#34;
+&amp;&#35;125;
+---&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The frontmatter would be used for config options rather than data used in the generation. For example:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Whether or not a template is copied or directly results in a file&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Additional metadata if the file is actually a standin for a project structure. Something like&lt;/p&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;&#35;123;
+    &#34;template&#34;: &amp;&#35;123;
+        &#34;directory&#34;: &#34;./cpp-cmake/&#34;,
+        ...
+    &amp;&#35;125;
+&amp;&#35;125;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;In theory, we could use a template file as a redirect to a template folder, which that file being excluded from copying.&lt;/p&gt;&lt;h3 id=&#34;filename-translation&#34;&gt;Filename translation&lt;/h3&gt;&lt;p&gt;Dawn declared filename translations in its config file, because it was convenient to do it like that. I have become aware of a few other ways to do it though, largely thanks to the clusterfuck that is react routers.&lt;/p&gt;&lt;p&gt;Certain react routers use filesystem paths as variables, because idk, fuck you. That&#39;s one of the things I explicitly avoided when designing violet, because I didn&#39;t want the filesystem paths to convey non-absolute information. It&#39;s also something I&#39;ll opt out of here.&lt;/p&gt;&lt;p&gt;The main question then becomes, which frontmatter does it live in? For single files, it&#39;s obviously 1:1, but in the case of project structures, should the metafile contain the translation, or should each individual file also have a frontmatter that contains that info?&lt;/p&gt;&lt;p&gt;I lean towards every file containing it, since each file likely has to be loaded into memory for manual copying anyway. Though there&#39;s no immediate examples of it now, projects could still have template information that&#39;s stored per-file, which means every file has to be checked for and stripped of its frontmatter before it&#39;s copied. That means manual copying, and that strengthens the case for keeping it in the frontmatter. &lt;/p&gt;&lt;p&gt;One complication is the parsing of it; should those strings be run through inja as well, or should a lighter version be used? It&#39;ll be hard to limit the contents of the strings if the full inja engine is used&lt;/p&gt;&lt;h2 id=&#34;main-challenge-limited-applications&#34;&gt;Main challenge: Limited applications&lt;/h2&gt;&lt;p&gt;I don&#39;t think this is worth spending time on. Though it&#39;s really convenient, it&#39;s maintenance overhead and lots of problems to solve for a very specific narrow problem that can be solved with a lot of &lt;code&gt;cp&lt;/code&gt; calls (or maybe &lt;code&gt;unison&lt;/code&gt;; not &lt;code&gt;rsync&lt;/code&gt; though, &lt;a href=&#34;https://github.com/RsyncProject/rsync/issues/92&#34;&gt;rsync is AI slop now&lt;/a&gt;) or otherwise copying files from my other repos. &lt;/p&gt;&lt;p&gt;Creating files is convenient, especially since I have a lot of files that are or start out fairly standard across multiple projects, but some of them would also benefit from being kept up to date. Keeping the files up-to-date is a whole other problem though, and attempting to implement it would explode the complexity of the project. It&#39;s possibly the only way this project has general use. &lt;/p&gt;&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;&lt;p&gt;Having a tool like this does not replace the fact that my editor (emacs at the time of writing) supports built-in snippets, which I still need to get around to configuring, and I&#39;ve never made enough repos to justify the time consumption. These replace a fair bit of the file content bits of templating, which makes the need to support &lt;code&gt;&#34;copy&#34;: true&lt;/code&gt; (or something to that effect) moot. Even before implementation, one of the main use-cases evaporates. Well, kinda - IIRC, the templates in emacs are also fairly weak, but it&#39;s much easier to just set up a bunch of them.&lt;/p&gt;&lt;p&gt;It is an interesting application of templating though. If I didn&#39;t already have &lt;a href=&#34;https://codeberg.org/LunarWatcher/violet&#34;&gt;violet&lt;/a&gt;, I probably would&#39;ve jumped on it anyway just for the sake of fucking a round with templates in a real-world project.&lt;/p&gt;&lt;p&gt;Will probably revisit if I find additional applications, or at least something that justifies creating it as a library. At this time, I don&#39;t think I will, though. Also doesn&#39;t help that I&#39;ve got better at setting up projects in general, since I kinda vaguely know what I&#39;m doing now :3&lt;/p&gt;
+            </content>
+
+            <author>
+                <name>Olivia</name>
+                <email>oliviawolfie@pm.me</email>
+            </author>
+        </entry>
+    
+</feed>
