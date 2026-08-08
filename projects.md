@@ -62,10 +62,6 @@ Hazel was initially based on Crow, but later moved to magpie, my own HTTP server
 
 [WebDAV sync](https://codeberg.org/LunarWatcher/obsidian-webdav-sync) is a small obsidian plugin for syncing vaults to WebDAV.
 
-### LiviUtils
-
-[LiviUtils](https://codeberg.org/LunarWatcher/obsidian-utils) is a bundle plugin with utilities. This structure was largely picked because of Obsidian's absurdly slow review time, but it was kept after the move away from always requiring manual review because it's convenient to bundle utilities.
-
 ## Utilities
 
 ### lspinstaller
