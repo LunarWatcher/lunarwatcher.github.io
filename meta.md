@@ -43,7 +43,7 @@ This site has had, at least that I can remember, three (four) major (technical) 
 * (Nothing: dec. 2025-jun. 2026)
 * Violet: jun. 2026 (current)
 
-Looking back on my commit history to write this list, I did notice that both the jekyll and hugo changes happened in september, a few days before christmas. I guess december has ended up being my webdev month for a while.
+Looking back on my commit history to write this list, I did notice that both the jekyll and hugo changes happened in december, a few days before christmas. I guess december has ended up being my webdev month for a while.
 
 The migration to hugo in 2019 happened because it was just easier to work with than jekyll, because ruby as an ecosystem is _awful_. The switch away from hugo came because, as mentioned earlier, hugo turned to AI slop. It took me a few months to roll my own, though most of that time was in the "I can't be bothered doing this so I'll just keep a repo with notes instead" phase.
 
