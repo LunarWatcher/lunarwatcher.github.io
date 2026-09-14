@@ -522,3 +522,10 @@ button.text:hover {
     color: black;
     font-weight: bold;
 }
+
+span.colour {
+    padding: 4px;
+    border-radius: 4px;
+    border: 2px solid var(--pink-800);
+}
+

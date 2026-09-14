@@ -17,5 +17,6 @@
         <li><a href="{{ site.prefix }}/notes/index.html">Notes and random thoughts</a></li>
         <li><a href="{{ site.prefix }}/projects.html">Some of my projects</a></li>
         <li><a href="{{ site.prefix }}/uses.html">Things I use</a></li>
+        <li><a href="{{ site.prefix }}/misc/index.html">Misc gateway</a></li>
     </ul>
 </nav>
