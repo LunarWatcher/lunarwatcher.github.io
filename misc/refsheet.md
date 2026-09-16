@@ -13,6 +13,8 @@ Is this list too hard to read? Try:
 * [Without colours](refsheet.md?nocolour)
 * [With colours](refsheet.md)
 
+<noscript>With colours requires JavaScript. The hex colours are still available in text</noscript>
+
 ## Main colours
 
 * Fur
