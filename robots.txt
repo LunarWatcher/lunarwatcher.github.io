@@ -314,3 +314,7 @@ Disallow: *
 DisallowAITraining: /
 
 Content-Usage: ai=n
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+User-Agent: *
+Content-Signal: ai-train=no, search=yes, ai-input=no
