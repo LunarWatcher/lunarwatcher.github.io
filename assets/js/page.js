@@ -31,7 +31,8 @@ document.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(el => {
         ev.preventDefault();
         // TODO: There has to be a better way to do this
         navigator.clipboard.writeText(
-            window.location.protocol + "//"
+          window.location.protocol + "//"
+            + window.location.host // TODO: hardcode to codeberg?
             + window.location.pathname + "#" + el.id
         );
         signalCopied(ev.target);
