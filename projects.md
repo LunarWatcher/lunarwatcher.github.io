@@ -4,7 +4,7 @@
 }
 ---
 
-This page lists some of my projects. For the complete list, see [my codeberg profile](https://codeberg.org/LunarWatcher) (the extended archive including older and mostly abandoned repos is [on GitHub](https://github.com/LunarWatcher)). This list prioritises projects that are still active. Dead projects only get listed if they had some special value. 
+This page lists some of my projects. For the complete list, see [my codeberg profile](https://codeberg.org/LunarWatcher) (the extended archive including older and mostly abandoned repos is [on GitHub](https://github.com/LunarWatcher)). This list prioritises projects that are still active. Dead projects only get listed if they had some special value.
 
 {{ page.table_of_contents }}
 
@@ -13,6 +13,12 @@ This page lists some of my projects. For the complete list, see [my codeberg pro
 ### umbra - a set of ✨ magic ✨ CLI tools
 
 [umbra](https://codeberg.org/LunarWatcher/umbra) initially came about because I wanted to automate away some of the actions I kept repeating, and eventually expanded further into other CLI utilities, largely to replace tools that have turned into AI slop. This is in all likelihood the single non-library project I rely the most on to work more efficiently.
+
+### kitsune - CLI/GUI hybrid automation app
+
+Umbra has been really good to me, especially at work - but it's still very lacking in task execution. [Kitsune](https://codeberg.org/LunarWatcher/kitsune) is a CLI/GUI app that's currently mostly a terminal emulator with automation features. I plan to expand it with some non-GUI features in the future.
+
+Kitsune is a combination of a few projects I have been wanting to do for a while; a test reporter (that I abandoned because there aren't any good TUI libraries in C++), an automatable terminal pipeline thing (partly covered by zellij (note: partly AI slop) at this time).
 
 ## Libraries
 
@@ -74,8 +80,13 @@ Hazel was initially based on Crow, but later moved to magpie, my own HTTP server
 
 [violet](https://codeberg.org/LunarWatcher/violet) came about because of the AI-sloppification of most other static site generators that used to be worth using. It's also used to generate this site, as well as a few doc sites for a few of my projects (though those just use the default theme rather than the theme I use here).
 
-
 ## Misc
+
+### iris - a templating library
+
+[iris](https://codeberg.org/LunarWatcher/iris) is a fork of inja that'll eventually get quite a few improvements over upstream. The fork is largely necessitated by violet, which as of 0.14.0 uses iris for its templates.
+
+This entire site was generated with iris templates :3
 
 ### dotfiles
 
