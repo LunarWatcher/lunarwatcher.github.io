@@ -1,6 +1,6 @@
-{% extends "../_default/base.inja" %}
+{% extends "../_default/base.iris" %}
 {% block content %}
-    {% include "partials/notes-sidebar.inja" %}
+    {% include "partials/notes-sidebar.iris" %}
     <div class="content">
         <h1>{{ page.title }}</h1>
         {% include "content" %}

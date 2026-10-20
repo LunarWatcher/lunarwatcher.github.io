@@ -12,7 +12,7 @@
         </div>
         <div>
             <h2><img alt="rss logo" style="width: 1em" src="{{ site.prefix }}/assets/svg/rss.svg" aria-hidden="true" /> RSS feeds</h2>
-            {% include "partials/rss.inja" %}
+            {% include "partials/rss.iris" %}
         </div>
     </div>
     <div>

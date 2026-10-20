@@ -3,15 +3,15 @@
     {% if existsIn(site.data, "language") %}lang="{{site.data.language}}"{% endif %}
 >
     <head>
-        {% include "partials/head.inja" %}
+        {% include "partials/head.iris" %}
     </head>
     <body>
-        {% include "partials/header.inja" %}
+        {% include "partials/header.iris" %}
 
         <main>
             {% block content %}
             {% endblock %}
         </main>
-        {% include "partials/footer.inja" %}
+        {% include "partials/footer.iris" %}
     </body>
 </html>

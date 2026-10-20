@@ -1,13 +1,13 @@
 {# This page is (mostly) indented with two spaces to reduce linebreaks in the folders variable (at max width = 120) I
 have autowrapping by default in code files, but it's mildly annoying in data files like this functionally is. #}
-{% extends "../_default/base.inja" %}
+{% extends "../_default/base.iris" %}
 {% block content %}
   <h1>{{ page.title }}</h1>
   {% include "content" %}
   {# values: "folder name": "Display name in header" #}
   {% set categories = loadJson(page, "/_templates/outlinks/data.json") %}
 
-  {% include "partials/link-to-me.inja" %}
+  {% include "partials/link-to-me.iris" %}
 
   <hr class="rainbow" />
 

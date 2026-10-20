@@ -1,4 +1,4 @@
-{% extends "../_default/base.inja" %}
+{% extends "../_default/base.iris" %}
 {% block content %}
     <h1>{{ page.title }}</h1>
     {% include "content" %}
@@ -32,7 +32,7 @@
 
     {% for scope, display in folders %}
         <h2 id="{{ scope }}">{{ display }}</h2>
-        {% include "partials/list-pages-in-scope.inja" %}
+        {% include "partials/list-pages-in-scope.iris" %}
     {% endfor %}
 
 {% endblock %}

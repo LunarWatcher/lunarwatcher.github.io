@@ -11,7 +11,7 @@
         {% for folderName, nextTree in subtree.subfolders.notes.subfolders %}
             {% set context.currTree = nextTree %}
             {% set context.folderName = folderName %}
-            <li>{{ recurseInclude("partials/note-tree-builder.inja", context) }}</li>
+            <li>{{ recurseInclude("partials/note-tree-builder.iris", context) }}</li>
         {% endfor %}
     </ul>
 </aside>
