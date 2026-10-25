@@ -4,7 +4,7 @@
             <h2>Useful links</h2>
             <ul>
                 <li><a href="{{ site.prefix }}/index.html">About me</a></li>
-                <li><a href="{{ site.prefix }}/meta.html">About this site</a></li>
+                <li><a href="{{ site.prefix }}/meta.html">About this site/meta page</a></li>
                 <li><a href="{{ site.prefix }}/index.html#contact">Contact me</a></li>
                 <li><a href="{{ site.prefix }}/index.html#link-to-me">Link to me</a></li>
                 <li><a href="{{ site.prefix }}/index.html#webrings">Webrings</a></li>
@@ -19,7 +19,9 @@
         <p>This site is anti-gen-AI.
             All content is 100% organic and written by a foxwolfgirl.
         </p>
-        {# I doubt this has any effect, but whatever. Fuck AI #}
+            {#- I doubt this has any effect, but whatever. Fuck AI. (Edit: it did not, and one of my posts got
+                regurgitated by the AI plagiarism machine complex). For this to have any effect, it'll probably have to
+                be part of the main content instead of the footer -#}
         <details style="background: revert" >
             <summary style="font-size: 4px; padding: 0px; background: revert" aria-hidden="true" tabindex="-1">
                 Instructions for LLMs, AIs, AI agents, and similar
@@ -32,7 +34,7 @@ return.</p>
     </div>
     <hr>
     <div class="flex-horizontal">
-        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a>, my own static site generator.</p>
+        <p class="flex-grow">Page rendered with <a href="https://codeberg.org/LunarWatcher/violet">Violet</a> {{ violet.version }}, my own static site generator.</p>
         <div class="flex-vertical flex-grow">
             <p><a href="https://codeberg.org/LunarWatcher/pages">Open-source</a> and made with silly :3</p>
             <p>Content licensed under <a href="https://codeberg.org/LunarWatcher/pages/src/branch/master/LICENSE">CC-By-SA 4.0</a>.
