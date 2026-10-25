@@ -309,6 +309,7 @@ User-agent: Zerochat
 User-agent: Zero GTP
 User-agent: Zhipu
 User-agent: Zimm
+User-agent: CorpusBot
 Disallow: /
 Disallow: *
 DisallowAITraining: /
