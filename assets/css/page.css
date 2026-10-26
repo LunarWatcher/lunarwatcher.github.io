@@ -176,6 +176,9 @@ table tbody tr:nth-child(even) {
 .small {
     font-size: 0.7rem;
 }
+.large {
+    font-size: 1rem;
+}
 
 .grey {
     color: #555555;
@@ -185,9 +188,13 @@ table tbody tr:nth-child(even) {
     flex: 0 1 auto;
 }
 
-article {
+article.list {
     border-bottom: 2px solid var(--pink-800);
     padding: 8px;
+}
+
+.post-appendix {
+    margin-top: 4rem;
 }
 
 .flex-grow {

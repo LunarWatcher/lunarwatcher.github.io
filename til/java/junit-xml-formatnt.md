@@ -2,7 +2,7 @@
 {
     "title": "JUnit XML formatn't",
     "date": "2026-09-03T20:23:53+02:00",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": ["java", "junit"]
     }

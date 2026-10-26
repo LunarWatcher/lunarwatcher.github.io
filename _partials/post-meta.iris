@@ -1,6 +1,8 @@
 <div class="post-meta flex-vertical">
     <div class="author-block flex-shrink flex-horizontal">
         <img src="{{ site.prefix }}/assets/profile.png"
+                {# Avoid the profile pic being interpreted as the image for the article (avoids weird embed and weird reader mode) #}
+                aria-hidden="true"
                 class="flex-shrink"
                 style="height: 32px; aspect-ratio: 1/1; border-radius: 32px;"
                 alt="Profile picture"
@@ -25,8 +27,12 @@
             </span>
         </div>
     </div>
-    {% if existsIn(page, "taxonomies") and existsIn(page.taxonomies, "tags") %}
-        <div class="tag-container flex-shrink flex-horizontal">
+    {% if page.type == "til" %}
+        <p class="small grey">This was posted in the TIL section, the low-effort section of my website where I post things that I find useful, but that don't get the full quality checks content elsewhere on this site does.</p>
+    {% endif %}
+    {% if exists("page.taxonomies.tags") %}
+        <div class="tag-container flex-shrink flex-horizontal" style="align-items:center;">
+            Tags:
             {% for tag in page.taxonomies.tags %}
                 <span class="tag flex-shrink">{{ tag }}</span>
             {% endfor %}

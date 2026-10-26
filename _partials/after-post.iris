@@ -1,1 +1,17 @@
-{#  <hr class="trans-flag-ish" /> #}
+<hr class="trans-flag-ish" />
+
+<div class="flex-horizontal post-appendix flex-shrink" style="justify-content: center;">
+    <div style="flex-basis: 50%">
+        <h2>Share this post</h2>
+        <p>Thank you for reading :3 If you have any feedback, feel free to <a href="{{ site.prefix }}/#contact">contact me</a>. The issue tracker for this repo is the closest this site has to a comment section.</p>
+        <p>All posts on this blog are already permalinked, so you can copy it from the browser. If you prefer, here's a button that does precisely that for you (note: copies a link to the codeberg version of this article, which is more permanent than the GitHub pages version).</p>
+        <noscript>You don't have JS enabled, which is required for the copy button to work. Copy the page link manually from your browser instead</noscript>
+        <button class="large" onclick="copyPageLink(event)" id="copy-page-link">Copy link</button>
+
+        <p class="small">
+            Please do not share this post on HackerNews or similar news aggregators. These sites result in my content being ingested into AI slop machines at a much higher rate than it just existing on the internet. Feel free to post it elsewhere though :3
+        </p>
+        <p>Want updates when I post? There are several RSS feeds you can subscribe to.</p>
+        {% include "partials/rss.iris" %}
+    </div>
+</div>

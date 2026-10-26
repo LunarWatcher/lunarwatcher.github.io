@@ -2,7 +2,7 @@
 {
     "title": "Listing keybinds, variables, keys, etc.",
     "date": "2026-06-25T06:13:28+02:00",
-    "type": "blog"
+    "type": "til"
 }
 ---
 

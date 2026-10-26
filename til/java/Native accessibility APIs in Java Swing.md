@@ -1,7 +1,7 @@
 ---
 {
     "title": "Native accessibility APIs in Java Swing",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": [
             "java",

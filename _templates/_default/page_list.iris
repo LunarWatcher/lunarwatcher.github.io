@@ -4,7 +4,7 @@
 
     {% if exists("listing") %}
         {% for page in listing.pages %}
-            <article class="flex-vertical">
+            <article class="flex-vertical list">
                 <h2><a href="{{ site.prefix}}/{{ page.url }}">{{ page.title }}</a></h2>
                 {% if existsIn(page, "date") %}
                     <span class="grey">

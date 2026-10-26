@@ -10,10 +10,10 @@ hljs.addPlugin({
 });
 
 function signalCopied(el) {
-    const text = el.text;
-    el.text = "Copied!";
+    const text = el.textContent;
+    el.textContent = "Copied!";
     setTimeout(() => {
-        el.text = text;
+        el.textContent = text;
     }, 1500);
 }
 
@@ -50,3 +50,11 @@ document.querySelectorAll(
         );
 })
 
+
+function copyPageLink(ev) {
+  navigator.clipboard.writeText(
+    "https://lunarwatcher.codeberg.page"
+      + window.location.pathname
+  );
+  signalCopied(ev.target);
+}

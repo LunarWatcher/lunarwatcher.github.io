@@ -1,7 +1,7 @@
 ---
 {
     "title": "Windows is pain: getting rid of CRLF",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": [
             "git",

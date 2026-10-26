@@ -2,7 +2,7 @@
 {
     "title": "Customising underline styles in an emacs theme",
     "date": "2026-06-25T06:13:28+02:00",
-    "type": "blog"
+    "type": "til"
 }
 ---
 The underline property can also be a list that takes a `:style`:

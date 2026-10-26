@@ -2,7 +2,7 @@
 {
     "title": "Opening a commit message in an editor after writing a partial commit message with -m",
     "date": "2026-07-10T03:17:30+02:00",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": ["git"]
     }

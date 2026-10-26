@@ -2,7 +2,7 @@
 {
     "title": "Pseudo-domains in firefox for local files",
     "date": "2026-08-04T01:56:14+02:00",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": ["firefox"]
     }

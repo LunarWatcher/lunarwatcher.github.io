@@ -1,7 +1,7 @@
 ---
 {
     "title": "How to disable SSH password auth on Ubuntu Server (22.10)",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": [
             "linux",

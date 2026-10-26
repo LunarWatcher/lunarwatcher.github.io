@@ -2,7 +2,7 @@
 {
     "title": "Inspecting the browser shadow DOM (browser-specific HTML element internals)",
     "date": "2026-07-31T23:50:26+02:00",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": ["html", "firefox", "chrome"]
     }

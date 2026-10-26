@@ -3,7 +3,7 @@
     "title": "Making big downloads resumable in firefox",
     "date": "2026-10-11T17:56:29+02:00",
     "last_modified": "2026-10-17T12:00:20+02:00",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": ["firefox"]
     }

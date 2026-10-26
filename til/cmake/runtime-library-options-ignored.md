@@ -1,7 +1,7 @@
 ---
 {
     "title": "Runtime library conflicts with CMake, and why CMake doesn't respect your options",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": [
             "cmake"

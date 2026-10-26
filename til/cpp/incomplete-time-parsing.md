@@ -1,7 +1,7 @@
 ---
 {
     "title": "C++ time sucks: parsing incomplete timestamps",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": [
             "cpp"

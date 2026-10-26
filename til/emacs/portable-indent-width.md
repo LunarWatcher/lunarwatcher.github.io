@@ -2,7 +2,7 @@
 {
     "title": "Setting indent width \"portably\" in emacs",
     "date": "2026-07-27T23:49:47+02:00",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": ["emacs"]
     }

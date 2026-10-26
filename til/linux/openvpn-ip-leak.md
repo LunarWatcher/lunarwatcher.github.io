@@ -1,7 +1,7 @@
 ---
 {
     "title": "IPv6 leak with OpenVPN",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": [
             "linux",

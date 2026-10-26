@@ -2,7 +2,7 @@
 {
     "title": "use-package from a local directory with a normally vc-loaded plugin",
     "date": "2026-06-29T00:13:57+02:00",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": ["emacs"]
     }

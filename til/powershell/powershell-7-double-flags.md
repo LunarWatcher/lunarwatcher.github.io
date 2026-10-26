@@ -1,7 +1,7 @@
 ---
 {
     "title": "Powershell 7 fails to parse flags with a double-shaped value",
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": [ "powershell", "microslop" ]
     },

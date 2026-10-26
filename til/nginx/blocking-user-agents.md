@@ -2,7 +2,7 @@
 {
     "title": "Blocking user agents with nginx",
     "date": "2025-02-27T13:22:51+01:00",
-    "type": "blog",
+    "type": "til",
     "tags": [
         "nginx"
     ]

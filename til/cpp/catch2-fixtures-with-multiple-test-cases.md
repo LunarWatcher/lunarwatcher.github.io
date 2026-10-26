@@ -2,7 +2,7 @@
 {
     "title": "Running the same test on multiple data in catch2",
     "date": "2026-10-21T00:40:35+02:00",
-    "type": "blog",
+    "type": "til",
     "taxonomies": { "tags": [ "cpp", "catch2" ] }
 }
 ---

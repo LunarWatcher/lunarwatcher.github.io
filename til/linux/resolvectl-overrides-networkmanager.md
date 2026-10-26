@@ -1,6 +1,6 @@
 ---
 {
-    "type": "blog",
+    "type": "til",
     "taxonomies": {
         "tags": [
             "Linux/Networking",
