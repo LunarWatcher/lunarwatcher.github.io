@@ -19,7 +19,7 @@ slop machines are set up, so this is going entirely off on the assumption that t
 raw or something like that. Again, not sure if it matters, but we'll see. #}
     <ai-access-control>{% include "partials/ai-deterrent.iris" %}</ai-access-control>
 
-    {% for entry in listPagesPaginated(page, ".", violet.sort.by_last_modified_date) %}
+    {% for entry in listPagesPaginated(".", violet.sort.by_last_modified_date) %}
         <entry>
             <title><![CDATA[{{ entry.title }}]]></title>
             <link rel="alternate" href="{{ site.data.domain }}/{{ entry.url }}" />

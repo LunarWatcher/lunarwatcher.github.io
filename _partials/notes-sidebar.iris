@@ -1,7 +1,7 @@
 <aside id="notes-sidebar">
     <h2>Notes and thoughts index</h2>
     {# For whatever reason, setting the context inline does not work and results in a syntax error #}
-    {% set subtree = treePages(site, "notes") %}
+    {% set subtree = treePages("/notes") %}
     {% set context = {
         "page": page,
         "site": site
