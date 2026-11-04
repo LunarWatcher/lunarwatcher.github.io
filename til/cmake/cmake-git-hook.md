@@ -89,7 +89,7 @@ This is the dumbest thing I've had the misfortune of needing to debug in a good 
 Unset all the offending variables before the CMake command:
 
 ```bash
-unset GIT_DIR GIT_INDEX_FILE GIT_PREFIX GIT_EXEC_PATH GIT_EDITOR GIT_AUTHOR_NAME GIT_AUTHOR_EMAIL GIT_AUTHOR_DATE
+unset GIT_INDEX_FILE GIT_PREFIX GIT_EXEC_PATH GIT_EDITOR GIT_AUTHOR_NAME GIT_AUTHOR_EMAIL GIT_AUTHOR_DATE
 if ! cmake .. -DCMAKE_BUILD_TYPE=Debug -DVIOLET_SANITISE=ON -DVIOLET_WARNINGS_ARE_ERRORS=ON -DVIOLET_CLANG_TIDY=ON; then
     echo "Failed to run CMake setup!"
     exit 1
