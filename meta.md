@@ -1,12 +1,13 @@
 ---
 {
-    "title": "Meta"
+    "title": "Meta",
+    "last_modified": "2026-11-04T20:29:13+01:00"
 }
 ---
 
-> Last updated: 2026-07-26T23:49:18+02:00
+> Last updated (by hand, not counting violet's metadata): {{ formatDate(page.last_modified, violet.datetime.iso) }}
 
-This website was generated with [violet](https://codeberg.org/LunarWatcher/violet), a static site generator I made after hugo fell to AI slop.
+This website was generated with [violet](https://codeberg.org/LunarWatcher/violet), a static site generator I made after hugo fell to <abbr title="All AI is AI slop">AI slop</abbr>.
 
 Some of the extended parts of this page were inspired by [this blog post](https://home.hedy.dev/posts/meta-pages/), though it was initially just intended to include the stats I added in violet 0.7.0, so I can flex or whatever :p
 
@@ -45,9 +46,9 @@ This site has had, at least that I can remember, three (four) major (technical) 
 
 Looking back on my commit history to write this list, I did notice that both the jekyll and hugo changes happened in december, a few days before christmas. I guess december has ended up being my webdev month for a while.
 
-The migration to hugo in 2019 happened because it was just easier to work with than jekyll, because ruby as an ecosystem is _awful_. The switch away from hugo came because, as mentioned earlier, hugo turned to AI slop. It took me a few months to roll my own, though most of that time was in the "I can't be bothered doing this so I'll just keep a repo with notes instead" phase.
+The migration to hugo in 2019 happened because it was just easier to work with than jekyll, because ruby as an ecosystem is *awful*. The switch away from hugo came because, as mentioned earlier, hugo turned to AI slop. It took me a few months to roll my own, though most of that time was in the "I can't be bothered doing this so I'll just keep a repo with notes instead" phase.
 
-(Also, holy shit, has it really been _8 years_ already?)
+(Also, holy shit, has it really been *8 years* already?)
 
 ### Philosophy
 

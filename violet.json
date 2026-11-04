@@ -1,29 +1,30 @@
 {
-    "name": "Olivia's silly blog",
-    "description": "Contains my blog",
-    "data": {
-        "language": "en-GB",
-        "repo": {
-            "github": "https://github.com/LunarWatcher/lunarwatcher.github.io",
-            "codeberg": "https://codeberg.org/LunarWatcher/pages"
-        },
-        "domain": "https://lunarwatcher.codeberg.page",
-        "author": {
-            "name": "Olivia",
-            "email": "oliviawolfie@pm.me"
-        },
-        "links": {
-            "discord": "EZyt8FAYHe"
-        },
-        "tagline": "Silly girl doing silly things"
+  "name": "Olivia's silly blog",
+  "description": "Contains my blog",
+  "timezone": "Europe/Oslo",
+  "data": {
+    "language": "en-GB",
+    "repo": {
+      "github": "https://github.com/LunarWatcher/lunarwatcher.github.io",
+      "codeberg": "https://codeberg.org/LunarWatcher/pages"
     },
-    "theme": null,
-    "metadata": true,
-    "exclude": [
-        "scripts",
-        "LICENSE",
-        "CONTRIBUTING.md",
-        ".ignore",
-        "raw"
-    ]
+    "domain": "https://lunarwatcher.codeberg.page",
+    "author": {
+      "name": "Olivia",
+      "email": "oliviawolfie@pm.me"
+    },
+    "links": {
+      "discord": "EZyt8FAYHe"
+    },
+    "tagline": "Silly girl doing silly things"
+  },
+  "theme": null,
+  "metadata": true,
+  "exclude": [
+    "scripts",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    ".ignore",
+    "raw"
+  ]
 }
