@@ -68,7 +68,7 @@ FetchContent_Declare(cli12
 )
 ```
 
-It makes no use of patch functionality in a way that would allow for conflicts to occur, and the conflicts happen on a clean clone. Another variant of the errors I got was claiming that this and a couple other packages installed the same way did not exist.
+It makes no use of patch functionality in a way that would allow for conflicts to occur, and the conflicts happen on a clean clone. Another variant of the errors I got was claiming that this and a couple other packages installed the same way did not exist. There's no apparent mechanism that would cause the entire directory to be quietly wiped in the milliseconds between the CMake process cloning and validating the dependency that could be attributed to incorrect use of FetchContent.
 
 ## Debugging
 
