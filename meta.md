@@ -66,7 +66,7 @@ The current design of the site is mostly just the same design I've had for years
 
 #### Colours and fonts
 
-Some pure design-semantic things have changed though. One notable difference from earlier is that [I don't set any fonts](/notes/html/fonts.md), because respecting user choices is good, and fonts are a very notable instance of a user preference that should be respected. If you don't like the font, go to your browser's settings and change the default to whatever you like. If you use Firefox, you can also change a setting that [disables websites' ability to set their own shit fonts](/til/firefox/fonts.html).
+Some pure design-semantic things have changed though. One notable difference from earlier is that [I don't set any fonts](/notes/webdev/fonts.md), because respecting user choices is good, and fonts are a very notable instance of a user preference that should be respected. If you don't like the font, go to your browser's settings and change the default to whatever you like. If you use Firefox, you can also change a setting that [disables websites' ability to set their own shit fonts](/til/firefox/fonts.md).
 
 The previous version used a pink-on-black theme. This one leans a lot more heavily towards pink and purple. I would still like to get in more colour in a few places, but I'm not sure how to do this without just making everything be coloured. I like pink, but reading everything on a pink background gets annoying.
 
@@ -90,7 +90,7 @@ Most of the design section has already touched on this, but this site has been d
 
 ### Webrings
 
-See [webrings](/index.md#webrings)
+See [webrings](/index.html#webrings)
 
 [^1]: An unrendered file is a file that hasn't been processed by the templating system, i.e. a file that was copied directly to the output folder.
 [^2]: Pro tip: though it is paid, [Kagi](https://kagi.com) (a different search engine) is doing a lot of good work on, among other things, the small web. It has to be mentioned that they endorse AI slop machines, but they have toggles for disabling all of it, and the actual search algorithm isn't designed to force maximum slop. Their philosophy around search arguably makes kagi a lesser evil.
