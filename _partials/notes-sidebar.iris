@@ -7,7 +7,7 @@
         "site": site
     } %}
 
-    <p>(<a href="{{ site.prefix }}/notes/index.html">What's this?</a>)</p>
+    <p>(<a href="{{ abspath("/notes/index.html") }}">What's this?</a>)</p>
     <ul id="recursive-list-root">
         {% for nextTree in subtree.subfolders %}
             {% set context.currTree = nextTree %}

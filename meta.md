@@ -100,4 +100,4 @@ See [webrings](/index.html#webrings)
 
   Matrix can go fuck itself.
 
-<script src="{{ site.prefix }}/assets/js/meta.js"></script>
+<script src="{{ abspath("/assets/js/meta.js") }}"></script>

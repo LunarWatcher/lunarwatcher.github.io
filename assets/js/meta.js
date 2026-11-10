@@ -4,7 +4,7 @@
 // are local.
 // There's a firefox `about:config` option to disable this (allegedly), and it crashed the tab. Nice.
 fetch(
-    "{{ site.prefix }}/_violet-meta.json"
+  "{{ abspath("/_violet-meta.json") }}"
 )
     .then(body => body.json())
     .then(json => {

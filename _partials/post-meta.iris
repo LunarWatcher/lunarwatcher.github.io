@@ -1,6 +1,6 @@
 <div class="post-meta flex-vertical">
     <div class="author-block flex-shrink flex-horizontal">
-        <img src="{{ site.prefix }}/assets/profile.png"
+        <img src="{{ abspath("/assets/profile.png") }}"
                 {# Avoid the profile pic being interpreted as the image for the article (avoids weird embed and weird reader mode) #}
                 aria-hidden="true"
                 class="flex-shrink"

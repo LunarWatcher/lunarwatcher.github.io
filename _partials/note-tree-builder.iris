@@ -1,14 +1,14 @@
 {# Direct root descendants #}
 
 {% if currTree.index != null %}
-    <a href="{{ site.prefix }}/{{ currTree.index.url }}">{{ currTree.index.title }}</a>
+    <a href="{{ abspath(currTree.index.url) }}">{{ currTree.index.title }}</a>
 {% else %}
     {{ currTree.folder_name }} (automatically titled section)
 {% endif %}
 
 <ul>
     {% for page in currTree.items %}
-        <li><a href="{{ site.prefix }}/{{ page.url }}">{{ page.title }}</a></li>
+        <li><a href="{{ abspath(page.url) }}">{{ page.title }}</a></li>
     {% endfor %}
 
     {% for nextTree in currTree.subfolders %}

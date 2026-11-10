@@ -1,6 +1,6 @@
 <header class="flex-vertical airgapped">
     <div class="flex-horizontal">
-        <span id="site-title" class="flex-grow"><a href="{{ site.prefix }}/">{{ site.name }}</a></span>
+        <span id="site-title" class="flex-grow"><a href="{{ abspath("/") }}">{{ site.name }}</a></span>
 
         <button
             class="flex-shrink"
@@ -12,11 +12,11 @@
 <nav id="navigation" class="flex-vertical airgapped">
     <h2>Navigation</h2>
     <ul class="pad">
-        <li><a href="{{ site.prefix }}/blog/index.html">Blog</a></li>
-        <li><a href="{{ site.prefix }}/til/index.html">TIL</a></li>
-        <li><a href="{{ site.prefix }}/notes/index.html">Notes and random thoughts</a></li>
-        <li><a href="{{ site.prefix }}/projects.html">Some of my projects</a></li>
-        <li><a href="{{ site.prefix }}/uses.html">Things I use</a></li>
-        <li><a href="{{ site.prefix }}/misc/index.html">Misc gateway</a></li>
+        <li><a href="{{ abspath("/blog/index.html") }}">Blog</a></li>
+        <li><a href="{{ abspath("/til/index.html") }}">TIL</a></li>
+        <li><a href="{{ abspath("/notes/index.html") }}">Notes and random thoughts</a></li>
+        <li><a href="{{ abspath("/projects.html") }}">Some of my projects</a></li>
+        <li><a href="{{ abspath("/uses.html") }}">Things I use</a></li>
+        <li><a href="{{ abspath("/misc/index.html") }}">Misc gateway</a></li>
     </ul>
 </nav>

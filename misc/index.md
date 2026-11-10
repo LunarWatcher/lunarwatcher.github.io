@@ -9,6 +9,6 @@ This page contains links to pages that didn't fit in anywhere else on the websit
 
 <ul>
 {% for p in listPages(".") %}
-    <li><a href="{{ site.prefix }}/{{ p.url }}">{{ p.title }}</a></li>
+    <li><a href="{{ abspath(p.url) }}">{{ p.title }}</a></li>
 {% endfor %}
 </ul>

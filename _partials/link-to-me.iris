@@ -2,9 +2,9 @@
     <summary id="link-to-me">Link to me</summary>
     <div>
         <p>If you want to link to this site, you can optionally do it with an 88x31:</p>
-        <a href="{{ site.prefix }}/assets/88x31.png">
+        <a href="{{ abspath("/assets/88x31.png") }}">
             <img
-                src="{{ site.prefix }}/assets/88x31.png"
+                src="{{ abspath("/assets/88x31.png") }}"
                 alt="88x31 badge for this site"
             />
         </a>

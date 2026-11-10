@@ -24,11 +24,11 @@ on the front page.  If either of these disappear, the IndieAuth login breaks.
             Vim into slopware, so now I'm using Emacs (with evil mode to make the experience tolerable).
             </p>
             <p>I work on all kinds of different projects, including games, scripting/automation/QOL, webservers, websites,
-            and whatever else I find interesting. Here's a <a href="{{ site.prefix }}/projects.html">list of some of my projects</a>.</p>
+            and whatever else I find interesting. Here's a <a href="{{ abspath("/projects.html") }}">list of some of my projects</a>.</p>
             {% include "partials/link-to-me.iris" %}
         </div>
         <div class="flex-shrink flex-vertical">
-        <img src="{{ site.prefix }}/assets/profile.png"
+        <img src="{{ abspath("/assets/profile.png") }}"
             style="max-height: 300px; aspect-ratio: 1/1; align-self: center"
             alt="Profile picture"
             id="profile-pic"
@@ -84,7 +84,7 @@ on the front page.  If either of these disappear, the IndieAuth login breaks.
             <ul>
                 <li>Codeberg: <a href="https://codeberg.org/LunarWatcher">LunarWatcher</a></li>
                 <li>GitHub: <a href="https://github.com/LunarWatcher">LunarWatcher</a></li>
-                <li><img alt="rss logo" style="width: 1em" src="{{ site.prefix }}/assets/svg/rss.svg" aria-hidden="true" /> RSS feeds:
+                <li><img alt="rss logo" style="width: 1em" src="{{ abspath("/assets/svg/rss.svg") }}" aria-hidden="true" /> RSS feeds:
                 {% include "partials/rss.iris" %}
                 Raw URLs:
                 <pre><code class="nohighlight">{{ site.data.domain }}/blog/feed.atom
@@ -100,12 +100,12 @@ on the front page.  If either of these disappear, the IndieAuth login breaks.
 <h2>Smol web</h2>
 
 <p>This website was designed in the spirit of the small web/indieweb. There's some ramblings on the design and some
-nerdy stats on <a href="{{ site.prefix }}/meta.html">the /meta page</a>.</p>
+nerdy stats on <a href="{{ abspath("/meta.html") }}">the /meta page</a>.</p>
 
 <h3>Webrings</h3>
 {% include "partials/webring-list.iris" %}
 
 <h3>Outlinks (88x31 wall)</h3>
-<p>Outlinks are kept on a separate page due to lots of images; see <a href="{{ site.prefix }}/outlinks.html">outlinks</a>.</p>
+<p>Outlinks are kept on a separate page due to lots of images; see <a href="{{ abspath("/outlinks.html") }}">outlinks</a>.</p>
 
-<script src="{{ site.prefix }}/assets/js/index-fun.js"></script>
+<script src="{{ abspath("/assets/js/index-fun.js") }}"></script>

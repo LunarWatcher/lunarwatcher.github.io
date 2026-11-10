@@ -477,22 +477,22 @@ blockquote p {
     margin-right: 4px;
 }
 .callout-note > .callout-title::before {
-    content: url("{{ site.prefix }}/assets/svg/callout-note.svg");
+    content: url("{{ abspath("/assets/svg/callout-note.svg") }}");
 }
 .callout-info > .callout-title::before {
-    content: url("{{ site.prefix }}/assets/svg/callout-info.svg");
+    content: url("{{ abspath("/assets/svg/callout-info.svg") }}");
 }
 .callout-tip > .callout-title::before {
-    content: url("{{ site.prefix }}/assets/svg/callout-tip.svg");
+    content: url("{{ abspath("/assets/svg/callout-tip.svg") }}");
 }
 .callout-important > .callout-title::before {
-    content: url("{{ site.prefix }}/assets/svg/callout-important.svg");
+    content: url("{{ abspath("/assets/svg/callout-important.svg") }}");
 }
 .callout-warning > .callout-title::before {
-    content: url("{{ site.prefix }}/assets/svg/callout-warning.svg");
+    content: url("{{ abspath("/assets/svg/callout-warning.svg") }}");
 }
 .callout-caution > .callout-title::before {
-    content: url("{{ site.prefix }}/assets/svg/callout-caution.svg");
+    content: url("{{ abspath("/assets/svg/callout-caution.svg") }}");
 }
 
 input:invalid {

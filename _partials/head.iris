@@ -10,16 +10,16 @@
     <meta name="description" content="{{ htmlEscape(page.summary) }}" />
 {% endif %}
 
-<link rel="stylesheet" href="{{ site.prefix }}/assets/css/variables.css" />
-<link rel="stylesheet" href="{{ site.prefix }}/assets/css/syntax.css" />
-<link rel="stylesheet" href="{{ site.prefix }}/assets/css/page.css" />
+<link rel="stylesheet" href="{{ abspath("/assets/css/variables.css") }}" />
+<link rel="stylesheet" href="{{ abspath("/assets/css/syntax.css") }}" />
+<link rel="stylesheet" href="{{ abspath("/assets/css/page.css") }}" />
 
 <link rel="canonical" href="{{ site.data.domain }}/{{ page.url }}" />
 
 <title>{{ page.title }}</title>
 
-<script src="{{ site.prefix }}/assets/vendor/highlightjs.js"></script>
-<script src="{{ site.prefix }}/assets/js/page.js" defer></script>
+<script src="{{ abspath("/assets/vendor/highlightjs.js") }}"></script>
+<script src="{{ abspath("/assets/js/page.js") }}" defer></script>
 
 <link rel="alternate"
    title="Olivia's silly blog :3 - blog posts"
