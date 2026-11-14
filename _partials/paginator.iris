@@ -34,9 +34,9 @@
             {% endif %}
         </li>
     </ul>
-    
+
     <form class="" id="skip-to-page"
-          onsubmit="event.preventDefault(); window.location.href = '{{ abspath(listing.base_path) }}/page/' + this.page.value + '/index.html'; return false;"
+          onsubmit="event.preventDefault(); window.location.href = '{{ abspath("page") }}/' + this.page.value + '/index.html'; return false;"
     >
         {# not elegant, but it work shaped #}
         <label for="page">Jump to page</label><br />

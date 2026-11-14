@@ -26,19 +26,19 @@ have autowrapping by default in code files, but it's mildly annoying in data fil
                           </tr>
                       </thead>
                       <tbody>
-                          {% for page in pages %}
+                          {% for itPage in pages %}
                               <tr>
                                   <td style="width: 100px;">
-                                      {% if page.88x31 != null %}
-                                          <a href="{{ page.url}}">
-                                              <img src="{{ page.88x31 }}"
+                                      {% if itPage.88x31 != null %}
+                                          <a href="{{ itPage.url}}">
+                                              <img src="{{ itPage.88x31 }}"
                                                    loading="lazy"
-                                                   alt="88x31 for {{ htmlEscape(page.name) }}" />
+                                                   alt="88x31 for {{ htmlEscape(itPage.name) }}" />
                                           </a>
                                       {% endif %}
                                   </td>
-                                  <td><a href="{{ page.url }}">{{ page.name }}</a></td>
-                                  <td>{{ page.comment }}</td>
+                                  <td><a href="{{ itPage.url }}">{{ itPage.name }}</a></td>
+                                  <td>{{ itPage.comment }}</td>
                               </tr>
                           {% endfor %}
                       </tbody>

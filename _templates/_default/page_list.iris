@@ -3,26 +3,26 @@
     {% include "content" %}
 
     {% if exists("listing") %}
-        {% for page in listing.pages %}
+        {% for itPage in listing.pages %}
             <article class="flex-vertical list">
-                <h2><a href="{{ abspath(page.url) }}">{{ page.title }}</a></h2>
-                {% if existsIn(page, "date") %}
+                <h2><a href="{{ abspath(itPage.url) }}">{{ itPage.title }}</a></h2>
+                {% if existsIn(itPage, "date") %}
                     <span class="grey">
-                        Published on {{ formatDate(page.date, "%F at %H:%M:%OS%Oz", "Europe/Oslo") }}
-                        {% if existsIn(page, "last_modified") %}
-                            · Last modified {{ formatDate(page.last_modified, "%F at %H:%M:%OS%Oz", "Europe/Oslo") }}
+                        Published on {{ formatDate(itPage.date, "%F at %H:%M:%OS%Oz", "Europe/Oslo") }}
+                        {% if existsIn(itPage, "last_modified") %}
+                            · Last modified {{ formatDate(itPage.last_modified, "%F at %H:%M:%OS%Oz", "Europe/Oslo") }}
                         {% endif %}
                     </span>
                 {% endif %}
 
-                {% if existsIn(page, "summary") %}
-                    <p>{{ page.summary }}</p>
+                {% if existsIn(itPage, "summary") %}
+                    <p>{{ itPage.summary }}</p>
                 {% endif %}
                 {# TODO: should this just be available if a summary is set?  #}
-                <p style="margin: 0px"><a href="{{ abspath(page.url) }}">Read more...</a></p>
-                {% if existsIn(page, "taxonomies") and existsIn(page.taxonomies, "tags") %}
+                <p style="margin: 0px"><a href="{{ abspath(itPage.url) }}">Read more...</a></p>
+                {% if existsIn(itPage, "taxonomies") and existsIn(itPage.taxonomies, "tags") %}
                     <div class="tag-container flex-horizontal" style="margin-top: 4px">
-                        {% for tag in page.taxonomies.tags %}
+                        {% for tag in itPage.taxonomies.tags %}
                             <span class="tag flex-shrink">{{ tag }}</span>
                         {% endfor %}
                     </div>
@@ -32,7 +32,7 @@
 
         {% include "partials/paginator.iris" %}
     {% else %}
-        <p>error: It seems <i>someone</i> did a dumdum and page_list fell back to the _default that's meant for paginated page
+        <p>error: It seems <i>someone</i> did a dumdum and itPage_list fell back to the _default that's meant for paginated itPage
             lists. I'm sure she knows she's a bad girl</p>
     {% endif %}
 {% endblock %}
