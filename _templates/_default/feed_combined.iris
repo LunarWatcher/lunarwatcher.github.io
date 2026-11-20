@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ site.name }} - {{ page.data.name }}</title>
     <subtitle>{{ site.data.tagline }}</subtitle>
-    <link href="{{ site.data.domain }}{{ page.url }}" rel="self" />
-    <link href="{{ site.data.domain }}{{ page.data.for-scope }}" />
-    <id>{{ site.data.domain }}{{ page.url }}</id>
+    <link href="{{ site.data.domain }}{{ abspath(page.url) }}" rel="self" />
+    <link href="{{ site.data.domain }}{{ abspath(page.data.for-scope) }}" />
+    <id>{{ site.data.domain }}{{ abspath(page.url) }}</id>
     <updated>{{ formatDate(now(), violet.datetime.iso) }}</updated>
     <rights type="html">
         Content licensed under CC-By-SA 4.0. Code licensed under the MIT license.
@@ -23,8 +23,8 @@
             {%- if entry.layout != "page_list" -%}
                 <entry>
                     <title><![CDATA[{{ entry.title }}]]></title>
-                    <link rel="alternate" href="{{ site.data.domain }}{{ entry.url }}" />
-                    <id>{{ site.data.domain }}{{ entry.url }}</id>
+                    <link rel="alternate" href="{{ site.data.domain }}{{ abspath(entry.url) }}" />
+                    <id>{{ site.data.domain }}{{ abspath(entry.url) }}</id>
 
                     {# I think a chunk of the slop machines access content on my site via this here ATOM feed,
                     where they don't see the any other anti-AI measures I try implementing. I don't know how the scraper
