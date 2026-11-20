@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ site.name }} - {{ page.data.name }}</title>
     <subtitle>{{ site.data.tagline }}</subtitle>
-    <link href="{{ site.data.domain }}/{{ page.url }}" rel="self" />
+    <link href="{{ site.data.domain }}{{ page.url }}" rel="self" />
     <link href="{{ site.data.domain }}{{ page.data.for-scope }}" />
-    <id>{{ site.data.domain }}/{{ page.url }}</id>
+    <id>{{ site.data.domain }}{{ page.url }}</id>
     <updated>{{ formatDate(now(), violet.datetime.iso) }}</updated>
     <rights type="html">
         Content licensed under CC-By-SA 4.0. Code licensed under the MIT license.
@@ -12,50 +12,52 @@
         in this website's source repo.
     </rights>
     {# I think a chunk of the slop machines access content on my site via this here ATOM feed,
-where they don't see the any other anti-AI measures I try implementing. I don't know how the scraper
-slop machines are set up, so this is going entirely off on the assumption that they're just fed an entry
-raw or something like that. Again, not sure if it matters, but we'll see. #}
-    <ai-access-control>{% include "partials/ai-deterrent.iris" %}</ai-access-control>
-    <generator uri="https://codeberg.org/LunarWatcher/violet">Violet</generator>
-
-    {% for scope in page.data.scopes %}
-        {% for entry in listPagesPaginated(scope, violet.sort.by_last_modified_date, 10) %}
-            <entry>
-                <title><![CDATA[{{ entry.title }}]]></title>
-                <link rel="alternate" href="{{ site.data.domain }}/{{ entry.url }}" />
-                <id>{{ site.data.domain }}/{{ entry.url }}</id>
-
-                {# I think a chunk of the slop machines access content on my site via this here ATOM feed,
     where they don't see the any other anti-AI measures I try implementing. I don't know how the scraper
     slop machines are set up, so this is going entirely off on the assumption that they're just fed an entry
     raw or something like that. Again, not sure if it matters, but we'll see. #}
-                <ai-access-control>{% include "partials/ai-deterrent.iris" %}</ai-access-control>
+    <ai-access-control>{% include "partials/ai-deterrent.iris" %}</ai-access-control>
+    <generator uri="https://codeberg.org/LunarWatcher/violet">Violet</generator>
 
-                {% if existsIn(entry, "date") %}
-                    <published>{{ formatDate(entry.date, violet.datetime.iso) }}</published>
-                {% else %}
-                    <published>{{ formatDate(now(), violet.datetime.iso) }}</published>
-                {% endif %}
-                {% if existsIn(entry, "last_modified") %}
-                    <updated>{{ formatDate(entry.last_modified, violet.datetime.iso) }}</updated>
-                {% else if existsIn(entry, "date") %}
-                    <updated>{{ formatDate(entry.date, violet.datetime.iso) }}</updated>
-                {% else %}
-                    <updated>{{ formatDate(now(), violet.datetime.iso) }}</updated>
-                {% endif %}
-                {% if existsIn(entry, "summary") %}
-                    <summary><![CDATA[{{ entry.summary }}]]></summary>
-                {% else %}
-                    <summary>No summary available! :(</summary>
-                {% endif %}
-                <content type="html">
-                    {{ htmlEscape(render(entry).content) }}
-                </content>
-                <author>
-                    <name>{{ site.data.author.name }}</name>
-                    <email>{{ site.data.author.email }}</email>
-                </author>
-            </entry>
-        {% endfor %}
-    {% endfor %}
+    {%- for scope in page.data.scopes -%}
+        {%- for entry in listPagesPaginated(scope, violet.sort.by_last_modified_date, 10) -%}
+            {%- if entry.layout != "page_list" -%}
+                <entry>
+                    <title><![CDATA[{{ entry.title }}]]></title>
+                    <link rel="alternate" href="{{ site.data.domain }}{{ entry.url }}" />
+                    <id>{{ site.data.domain }}{{ entry.url }}</id>
+
+                    {# I think a chunk of the slop machines access content on my site via this here ATOM feed,
+                    where they don't see the any other anti-AI measures I try implementing. I don't know how the scraper
+                    slop machines are set up, so this is going entirely off on the assumption that they're just fed an entry
+                    raw or something like that. Again, not sure if it matters, but we'll see. #}
+                    <ai-access-control>{%- include "partials/ai-deterrent.iris" -%}</ai-access-control>
+
+                    {%- if existsIn(entry, "date") -%}
+                        <published>{{ formatDate(entry.date, violet.datetime.iso) }}</published>
+                    {%- else -%}
+                        <published>{{ formatDate(now(), violet.datetime.iso) }}</published>
+                    {%- endif -%}
+                    {%- if existsIn(entry, "last_modified") -%}
+                        <updated>{{ formatDate(entry.last_modified, violet.datetime.iso) }}</updated>
+                    {%- else if existsIn(entry, "date") -%}
+                        <updated>{{ formatDate(entry.date, violet.datetime.iso) }}</updated>
+                    {%- else -%}
+                        <updated>{{ formatDate(now(), violet.datetime.iso) }}</updated>
+                    {%- endif -%}
+                    {%- if existsIn(entry, "summary") -%}
+                        <summary><![CDATA[{{ entry.summary }}]]></summary>
+                    {%- else -%}
+                        <summary>No summary available! :(</summary>
+                    {%- endif -%}
+                    <content type="html">
+                        {{ htmlEscape(render(entry).content) }}
+                    </content>
+                    <author>
+                        <name>{{ site.data.author.name }}</name>
+                        <email>{{ site.data.author.email }}</email>
+                    </author>
+                </entry>
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endfor -%}
 </feed>
