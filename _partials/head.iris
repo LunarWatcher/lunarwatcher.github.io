@@ -16,6 +16,9 @@
 
 <link rel="canonical" href="{{ site.data.domain }}/{{ page.url }}" />
 
+<!-- By recommendation from https://baccyflap.com/res/robots/ -->
+<meta name="robots" content="noai, noimageai" />
+
 <title>{{ page.title }}</title>
 
 <script src="{{ abspath("/assets/vendor/highlightjs.js") }}"></script>
