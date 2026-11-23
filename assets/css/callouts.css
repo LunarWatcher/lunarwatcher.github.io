@@ -1,0 +1,38 @@
+.callout-note > .callout-title {
+    color: var(--violet-colour-note);
+}
+.callout-info > .callout-title {
+    color: var(--violet-colour-info);
+}
+.callout-tip > .callout-title {
+    color: var(--violet-colour-tip);
+}
+.callout-important > .callout-title {
+    color: var(--violet-colour-important);
+}
+.callout-warning > .callout-title {
+    color: var(--violet-colour-warning);
+}
+.callout-caution > .callout-title {
+    color: var(--violet-colour-caution);
+}
+
+/* TODO: replace with better-designed SVGs */
+.callout-note > .callout-title::before {
+    content: "✏ ";
+}
+.callout-info > .callout-title::before {
+    content: "🛈 ";
+}
+.callout-tip > .callout-title::before {
+    content: "💡 ";
+}
+.callout-important > .callout-title::before {
+    content: "📝 ";
+}
+.callout-warning > .callout-title::before {
+    content: "⚠ ";
+}
+.callout-caution > .callout-title::before {
+    content: "⚠ ";
+}
